@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>빌리닷컴 x 5FUNNEL 숏폼 마케팅 제안</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --primary:#3E90F5;--primary-dim:rgba(62,144,245,.08);--primary-mid:rgba(62,144,245,.18);--primary-glow:rgba(62,144,245,.35);
+  --highlight:#FF8C42;--highlight-dim:rgba(255,140,66,.10);
+  --accent:#50D000;--accent-dim:rgba(80,208,0,.10);
+  --purple:#7C3AED;--purple-dim:rgba(124,58,237,.10);
+  --danger:#EF4444;--danger-dim:rgba(239,68,68,.08);
+  --warn:#F59E0B;--warn-dim:rgba(245,158,11,.10);
+  --ink:#0F172A;--ink-sub:#475569;--ink-mute:#94A3B8;
+  --surface:#FFF;--surface-alt:#F8FAFC;--surface-dark:#0F172A;
+  --border:#E2E8F0;--border-light:#F1F5F9;
+  --font-d:'Outfit','Pretendard Variable',sans-serif;
+  --font-b:'Pretendard Variable',sans-serif;
+  --r-sm:8px;--r-md:14px;--r-lg:20px;
+  --sh-card:0 1px 3px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.06);
+  --sh-lift:0 4px 12px rgba(15,23,42,.06),0 12px 36px rgba(15,23,42,.10);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden}
+body{font-family:var(--font-b);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased}
+
+/* SLIDE */
+.slide{min-height:100dvh;width:100vw;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(2rem,5vw,5rem);position:relative}
+
+/* NAV */
+.nav-dots{position:fixed;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px}
+.nav-dots a{width:8px;height:8px;border-radius:50%;background:var(--border);display:block;transition:all .35s cubic-bezier(.4,0,.2,1)}
+.nav-dots a:hover,.nav-dots a.active{background:var(--primary);box-shadow:0 0 8px var(--primary-glow);transform:scale(1.5)}
+.slide-counter{position:fixed;bottom:clamp(14px,2vw,28px);right:clamp(14px,2vw,28px);font-family:var(--font-d);font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);z-index:100;background:rgba(255,255,255,.85);padding:5px 14px;border-radius:20px;backdrop-filter:blur(12px);border:1px solid var(--border);font-variant-numeric:tabular-nums}
+
+/* REVEAL */
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s cubic-bezier(.16,1,.3,1),transform .7s cubic-bezier(.16,1,.3,1)}
+.rv.visible{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}
+
+/* TYPO */
+h1,h2,h3{font-family:var(--font-d);word-break:keep-all;text-wrap:balance}
+h1{font-weight:800;line-height:1.18;letter-spacing:-.02em}
+h2{font-weight:700;line-height:1.25;letter-spacing:-.015em}
+h3{font-weight:600;line-height:1.35}
+p,li{line-height:1.75;word-break:keep-all}
+.label{font-family:var(--font-d);font-size:clamp(10px,1.1vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--primary);margin-bottom:clamp(6px,1.2vh,14px)}
+.t-primary{color:var(--primary)}.t-highlight{color:var(--highlight)}.t-accent{color:var(--accent)}.t-danger{color:var(--danger)}.t-purple{color:var(--purple)}.t-sub{color:var(--ink-sub)}.t-mute{color:var(--ink-mute)}
+
+/* LAYOUT */
+.container{max-width:1080px;width:100%}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(16px,3vw,32px)}
+.g3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:clamp(14px,2.5vw,28px)}
+.g4{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,2vw,24px)}
+.center{text-align:center}
+
+/* CARD */
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--r-lg);padding:clamp(22px,3vw,40px);box-shadow:var(--sh-card);font-size:clamp(15px,1.6vw,19px);transition:transform .35s cubic-bezier(.4,0,.2,1),box-shadow .35s cubic-bezier(.4,0,.2,1)}
+.card:hover{transform:translateY(-3px);box-shadow:var(--sh-lift)}
+.card-top-primary{border-top:3px solid var(--primary)}
+.card-top-highlight{border-top:3px solid var(--highlight)}
+.card-top-accent{border-top:3px solid var(--accent)}
+.card-top-purple{border-top:3px solid var(--purple)}
+.card-tint-danger{background:var(--danger-dim);border-color:rgba(239,68,68,.15)}
+.card-tint-accent{background:var(--accent-dim);border-color:rgba(80,208,0,.15)}
+
+/* BADGE */
+.badge{display:inline-block;padding:5px 14px;border-radius:20px;font-size:clamp(11px,1.2vw,14px);font-weight:700;font-family:var(--font-d);letter-spacing:.04em}
+.badge-primary{background:var(--primary);color:#fff}
+.badge-highlight{background:var(--highlight);color:#fff}
+.badge-accent{background:var(--accent);color:#fff}
+.badge-danger{background:var(--danger);color:#fff}
+.badge-outline{background:transparent;border:1.5px solid var(--primary);color:var(--primary)}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:separate;border-spacing:0;border-radius:var(--r-md);overflow:hidden;font-size:clamp(14px,1.5vw,18px)}
+.tbl thead th{background:var(--surface-dark);color:#fff;padding:clamp(10px,1.5vh,16px) clamp(12px,1.5vw,20px);font-family:var(--font-d);font-weight:600;text-align:left}
+.tbl tbody td{padding:clamp(10px,1.5vh,16px) clamp(12px,1.5vw,20px);border-bottom:1px solid var(--border-light)}
+.tbl tbody tr:last-child td{border-bottom:none}
+.tbl tbody tr:nth-child(even){background:var(--surface-alt)}
+.tbl .row-alert{background:var(--danger-dim)!important}
+
+/* MATRIX */
+.matrix{display:grid;grid-template-columns:auto repeat(6,1fr);gap:2px;font-size:clamp(13px,1.4vw,16px)}
+.mx-group{text-align:center;padding:clamp(10px,1.5vh,16px) clamp(8px,1vw,14px);font-family:var(--font-d);font-weight:700;font-size:clamp(14px,1.5vw,18px);letter-spacing:.04em;border-radius:8px 8px 0 0}
+.mx-group-search{background:#1E3A5F;color:#fff;grid-column:span 3}
+.mx-group-discover{background:#3D1F5C;color:#fff;grid-column:span 3}
+.mx-group-empty{background:transparent}
+.mx-h{background:var(--surface-dark);color:#fff;padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);font-weight:600;text-align:center;font-family:var(--font-d)}
+.mx-r{background:var(--surface-alt);padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);font-weight:700;display:flex;align-items:center;font-size:clamp(14px,1.5vw,17px)}
+.mx-c{padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);text-align:center;border-radius:6px;transition:all .3s ease}
+.mx-empty{background:#F1F5F9;color:var(--ink-mute)}
+.mx-active{background:var(--primary-mid);color:var(--primary);font-weight:700;border:2px solid rgba(62,144,245,.3)}
+.mx-weak{background:var(--warn-dim);color:#92400E;font-weight:700;border:2px solid rgba(245,158,11,.3)}
+.mx-cafe{background:var(--purple-dim);color:var(--purple);font-weight:700;border:2px solid rgba(124,58,237,.3)}
+.mx-short{background:var(--highlight-dim);color:#C2410C;font-weight:700;border:2px solid rgba(255,140,66,.3)}
+
+/* FLOW */
+.flow{display:flex;align-items:center;gap:clamp(4px,1vw,12px);flex-wrap:wrap;justify-content:center}
+.flow-node{padding:clamp(14px,2vh,24px) clamp(18px,2.5vw,32px);border-radius:var(--r-md);text-align:center;font-weight:500;font-size:clamp(14px,1.5vw,18px);min-width:clamp(90px,12vw,140px)}
+.fn-broken{background:var(--danger-dim);border:2px dashed var(--danger);color:var(--danger)}
+.fn-weak{background:var(--warn-dim);border:2px dashed var(--warn);color:#92400E}
+.fn-ok{background:var(--accent-dim);border:2px solid var(--accent);color:#166534}
+.flow-arr{font-size:clamp(16px,2vw,24px);color:var(--ink-mute);font-family:var(--font-d)}
+.flow-arr-broken{color:var(--danger)}.flow-arr-ok{color:var(--accent)}
+
+/* PRICING */
+.price-card{border-radius:var(--r-lg);padding:clamp(22px,3vw,40px);text-align:center;position:relative;overflow:hidden;background:var(--surface);border:1px solid var(--border);box-shadow:var(--sh-card)}
+.price-card.featured{border:2px solid var(--primary);box-shadow:0 0 40px rgba(62,144,245,.18)}
+
+/* TIMELINE */
+.timeline{display:flex;gap:clamp(10px,2.5vw,24px);align-items:flex-start}
+.tl-item{flex:1;text-align:center;position:relative}
+.tl-dot{width:clamp(40px,5.5vw,60px);height:clamp(40px,5.5vw,60px);border-radius:50%;background:var(--primary);color:#fff;display:flex;align-items:center;justify-content:center;font-family:var(--font-d);font-weight:800;font-size:clamp(16px,2.2vw,24px);margin:0 auto 14px;position:relative;z-index:1;box-shadow:0 4px 16px rgba(62,144,245,.3)}
+.tl-item:not(:last-child)::after{content:'';position:absolute;top:clamp(20px,2.75vw,30px);left:calc(50% + clamp(20px,2.75vw,30px));right:calc(-50% + clamp(20px,2.75vw,30px));height:3px;background:var(--primary-mid);z-index:0}
+.tl-label{font-family:var(--font-d);font-weight:700;font-size:clamp(16px,1.8vw,22px);margin-bottom:8px}
+.tl-desc{font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub);line-height:1.7}
+
+/* CTA */
+.slide-cta{background:linear-gradient(160deg,#070B14 0%,#0F172A 50%,#070B14 100%);color:#fff}
+.slide-cta h2{color:#fff}
+
+/* LOGO */
+.logo{font-family:var(--font-d);font-weight:800;font-style:italic;letter-spacing:-.02em}
+
+/* PULSE */
+@keyframes pulse-ring{0%{transform:scale(1);opacity:.6}100%{transform:scale(2);opacity:0}}
+.pulse-ring{animation:pulse-ring 2s ease-out infinite}
+
+/* RESPONSIVE */
+@media(max-width:768px){.g2,.g3,.g4{grid-template-columns:1fr}.flow{flex-direction:column}.flow-arr{transform:rotate(90deg)}.timeline{flex-direction:column}.tl-item:not(:last-child)::after{display:none}.matrix{font-size:10px}}
+@media(prefers-reduced-motion:reduce){.rv{transition:none;opacity:1;transform:none}.pulse-ring{animation:none}}
+</style>
+</head>
+<body>
+
+<nav class="nav-dots" id="navDots"></nav>
+<div class="slide-counter" id="slideCounter">1 / 12</div>
+
+<!-- S1 · 커버 -->
+<section class="slide" id="s1" style="background:linear-gradient(160deg,#070B14 0%,#0F172A 40%,#162036 100%);color:#fff">
+  <div class="container center">
+    <div class="rv" style="margin-bottom:clamp(24px,5vh,56px)">
+      <span class="logo" style="font-size:clamp(32px,5vw,56px);color:#fff">5FUNNEL</span>
+    </div>
+    <h1 class="rv rv-d1" style="font-size:clamp(34px,5.5vw,72px);color:#fff;margin-bottom:clamp(10px,2vh,20px)">
+      빌리닷컴<br><span class="t-highlight">숏폼 마케팅 제안</span>
+    </h1>
+    <p class="rv rv-d2" style="font-size:clamp(14px,1.6vw,20px);color:rgba(255,255,255,.5)">
+      2026년 3월 · 담당 마케터 박찬형
+    </p>
+    <div class="rv rv-d3" style="margin-top:clamp(32px,5vh,60px);display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <span class="badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)">업력 8년</span>
+      <span class="badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)">관리 브랜드 200+</span>
+      <span class="badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)">누적 매출 600억+</span>
+    </div>
+  </div>
+</section>
+
+<!-- S2 · 감정 훅 -->
+<section class="slide" id="s2">
+  <div class="container center" style="max-width:920px">
+    <h1 class="rv" style="font-size:clamp(28px,4.5vw,56px);line-height:1.35;margin-bottom:clamp(20px,4vh,40px)">
+      유니버셜 스튜디오 가기 전,<br>
+      모든 가족이 검색합니다.<br>
+      <span class="t-highlight">"굿즈 대여"</span>
+    </h1>
+    <p class="rv rv-d2" style="font-size:clamp(20px,3vw,36px);color:var(--danger);font-weight:700;margin-bottom:clamp(20px,4vh,40px)">
+      그런데 빌리닷컴의 영상은<br>어디에도 없습니다.
+    </p>
+    <div class="rv rv-d3" style="max-width:760px;margin:0 auto">
+      <div class="g2" style="gap:clamp(12px,2vw,24px)">
+        <div class="card card-tint-accent" style="text-align:left">
+          <h3 style="font-size:clamp(16px,1.8vw,22px);margin-bottom:12px;color:#166534">카페 바이럴</h3>
+          <p style="font-size:clamp(14px,1.5vw,18px);color:#166534">
+            "유니버셜 스튜디오 굿즈" 검색하면<br>빌리닷컴이 <strong>보입니다</strong>
+          </p>
+          <p class="t-mute" style="font-size:clamp(12px,1.2vw,15px);margin-top:8px">검색하는 사람에게 닿는 중</p>
+        </div>
+        <div class="card card-tint-danger" style="text-align:left">
+          <h3 style="font-size:clamp(16px,1.8vw,22px);margin-bottom:12px;color:var(--danger)">숏폼 / SNS</h3>
+          <p style="font-size:clamp(14px,1.5vw,18px);color:var(--danger)">
+            인스타에서 USJ 릴스를 보는<br>수백만 명에게 <strong>안 보입니다</strong>
+          </p>
+          <p class="t-mute" style="font-size:clamp(12px,1.2vw,15px);margin-top:8px">검색 안 하는 사람에게 못 닿는 중</p>
+        </div>
+      </div>
+    </div>
+    <p class="rv rv-d4 t-sub" style="font-size:clamp(16px,1.8vw,22px);margin-top:clamp(24px,4vh,40px);font-weight:600">
+      빌리닷컴의 상품은 숏폼에서 <span class="t-highlight" style="font-weight:800">터질 수밖에 없는 구조</span>를 가지고 있습니다.
+    </p>
+  </div>
+</section>
+
+<!-- S3 · 5FUNNEL 소개 -->
+<section class="slide" id="s3" style="background:var(--surface-alt)">
+  <div class="container">
+    <div class="label rv">ABOUT 5FUNNEL</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(26px,3.5vw,48px);margin-bottom:clamp(16px,3vh,32px)">
+      고객이 움직이는 <span class="t-primary">전체 동선을 설계</span>합니다
+    </h2>
+
+    <div class="g2 rv rv-d2" style="margin-bottom:clamp(24px,4vh,40px)">
+      <div class="card card-top-primary">
+        <h3 style="font-size:clamp(18px,2vw,24px);margin-bottom:16px">OSC / 5FUNNEL</h3>
+        <table style="width:100%;font-size:clamp(14px,1.5vw,17px)">
+          <tr><td style="padding:6px 0;color:var(--ink-mute);width:35%">설립</td><td style="padding:6px 0;font-weight:600">2018년 (업력 8년)</td></tr>
+          <tr><td style="padding:6px 0;color:var(--ink-mute)">규모</td><td style="padding:6px 0;font-weight:600">관리 브랜드 200개+</td></tr>
+          <tr><td style="padding:6px 0;color:var(--ink-mute)">매출</td><td style="padding:6px 0;font-weight:600">누적 600억+</td></tr>
+          <tr><td style="padding:6px 0;color:var(--ink-mute)">인증</td><td style="padding:6px 0;font-weight:600">벤처기업, 기업부설연구소</td></tr>
+        </table>
+      </div>
+      <div class="card card-top-highlight">
+        <h3 style="font-size:clamp(18px,2vw,24px);margin-bottom:16px">숏폼에서 다른 점</h3>
+        <table style="width:100%;font-size:clamp(14px,1.5vw,17px)">
+          <tr><td style="padding:6px 0;color:var(--ink-mute);width:40%">일반 업체</td><td style="padding:6px 0;font-weight:600">편집만 제공</td></tr>
+          <tr><td style="padding:6px 0;color:var(--ink-mute)">5FUNNEL</td><td style="padding:6px 0;font-weight:600;color:var(--highlight)">기획+제작+알고리즘 설계</td></tr>
+          <tr><td style="padding:6px 0;color:var(--ink-mute)">조회수</td><td style="padding:6px 0;font-weight:600">200~300 vs <span class="t-highlight">수천 이상</span></td></tr>
+          <tr><td style="padding:6px 0;color:var(--ink-mute)">광고비</td><td style="padding:6px 0;font-weight:600">별도 필요 vs <span class="t-highlight">불필요</span></td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="rv rv-d3 center">
+      <p style="font-size:clamp(15px,1.6vw,20px);color:var(--ink-sub)">
+        영상을 올리고 <span class="t-danger" style="font-weight:700">기도하는 방식</span>이 아닙니다.<br>
+        내부 바이럴 팀이 초반 <span class="t-primary" style="font-weight:700">알고리즘을 설계</span>합니다.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- S4 · 시장 / 경쟁 분석 -->
+<section class="slide" id="s4">
+  <div class="container">
+    <div class="label rv">MARKET ANALYSIS</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(26px,3.5vw,48px);margin-bottom:clamp(16px,3vh,32px)">
+      USJ 굿즈 대여 — <span class="t-highlight">숏폼이 비어있습니다</span>
+    </h2>
+
+    <div class="rv rv-d2" style="margin-bottom:clamp(24px,4vh,40px)">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>콘텐츠 유형</th>
+            <th>현황</th>
+            <th>기회</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:600">USJ 브이로그 / 꿀팁</td>
+            <td><span class="badge badge-danger" style="font-size:clamp(11px,1.1vw,13px)">포화</span></td>
+            <td class="t-mute">이미 레드오션</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600">USJ 맛집 / 어트랙션</td>
+            <td><span class="badge" style="background:var(--warn);color:#fff;font-size:clamp(11px,1.1vw,13px)">많음</span></td>
+            <td class="t-mute">개인 크리에이터 중심</td>
+          </tr>
+          <tr class="row-alert">
+            <td style="font-weight:800">USJ 굿즈 대여 콘텐츠</td>
+            <td><span class="badge badge-accent" style="font-size:clamp(11px,1.1vw,13px)">거의 없음</span></td>
+            <td style="font-weight:700;color:var(--accent)">빌리닷컴이 선점 가능</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="g2 rv rv-d3">
+      <div class="card" style="text-align:left">
+        <h3 style="font-size:clamp(16px,1.8vw,22px);margin-bottom:14px">경쟁사 비교</h3>
+        <table style="width:100%;font-size:clamp(14px,1.4vw,17px)">
+          <tr style="border-bottom:1px solid var(--border-light)">
+            <td style="padding:8px 0;color:var(--ink-mute);width:35%">항목</td>
+            <td style="padding:8px 0;font-weight:600">빌리세움</td>
+            <td style="padding:8px 0;font-weight:700;color:var(--primary)">빌리닷컴</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-light)">
+            <td style="padding:8px 0;color:var(--ink-mute)">상품 다양성</td>
+            <td style="padding:8px 0">기본</td>
+            <td style="padding:8px 0;font-weight:600;color:var(--accent)">코닥카메라, 에어랩 등</td>
+          </tr>
+          <tr style="border-bottom:1px solid var(--border-light)">
+            <td style="padding:8px 0;color:var(--ink-mute)">배송 혜택</td>
+            <td style="padding:8px 0">—</td>
+            <td style="padding:8px 0;font-weight:600;color:var(--accent)">2개 이상 무료배송</td>
+          </tr>
+          <tr>
+            <td style="padding:8px 0;color:var(--ink-mute)">숏폼/SNS</td>
+            <td style="padding:8px 0;color:var(--danger)">없음</td>
+            <td style="padding:8px 0;color:var(--danger)">없음 → <strong class="t-highlight">제안</strong></td>
+          </tr>
+        </table>
+      </div>
+      <div class="card card-top-highlight" style="display:flex;flex-direction:column;justify-content:center;text-align:center">
+        <p style="font-size:clamp(16px,1.8vw,22px);font-weight:700;margin-bottom:12px">
+          경쟁사도 숏폼을 하지 않고 있습니다
+        </p>
+        <p style="font-size:clamp(22px,3vw,36px);font-weight:800;color:var(--highlight)">
+          먼저 시작하는 쪽이<br>이 시장을 선점합니다
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S5 · 24칸 매트릭스 AS-IS + TO-BE -->
+<section class="slide" id="s5" style="background:var(--surface-alt)">
+  <div class="container">
+    <div class="label rv">MARKETING MATRIX</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.2vw,44px);margin-bottom:clamp(8px,1.5vh,16px)">
+      현황 진단 — <span class="t-primary">어디가 비어있는가</span>
+    </h2>
+    <p class="rv rv-d2 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">
+      카페바이럴로 검색 유입은 만들고 있지만, <strong class="t-danger">발견 축이 완전히 비어있습니다.</strong>
+      <span class="t-highlight" style="font-weight:700">숏폼</span>이 그 빈자리를 채웁니다.
+    </p>
+
+    <div class="rv rv-d3">
+      <div class="matrix">
+        <!-- 상위 그룹 -->
+        <div class="mx-group-empty"></div>
+        <div class="mx-group mx-group-search">검색 Search</div>
+        <div class="mx-group mx-group-discover">발견 Discovery</div>
+
+        <!-- 하위 헤더 -->
+        <div class="mx-h"></div>
+        <div class="mx-h" style="background:#1E3A5F">OWNED</div>
+        <div class="mx-h" style="background:#1E3A5F">EARNED</div>
+        <div class="mx-h" style="background:#1E3A5F">PAID</div>
+        <div class="mx-h" style="background:#3D1F5C">OWNED</div>
+        <div class="mx-h" style="background:#3D1F5C">EARNED</div>
+        <div class="mx-h" style="background:#3D1F5C">PAID</div>
+
+        <!-- 인지 -->
+        <div class="mx-r">인지</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-cafe">카페<br>바이럴</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-short">숏폼<br><small>TO-BE</small></div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+
+        <!-- 고려 -->
+        <div class="mx-r">고려</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-short">숏폼<br><small>TO-BE</small></div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+
+        <!-- 전환 -->
+        <div class="mx-r">전환</div>
+        <div class="mx-c mx-active">스마트<br>스토어</div>
+        <div class="mx-c mx-cafe">카페<br>바이럴</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-short">숏폼<br><small>TO-BE</small></div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+
+        <!-- 확산 -->
+        <div class="mx-r">확산</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+        <div class="mx-c mx-empty">—</div>
+      </div>
+    </div>
+
+    <div class="rv rv-d4" style="margin-top:clamp(16px,3vh,28px);display:flex;gap:clamp(12px,2vw,24px);justify-content:center;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:8px;font-size:clamp(13px,1.3vw,16px)">
+        <span style="display:inline-block;width:16px;height:16px;border-radius:4px;border:2px solid rgba(62,144,245,.3);background:var(--primary-mid)"></span>
+        <span>현재 활성</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:clamp(13px,1.3vw,16px)">
+        <span style="display:inline-block;width:16px;height:16px;border-radius:4px;border:2px solid rgba(124,58,237,.3);background:var(--purple-dim)"></span>
+        <span>카페 바이럴</span>
+      </div>
+      <div style="display:flex;align-items:center;gap:8px;font-size:clamp(13px,1.3vw,16px)">
+        <span style="display:inline-block;width:16px;height:16px;border-radius:4px;border:2px solid rgba(255,140,66,.3);background:var(--highlight-dim)"></span>
+        <span class="t-highlight" style="font-weight:700">숏폼 (제안)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S6 · 고객경로 진단 -->
+<section class="slide" id="s6">
+  <div class="container">
+    <div class="label rv">CUSTOMER JOURNEY</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.2vw,44px);margin-bottom:clamp(16px,3vh,32px)">
+      두 종류의 고객, <span class="t-danger">한쪽에만</span> 닿고 있습니다
+    </h2>
+
+    <div class="g2 rv rv-d2" style="margin-bottom:clamp(24px,4vh,40px)">
+      <div class="card card-top-accent">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span class="badge badge-accent" style="font-size:clamp(11px,1.1vw,13px)">닿고 있음</span>
+          <h3 style="font-size:clamp(16px,1.8vw,22px)">가족여행 엄마 김지은 (37)</h3>
+        </div>
+        <p style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub);margin-bottom:12px">
+          네이버에서 <strong>"USJ 팝콘통 대여"</strong> 검색
+        </p>
+        <div class="flow" style="justify-content:flex-start">
+          <div class="flow-node fn-ok" style="min-width:auto;padding:10px 16px;font-size:clamp(12px,1.3vw,15px)">검색</div>
+          <span class="flow-arr flow-arr-ok">→</span>
+          <div class="flow-node fn-ok" style="min-width:auto;padding:10px 16px;font-size:clamp(12px,1.3vw,15px)">카페 글 발견</div>
+          <span class="flow-arr flow-arr-ok">→</span>
+          <div class="flow-node fn-ok" style="min-width:auto;padding:10px 16px;font-size:clamp(12px,1.3vw,15px)">스마트스토어</div>
+        </div>
+        <p class="t-accent" style="font-size:clamp(13px,1.3vw,16px);font-weight:600;margin-top:12px">카페 바이럴이 커버하는 경로</p>
+      </div>
+
+      <div class="card card-top-highlight" style="border-color:var(--danger)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+          <span class="badge badge-danger" style="font-size:clamp(11px,1.1vw,13px)">못 닿는 중</span>
+          <h3 style="font-size:clamp(16px,1.8vw,22px)">커플여행 박소연 (26)</h3>
+        </div>
+        <p style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub);margin-bottom:12px">
+          인스타에서 <strong>USJ 릴스</strong> 보면서 여행 계획
+        </p>
+        <div class="flow" style="justify-content:flex-start">
+          <div class="flow-node fn-ok" style="min-width:auto;padding:10px 16px;font-size:clamp(12px,1.3vw,15px)">USJ 릴스 소비</div>
+          <span class="flow-arr flow-arr-broken">→</span>
+          <div class="flow-node fn-broken" style="min-width:auto;padding:10px 16px;font-size:clamp(12px,1.3vw,15px)">빌리닷컴?</div>
+          <span class="flow-arr flow-arr-broken">→</span>
+          <div class="flow-node fn-broken" style="min-width:auto;padding:10px 16px;font-size:clamp(12px,1.3vw,15px)">접점 없음</div>
+        </div>
+        <p class="t-danger" style="font-size:clamp(13px,1.3vw,16px);font-weight:600;margin-top:12px">숏폼이 있어야 닿는 경로</p>
+      </div>
+    </div>
+
+    <div class="rv rv-d3 center" style="max-width:800px;margin:0 auto">
+      <div class="card" style="background:linear-gradient(135deg,var(--highlight-dim),rgba(255,140,66,.02));border-color:rgba(255,140,66,.2)">
+        <p style="font-size:clamp(17px,2vw,24px);font-weight:700">
+          김지은은 이미 닿고 있습니다.<br>
+          <span class="t-highlight">박소연에게 닿으려면 숏폼이 필요합니다.</span>
+        </p>
+        <p style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub);margin-top:10px">
+          카페바이럴 = 검색하는 사람 커버 · 숏폼 = 아직 검색하지 않는 사람까지 확장
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S7 · 왜 숏폼이 최적인가 -->
+<section class="slide" id="s7" style="background:var(--surface-alt)">
+  <div class="container">
+    <div class="label rv">WHY SHORT-FORM</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.2vw,44px);margin-bottom:clamp(16px,3vh,32px)">
+      왜 이 상품이 숏폼에서 <span class="t-highlight">터질 수밖에 없는가</span>
+    </h2>
+
+    <div class="g3 rv rv-d2">
+      <div class="card card-top-highlight">
+        <div style="font-size:clamp(28px,3.5vw,44px);margin-bottom:14px">👁</div>
+        <h3 style="font-size:clamp(17px,1.9vw,24px);margin-bottom:12px">시각적 임팩트</h3>
+        <p style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub)">
+          팝콘통, 코닥카메라, 에어랩 —<br>
+          <strong>보는 순간 반응이 나오는</strong> 상품입니다.
+        </p>
+        <p style="font-size:clamp(13px,1.3vw,16px);color:var(--ink-mute);margin-top:10px">
+          텍스트 "대여합니다" vs<br>영상으로 실물을 보여주는 것<br>= 완전히 다른 효과
+        </p>
+      </div>
+
+      <div class="card card-top-primary">
+        <div style="font-size:clamp(28px,3.5vw,44px);margin-bottom:14px">✈</div>
+        <h3 style="font-size:clamp(17px,1.9vw,24px);margin-bottom:12px">감정적 소비</h3>
+        <p style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub)">
+          여행 기대감이<br>
+          <strong>구매 결정을 가속</strong>합니다.
+        </p>
+        <p style="font-size:clamp(13px,1.3vw,16px);color:var(--ink-mute);margin-top:10px">
+          "이거 빌리면 USJ에서<br>이렇게 쓸 수 있어!"<br>→ 고민 없이 결정
+        </p>
+      </div>
+
+      <div class="card card-top-accent">
+        <div style="font-size:clamp(28px,3.5vw,44px);margin-bottom:14px">⚡</div>
+        <h3 style="font-size:clamp(17px,1.9vw,24px);margin-bottom:12px">단순 전환</h3>
+        <p style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub)">
+          영상 → 링크 → 주문.<br>
+          <strong>3단계 만에 끝</strong>납니다.
+        </p>
+        <p style="font-size:clamp(13px,1.3vw,16px);color:var(--ink-mute);margin-top:10px">
+          상담도, 설득도 불필요.<br>가격이 합리적이라는 걸<br>영상에서 보여주면 끝
+        </p>
+      </div>
+    </div>
+
+    <div class="rv rv-d3 center" style="margin-top:clamp(20px,3vh,32px)">
+      <p style="font-size:clamp(15px,1.6vw,20px);color:var(--ink-sub)">
+        + 이미 수백만 명이 소비하는 <strong class="t-highlight">USJ 콘텐츠 시장</strong>에
+        "굿즈 대여"라는 새로운 니치로 진입
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- S8 · 콘텐츠 아이디어 -->
+<section class="slide" id="s8">
+  <div class="container">
+    <div class="label rv">CONTENT IDEAS</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.2vw,44px);margin-bottom:clamp(16px,3vh,32px)">
+      구체적으로 <span class="t-primary">어떤 영상</span>을 만들 수 있는가
+    </h2>
+
+    <div class="g2 rv rv-d2">
+      <div class="card card-top-highlight">
+        <span class="badge badge-highlight" style="margin-bottom:12px">콘텐츠 A</span>
+        <h3 style="font-size:clamp(17px,1.9vw,24px);margin-bottom:10px">"USJ 가기 전 이것만 빌리세요"</h3>
+        <table style="width:100%;font-size:clamp(13px,1.3vw,16px)">
+          <tr><td style="padding:5px 0;color:var(--ink-mute);width:30%">형식</td><td style="padding:5px 0">제품 소개 + 가격 비교</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">후킹</td><td style="padding:5px 0;font-weight:600">"안 빌리면 현지에서 3배 더 씁니다"</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">스톱</td><td style="padding:5px 0">팝콘통/코닥카메라 실물 클로즈업</td></tr>
+        </table>
+      </div>
+
+      <div class="card card-top-primary">
+        <span class="badge badge-primary" style="margin-bottom:12px">콘텐츠 B</span>
+        <h3 style="font-size:clamp(17px,1.9vw,24px);margin-bottom:10px">"사면 얼마? 빌리면 얼마?"</h3>
+        <table style="width:100%;font-size:clamp(13px,1.3vw,16px)">
+          <tr><td style="padding:5px 0;color:var(--ink-mute);width:30%">형식</td><td style="padding:5px 0">가격 비교 팩트 기반</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">후킹</td><td style="padding:5px 0;font-weight:600">구매가 vs 대여가 숫자 시각화</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">CTA</td><td style="padding:5px 0">"사지 마세요, 빌리세요"</td></tr>
+        </table>
+      </div>
+
+      <div class="card card-top-accent">
+        <span class="badge badge-accent" style="margin-bottom:12px">콘텐츠 C</span>
+        <h3 style="font-size:clamp(17px,1.9vw,24px);margin-bottom:10px">"USJ 가족여행 꿀팁"</h3>
+        <table style="width:100%;font-size:clamp(13px,1.3vw,16px)">
+          <tr><td style="padding:5px 0;color:var(--ink-mute);width:30%">형식</td><td style="padding:5px 0">여행 정보성 콘텐츠</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">후킹</td><td style="padding:5px 0;font-weight:600">"가족이 가장 후회하는 것"</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">보너스</td><td style="padding:5px 0">어댑터/손선풍기 무료대여 이벤트</td></tr>
+        </table>
+      </div>
+
+      <div class="card card-top-purple">
+        <span class="badge" style="background:var(--purple);color:#fff;margin-bottom:12px">콘텐츠 D</span>
+        <h3 style="font-size:clamp(17px,1.9vw,24px);margin-bottom:10px">"코닥카메라 대여 후기"</h3>
+        <table style="width:100%;font-size:clamp(13px,1.3vw,16px)">
+          <tr><td style="padding:5px 0;color:var(--ink-mute);width:30%">형식</td><td style="padding:5px 0">리뷰 콘텐츠</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">후킹</td><td style="padding:5px 0;font-weight:600">코닥카메라 실제 촬영 결과물 공개</td></tr>
+          <tr><td style="padding:5px 0;color:var(--ink-mute)">연계</td><td style="padding:5px 0">리뷰이벤트(손선풍기 무료대여)</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S9 · 기대 성과 -->
+<section class="slide" id="s9" style="background:var(--surface-alt)">
+  <div class="container">
+    <div class="label rv">EXPECTED RESULTS</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.2vw,44px);margin-bottom:clamp(16px,3vh,32px)">
+      유입 경로가 <span class="t-primary">2배</span>가 됩니다
+    </h2>
+
+    <div class="g2 rv rv-d2" style="margin-bottom:clamp(24px,4vh,40px)">
+      <div class="card" style="text-align:center">
+        <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-mute);margin-bottom:8px;font-weight:600">현재</p>
+        <p style="font-size:clamp(20px,2.5vw,32px);font-weight:800;margin-bottom:14px">유입 경로 <span class="t-danger">1개</span></p>
+        <div style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub)">
+          <p>카페바이럴 → 스마트스토어</p>
+          <p class="t-mute" style="font-size:clamp(12px,1.2vw,15px);margin-top:6px">"USJ 굿즈 대여" 검색한 사람만</p>
+        </div>
+      </div>
+      <div class="card" style="text-align:center;border:2px solid var(--primary);box-shadow:0 0 30px rgba(62,144,245,.12)">
+        <p style="font-size:clamp(12px,1.2vw,14px);color:var(--primary);margin-bottom:8px;font-weight:600">숏폼 추가 후</p>
+        <p style="font-size:clamp(20px,2.5vw,32px);font-weight:800;margin-bottom:14px">유입 경로 <span class="t-primary">2개</span></p>
+        <div style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub)">
+          <p>카페바이럴 → 스마트스토어</p>
+          <p style="color:var(--highlight);font-weight:600">+ 숏폼 → 스마트스토어</p>
+          <p class="t-mute" style="font-size:clamp(12px,1.2vw,15px);margin-top:6px">USJ 콘텐츠 소비자 전체에 노출</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d3">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>성과 지표</th>
+            <th>왜 보는가</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td style="font-weight:700">영상 조회수</td>
+            <td>빌리닷컴이 얼마나 많은 잠재 고객에게 노출되었는지</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700">프로필 클릭 → 스마트스토어 유입</td>
+            <td>영상이 실제 구매 관심으로 이어지는지</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700">스마트스토어 주문 건수 변화</td>
+            <td>숏폼 이후 매출에 실제 영향이 있는지</td>
+          </tr>
+          <tr>
+            <td style="font-weight:700">영상 저장/공유 수</td>
+            <td>콘텐츠가 자발적으로 확산되는지 (알고리즘 신호)</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- S10 · 서비스 구성 -->
+<section class="slide" id="s10">
+  <div class="container">
+    <div class="label rv">SERVICE</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.2vw,44px);margin-bottom:clamp(16px,3vh,32px)">
+      숏폼 올인원 — <span class="t-highlight">550,000원</span>
+    </h2>
+
+    <div class="g2 rv rv-d2" style="margin-bottom:clamp(24px,4vh,40px)">
+      <div class="price-card featured">
+        <p class="price-name">숏폼 올인원 1건</p>
+        <p class="price-amount t-primary">550,000<span style="font-size:clamp(14px,1.5vw,18px);font-weight:400">원</span></p>
+        <ul class="price-list">
+          <li>빌리닷컴 맞춤 콘텐츠 기획 (알고리즘 3단 구조)</li>
+          <li>촬영 or 기존 소스 활용 (협의)</li>
+          <li>숏폼 최적화 편집 (60초 이내)</li>
+          <li>인스타 릴스 / 틱톡 / 유튜브 숏츠 업로드</li>
+          <li>내부 바이럴 팀 초반 붐업</li>
+          <li>수정 1회 포함</li>
+        </ul>
+      </div>
+
+      <div style="display:flex;flex-direction:column;gap:clamp(12px,2vw,20px)">
+        <div class="card card-top-highlight" style="flex:1">
+          <h3 style="font-size:clamp(16px,1.8vw,22px);margin-bottom:12px">알고리즘 3단 구조</h3>
+          <table style="width:100%;font-size:clamp(13px,1.4vw,17px)">
+            <tr style="border-bottom:1px solid var(--border-light)">
+              <td style="padding:8px 0;font-weight:700;color:var(--highlight);width:30%">스톱</td>
+              <td style="padding:8px 0">스크롤을 멈추는 첫 2초<br><span class="t-mute" style="font-size:clamp(11px,1.1vw,14px)">팝콘통 클로즈업 / "이거 5만원입니다"</span></td>
+            </tr>
+            <tr style="border-bottom:1px solid var(--border-light)">
+              <td style="padding:8px 0;font-weight:700;color:var(--primary);width:30%">스테이</td>
+              <td style="padding:8px 0">끝까지 보게 하는 구조<br><span class="t-mute" style="font-size:clamp(11px,1.1vw,14px)">구매가 vs 대여가 비교 / 실제 사용</span></td>
+            </tr>
+            <tr>
+              <td style="padding:8px 0;font-weight:700;color:var(--accent);width:30%">액션</td>
+              <td style="padding:8px 0">행동 유도 마무리<br><span class="t-mute" style="font-size:clamp(11px,1.1vw,14px)">"사지 마세요, 빌리세요" + 링크</span></td>
+            </tr>
+          </table>
+        </div>
+        <div class="card" style="background:var(--primary-dim);border-color:rgba(62,144,245,.15)">
+          <p style="font-size:clamp(14px,1.5vw,18px);font-weight:600;color:var(--primary)">
+            영상을 올리고 기도하는 방식이 아닙니다.
+          </p>
+          <p style="font-size:clamp(13px,1.3vw,16px);color:var(--ink-sub);margin-top:6px">
+            검증된 포맷 분석 + 바이럴 팀 초반 붐업으로<br>업로드 직후 노출이 시작되는 구조
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S11 · 확장 가능성 -->
+<section class="slide" id="s11" style="background:var(--surface-alt)">
+  <div class="container">
+    <div class="label rv">GROWTH PATH</div>
+    <h2 class="rv rv-d1" style="font-size:clamp(24px,3.2vw,44px);margin-bottom:clamp(16px,3vh,32px)">
+      테스트 1건에서 <span class="t-primary">채널 성장</span>까지
+    </h2>
+
+    <div class="rv rv-d2 timeline" style="margin-bottom:clamp(24px,4vh,40px)">
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--accent)">Now</div>
+        <div class="tl-label">현재</div>
+        <div class="tl-desc">카페 바이럴 10건<br><strong>55만원/월</strong><br><span class="t-mute">검색 유입 확보</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--highlight)">1</div>
+        <div class="tl-label">테스트</div>
+        <div class="tl-desc">숏폼 올인원 1건<br><strong>55만원</strong><br><span class="t-highlight">발견 유입 가능성 검증</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot">2</div>
+        <div class="tl-label">확장 1단계</div>
+        <div class="tl-desc">숏폼 월 복수 건<br><strong>협의</strong><br><span class="t-mute">알고리즘 학습 + 채널 성장</span></div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background:var(--purple)">3</div>
+        <div class="tl-label">확장 2단계</div>
+        <div class="tl-desc">채널 브랜딩 패키지<br><strong>프리미엄</strong><br><span class="t-mute">영상 10건 + 조회수 보장</span></div>
+      </div>
+    </div>
+
+    <div class="rv rv-d3 center" style="max-width:800px;margin:0 auto">
+      <div class="card" style="background:var(--primary-dim);border-color:rgba(62,144,245,.15)">
+        <p style="font-size:clamp(16px,1.8vw,22px);font-weight:700">
+          숏폼은 영상이 쌓일수록<br>알고리즘이 더 많은 사람에게 노출합니다.
+        </p>
+        <p style="font-size:clamp(14px,1.5vw,18px);color:var(--ink-sub);margin-top:10px">
+          1건으로 가능성을 확인한 후, 채널을 키워가는 것이<br>가장 합리적인 접근입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- S12 · 클로징 -->
+<section class="slide slide-cta" id="s12">
+  <div class="container center" style="max-width:860px">
+    <div class="rv" style="margin-bottom:clamp(24px,4vh,40px)">
+      <span class="logo" style="font-size:clamp(22px,3vw,36px);color:rgba(255,255,255,.3)">5FUNNEL</span>
+    </div>
+    <h2 class="rv rv-d1" style="font-size:clamp(28px,4.5vw,60px);color:#fff;margin-bottom:clamp(16px,3vh,28px)">
+      카페바이럴로 <span class="t-accent">검색 유입</span>은<br>이미 만들고 있습니다.
+    </h2>
+    <p class="rv rv-d2" style="font-size:clamp(20px,2.8vw,36px);color:var(--highlight);font-weight:700;margin-bottom:clamp(24px,4vh,40px)">
+      이제 숏폼으로 발견 유입까지 추가하면,<br>
+      빌리닷컴을 찾는 경로가 2배가 됩니다.
+    </p>
+
+    <div class="rv rv-d3" style="max-width:600px;margin:0 auto clamp(32px,5vh,48px)">
+      <table style="width:100%;font-size:clamp(15px,1.6vw,20px);color:rgba(255,255,255,.7)">
+        <tr style="border-bottom:1px solid rgba(255,255,255,.1)">
+          <td style="padding:12px 0;color:rgba(255,255,255,.4);width:20%">Step 1</td>
+          <td style="padding:12px 0">제안서 검토 및 피드백</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.1)">
+          <td style="padding:12px 0;color:rgba(255,255,255,.4)">Step 2</td>
+          <td style="padding:12px 0">콘텐츠 방향 협의</td>
+        </tr>
+        <tr style="border-bottom:1px solid rgba(255,255,255,.1)">
+          <td style="padding:12px 0;color:rgba(255,255,255,.4)">Step 3</td>
+          <td style="padding:12px 0">소스 준비 (기존 영상/사진 or 촬영)</td>
+        </tr>
+        <tr>
+          <td style="padding:12px 0;color:rgba(255,255,255,.4)">Step 4</td>
+          <td style="padding:12px 0;color:#fff;font-weight:600">기획 → 제작 → 검수 → 업로드 (5일)</td>
+        </tr>
+      </table>
+    </div>
+
+    <p class="rv rv-d4" style="font-size:clamp(18px,2.2vw,28px);color:#fff;font-weight:700">
+      5FUNNEL 박찬형 마케터
+    </p>
+    <p class="rv rv-d5" style="font-size:clamp(12px,1.2vw,15px);color:rgba(255,255,255,.35);margin-top:clamp(20px,3vh,36px)">
+      본 제안서는 빌리닷컴의 의뢰서 및 현황 정보를 바탕으로 작성되었습니다.<br>
+      5FUNNEL은 OSC(주식회사 오에스씨)의 마케팅 전문 브랜드입니다.
+    </p>
+  </div>
+</section>
+
+<script>
+const io=new IntersectionObserver(e=>{e.forEach(el=>{if(el.isIntersecting)el.target.classList.add('visible')})},{threshold:.15});
+document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+const slides=document.querySelectorAll('.slide'),navDots=document.getElementById('navDots'),counter=document.getElementById('slideCounter');
+slides.forEach((s,i)=>{const a=document.createElement('a');a.href='#'+s.id;navDots.appendChild(a)});
+const sio=new IntersectionObserver(e=>{e.forEach(en=>{if(en.isIntersecting){const idx=[...slides].indexOf(en.target);navDots.querySelectorAll('a').forEach((d,i)=>d.classList.toggle('active',i===idx));counter.textContent=`${idx+1} / ${slides.length}`}})},{threshold:.5});
+slides.forEach(s=>sio.observe(s));
+document.addEventListener('keydown',e=>{const cur=[...slides].findIndex(s=>{const r=s.getBoundingClientRect();return r.top>=-10&&r.top<window.innerHeight/2});if(['ArrowDown',' ','ArrowRight'].includes(e.key)){e.preventDefault();if(cur<slides.length-1)slides[cur+1].scrollIntoView({behavior:'smooth'})}else if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();if(cur>0)slides[cur-1].scrollIntoView({behavior:'smooth'})}});
+</script>
+</body>
+</html>
