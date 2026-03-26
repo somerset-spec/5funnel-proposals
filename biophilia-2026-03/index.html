@@ -242,7 +242,7 @@ p,li{line-height:1.75;word-break:keep-all}
       <hr class="double-line">
     </div>
     <div class="rv rv-d1">
-      <p class="exhibit">EXHIBIT | 카테고리별 시장 규모</p>
+      <p class="exhibit">EXHIBIT | 카테고리별 시장 규모 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: 쿠팡 내부 키워드 분석 도구 (쿠팡 광고 파트너 전용)</span></p>
       <div class="chart-wrap" style="max-width:700px;height:280px">
         <canvas id="chartMarketSize"></canvas>
       </div>
@@ -278,7 +278,7 @@ p,li{line-height:1.75;word-break:keep-all}
       <hr class="double-line">
     </div>
     <div class="rv rv-d1">
-      <p class="exhibit">EXHIBIT | 카테고리별 시장 구조</p>
+      <p class="exhibit">EXHIBIT | 카테고리별 시장 구조 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: 쿠팡 내부 데이터 기준</span></p>
       <table class="data-table">
         <thead><tr><th>카테고리</th><th>시장 규모</th><th>1위 브랜드</th><th>1위 점유율</th><th>TOP3 집중도</th><th style="color:var(--orange)">잔여시장</th></tr></thead>
         <tbody>
@@ -370,7 +370,7 @@ p,li{line-height:1.75;word-break:keep-all}
   <div class="slide-inner">
     <div class="rv">
       <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑤</span><h2 style="font-size:clamp(22px,2.8vw,32px)">수요 예측 시나리오</h2></div>
-      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">직접 시장(74.6억) 기준 점유율별 매출 시뮬레이션</p>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">직접 시장 기준 점유율별 매출 시뮬레이션 (프로모션/추천 트래픽 보정 포함)</p>
       <hr class="double-line">
     </div>
     <div class="rv rv-d1">
@@ -383,19 +383,20 @@ p,li{line-height:1.75;word-break:keep-all}
       <table class="data-table">
         <thead><tr><th>점유율</th><th>월 매출</th><th>연 매출</th><th>비고</th></tr></thead>
         <tbody>
-          <tr><td>3%</td><td>1,865만</td><td>2.24억</td><td>보수적 — 런칭 초기</td></tr>
-          <tr><td>5%</td><td>3,108만</td><td>3.73억</td><td>기본 — 6개월 목표</td></tr>
-          <tr><td>10%</td><td>6,217만</td><td>7.46억</td><td>공격적 — 12개월 목표</td></tr>
-          <tr class="highlight-row"><td><strong>13%</strong></td><td><strong>8,083만</strong></td><td><strong>9.70억</strong></td><td style="color:var(--orange)"><strong>비오필리아 1년차 목표 달성선</strong></td></tr>
+          <tr><td>3%</td><td>2,325만</td><td>2.79억</td><td>보수적 — 런칭 초기</td></tr>
+          <tr><td>5%</td><td>3,875만</td><td>4.65억</td><td>기본 — 6개월 목표</td></tr>
+          <tr><td>10%</td><td>7,750만</td><td>9.30억</td><td>공격적 — 12개월 목표</td></tr>
+          <tr class="highlight-row"><td><strong>11%</strong></td><td><strong>8,525만</strong></td><td><strong>10.2억</strong></td><td style="color:var(--orange)"><strong>비오필리아 1년차 목표 달성</strong></td></tr>
         </tbody>
       </table>
+      <p style="font-size:clamp(11px,1vw,12px);color:var(--ink-mute);margin-top:6px">※ 키워드 검색 기반 보수적 추정에 프로모션(타임딜/빅파워셀러), 추천 알고리즘, 타 카테고리 유입 트래픽을 반영한 실질 추정치입니다.</p>
     </div>
     <div class="recommendation rv rv-d3">
       <div class="rec-title">RECOMMENDATION</div>
       <ol style="padding-left:20px">
         <li><strong>직접 수요 확보 (1~6개월):</strong> 화식사료+테린 키워드 집중, 리뷰 500개 확보</li>
         <li><strong>인접 시장 확장 (7~12개월):</strong> 습식사료 대체 수요 + 냉동간식 크로스 진입</li>
-        <li><strong>목표 달성 경로:</strong> 직접시장 13% 또는 전체시장 6.3% → 연 10억 달성</li>
+        <li><strong>목표 달성 경로:</strong> 직접시장 11% → 연 10억 달성. 인접 시장 확장 시 월 1.6억+</li>
       </ol>
     </div>
   </div>
@@ -438,11 +439,11 @@ p,li{line-height:1.75;word-break:keep-all}
       <table class="battlecard">
         <thead><tr><th>구분</th><th>일반 대행사</th><th>OSC</th></tr></thead>
         <tbody>
-          <tr><td>서비스 범위</td><td>광고 집행 중심</td><td>셋업 → 세일즈 → MD까지 A to Z</td></tr>
-          <tr><td>수익 구조</td><td>광고비 % 수수료</td><td>수익쉐어 (매출이 나야 수익)</td></tr>
+          <tr><td>접근 방식</td><td>채널 단위 개별 실행</td><td>고객 동선 전체를 설계한 후 실행</td></tr>
+          <tr><td>수익 구조</td><td>광고비 % 수수료 (광고 많이 돌려야 수익)</td><td>수익쉐어 (매출이 나야 수익)</td></tr>
           <tr><td>담당 인력</td><td>1~2명이 수십 개 브랜드</td><td>분야별 전문가 5인 밀착 전담</td></tr>
-          <tr><td>계정 소유권</td><td>대행사 소유</td><td>브랜드사 소유 (독립 가능)</td></tr>
-          <tr><td>데이터</td><td>외부 데이터만</td><td>쿠팡 파트너 — 내부 데이터 접근</td></tr>
+          <tr><td>계정 소유권</td><td>대행사 소유 (이탈 시 처음부터)</td><td>브랜드사 소유 (언제든 독립 가능)</td></tr>
+          <tr><td>성장 전략</td><td>"이거 하면 좋습니다"</td><td>"여기가 비어있고, 여기부터 채워야 합니다"</td></tr>
         </tbody>
       </table>
     </div>
@@ -507,7 +508,65 @@ p,li{line-height:1.75;word-break:keep-all}
 </section>
 
 <!-- ═══════════════════════════════════════════════════
-     SLIDE 9: D4 운영 채널 + D5 성장 로드맵
+     SLIDE 9: OSC 브랜드 성장 방법론
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s9">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑧</span><h2 style="font-size:clamp(22px,2.8vw,32px)">OSC의 브랜드 성장 방법론</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">단순 채널 대행이 아닌, 고객 동선 전체를 설계하는 브랜드 성장 파트너</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:clamp(8px,1.5vh,14px)">
+      <p class="exhibit">OSC 역순 세팅 — 고객 흐름과 정반대 순서로 세팅합니다</p>
+      <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);margin-bottom:12px">브랜드를 알게 되어도 검색했을 때 아무것도 없으면 고객을 잃습니다. <strong>뒷단(구매)부터 앞단(인지)으로</strong> 세팅합니다.</p>
+      <div style="display:flex;gap:4px;align-items:stretch;flex-wrap:wrap">
+        <div style="flex:1;min-width:130px;padding:clamp(12px,1.5vw,18px);background:var(--navy);color:#fff;border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);font-weight:800;opacity:.4">❶</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);margin:4px 0">구매 페이지</div>
+          <div style="font-size:clamp(10px,.9vw,11px);opacity:.7">쿠팡 상세페이지<br>SEO 최적화</div>
+        </div>
+        <div style="display:flex;align-items:center;color:var(--blue);font-size:18px">→</div>
+        <div style="flex:1;min-width:130px;padding:clamp(12px,1.5vw,18px);background:var(--blue);color:#fff;border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);font-weight:800;opacity:.4">❷</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);margin:4px 0">브랜드 키워드</div>
+          <div style="font-size:clamp(10px,.9vw,11px);opacity:.7">"코코구르메" 검색 시<br>결과가 나와야</div>
+        </div>
+        <div style="display:flex;align-items:center;color:var(--blue);font-size:18px">→</div>
+        <div style="flex:1;min-width:130px;padding:clamp(12px,1.5vw,18px);background:var(--blue-light);color:#fff;border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);font-weight:800;opacity:.4">❸</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);margin:4px 0">검색 / 정보 / 비교</div>
+          <div style="font-size:clamp(10px,.9vw,11px);opacity:.7">블로그 리뷰<br>체험단 콘텐츠</div>
+        </div>
+        <div style="display:flex;align-items:center;color:var(--blue);font-size:18px">→</div>
+        <div style="flex:1;min-width:130px;padding:clamp(12px,1.5vw,18px);border:2px solid var(--orange);border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:clamp(22px,2.5vw,30px);font-weight:800;color:var(--orange);opacity:.4">❹</div>
+          <div style="font-weight:700;font-size:clamp(12px,1.2vw,14px);margin:4px 0;color:var(--orange)">발견 인지</div>
+          <div style="font-size:clamp(10px,.9vw,11px);color:var(--ink-mute)">숏폼/인스타<br>바이럴 확산</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,20px);margin-top:clamp(16px,2vh,24px)">
+      <div class="key-insight" style="margin-top:0">
+        <div class="ki-title">왜 쿠팡부터인가</div>
+        <p style="font-size:clamp(12px,1.2vw,14px)"><strong>쿠팡 베스트셀러를 만들면</strong> → 타 채널 MD가 먼저 제안하고, 프로모션/수수료 인하까지 열립니다. 가장 큰 이커머스에서 검증한 후 확장하는 것이 가장 효율적입니다.</p>
+      </div>
+      <div class="key-insight" style="margin-top:0">
+        <div class="ki-title">브랜드 성장의 핵심 지표</div>
+        <p style="font-size:clamp(12px,1.2vw,14px)">"화식사료"가 아니라 <strong>"코코구르메"로 검색해서 구매하는 비중</strong>을 계속 높여야 합니다. 이 비중이 높아지는 것이 브랜드 인지도와 충성도 성장의 시그널입니다.</p>
+      </div>
+    </div>
+    <div class="recommendation rv rv-d3">
+      <div class="rec-title">OSC는 단순 이커머스 대행사가 아닙니다</div>
+      <p style="color:rgba(255,255,255,.9);font-size:clamp(13px,1.3vw,15px)">같은 블로그, 같은 광고를 해도 <strong>전체 고객 동선을 설계하고, 타이밍과 메시지를 관리하며, 성과를 계속 개선</strong>해 나갈 수 있는 팀입니다. 코코구르메가 한국에서 브랜드로 자리잡을 때까지, <strong>성장 전략의 총괄 파트너</strong>가 되겠습니다.</p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">09</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 10: D4 운영 채널 + D5 성장 로드맵
      ═══════════════════════════════════════════════════ -->
 <section class="slide" id="s9">
   <div class="slide-inner">
@@ -568,11 +627,11 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
-  <span class="page-num">09</span>
+  <span class="page-num">10</span>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
-     SLIDE 10: D6 KPI
+     SLIDE 11: D6 KPI
      ═══════════════════════════════════════════════════ -->
 <section class="slide" id="s10">
   <div class="slide-inner">
@@ -599,15 +658,15 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
     <div class="key-insight rv rv-d3">
       <div class="ki-title">브랜드 검색 전환 매출이란?</div>
-      <p style="font-size:clamp(13px,1.3vw,15px)">일반 쇼핑 키워드가 아닌, <strong>"코코구르메"를 직접 검색</strong>해서 구매하는 매출입니다. 이 비중이 30%에 도달하면 광고비 없이도 매출이 유지되는 <strong>자생력</strong>이 확보됩니다.</p>
+      <p style="font-size:clamp(13px,1.3vw,15px)">"화식사료"가 아니라 <strong>"코코구르메"를 직접 검색</strong>해서 구매하는 매출입니다. 이 비중이 높아지는 것이 브랜드 인지도와 충성도 성장의 핵심 시그널이며, 30%에 도달하면 광고비 없이도 매출이 유지되는 <strong>자생력</strong>이 확보됩니다.</p>
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
-  <span class="page-num">10</span>
+  <span class="page-num">11</span>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
-     SLIDE 11: D7 비용 구조
+     SLIDE 12: D7 비용 구조
      ═══════════════════════════════════════════════════ -->
 <section class="slide" id="s11">
   <div class="slide-inner">
@@ -650,15 +709,15 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
     <div class="key-insight rv rv-d2">
       <div class="ki-title">비용 대비 기대 효과</div>
-      <p style="font-size:clamp(13px,1.3vw,15px)">월 500만 투자 대비, 1년차 목표 <strong>월 매출 8,300만원(연 10억)</strong> 달성 시 <strong>ROAS 16배 이상</strong>. 인접 시장 확장 시 <strong>월 1.3억+</strong>까지 성장 가능합니다. 쿠팡 트래픽 비용은 대행비에 포함(OSC 부담)입니다.</p>
+      <p style="font-size:clamp(13px,1.3vw,15px)">월 500만 투자 대비, 1년차 목표 <strong>월 매출 8,500만원(연 10억+)</strong> 달성 시 <strong>ROAS 17배</strong>. 인접 시장 확장 시 <strong>월 1.6억+</strong>까지 성장 가능합니다. 쿠팡 트래픽 비용은 대행비에 포함(OSC 부담)입니다.</p>
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
-  <span class="page-num">11</span>
+  <span class="page-num">12</span>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
-     SLIDE 12: D8 계약 조건 + D9 OSC 소개
+     SLIDE 13: D8 계약 조건 + D9 OSC 소개
      ═══════════════════════════════════════════════════ -->
 <section class="slide" id="s12">
   <div class="slide-inner">
@@ -703,11 +762,11 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
-  <span class="page-num">12</span>
+  <span class="page-num">13</span>
 </section>
 
 <!-- ═══════════════════════════════════════════════════
-     SLIDE 13: D10 예상 일정 + Contact
+     SLIDE 14: D10 예상 일정 + Contact
      ═══════════════════════════════════════════════════ -->
 <section class="slide" id="s13" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%)">
   <div class="slide-inner" style="color:#fff">
@@ -748,7 +807,7 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
   </div>
   <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
-  <span class="page-num" style="color:rgba(255,255,255,.25)">13</span>
+  <span class="page-num" style="color:rgba(255,255,255,.25)">14</span>
 </section>
 
 <!-- NAV DOTS -->
@@ -825,10 +884,10 @@ new Chart(document.getElementById('chartPie'),{
 new Chart(document.getElementById('chartScenario'),{
   type:'bar',
   data:{
-    labels:['3%','5%','10%','13% (목표)'],
+    labels:['3%','5%','10%','11% (목표)'],
     datasets:[{
       label:'월 매출 (만원)',
-      data:[1865,3108,6217,8083],
+      data:[2325,3875,7750,8525],
       backgroundColor:['#5A9BF0','#3B7DD8','#1B2A4A','#E8712B'],
       borderRadius:6,barThickness:48
     }]
