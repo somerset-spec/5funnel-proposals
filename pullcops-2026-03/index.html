@@ -272,7 +272,7 @@ p,li{line-height:1.75;word-break:keep-all}
       <hr class="double-line">
     </div>
     <div class="rv rv-d1">
-      <p class="exhibit">EXHIBIT | 키워드별 시장 규모 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: 쿠팡 키워드 분석 도구 (2026년 3월)</span></p>
+      <p class="exhibit">EXHIBIT | 키워드별 시장 규모 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: OSC 쿠팡 내부 데이터 (2026년 3월)</span></p>
       <div class="chart-wrap" style="max-width:700px;height:240px">
         <canvas id="chartMarketSize"></canvas>
       </div>
@@ -354,51 +354,62 @@ p,li{line-height:1.75;word-break:keep-all}
 <section class="slide" id="s5">
   <div class="slide-inner">
     <div class="rv">
-      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">④</span><h2 style="font-size:clamp(22px,2.8vw,32px)">인접 시장 확장</h2></div>
-      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">비료 시장 218억 트래픽을 제초제가 흡수</p>
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">④</span><h2 style="font-size:clamp(22px,2.8vw,32px)">인접 시장 확장 전략</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">제초제 6.7억 + 비료 218억 = 풀캅스의 실질 가용 시장</p>
       <hr class="double-line">
     </div>
-    <div class="node-diagram rv rv-d1">
-      <div class="node node-adjacent">
-        <div style="font-size:clamp(10px,1vw,12px);color:var(--ink-mute)">인접 시장</div>
-        <div style="font-size:clamp(16px,1.8vw,22px);font-weight:800;color:var(--navy)">비료</div>
-        <div style="font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub)">연 218억</div>
-        <div style="font-size:clamp(10px,1vw,11px);color:var(--ink-mute)">4,660만 검색노출</div>
+
+    <!-- 비교 시각화: 제초제 vs 비료 규모 대비 -->
+    <div class="rv rv-d1" style="margin-top:clamp(10px,1.5vh,16px)">
+      <p class="exhibit">EXHIBIT | 시장 규모 비교 — 풀캅스가 접근할 수 있는 시장 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: OSC 쿠팡 내부 데이터</span></p>
+      <div style="display:grid;grid-template-columns:1fr 60px 1fr;gap:0;align-items:center;margin-top:12px">
+        <!-- 제초제 -->
+        <div style="background:linear-gradient(135deg,#1B2A4A,#2A3F6A);border-radius:var(--radius);padding:clamp(20px,2.5vw,32px);color:#fff;text-align:center">
+          <div style="font-size:11px;letter-spacing:.15em;opacity:.5;text-transform:uppercase;margin-bottom:6px">직접 시장</div>
+          <div style="font-family:var(--font-display);font-size:clamp(14px,1.4vw,18px);font-weight:700;margin-bottom:4px">제초제</div>
+          <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,52px);font-weight:800;line-height:1">6.7<span style="font-size:.4em;opacity:.7">억</span></div>
+          <div style="font-size:12px;opacity:.5;margin-top:6px">168만 검색노출</div>
+        </div>
+        <!-- 연결 -->
+        <div style="text-align:center">
+          <div style="font-size:28px;color:var(--blue)">＋</div>
+        </div>
+        <!-- 비료 -->
+        <div style="background:linear-gradient(135deg,#3B7DD8,#5A9BF0);border-radius:var(--radius);padding:clamp(20px,2.5vw,32px);color:#fff;text-align:center">
+          <div style="font-size:11px;letter-spacing:.15em;opacity:.5;text-transform:uppercase;margin-bottom:6px">인접 시장</div>
+          <div style="font-family:var(--font-display);font-size:clamp(14px,1.4vw,18px);font-weight:700;margin-bottom:4px">비료</div>
+          <div style="font-family:var(--font-display);font-size:clamp(36px,4vw,52px);font-weight:800;line-height:1">218<span style="font-size:.4em;opacity:.7">억</span></div>
+          <div style="font-size:12px;opacity:.5;margin-top:6px">4,660만 검색노출</div>
+        </div>
       </div>
-      <div class="node-arrow">→</div>
-      <div class="node node-center" style="min-width:160px">
-        <div style="font-size:clamp(10px,1vw,12px);opacity:.6">직접 시장</div>
-        <div style="font-size:clamp(18px,2vw,24px);font-weight:800">제초제</div>
-        <div style="font-size:clamp(12px,1.2vw,14px);opacity:.8">연 6.7억</div>
-      </div>
-      <div class="node-arrow">←</div>
-      <div class="node node-adjacent">
-        <div style="font-size:clamp(10px,1vw,12px);color:var(--ink-mute)">트래픽 흡수</div>
-        <div style="font-size:clamp(16px,1.8vw,22px);font-weight:800;color:var(--navy)">풀캅스</div>
-        <div style="font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub)">토양개량제</div>
-        <div style="font-size:clamp(10px,1vw,11px);color:var(--ink-mute)">비료 키워드 진입 가능</div>
+      <!-- 합산 바 -->
+      <div style="margin-top:14px;background:linear-gradient(90deg,var(--navy),var(--blue));border-radius:var(--radius);padding:14px 24px;display:flex;justify-content:space-between;align-items:center;color:#fff">
+        <div style="font-size:clamp(13px,1.3vw,15px);font-weight:600">합산 가용 시장</div>
+        <div style="font-family:var(--font-display);font-size:clamp(24px,3vw,36px);font-weight:800">225<span style="font-size:.5em;opacity:.7">억</span></div>
       </div>
     </div>
-    <div class="rv rv-d2">
-      <h3 style="font-size:clamp(16px,1.6vw,20px);margin-bottom:10px">풀캅스가 비료 트래픽을 흡수할 수 있는 이유</h3>
+
+    <!-- 3가지 근거 -->
+    <div class="rv rv-d2" style="margin-top:clamp(18px,2.5vh,28px)">
+      <h3 style="font-size:clamp(15px,1.5vw,18px);margin-bottom:12px">풀캅스가 비료 트래픽을 흡수할 수 있는 이유</h3>
       <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,16px)">
-        <div style="padding:16px;background:var(--blue-dim);border-radius:var(--radius)">
-          <div style="font-weight:700;color:var(--navy);margin-bottom:4px">공식 분류</div>
-          <div style="font-size:clamp(12px,1.1vw,13px);color:var(--ink-sub)">풀캅스 = "미생물제제 토양개량제" → 비료 카테고리 진입 근거</div>
+        <div style="padding:clamp(16px,2vw,22px);background:var(--surface-alt);border-radius:var(--radius);border:1px solid var(--border);border-top:4px solid var(--blue)">
+          <div style="font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--navy);margin-bottom:8px">공식 분류</div>
+          <div style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);line-height:1.6">풀캅스는 <strong>"미생물제제 토양개량제"</strong>로 분류되어 비료 카테고리 키워드에 진입할 수 있습니다.</div>
         </div>
-        <div style="padding:16px;background:var(--orange-dim);border-radius:var(--radius)">
-          <div style="font-weight:700;color:var(--navy);margin-bottom:4px">카테고리 혼용</div>
-          <div style="font-size:clamp(12px,1.1vw,13px);color:var(--ink-sub)">쿠팡에서 "비료" 검색 시 제초제 상품도 함께 노출</div>
+        <div style="padding:clamp(16px,2vw,22px);background:var(--surface-alt);border-radius:var(--radius);border:1px solid var(--border);border-top:4px solid var(--orange)">
+          <div style="font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--navy);margin-bottom:8px">카테고리 혼용</div>
+          <div style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);line-height:1.6">쿠팡에서 <strong>"비료" 검색 시 제초제 상품도 함께 노출</strong>됩니다. 4,660만 검색 트래픽의 일부가 제초제로 유입됩니다.</div>
         </div>
-        <div style="padding:16px;background:var(--green-dim);border-radius:var(--radius)">
-          <div style="font-weight:700;color:var(--navy);margin-bottom:4px">복합 니즈</div>
-          <div style="font-size:clamp(12px,1.1vw,13px);color:var(--ink-sub)">정원/잔디 관리 고객은 비료와 제초제를 함께 구매</div>
+        <div style="padding:clamp(16px,2vw,22px);background:var(--surface-alt);border-radius:var(--radius);border:1px solid var(--border);border-top:4px solid var(--green)">
+          <div style="font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--navy);margin-bottom:8px">복합 구매 니즈</div>
+          <div style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);line-height:1.6">정원/잔디 관리 고객은 <strong>비료와 제초제를 함께 구매</strong>합니다. 한 번의 검색으로 두 시장이 연결됩니다.</div>
         </div>
       </div>
     </div>
-    <div class="key-insight rv rv-d3">
-      <div class="ki-title">가용 시장 확장</div>
-      <p style="font-size:clamp(13px,1.3vw,15px)">직접 시장(6.7억) + 비료 트래픽 흡수(+20~30%) = <strong>실질 가용 시장 연 8~9억 이상</strong>. 비료 시장의 4,660만 검색 노출은 풀캅스의 숨은 기회입니다.</p>
+    <div class="recommendation rv rv-d3">
+      <div class="rec-title">OPPORTUNITY</div>
+      <p style="font-size:clamp(14px,1.4vw,16px)">제초제 단독 시장(6.7억)만 보면 작아 보이지만, <strong>비료 218억 시장과 카테고리가 혼용</strong>됩니다. 풀캅스는 "토양개량제"라는 공식 분류 덕분에 이 거대 시장의 트래픽을 자연스럽게 흡수할 수 있습니다.</p>
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
@@ -406,35 +417,63 @@ p,li{line-height:1.75;word-break:keep-all}
 </section>
 
 <!-- ═══════════════════════════════════════════════════
-     SLIDE 6: A4 수요 예측 시나리오
+     SLIDE 6: A4 판매 목표 — "이렇게 할 수 있습니다"
      ═══════════════════════════════════════════════════ -->
 <section class="slide" id="s6">
   <div class="slide-inner">
     <div class="rv">
-      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑤</span><h2 style="font-size:clamp(22px,2.8vw,32px)">수요 예측 시나리오</h2></div>
-      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">점유율별 매출 시뮬레이션 및 SKU 확장 잠재력</p>
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑤</span><h2 style="font-size:clamp(22px,2.8vw,32px)">이만큼 팔 수 있습니다</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">제초제 + 비료 합산 시장 기반 판매 목표 — OSC 쿠팡 내부 데이터 기준</p>
       <hr class="double-line">
     </div>
-    <div class="rv rv-d1">
-      <p class="exhibit">EXHIBIT | 실전 판매 목표 (5L 기준)</p>
+
+    <!-- 핵심 목표 KPI 카드 -->
+    <div class="rv rv-d1" style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(10px,1.5vh,16px)">
+      <div style="background:linear-gradient(135deg,#1B2A4A,#2A3F6A);border-radius:var(--radius);padding:clamp(18px,2vw,28px);color:#fff;text-align:center">
+        <div style="font-size:11px;letter-spacing:.12em;opacity:.5;margin-bottom:4px">5L 단독</div>
+        <div style="font-family:var(--font-display);font-size:clamp(32px,3.5vw,44px);font-weight:800;line-height:1">500</div>
+        <div style="font-size:clamp(12px,1.2vw,14px);opacity:.7;margin-top:2px">건/월</div>
+        <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);font-family:var(--font-display);font-size:clamp(18px,2vw,24px);font-weight:700;color:var(--blue-light)">1,250만<span style="font-size:.6em;opacity:.7">/월</span></div>
+      </div>
+      <div style="background:linear-gradient(135deg,#3B7DD8,#5A9BF0);border-radius:var(--radius);padding:clamp(18px,2vw,28px);color:#fff;text-align:center">
+        <div style="font-size:11px;letter-spacing:.12em;opacity:.5;margin-bottom:4px">2L 추가 시</div>
+        <div style="font-family:var(--font-display);font-size:clamp(32px,3.5vw,44px);font-weight:800;line-height:1">1,000+</div>
+        <div style="font-size:clamp(12px,1.2vw,14px);opacity:.7;margin-top:2px">건/월</div>
+        <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);font-family:var(--font-display);font-size:clamp(18px,2vw,24px);font-weight:700;color:#fff">+1,250만<span style="font-size:.6em;opacity:.7">/월</span></div>
+      </div>
+      <div style="background:linear-gradient(135deg,#27AE60,#2ECC71);border-radius:var(--radius);padding:clamp(18px,2vw,28px);color:#fff;text-align:center">
+        <div style="font-size:11px;letter-spacing:.12em;opacity:.5;margin-bottom:4px">합산 목표</div>
+        <div style="font-family:var(--font-display);font-size:clamp(32px,3.5vw,44px);font-weight:800;line-height:1">2,500만+</div>
+        <div style="font-size:clamp(12px,1.2vw,14px);opacity:.7;margin-top:2px">월 매출</div>
+        <div style="margin-top:8px;padding-top:8px;border-top:1px solid rgba(255,255,255,.15);font-family:var(--font-display);font-size:clamp(18px,2vw,24px);font-weight:700;color:#fff">연 3억+</div>
+      </div>
+    </div>
+
+    <!-- 시나리오 테이블 -->
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <p class="exhibit">EXHIBIT | 제품별 판매 목표 시나리오</p>
       <table class="data-table">
-        <thead><tr><th>시나리오</th><th>월 판매량</th><th>월 매출</th><th>연 매출</th></tr></thead>
+        <thead><tr><th>제품</th><th>판매가</th><th>월 판매량</th><th>월 매출</th><th>연 매출</th><th>비고</th></tr></thead>
         <tbody>
-          <tr><td>보수적</td><td>200건</td><td>500만</td><td>6,000만</td></tr>
-          <tr class="highlight-row"><td><strong>기본</strong></td><td><strong>350건</strong></td><td><strong>875만</strong></td><td><strong>1.05억</strong></td></tr>
-          <tr><td>공격적</td><td>500건</td><td>1,250만</td><td>1.5억</td></tr>
+          <tr class="highlight-row"><td><strong>5L</strong></td><td>25,000원</td><td><strong>200~500건</strong></td><td><strong>500~1,250만</strong></td><td><strong>6,000만~1.5억</strong></td><td>Phase 1 런칭 제품</td></tr>
+          <tr><td><strong>2L</strong></td><td>미정</td><td><strong>1,000건+</strong></td><td><strong>1,250만+</strong></td><td><strong>1.5억+</strong></td><td>Phase 4 SKU 확장</td></tr>
+          <tr class="total-row"><td colspan="2"><strong>합산</strong></td><td><strong>1,500건+</strong></td><td><strong>2,500만+</strong></td><td><strong>3억+</strong></td><td>풀 라인업 운영 시</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
-      <p class="exhibit">EXHIBIT | SKU 확장 시 매출 잠재력</p>
-      <div class="chart-wrap" style="max-width:600px;height:200px">
-        <canvas id="chartSKU"></canvas>
+
+    <!-- 비료 시장 연동 포인트 -->
+    <div class="rv rv-d3" style="margin-top:clamp(14px,2vh,20px)">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,1.5vw,18px)">
+        <div class="key-insight" style="margin-top:0">
+          <div class="ki-title">WHY THIS IS ACHIEVABLE</div>
+          <p style="font-size:clamp(12px,1.2vw,14px)">제초제 시장 잔여 77.5%에서 <strong>5% 점유만으로도 월 281만원</strong>. 여기에 비료 4,660만 검색 트래픽의 유입까지 합산하면, 실질 판매량은 키워드 분석 추정치보다 <strong>20~30% 이상 높을 수 있습니다.</strong></p>
+        </div>
+        <div class="key-insight" style="margin-top:0;border-left-color:var(--green)">
+          <div class="ki-title" style="color:var(--green)">2L = GAME CHANGER</div>
+          <p style="font-size:clamp(12px,1.2vw,14px)">2L 소용량은 개인 소비자 접근성이 5L 대비 압도적으로 높아 <strong>판매량 잠재력이 2~3배</strong>입니다. 임가공 해결 시 월 매출 2,500만원 이상으로 확장 가능합니다.</p>
+        </div>
       </div>
-    </div>
-    <div class="recommendation rv rv-d3">
-      <div class="rec-title">GROWTH POTENTIAL</div>
-      <p style="font-size:clamp(14px,1.4vw,16px)">5L 단일 제품으로 <strong>월 875만원</strong>(기본 시나리오) 달성 가능. 2L 소용량 제품 추가 시 <strong>월 2,000만원+</strong>로 확장되며, 개인 소비자 접근성이 높아 판매량 잠재력은 5L의 2~3배입니다.</p>
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
@@ -726,17 +765,7 @@ document.fonts.ready.then(()=>{
     datasets:[{data:[7.8,6.3,8.4,77.5],backgroundColor:['#3B7DD8','#5A9BF0','#E8712B','#E2E8F0'],borderWidth:0}]
   },options:{...defs,cutout:'55%',plugins:{legend:{display:true,position:'bottom',labels:{font:{family:'Pretendard Variable',size:11},boxWidth:10,padding:8}}}}});
 
-  // SKU Expansion Chart
-  new Chart(document.getElementById('chartSKU'),{type:'bar',data:{
-    labels:['5L 단독','5L + 2L'],
-    datasets:[
-      {label:'5L',data:[875,875],backgroundColor:'#3B7DD8',borderRadius:6,barThickness:50},
-      {label:'2L',data:[0,1250],backgroundColor:'#27AE60',borderRadius:6,barThickness:50}
-    ]
-  },options:{...defs,scales:{
-    x:{stacked:true,grid:{display:false},ticks:{font:{family:'Pretendard Variable',weight:'600'}}},
-    y:{stacked:true,grid:{color:'#E2E8F0'},ticks:{callback:v=>v+'만',font:{family:'Outfit',weight:'600'}}}
-  },plugins:{...defs.plugins,legend:{display:true,position:'top',labels:{font:{family:'Pretendard Variable',size:11},boxWidth:10}}}}});
+  // (chartSKU removed — replaced with KPI cards in P6)
 });
 </script>
 </body>
