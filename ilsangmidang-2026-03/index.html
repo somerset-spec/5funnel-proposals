@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEVklEQVR4nM1Xz0sjSRT+OiaLE/xJRNmoAUUNMoqjCerixR+sZhQhJ08edg/ePI548R8QZw5zUzx4krnMRSHIuqABIQZcGDyIuos5KKJRccEfmMQkb3llVaeNyay7jKMfNF1d1fW+r9979apaQxYQkQbApGlaQj7/CKAPwM8AmgGUA8iXr18COATwBcDvAH7TNO1IzssBkNQ0jbJxPQARmQzt10Q0TURhejzCcs7rTDa/CrpTzPdXRDRFRFGD4QQRxYkoKS8F9RyX7yhEpY1XRtuPIa8joj8Mhm7TCP8NSTlHgW3VfVUEpcjfGNwd+4/EmYSwDZI230QUQTI+RFRDRCeGr/5WULbYdo2RU1PZDuAHAOsAmgDEAZjxbaFsbgL4CUCMV4fR9e+lSuWyp4Cy/V6FQpMeqAWwxR6R3uD7U4BrQVLeeYn+xYWGH95J91A6eSKRQDweF3eiVC3htnHMiGQyqfdz2wC2TZLrHXOzB8oAbAMoNgpgAk176Ag2yP3pY+p9HjeZ7tectD7F8TeAelbyVpKzVLUadAK/34+dnR2UlpbC4/HAarWK/kgkAp/Ph9PTUzQ2NqKjo0PMY6Ld3V2sra3BbDaju7sbDofDKEKTXMz5lid9MlQxSiQSlEwmKRwOU3t7O9XU1NDAwAC5XC6y2+0UCATo/PycnE4ntbW10eDgIDkcDhoaGhLZNTY2RjabjXp7e6mnp0e0Z2dnSdmWUNX0EwvYkZ1J40ts3OPx0O1tqhxMTk4KESxoZGRE72dBlZWV5PV6qbi4mLa2tvQxv9/PLqft7W2jCFXcdljAhS4rLpxAwWCQLBYLXVzcDcViMX2Mv4oNjo6OUjSa2iYODg6oqKhIiGREIhF9js/no1AodPeVyXuF9cJs2FL1LN/Y2EBtbS3y8/NF7CwWi8hqbre0tCAUCmFlZQVVVVVobm5GZ2cnhoeHUVhYiKamJvEexz8nJ0e0+/v7U8vgfvLmZ90iM2U54/r6WiTc5uYmpqenUV9fj/n5eTidTpycnCA3N/eBLRYfi3HhywDKEIL19XURgsvLywchcLvd1NDQIPqMGB8fF6GZm5sTzzc3N/qcrq4uWlhYuMehQoBsSdja2vogCaempqikpITKyspoYmLingBOyvLycqqurqb9/X29f2ZmhqxWK52dnYn4yxzQk9Asj1F1cm2qfQGLi4vwer3Cxeze4+NjHB0dibWfl5eHvr4+LC0twW634/DwENFoFIFAAB8+fIDb7YbL5cLV1RX29vbEHJvNZqwFquZ84Ur4C4C5bIVodXVVFJb0QsS5sLy8jHA4jIqKCiGIk5XB+REMBlFQUCASkJMzrbIqrl//VylmpJdbNUdVw8eWYpOmaWEAn+Wgvqso8vTNiA3xlb4ZKcE8ZtyMMghSHJ+Z+/m3Y9yd/f8E8FEmIZ9cngpxyfFRcpqe/0j23IfSl3EsfxE/Ji/i1wwpEd/t5zTrev9ev+f/AE9oZziqphNnAAAAAElFTkSuQmCC">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="일상미당 쿠팡 판매전략 제안서 — OSC">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="일상미당 × OSC 쿠팡 판매전략 제안서">
+<meta property="og:description" content="178.7억 시장, 74.2%가 아직 주인 없는 빈자리">
+<meta property="og:type" content="website">
+<title>일상미당 × OSC 쿠팡 판매전략 제안서</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy: #1B2A4A;
+  --navy-light: #2A3F6A;
+  --blue: #3B7DD8;
+  --blue-light: #5A9BF0;
+  --blue-dim: rgba(59,125,216,.08);
+  --orange: #E8712B;
+  --orange-dim: rgba(232,113,43,.10);
+  --green: #27AE60;
+  --green-dim: rgba(39,174,96,.10);
+  --red: #C0392B;
+  --red-dim: rgba(192,57,43,.08);
+  --ink: #1B2A4A;
+  --ink-sub: #475569;
+  --ink-mute: #94A3B8;
+  --surface: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --border: #E2E8F0;
+  --insight-bg: #F0F4F8;
+  --font-display: 'Outfit','Pretendard Variable',sans-serif;
+  --font-body: 'Pretendard Variable',sans-serif;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.06);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased}
+
+.slide{min-height:100dvh;width:100vw;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(2rem,5vw,5rem);position:relative}
+.slide-inner{width:100%;max-width:960px}
+
+.nav-dots{position:fixed;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px}
+.nav-dots a{width:8px;height:8px;border-radius:50%;background:var(--border);display:block;transition:all .3s ease}
+.nav-dots a:hover,.nav-dots a.active{background:var(--blue);transform:scale(1.5);box-shadow:0 0 8px rgba(59,125,216,.5)}
+.confidential{position:absolute;bottom:clamp(14px,2vw,28px);left:clamp(24px,3vw,40px);font-family:var(--font-display);font-size:10px;color:var(--ink-mute);letter-spacing:.15em;text-transform:uppercase}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.rv.visible{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}.rv-d6{transition-delay:.6s}
+.rv-scale{opacity:0;transform:scale(.92);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.rv-scale.visible{opacity:1;transform:scale(1)}
+
+h1,h2,h3{font-family:var(--font-display);word-break:keep-all;text-wrap:balance}
+h1{font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h2{font-weight:700;line-height:1.25;letter-spacing:-.015em}
+p,li{line-height:1.75;word-break:keep-all}
+.label{font-family:var(--font-display);font-size:clamp(10px,1.1vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--blue);margin-bottom:8px}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--font-display);font-size:14px;font-weight:700;margin-right:10px}
+.exhibit{font-family:var(--font-display);font-size:11px;color:var(--ink-mute);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px);margin-top:clamp(20px,3vh,36px)}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(16px,2vw,24px);text-align:center;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.kpi-card:nth-child(1)::before{background:var(--blue)}
+.kpi-card:nth-child(2)::before{background:var(--orange)}
+.kpi-card:nth-child(3)::before{background:var(--green)}
+.kpi-card .num{font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:800;line-height:1.1;color:var(--navy)}
+.kpi-card .unit{font-size:clamp(14px,1.5vw,18px);font-weight:600;color:var(--ink-sub)}
+.kpi-card .kpi-label{font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);margin-top:6px}
+
+.key-insight{border-left:4px solid var(--navy);background:var(--insight-bg);padding:clamp(14px,2vw,20px) clamp(16px,2vw,24px);border-radius:0 var(--radius) var(--radius) 0;margin-top:clamp(16px,2vh,24px)}
+.key-insight .ki-title{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--navy);margin-bottom:6px}
+
+.recommendation{background:var(--navy);color:#fff;padding:clamp(20px,3vw,32px);border-radius:var(--radius);margin-top:clamp(16px,2vh,24px)}
+.recommendation .rec-title{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.15em;margin-bottom:12px;opacity:.7}
+.recommendation li{color:rgba(255,255,255,.9);margin-bottom:8px}
+
+.data-table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.2vw,14px);margin-top:8px}
+.data-table thead th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:clamp(11px,1.1vw,13px)}
+.data-table tbody td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.data-table tbody tr:nth-child(even){background:#F9FAFB}
+.data-table .highlight-row{background:rgba(59,125,216,.06);font-weight:600}
+.data-table .total-row{background:var(--navy);color:#fff;font-weight:700}
+.data-table .total-row td{border-bottom:none}
+
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5vw,16px);margin:clamp(16px,2vh,24px) 0}
+.metric-item{text-align:center;padding:clamp(12px,1.5vw,18px);background:var(--surface-alt);border-radius:var(--radius);border:1px solid var(--border)}
+.metric-item .m-num{font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);font-weight:800;color:var(--navy)}
+.metric-item .m-label{font-size:clamp(10px,1vw,12px);color:var(--ink-mute);margin-top:4px}
+
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,14px);margin-top:clamp(12px,2vh,20px)}
+.phase-card{padding:clamp(14px,1.5vw,20px);border-radius:var(--radius);border:1px solid var(--border);position:relative}
+.phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius) var(--radius) 0 0}
+.phase-card:nth-child(1)::before{background:var(--blue)}
+.phase-card:nth-child(2)::before{background:var(--blue-light)}
+.phase-card:nth-child(3)::before{background:var(--orange)}
+.phase-card:nth-child(4)::before{background:var(--green)}
+.phase-card .ph-num{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--ink-mute);letter-spacing:.1em}
+.phase-card .ph-title{font-weight:700;font-size:clamp(13px,1.3vw,15px);margin:4px 0}
+.phase-card .ph-goal{font-family:var(--font-display);font-size:clamp(18px,2vw,24px);font-weight:800;color:var(--navy)}
+.phase-card .ph-detail{font-size:clamp(11px,1vw,12px);color:var(--ink-sub);margin-top:6px;line-height:1.5}
+
+.chart-wrap{max-width:100%;margin:12px auto;position:relative}
+.double-line{border:none;border-top:3px double var(--navy);margin:clamp(12px,1.5vh,18px) 0}
+
+.node-diagram{display:flex;align-items:center;justify-content:center;gap:0;margin:clamp(16px,2vh,24px) 0;flex-wrap:wrap}
+.node{padding:clamp(10px,1.2vw,16px) clamp(14px,1.5vw,20px);border-radius:var(--radius);text-align:center;font-size:clamp(12px,1.2vw,14px);font-weight:600;min-width:120px}
+.node-center{background:var(--navy);color:#fff;font-size:clamp(14px,1.4vw,16px);z-index:1}
+.node-adjacent{background:var(--surface);border:2px solid var(--blue);color:var(--navy)}
+.node-arrow{font-size:20px;color:var(--blue);padding:0 4px}
+
+.benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.benefit-card{padding:clamp(16px,2vw,24px);border-radius:var(--radius);border:1px solid var(--border);background:var(--surface)}
+.benefit-card .bc-icon{font-size:28px;margin-bottom:8px}
+.benefit-card .bc-title{font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--navy);margin-bottom:4px}
+.benefit-card .bc-desc{font-size:clamp(12px,1.2vw,13px);color:var(--ink-sub);line-height:1.6}
+
+.growth-timeline{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1vw,12px);margin-top:clamp(14px,2vh,20px)}
+.gt-item{text-align:center;padding:clamp(14px,1.5vw,20px);border-radius:var(--radius);background:var(--surface-alt);border:1px solid var(--border)}
+.gt-item .gt-month{font-family:var(--font-display);font-size:clamp(10px,1vw,12px);font-weight:700;color:var(--ink-mute);letter-spacing:.1em}
+.gt-item .gt-revenue{font-family:var(--font-display);font-size:clamp(20px,2.5vw,28px);font-weight:800;color:var(--navy);margin:4px 0}
+.gt-item .gt-detail{font-size:clamp(10px,1vw,12px);color:var(--ink-sub);line-height:1.4}
+
+.slide-counter{position:fixed;bottom:clamp(14px,2vw,28px);right:clamp(14px,2vw,28px);font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);z-index:100;background:rgba(255,255,255,.85);padding:5px 14px;border-radius:20px;backdrop-filter:blur(12px);border:1px solid var(--border);font-variant-numeric:tabular-nums}
+
+.mobile-banner{display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--navy);color:#fff;text-align:center;padding:12px 16px;font-size:14px;font-family:var(--font-display);letter-spacing:.02em}
+.mobile-banner a{color:var(--blue-light);text-decoration:underline;margin-left:4px;cursor:pointer}
+
+/* 3-axis strategy cards */
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.strategy-card{padding:clamp(16px,2vw,24px);border-radius:var(--radius);border:1px solid var(--border);background:var(--surface)}
+.strategy-card .sc-num{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--ink-mute);letter-spacing:.1em;margin-bottom:4px}
+.strategy-card .sc-title{font-family:var(--font-display);font-weight:700;font-size:clamp(15px,1.5vw,18px);color:var(--navy);margin-bottom:8px}
+.strategy-card ul{list-style:none;padding:0}
+.strategy-card ul li{font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);padding:4px 0;line-height:1.5}
+.strategy-card ul li::before{content:'→ ';color:var(--blue);font-weight:700}
+
+/* OSC capability cards */
+.cap-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.cap-card{text-align:center;padding:clamp(20px,2.5vw,32px);border-radius:var(--radius);background:var(--surface-alt);border:1px solid var(--border)}
+.cap-card .cap-num{font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--navy)}
+.cap-card .cap-label{font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);margin-top:4px}
+.cap-card .cap-desc{font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);margin-top:8px;line-height:1.5}
+
+@media(max-width:768px){
+  .kpi-row,.metric-row{grid-template-columns:1fr}
+  .roadmap,.benefit-grid,.growth-timeline,.strategy-grid,.cap-row{grid-template-columns:repeat(2,1fr)}
+  .data-table{font-size:11px}
+  .node-diagram{flex-direction:column}
+  .mobile-banner{display:block}
+  .nav-dots,.slide-counter{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv,.rv-scale{transition:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- MOBILE BANNER -->
+<div class="mobile-banner">
+  📱 이 제안서는 PC에서 최적으로 보입니다
+  <a onclick="this.parentElement.style.display='none'">닫기</a>
+</div>
+
+<!-- SLIDE COUNTER -->
+<div class="slide-counter" id="slideCounter">1 / 10</div>
+
+<!-- NAV DOTS -->
+<nav class="nav-dots" aria-label="슬라이드 네비게이션">
+  <a href="#s1" title="표지"></a>
+  <a href="#s2" title="Executive Summary"></a>
+  <a href="#s3" title="시장 규모"></a>
+  <a href="#s4" title="경쟁 환경"></a>
+  <a href="#s5" title="인접 시장"></a>
+  <a href="#s6" title="수요 예측"></a>
+  <a href="#s7" title="전략"></a>
+  <a href="#s8" title="성장 로드맵"></a>
+  <a href="#s9" title="OSC 소개"></a>
+  <a href="#s10" title="함께 시작합시다"></a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 1: COVER
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s1" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%)">
+  <div class="slide-inner" style="color:#fff">
+    <div class="rv">
+      <p style="font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:clamp(10px,2vh,20px)">Market Sizing &amp; Sales Strategy</p>
+      <h1 style="font-size:clamp(32px,4.5vw,56px);color:#fff;margin-bottom:clamp(8px,1.5vh,16px)">
+        일상미당 · 콩쑥개떡<br>
+        <span style="color:var(--blue-light)">쿠팡 판매전략 제안서</span>
+      </h1>
+      <p style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,.65);max-width:640px;margin-bottom:8px">
+        쿠팡 인절미/증편 시장 수요 예측 &amp; 판매 전략
+      </p>
+      <p style="font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.45);font-style:italic;max-width:640px">
+        "네이버 1위 콩쑥개떡 — 쿠팡에서는 아직 잠재력의 30%도 발휘하지 못하고 있습니다."
+      </p>
+    </div>
+
+    <div class="kpi-row rv rv-d2">
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--blue-light)">178.7</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--blue-light);opacity:.7">억</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">인절미+찹쌀떡 합산 시장</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--orange)">74.2</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--orange);opacity:.7">%</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">잔여시장 (주인 없는 시장)</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(28px,3vw,40px);font-weight:800;color:var(--green)">네이버</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--green);opacity:.7"> 1위</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">콩쑥개떡 쇼핑검색</div>
+      </div>
+    </div>
+
+    <div class="rv rv-d3" style="margin-top:clamp(24px,4vh,40px)">
+      <p style="font-size:clamp(14px,1.4vw,17px);font-weight:600;color:rgba(255,255,255,.6)">주식회사 오에스씨 (OSC)</p>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 2: EXECUTIVE SUMMARY
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s2">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">①</span><h2 style="font-size:clamp(22px,2.8vw,32px)">Executive Summary</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">시장 개요 및 핵심 발견사항</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <div class="metric-row">
+        <div class="metric-item"><div class="m-num">72.5억</div><div class="m-label">직접 시장 (인절미/증편)</div></div>
+        <div class="metric-item"><div class="m-num">106.3억</div><div class="m-label">인접 시장 (찹쌀떡)</div></div>
+        <div class="metric-item"><div class="m-num">178.7억</div><div class="m-label">합산 TAM</div></div>
+        <div class="metric-item"><div class="m-num">74.2%</div><div class="m-label">잔여시장</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub);margin-top:clamp(8px,1.5vh,14px);line-height:1.8">
+        콩쑥개떡은 <strong>네이버 쇼핑 검색어 1위</strong>를 달성한 검증된 제품입니다. 그러나 쿠팡에서는 리뷰 부족, 광고 비효율, 가격 관리 미흡으로 같은 제품력이 작동하지 않고 있습니다.
+      </p>
+      <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub);margin-top:10px;line-height:1.8">
+        쿠팡 인절미/증편 시장은 <strong>1위도 16.5%에 불과</strong>한 분산형 시장입니다. 인접한 찹쌀떡 시장(106.3억)까지 합산하면 <strong>178.7억의 가용 시장</strong>이 열리며, 콩쑥개떡은 찹쌀 기반 제품으로 양쪽 카테고리에 자연 진입이 가능합니다.
+      </p>
+    </div>
+    <div class="rv rv-d3">
+      <div class="key-insight">
+        <div class="ki-title">KEY INSIGHT</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink)">
+          <strong>광고, 리뷰, 가격 관리</strong> — 세 가지만 바꾸면, 네이버에서 입증된 1위 역량을 쿠팡에서도 재현할 수 있습니다.
+        </p>
+      </div>
+    </div>
+    <div class="rv rv-d4" style="margin-top:8px"><p class="exhibit">출처: OSC 쿠팡 내부 데이터 (2026년 3월)</p></div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 3: A1 시장 규모
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">②</span><h2 style="font-size:clamp(22px,2.8vw,32px)">시장 규모 추정</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">인절미/증편 + 찹쌀떡 시장 구조 및 수요 분석</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <p class="exhibit">EXHIBIT | 시장 규모 비교 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: 쿠팡 내부 키워드 분석 도구 (쿠팡 광고 파트너 전용)</span></p>
+      <div class="chart-wrap" style="height:200px">
+        <canvas id="chartMarketSize"></canvas>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(12px,2vh,20px)">
+      <p class="exhibit">EXHIBIT | 수요 퍼널 분석</p>
+      <table class="data-table">
+        <thead><tr><th>카테고리</th><th>연간 클릭 수</th><th>객단가</th><th>연간시장매출</th><th>광고비율</th></tr></thead>
+        <tbody>
+          <tr><td><strong>인절미/증편</strong></td><td>1,408,700</td><td>25,723원</td><td><strong>72.5억</strong></td><td>48%</td></tr>
+          <tr><td><strong>찹쌀떡</strong></td><td>2,470,600</td><td>21,503원</td><td><strong>106.3억</strong></td><td>30%</td></tr>
+          <tr class="total-row"><td>합산</td><td>3,879,300</td><td>—</td><td>178.7억</td><td>—</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d3">
+      <div class="key-insight">
+        <div class="ki-title">KEY INSIGHT</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink)">연 387만건의 검색이 발생하는 시장에서, 콩쑥개떡이 차지하고 있는 비중은 극히 일부입니다. 인절미와 찹쌀떡 두 키워드에 동시에 노출될 수 있는 <strong>찹쌀 기반 제품</strong>이라는 것이 핵심 기회입니다.</p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 4: A2 경쟁 환경
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s4">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">③</span><h2 style="font-size:clamp(22px,2.8vw,32px)">경쟁 환경 분석</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">인절미/증편 경쟁 구도 및 진입 기회</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:clamp(12px,2vh,20px)">
+      <p class="exhibit">EXHIBIT | TOP3 경쟁사 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: 쿠팡 내부 데이터 기준</span></p>
+      <table class="data-table">
+        <thead><tr><th>순위</th><th>브랜드</th><th>연간 클릭</th><th>점유율</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><strong>명가삼대떡집</strong></td><td>232,500</td><td>16.5%</td><td style="color:var(--orange)">찹쌀떡 시장에서도 2위</td></tr>
+          <tr><td>2</td><td>잔기지떡</td><td>75,300</td><td>5.3%</td><td></td></tr>
+          <tr><td>3</td><td>하람</td><td>55,800</td><td>4.0%</td><td></td></tr>
+          <tr class="total-row"><td></td><td>잔여</td><td>1,045,100</td><td>74.2%</td><td></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <p class="exhibit">EXHIBIT | 인절미/증편 점유율 구조</p>
+      <div style="display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:center">
+        <div class="chart-wrap" style="height:220px"><canvas id="chartCompetition"></canvas></div>
+        <div>
+          <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub);margin-bottom:12px">인절미/증편 시장은 <strong>명가삼대떡집(16.5%)</strong>이 1위이지만, 2위 잔기지떡(5.3%), 3위 하람(4.0%)은 매우 약합니다.</p>
+          <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub)"><strong style="color:var(--orange)">잔여시장 74.2%</strong>는 아직 주인이 없습니다. 명가삼대떡집만이 인절미(1위)+찹쌀떡(2위) 두 시장을 동시에 공략 중입니다. <strong>콩쑥개떡이 이 포지션을 차지할 수 있습니다.</strong></p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 5: A3 인접 시장
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s5">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">④</span><h2 style="font-size:clamp(22px,2.8vw,32px)">인접 시장 확장 전략</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">콩쑥개떡 → 인절미 + 찹쌀떡 교차 시장 공략</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <div class="node-diagram">
+        <div class="node node-adjacent">
+          <div style="font-size:clamp(18px,2vw,24px);font-weight:800">106.3억</div>
+          <div style="font-size:clamp(11px,1.1vw,13px);margin-top:4px">찹쌀떡 (인접)</div>
+          <div style="font-size:clamp(10px,1vw,11px);color:var(--ink-mute);margin-top:2px">잔여 80.1%</div>
+        </div>
+        <div class="node-arrow">←→</div>
+        <div class="node node-center" style="padding:clamp(16px,2vw,24px) clamp(20px,2.5vw,32px)">
+          <div style="font-size:clamp(14px,1.4vw,17px);opacity:.7">콩쑥개떡</div>
+          <div style="font-size:clamp(22px,2.8vw,32px);font-weight:800;margin:4px 0">178.7억</div>
+          <div style="font-size:clamp(11px,1.1vw,13px);opacity:.7">합산 가용 시장</div>
+        </div>
+        <div class="node-arrow">←→</div>
+        <div class="node node-adjacent">
+          <div style="font-size:clamp(18px,2vw,24px);font-weight:800">72.5억</div>
+          <div style="font-size:clamp(11px,1.1vw,13px);margin-top:4px">인절미/증편 (직접)</div>
+          <div style="font-size:clamp(10px,1vw,11px);color:var(--ink-mute);margin-top:2px">잔여 74.2%</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d2">
+      <h3 style="font-size:clamp(15px,1.5vw,18px);margin-bottom:clamp(8px,1vh,12px)">왜 찹쌀떡 시장을 노릴 수 있는가</h3>
+      <div class="benefit-grid">
+        <div class="benefit-card"><div class="bc-icon">🍡</div><div class="bc-title">제품 특성</div><div class="bc-desc">콩쑥개떡은 100% 찹쌀 기반 → "찹쌀떡" 키워드 자연 노출</div></div>
+        <div class="benefit-card"><div class="bc-icon">🔍</div><div class="bc-title">소비자 행동</div><div class="bc-desc">인절미 검색 고객과 찹쌀떡 검색 고객의 구매 의사결정이 겹침</div></div>
+        <div class="benefit-card"><div class="bc-icon">📊</div><div class="bc-title">경쟁 근거</div><div class="bc-desc">명가삼대떡집이 두 시장 모두 TOP3 = 교차 노출 실증</div></div>
+        <div class="benefit-card"><div class="bc-icon">💰</div><div class="bc-title">시장 환경</div><div class="bc-desc">찹쌀떡 광고비율 30%로 인절미(48%)보다 진입 부담 낮음</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d3">
+      <div class="key-insight">
+        <div class="ki-title">KEY INSIGHT</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink)">직접 시장(72.5억)만 보면 제한적이지만, 찹쌀떡 시장까지 확장하면 <strong>178.7억의 시장</strong>이 열립니다. 이것이 콩쑥개떡의 진짜 가용 시장입니다.</p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 6: A4 수요 예측
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s6">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑤</span><h2 style="font-size:clamp(22px,2.8vw,32px)">수요 예측 시나리오</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">점유율별 매출 시뮬레이션 및 목표 역산</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <p class="exhibit">EXHIBIT | 점유율별 매출 시뮬레이션 (직접 시장 72.5억 기준) <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: 쿠팡 내부 키워드 분석 도구</span></p>
+      <div class="chart-wrap" style="height:240px">
+        <canvas id="chartScenario"></canvas>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(12px,1.5vh,18px)">
+      <table class="data-table">
+        <thead><tr><th>기준</th><th>필요 점유율</th><th>현실성</th></tr></thead>
+        <tbody>
+          <tr><td>직접 시장만 (72.5억)</td><td>26~33%</td><td>공격적 (1위의 2배)</td></tr>
+          <tr class="highlight-row"><td><strong>합산 시장 (178.7억)</strong></td><td><strong>11~13%</strong></td><td><strong>✅ 인접 확장 시 달성 가능</strong></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);margin-top:10px;line-height:1.7">
+        쿠팡 목표 월 1.6~2억은 직접시장만으로는 1위(16.5%)를 크게 뛰어넘어야 합니다.<br>
+        그러나 <strong>찹쌀떡 인접 시장까지 교차 공략하면, 합산 시장의 11~13%로 현실적 목표</strong>가 됩니다.
+      </p>
+    </div>
+    <div class="rv rv-d3">
+      <div class="recommendation">
+        <div class="rec-title">RECOMMENDATION</div>
+        <ol style="list-style:none;padding:0">
+          <li style="margin-bottom:10px"><strong>① 1~3개월:</strong> 인절미/증편 직접 시장에서 3% 확보 → 월 1,812만</li>
+          <li style="margin-bottom:10px"><strong>② 3~6개월:</strong> 찹쌀떡 인접 키워드 확장 → 월 3,000만~6,000만</li>
+          <li><strong>③ 6~12개월:</strong> 크로스 카테고리 TOP 포지션 → 월 1억+ → 목표 달성 경로 진입</li>
+        </ol>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 7: B1 전략
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s7">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑥</span><h2 style="font-size:clamp(22px,2.8vw,32px)">쿠팡에서 콩쑥개떡이 이기는 법</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">네이버 1위의 역량을 쿠팡에서 재현하는 3축 전략</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:clamp(8px,1vh,12px)">
+      <p style="font-size:clamp(14px,1.4vw,16px);color:var(--ink);line-height:1.8">
+        콩쑥개떡은 이미 <strong>네이버 쇼핑 1위</strong>를 달성한 검증된 제품입니다.<br>
+        같은 제품력이 쿠팡에서 왜 작동하지 않을까요?<br>
+        쿠팡은 네이버와 다른 게임입니다. <strong>광고, 리뷰, 가격 관리</strong> — 세 가지만 바꾸면 됩니다.
+      </p>
+    </div>
+    <div class="rv rv-d2">
+      <div class="strategy-grid">
+        <div class="strategy-card" style="border-top:4px solid var(--blue)">
+          <div class="sc-num">축 1</div>
+          <div class="sc-title">광고 최적화</div>
+          <ul>
+            <li>키워드별 입찰가 ROAS 기반 재배분</li>
+            <li>시간대/요일별 노출 조정</li>
+            <li>"찹쌀떡" 인접 키워드 확장</li>
+          </ul>
+        </div>
+        <div class="strategy-card" style="border-top:4px solid var(--orange)">
+          <div class="sc-num">축 2</div>
+          <div class="sc-title">리뷰 확보</div>
+          <ul>
+            <li>체험단으로 초기 리뷰 100건+ 확보</li>
+            <li>구매확정 후 리뷰 유도</li>
+            <li>"네이버 1위" Social Proof 활용</li>
+          </ul>
+        </div>
+        <div class="strategy-card" style="border-top:4px solid var(--green)">
+          <div class="sc-num">축 3</div>
+          <div class="sc-title">가격 안정화</div>
+          <ul>
+            <li>MAP(최저가 정책) 수립</li>
+            <li>프로모션 가격 관리</li>
+            <li>채널간 가격 정합성 유지</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d3">
+      <div class="key-insight">
+        <div class="ki-title">KEY INSIGHT</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink)">광고, 리뷰, 가격 관리 — 이 세 가지만 최적화하면, 네이버에서 입증된 1위 역량을 쿠팡에서도 재현할 수 있습니다.</p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 8: B2 성장 로드맵
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s8">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑦</span><h2 style="font-size:clamp(22px,2.8vw,32px)">성장 로드맵</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">단계별 성장 시나리오 &amp; 기존 채널 시너지</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <div class="roadmap">
+        <div class="phase-card">
+          <div class="ph-num">PHASE 1</div>
+          <div class="ph-title">최적화</div>
+          <div class="ph-goal">1,800만</div>
+          <div class="ph-detail">1~3개월<br>리뷰 100건+<br>광고 ROAS 안정화<br>가격 안정화</div>
+        </div>
+        <div class="phase-card">
+          <div class="ph-num">PHASE 2</div>
+          <div class="ph-title">확장</div>
+          <div class="ph-goal">3,000만</div>
+          <div class="ph-detail">3~6개월<br>찹쌀떡 키워드 확장<br>인접 시장 교차 노출<br>바이럴 시작</div>
+        </div>
+        <div class="phase-card">
+          <div class="ph-num">PHASE 3</div>
+          <div class="ph-title">스케일업</div>
+          <div class="ph-goal">6,000만~1억</div>
+          <div class="ph-detail">6~12개월<br>카테고리 TOP 진입<br>브랜드 검색 증가<br>프로모션/공동구매</div>
+        </div>
+        <div class="phase-card">
+          <div class="ph-num">PHASE 4</div>
+          <div class="ph-title">목표 달성</div>
+          <div class="ph-goal">1.6억+</div>
+          <div class="ph-detail">12개월~<br>크로스 카테고리 TOP<br>전 채널 시너지<br>B2B 확장</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <h3 style="font-size:clamp(15px,1.5vw,18px);margin-bottom:clamp(8px,1vh,12px)">쿠팡에서 잘 되면, 전부 좋아집니다</h3>
+      <div class="benefit-grid">
+        <div class="benefit-card"><div class="bc-icon">🛒</div><div class="bc-title">네이버 스마트스토어</div><div class="bc-desc">"콩쑥개떡" 브랜드 검색 증가 → 매출 동반 상승</div></div>
+        <div class="benefit-card"><div class="bc-icon">🏬</div><div class="bc-title">G마켓/11번가/현대Mall</div><div class="bc-desc">쿠팡 베스트셀러 = 전 채널 신뢰도 상승</div></div>
+        <div class="benefit-card"><div class="bc-icon">🏢</div><div class="bc-title">B2B (학교/회사)</div><div class="bc-desc">온라인 판매 실적이 영업 제안서 레퍼런스로 작동</div></div>
+        <div class="benefit-card"><div class="bc-icon">🤝</div><div class="bc-title">폐쇄몰 위탁</div><div class="bc-desc">브랜드 파워 상승 → 위탁 조건 개선 가능</div></div>
+      </div>
+    </div>
+    <div class="rv rv-d3">
+      <div class="recommendation">
+        <div class="rec-title">RECOMMENDATION</div>
+        <p style="color:rgba(255,255,255,.9);line-height:1.7">쿠팡은 단일 채널이 아닌, <strong>전체 브랜드 성장의 레버리지</strong>입니다.<br>쿠팡 광고와 리뷰만 최적화해도, 지금 운영 중인 8개 채널 전체에 시너지가 발생합니다.</p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 9: B3 OSC 소개
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s9">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑧</span><h2 style="font-size:clamp(22px,2.8vw,32px)">이 분석을 만든 팀</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">OSC 핵심 역량</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <div class="cap-row">
+        <div class="cap-card">
+          <div class="cap-num" style="color:var(--blue)">쿠팡</div>
+          <div class="cap-label">공식 광고 파트너</div>
+          <div class="cap-desc">일반 대행사가 볼 수 없는<br>키워드·경쟁사 분석</div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-num">8<span style="font-size:clamp(14px,1.5vw,18px);font-weight:600;color:var(--ink-sub)">년</span></div>
+          <div class="cap-label">이커머스 전문</div>
+          <div class="cap-desc">쿠팡/네이버/오픈마켓<br>통합 운영</div>
+        </div>
+        <div class="cap-card">
+          <div class="cap-num">200<span style="font-size:clamp(14px,1.5vw,18px);font-weight:600;color:var(--ink-sub)">+</span></div>
+          <div class="cap-label">브랜드 운영</div>
+          <div class="cap-desc">2,000+ SKU<br>실전 경험</div>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(20px,3vh,32px)">
+      <p style="font-size:clamp(14px,1.4vw,17px);color:var(--ink);line-height:1.8">
+        이 제안서의 시장 데이터는 <strong>쿠팡 공식 광고 파트너만 접근할 수 있는 내부 분석 도구</strong>로 추출했습니다. 일반 대행사나 자체 운영으로는 얻을 수 없는 경쟁사 점유율, 키워드별 수요, 시장 구조 분석이 가능합니다.
+      </p>
+      <p style="font-size:clamp(14px,1.4vw,17px);color:var(--ink);margin-top:12px;line-height:1.8">
+        이 데이터를 분석하는 것에서 그치지 않습니다.<br>
+        <strong>분석한 전략을 직접 실행하는 팀</strong>입니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 10: B4 CTA
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s10" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%)">
+  <div class="slide-inner" style="text-align:center;color:#fff">
+    <div class="rv">
+      <h1 style="font-size:clamp(28px,3.5vw,48px);color:#fff;margin-bottom:clamp(12px,2vh,20px);line-height:1.3">
+        74.2%의 빈자리,<br>
+        <span style="color:var(--blue-light)">함께 채워보시겠어요?</span>
+      </h1>
+    </div>
+    <div class="rv rv-d1" style="margin-top:clamp(8px,1.5vh,14px)">
+      <p style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,.65);max-width:600px;margin:0 auto;line-height:1.8">
+        178.7억 시장에서 1위가 16.5%밖에 못 먹고 있습니다.<br>
+        네이버 1위 콩쑥개떡이라면, 이 빈자리를 채울 수 있습니다.
+      </p>
+    </div>
+
+    <div class="rv rv-d2" style="margin-top:clamp(28px,4vh,40px)">
+      <div style="display:flex;justify-content:center;gap:clamp(8px,1.5vw,16px);flex-wrap:wrap">
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(59,125,216,.2);border-radius:50px;border:1px solid rgba(59,125,216,.3)">
+          <span style="font-family:var(--font-display);font-weight:800;color:var(--blue-light)">①</span>
+          <span style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.8)">전략 상세 논의</span>
+        </div>
+        <div style="font-size:20px;color:rgba(255,255,255,.3);display:flex;align-items:center">→</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(232,113,43,.2);border-radius:50px;border:1px solid rgba(232,113,43,.3)">
+          <span style="font-family:var(--font-display);font-weight:800;color:var(--orange)">②</span>
+          <span style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.8)">실행 범위 협의</span>
+        </div>
+        <div style="font-size:20px;color:rgba(255,255,255,.3);display:flex;align-items:center">→</div>
+        <div style="display:flex;align-items:center;gap:8px;padding:10px 18px;background:rgba(39,174,96,.2);border-radius:50px;border:1px solid rgba(39,174,96,.3)">
+          <span style="font-family:var(--font-display);font-weight:800;color:var(--green)">③</span>
+          <span style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.8)">런칭</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d3" style="margin-top:clamp(32px,5vh,48px)">
+      <p style="font-size:clamp(18px,2vw,24px);font-weight:700;color:rgba(255,255,255,.8);font-family:var(--font-display)">5FUNNEL</p>
+      <p style="font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.4);margin-top:6px;letter-spacing:.08em">주식회사 오에스씨 (OSC) · 브랜드 성장 파트너</p>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SCRIPTS
+     ═══════════════════════════════════════════════════ -->
+<script>
+const slides=document.querySelectorAll('.slide');
+const dots=document.querySelectorAll('.nav-dots a');
+const counter=document.getElementById('slideCounter');
+
+const revealObs=new IntersectionObserver(es=>{
+  es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('visible')});
+},{threshold:.15});
+document.querySelectorAll('.rv,.rv-scale').forEach(el=>revealObs.observe(el));
+
+const slideObs=new IntersectionObserver(es=>{
+  es.forEach(e=>{
+    if(e.isIntersecting){
+      const idx=[...slides].indexOf(e.target);
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+      counter.textContent=(idx+1)+' / '+slides.length;
+    }
+  });
+},{threshold:.35});
+slides.forEach(s=>slideObs.observe(s));
+
+document.addEventListener('keydown',e=>{
+  const cur=[...slides].findIndex(s=>{const r=s.getBoundingClientRect();return r.top>=-10&&r.top<window.innerHeight/2});
+  if(['ArrowDown',' ','ArrowRight'].includes(e.key)){e.preventDefault();if(cur<slides.length-1)slides[cur+1].scrollIntoView({behavior:'smooth'})}
+  else if(['ArrowUp','ArrowLeft'].includes(e.key)){e.preventDefault();if(cur>0)slides[cur-1].scrollIntoView({behavior:'smooth'})}
+});
+
+Chart.defaults.font.family="'Pretendard Variable',sans-serif";
+Chart.defaults.color='#475569';
+
+document.fonts.ready.then(()=>{
+  const defs={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}};
+
+  // Market Size Bar Chart
+  new Chart(document.getElementById('chartMarketSize'),{type:'bar',data:{
+    labels:['인절미/증편 (직접)','찹쌀떡 (인접)'],
+    datasets:[{data:[72.5,106.3],backgroundColor:['#3B7DD8','#5A9BF0'],borderRadius:6,barThickness:50}]
+  },options:{...defs,indexAxis:'y',scales:{
+    x:{grid:{display:false},ticks:{callback:v=>v+'억',font:{family:'Outfit',weight:'600'}}},
+    y:{grid:{display:false},ticks:{font:{family:'Pretendard Variable',size:13,weight:'700'}}}
+  },plugins:{...defs.plugins,tooltip:{callbacks:{label:c=>c.raw+'억원'}}}}});
+
+  // Competition Donut
+  new Chart(document.getElementById('chartCompetition'),{type:'doughnut',data:{
+    labels:['명가삼대떡집 16.5%','잔기지떡 5.3%','하람 4.0%','잔여시장 74.2%'],
+    datasets:[{data:[16.5,5.3,4.0,74.2],backgroundColor:['#3B7DD8','#5A9BF0','#E8712B','#E2E8F0'],borderWidth:0}]
+  },options:{...defs,cutout:'55%',plugins:{legend:{display:true,position:'bottom',labels:{font:{family:'Pretendard Variable',size:11},boxWidth:10,padding:8}}}}});
+
+  // Scenario Bar Chart
+  new Chart(document.getElementById('chartScenario'),{type:'bar',data:{
+    labels:['1%','3%','5%','10%','목표\n(합산 11%)'],
+    datasets:[{
+      label:'월 매출',
+      data:[604,1812,3020,6039,16000],
+      backgroundColor:['#E2E8F0','#5A9BF0','#3B7DD8','#E8712B','#27AE60'],
+      borderRadius:6,
+      barThickness:40
+    }]
+  },options:{...defs,scales:{
+    x:{grid:{display:false},ticks:{font:{family:'Pretendard Variable',size:11,weight:'600'}}},
+    y:{grid:{color:'#F1F5F9'},ticks:{callback:v=>{if(v>=10000)return(v/10000).toFixed(1)+'억';return(v/10000*10000/10000).toFixed(0)+'만'},font:{family:'Outfit',weight:'600'}}}
+  },plugins:{...defs.plugins,tooltip:{callbacks:{label:c=>{if(c.raw>=10000)return(c.raw/10000).toFixed(1)+'억원/월';return c.raw.toLocaleString()+'만원/월'}}}}}});
+});
+</script>
+</body>
+</html>
