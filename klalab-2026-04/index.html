@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAEVklEQVR4nM1Xz0sjSRT+OiaLE/xJRNmoAUUNMoqjCerixR+sZhQhJ08edg/ePI548R8QZw5zUzx4krnMRSHIuqABIQZcGDyIuos5KKJRccEfmMQkb3llVaeNyay7jKMfNF1d1fW+r9979apaQxYQkQbApGlaQj7/CKAPwM8AmgGUA8iXr18COATwBcDvAH7TNO1IzssBkNQ0jbJxPQARmQzt10Q0TURhejzCcs7rTDa/CrpTzPdXRDRFRFGD4QQRxYkoKS8F9RyX7yhEpY1XRtuPIa8joj8Mhm7TCP8NSTlHgW3VfVUEpcjfGNwd+4/EmYSwDZI232QUQTI+RFRDRCeGr/5WULbYdo2RU1PZDuAHAOsAmgDEAZjxbaFsbgL4CUCMV4fR9e+lSuWyp4Cy/V6FQpMeqAWwxR6R3uD7U4BrQVLeeYn+xYWGH95J91A6eSKRQDweF3eiVC3htnHMiGQyqfdz2wC2TZLrHXOzB8oAbAMoNgpgAk176Ag2yP3pY+p9HjeZ7tectD7F8TeAelbyVpKzVLUadAK/34+dnR2UlpbC4/HAarWK/kgkAp/Ph9PTUzQ2NqKjo0PMY6Ld3V2sra3BbDaju7sbDofDKEKTXMz5lid9MlQxSiQSlEwmKRwOU3t7O9XU1NDAwAC5XC6y2+0UCATo/PycnE4ntbW10eDgIDkcDhoaGhLZNTY2RjabjXp7e6mnp0e0Z2dnSdmWUNX0EwvYkZ1J40ts3OPx0O1tqhxMTk4KESxoZGRE72dBlZWV5PV6qbi4mLa2tvQxv9/PLqft7W2jCFXcdljAhS4rLpxAwWCQLBYLXVzcDcViMX2Mv4oNjo6OUjSa2iYODg6oqKhIiGREIhF9js/no1AodPeVyXuF9cJs2FL1LN/Y2EBtbS3y8/NF7CwWi8hqbre0tCAUCmFlZQVVVVVobm5GZ2cnhoeHUVhYiKamJvEexz8nJ0e0+/v7U8vgfvLmZ90iM2U54/r6WiTc5uYmpqenUV9fj/n5eTidTpycnCA3N/eBLRYfi3HhywDKEIL19XURgsvLywchcLvd1NDQIPqMGB8fF6GZm5sTzzc3N/qcrq4uWlhYuMehQoBsSdja2vogCaempqikpITKyspoYmLingBOyvLycqqurqb9/X29f2ZmhqxWK52dnYn4yxzQk9Asj1F1cm2qfQGLi4vwer3Cxeze4+NjHB0dibWfl5eHvr4+LC0twW634/DwENFoFIFAAB8+fIDb7YbL5cLV1RX29vbEHJvNZqwFquZ84Ur4C4C5bIVodXVVFJb0QsS5sLy8jHA4jIqKCiGIk5XB+REMBlFQUCASkJMzrbIqrl//VylmpJdbNUdVw8eWYpOmaWEAn+Wgvqso8vTNiA3xlb4ZKcE8ZtyMMghSHJ+Z+/m3Y9yd/f8E8FEmIZ9cngpxyfFRcpqe/0j23IfSl3EsfxE/Ji/i1wwpEd/t5zTrev9ev+f/AE9oZziqphNnAAAAAElFTkSuQmCC">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KLALAB × OSC 쿠팡 운영대행 제안서</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+:root {
+  --navy: #1B2A4A;
+  --navy-light: #2A3F6A;
+  --blue: #3B7DD8;
+  --blue-light: #5A9BF0;
+  --blue-dim: rgba(59,125,216,.08);
+  --orange: #E8712B;
+  --orange-dim: rgba(232,113,43,.10);
+  --green: #27AE60;
+  --green-dim: rgba(39,174,96,.10);
+  --red: #C0392B;
+  --red-dim: rgba(192,57,43,.08);
+  --ink: #1B2A4A;
+  --ink-sub: #475569;
+  --ink-mute: #94A3B8;
+  --surface: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --border: #E2E8F0;
+  --insight-bg: #F0F4F8;
+  --font-display: 'Outfit','Pretendard Variable',sans-serif;
+  --font-body: 'Pretendard Variable',sans-serif;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.06);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased}
+.slide{min-height:100dvh;width:100vw;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(2rem,5vw,5rem);position:relative}
+.slide-inner{width:100%;max-width:960px}
+.nav-dots{position:fixed;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px}
+.nav-dots a{width:8px;height:8px;border-radius:50%;background:var(--border);display:block;transition:all .3s ease}
+.nav-dots a:hover,.nav-dots a.active{background:var(--blue);transform:scale(1.5)}
+.page-num{position:absolute;bottom:clamp(14px,2vw,28px);right:clamp(24px,3vw,40px);font-family:var(--font-display);font-size:11px;color:var(--ink-mute);letter-spacing:.1em}
+.confidential{position:absolute;bottom:clamp(14px,2vw,28px);left:clamp(24px,3vw,40px);font-family:var(--font-display);font-size:10px;color:var(--ink-mute);letter-spacing:.15em;text-transform:uppercase}
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.rv.visible{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}
+h1,h2,h3{font-family:var(--font-display);word-break:keep-all;text-wrap:balance}
+h1{font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h2{font-weight:700;line-height:1.25;letter-spacing:-.015em}
+p,li{line-height:1.75;word-break:keep-all}
+.label{font-family:var(--font-display);font-size:clamp(10px,1.1vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--blue);margin-bottom:8px}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--font-display);font-size:14px;font-weight:700;margin-right:10px}
+.exhibit{font-family:var(--font-display);font-size:11px;color:var(--ink-mute);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px);margin-top:clamp(20px,3vh,36px)}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(16px,2vw,24px);text-align:center;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.kpi-card:nth-child(1)::before{background:var(--blue)}
+.kpi-card:nth-child(2)::before{background:var(--orange)}
+.kpi-card:nth-child(3)::before{background:var(--green)}
+.kpi-card .num{font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:800;line-height:1.1;color:var(--navy)}
+.kpi-card .unit{font-size:clamp(14px,1.5vw,18px);font-weight:600;color:var(--ink-sub)}
+.kpi-card .kpi-label{font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);margin-top:6px}
+.key-insight{border-left:4px solid var(--navy);background:var(--insight-bg);padding:clamp(14px,2vw,20px) clamp(16px,2vw,24px);border-radius:0 var(--radius) var(--radius) 0;margin-top:clamp(16px,2vh,24px)}
+.key-insight .ki-title{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--navy);margin-bottom:6px}
+.recommendation{background:var(--navy);color:#fff;padding:clamp(20px,3vw,32px);border-radius:var(--radius);margin-top:clamp(16px,2vh,24px)}
+.recommendation .rec-title{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.15em;margin-bottom:12px;opacity:.7}
+.recommendation li{color:rgba(255,255,255,.9);margin-bottom:8px}
+.data-table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.2vw,14px);margin-top:8px}
+.data-table thead th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:clamp(11px,1.1vw,13px)}
+.data-table tbody td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.data-table tbody tr:nth-child(even){background:#F9FAFB}
+.data-table .highlight-row{background:rgba(59,125,216,.06)!important;font-weight:600}
+.data-table .total-row{background:var(--navy)!important;color:#fff;font-weight:700}
+.data-table .total-row td{border-bottom:none}
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5vw,16px);margin:clamp(16px,2vh,24px) 0}
+.metric-item{text-align:center;padding:clamp(12px,1.5vw,18px);background:var(--surface-alt);border-radius:var(--radius);border:1px solid var(--border)}
+.metric-item .m-num{font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);font-weight:800;color:var(--navy)}
+.metric-item .m-label{font-size:clamp(10px,1vw,12px);color:var(--ink-mute);margin-top:4px}
+.battlecard{width:100%;border-collapse:collapse;font-size:clamp(12px,1.2vw,14px)}
+.battlecard thead th{padding:10px 14px;font-weight:600;font-size:clamp(11px,1.1vw,13px)}
+.battlecard thead th:first-child{background:var(--surface-alt);color:var(--ink-sub);text-align:left}
+.battlecard thead th:nth-child(2){background:#FEE2E2;color:var(--red)}
+.battlecard thead th:nth-child(3){background:rgba(59,125,216,.1);color:var(--blue)}
+.battlecard tbody td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.battlecard tbody td:first-child{font-weight:600;color:var(--ink-sub);background:var(--surface-alt)}
+.battlecard tbody td:nth-child(3){color:var(--navy);font-weight:600}
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,14px);margin-top:clamp(12px,2vh,20px)}
+.phase-card{padding:clamp(14px,1.5vw,20px);border-radius:var(--radius);border:1px solid var(--border);position:relative}
+.phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius) var(--radius) 0 0}
+.phase-card:nth-child(1)::before{background:var(--blue)}
+.phase-card:nth-child(2)::before{background:var(--blue-light)}
+.phase-card:nth-child(3)::before{background:var(--orange)}
+.phase-card:nth-child(4)::before{background:var(--green)}
+.phase-card .ph-num{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--ink-mute);letter-spacing:.1em}
+.phase-card .ph-title{font-weight:700;font-size:clamp(13px,1.3vw,15px);margin:4px 0}
+.phase-card .ph-goal{font-family:var(--font-display);font-size:clamp(18px,2vw,24px);font-weight:800;color:var(--navy)}
+.phase-card .ph-detail{font-size:clamp(11px,1vw,12px);color:var(--ink-sub);margin-top:6px;line-height:1.5}
+.cost-table{width:100%;border-collapse:collapse}
+.cost-table td,.cost-table th{padding:12px 16px;text-align:left;border-bottom:1px solid var(--border)}
+.cost-table thead th{background:var(--surface-alt);font-weight:600;font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub)}
+.cost-table .cost-total{background:var(--navy);color:#fff;font-weight:700}
+.cost-table .cost-total td{border-bottom:none}
+.chart-wrap{max-width:100%;margin:12px auto;position:relative}
+.double-line{border:none;border-top:3px double var(--navy);margin:clamp(12px,1.5vh,18px) 0}
+.node-diagram{display:flex;align-items:center;justify-content:center;gap:0;margin:clamp(16px,2vh,24px) 0;flex-wrap:wrap}
+.node{padding:clamp(10px,1.2vw,16px) clamp(14px,1.5vw,20px);border-radius:var(--radius);text-align:center;font-size:clamp(12px,1.2vw,14px);font-weight:600;min-width:120px}
+.node-center{background:var(--navy);color:#fff;font-size:clamp(14px,1.4vw,16px);z-index:1}
+.node-adjacent{background:var(--surface);border:2px solid var(--blue);color:var(--navy)}
+.node-arrow{font-size:20px;color:var(--blue);padding:0 4px}
+.compare-table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.2vw,14px);margin-top:12px}
+.compare-table thead th{padding:10px 14px;font-weight:600;font-size:clamp(11px,1.1vw,13px)}
+.compare-table thead th:first-child{background:var(--surface-alt);color:var(--ink-sub);text-align:left}
+.compare-table thead th:nth-child(2){background:#FEE2E2;color:var(--red)}
+.compare-table thead th:nth-child(3){background:rgba(59,125,216,.1);color:var(--blue)}
+.compare-table tbody td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.compare-table tbody td:first-child{font-weight:600;color:var(--ink-sub);background:var(--surface-alt)}
+.compare-table tbody td:nth-child(3){color:var(--navy);font-weight:600}
+@media(max-width:768px){
+  .kpi-row,.metric-row{grid-template-columns:1fr}
+  .roadmap{grid-template-columns:repeat(2,1fr)}
+  .battlecard,.data-table,.compare-table{font-size:11px}
+  .node-diagram{flex-direction:column}
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 1: COVER
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s1" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%)">
+  <div class="slide-inner" style="color:#fff">
+    <div class="rv">
+      <p style="font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:clamp(10px,2vh,20px)">Commerce Operations Proposal</p>
+      <h1 style="font-size:clamp(32px,4.5vw,56px);color:#fff;margin-bottom:clamp(8px,1.5vh,16px)">
+        KLALAB<br>
+        <span style="color:var(--blue-light)">쿠팡 운영대행 제안서</span>
+      </h1>
+      <p style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,.65);max-width:640px;margin-bottom:8px">
+        쿠팡 키워드 분석 기반 시장 수요 예측 &amp; 커머스 운영대행 제안
+      </p>
+      <p style="font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.45);font-style:italic;max-width:640px">
+        "로션/에멀젼 352억 시장, 잔여시장 85.4% — 이온화 미네랄 특허의 빈자리가 쿠팡에 있습니다."
+      </p>
+    </div>
+    <div class="kpi-row rv rv-d2">
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--blue-light)">352</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--blue-light);opacity:.7">억원</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">로션/에멀젼 시장 규모 (연)</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--orange)">85.4</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--orange);opacity:.7">%</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">잔여시장 (TOP3 외)</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(30px,3.8vw,44px);font-weight:800;color:var(--green)">특허</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">이온화 미네랄 특허공법</div>
+      </div>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(24px,4vh,40px);display:flex;align-items:center;gap:20px">
+      <div>
+        <p style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.4)">Prepared by</p>
+        <p style="font-size:clamp(14px,1.4vw,17px);font-weight:600;color:rgba(255,255,255,.8)">주식회사 오에스씨 (OSC)</p>
+        <p style="font-size:clamp(11px,1.1vw,13px);color:rgba(255,255,255,.35)">쿠팡 광고 파트너 · 200+ 브랜드 운영</p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+  <span class="page-num" style="color:rgba(255,255,255,.25)">01</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 2: EXECUTIVE SUMMARY
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s2">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">①</span><h2 style="font-size:clamp(22px,2.8vw,32px)">Executive Summary</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">시장 개요 및 핵심 발견사항</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:clamp(8px,1.5vh,14px)">
+      <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub);max-width:800px">
+        로션/에멀젼 시장은 연 352억원 규모이며, <strong>TOP3 집중도가 14.6%로 쿠팡 스킨케어 카테고리 중 가장 분산된 시장</strong>입니다. 1위 피지오겔도 6.38%에 불과하여 강력한 1위가 없습니다. KLALAB은 이미 <strong>이온화 미네랄 특허</strong>, <strong>피부과 납품</strong>, <strong>연 37~39억 해외 매출</strong>로 제품력이 검증되었으나, 국내 매출은 시장의 1%에 불과합니다. 이는 제품의 문제가 아니라 <strong>채널 운영의 부재</strong> 때문입니다.
+      </p>
+    </div>
+    <div class="metric-row rv rv-d2">
+      <div class="metric-item"><div class="m-num">3,174<span style="font-size:.5em">억</span></div><div class="m-label">스킨케어 TAM</div></div>
+      <div class="metric-item"><div class="m-num">352<span style="font-size:.5em">억</span></div><div class="m-label">직접 시장 SAM</div></div>
+      <div class="metric-item"><div class="m-num" style="color:var(--orange)">85.4<span style="font-size:.5em">%</span></div><div class="m-label">잔여시장</div></div>
+      <div class="metric-item"><div class="m-num" style="color:var(--blue)">14.6<span style="font-size:.5em">%</span></div><div class="m-label">TOP3 집중도</div></div>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">KEY INSIGHT</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        KLALAB이 벤치마킹하는 <strong>에스트라도 TOP3에 포함되지 않습니다.</strong> 85.4%의 잔여시장에서 이온화 미네랄 특허 기술이 에스트라 대비 명확한 차별점이 될 수 있습니다. 현재 1% → <strong>3%만 달성해도 월 8,811만(현재의 3배)</strong>입니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">02</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 3: A1. MARKET SIZE
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">②</span><h2 style="font-size:clamp(22px,2.8vw,32px)">시장 규모 추정</h2></div>
+      <p class="exhibit">EXHIBIT | 쿠팡 키워드 기반 수요 퍼널</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <table class="data-table">
+        <thead><tr><th>키워드</th><th>년클릭수</th><th>객단가</th><th>광고비율</th><th>연간시장매출</th></tr></thead>
+        <tbody>
+          <tr class="highlight-row"><td><strong>로션/에멀젼</strong></td><td>705만</td><td>25,000원</td><td>33%</td><td><strong>352억</strong></td></tr>
+          <tr><td>앰플</td><td>1,693만</td><td>25,000원</td><td>44%</td><td><strong>847억</strong></td></tr>
+          <tr><td>선블록/선크림/선로션</td><td>2,346만</td><td>26,000원</td><td>35%</td><td><strong>1,220억</strong></td></tr>
+          <tr><td>클렌징 폼</td><td>2,517만</td><td>15,000원</td><td>32%</td><td><strong>755억</strong></td></tr>
+          <tr class="total-row"><td><strong>합산</strong></td><td>7,260만</td><td>—</td><td>—</td><td><strong>3,174억</strong></td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:11px;color:var(--ink-mute);margin-top:8px">출처: OSC 쿠팡 내부 데이터 (2026년 4월, 전환율 20% 기준)</p>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <p class="exhibit">EXHIBIT | TAM / SAM / SOM</p>
+      <div class="chart-wrap" style="height:200px"><canvas id="chartTAM"></canvas></div>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">KEY INSIGHT</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        DR120 장벽강화크림은 로션/에멀젼(352억) 시장에서 직접 경쟁합니다. 다수의 SKU를 보유한 KLALAB이 앰플·선크림·클렌징으로 확장하면, <strong>총 가용 시장은 3,174억원</strong>에 달합니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">03</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 4: A2. COMPETITIVE LANDSCAPE
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s4">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">③</span><h2 style="font-size:clamp(22px,2.8vw,32px)">경쟁 환경 분석</h2></div>
+      <p class="exhibit">EXHIBIT | 카테고리별 시장 구조</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <table class="data-table">
+        <thead><tr><th>카테고리</th><th>시장 규모</th><th>1위</th><th>1위 점유율</th><th>TOP3 집중도</th><th>잔여시장</th></tr></thead>
+        <tbody>
+          <tr class="highlight-row"><td><strong>로션/에멀젼</strong></td><td>352억</td><td>피지오겔</td><td>6.38%</td><td><strong>14.6%</strong></td><td><strong>85.4%</strong></td></tr>
+          <tr><td>앰플</td><td>847억</td><td>웰라쥬</td><td>4.71%</td><td>10.4%</td><td>89.6%</td></tr>
+          <tr><td>선블록/선크림</td><td>1,220억</td><td>달바</td><td>6.99%</td><td>18.2%</td><td>81.8%</td></tr>
+          <tr><td>클렌징 폼</td><td>755억</td><td>센카</td><td>12.09%</td><td>22.6%</td><td>77.4%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,20px)">
+      <p class="exhibit">EXHIBIT | 로션/에멀젼 TOP3 점유율</p>
+      <div class="chart-wrap" style="height:220px"><canvas id="chartShare"></canvas></div>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">KEY INSIGHT</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        로션/에멀젼은 <strong>4개 카테고리 중 TOP3 집중도가 가장 낮습니다(14.6%)</strong>. 1위 피지오겔(6.38%)부터 3위 제로이드(2.42%)까지 점유율 차이가 극히 작아, 체계적 운영만으로 단기간 내 TOP5 진입이 가능합니다. <strong>에스트라도 TOP3에 없습니다</strong> — 잔여시장이 곧 기회입니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">04</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 5: A3. ADJACENT MARKET
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s5">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">④</span><h2 style="font-size:clamp(22px,2.8vw,32px)">인접 시장 확장 전략</h2></div>
+      <p class="exhibit">EXHIBIT | 시장 확장 구조</p>
+      <hr class="double-line">
+    </div>
+    <div class="node-diagram rv rv-d1">
+      <div class="node node-adjacent">앰플<br><span style="font-size:11px;color:var(--ink-mute)">847억</span></div>
+      <span class="node-arrow">←→</span>
+      <div class="node node-center">로션/에멀젼<br><span style="font-size:12px;opacity:.8">352억 (핵심)</span></div>
+      <span class="node-arrow">←→</span>
+      <div class="node node-adjacent">선블록/선크림<br><span style="font-size:11px;color:var(--ink-mute)">1,220억</span></div>
+      <span class="node-arrow" style="margin-top:8px">↕</span>
+      <div class="node node-adjacent" style="margin-top:4px">클렌징 폼<br><span style="font-size:11px;color:var(--ink-mute)">755억</span></div>
+    </div>
+    <div class="rv rv-d2">
+      <table class="data-table">
+        <thead><tr><th>확장 단계</th><th>카테고리</th><th>시장 규모</th><th>누적</th></tr></thead>
+        <tbody>
+          <tr class="highlight-row"><td>① 핵심</td><td>로션/에멀젼</td><td>352억</td><td><strong>352억</strong></td></tr>
+          <tr><td>② +성분 시너지</td><td>앰플</td><td>+847억</td><td><strong>1,199억</strong></td></tr>
+          <tr><td>③ +루틴 완성</td><td>선블록/선크림</td><td>+1,220억</td><td><strong>2,419억</strong></td></tr>
+          <tr class="total-row"><td>④ +루틴 시작</td><td>클렌징 폼</td><td>+755억</td><td><strong>3,174억</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">KEY INSIGHT</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        DR120 하나로 시작해, <strong>이온화 미네랄 기술을 앰플·선크림·클렌징으로 확장하면 3,174억 시장</strong>이 열립니다. KLALAB은 이미 다수의 SKU를 보유하고 있어 확장 기반이 갖추어져 있습니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">05</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 6: A4. REVENUE SCENARIOS
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s6">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑤</span><h2 style="font-size:clamp(22px,2.8vw,32px)">수요 예측 시나리오</h2></div>
+      <p class="exhibit">EXHIBIT | 직접 시장 352억 기준 점유율별 매출</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <div class="chart-wrap" style="height:250px"><canvas id="chartScenario"></canvas></div>
+    </div>
+    <div class="rv rv-d2">
+      <table class="data-table">
+        <thead><tr><th>점유율</th><th>월 매출</th><th>연 매출</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>1%</td><td>2,937만</td><td>3.5억</td><td>≈ 현재 수준</td></tr>
+          <tr class="highlight-row"><td><strong>3%</strong></td><td><strong>8,811만</strong></td><td><strong>10.6억</strong></td><td><strong>12개월 목표 (3배 성장)</strong></td></tr>
+          <tr><td>5%</td><td>1.47억</td><td>17.6억</td><td>18개월 목표</td></tr>
+          <tr><td>10%</td><td>2.94억</td><td>35.2억</td><td>SKU 확장 병행 시</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="recommendation rv rv-d3">
+      <div class="rec-title">RECOMMENDATION</div>
+      <ul style="list-style:none;padding:0">
+        <li>1. <strong>Phase 1~2 (1~6개월):</strong> 쿠팡 최적화로 1% → 2% (월 5,900만)</li>
+        <li>2. <strong>Phase 3 (7~12개월):</strong> 광고+리뷰+SKU로 3% 달성 (월 8,811만)</li>
+        <li>3. <strong>Phase 4 (13개월~):</strong> 인접시장 확장으로 월 1.5억+ 도달</li>
+      </ul>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">06</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 7: D1. WHY NOW
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s7">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑥</span><h2 style="font-size:clamp(22px,2.8vw,32px)">왜 지금인가</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">KLALAB이 지금 전문 운영 파트너가 필요한 이유</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1" style="margin-top:clamp(8px,1.5vh,14px)">
+      <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:12px">검증된 브랜드, 미개척 국내 시장</h3>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:clamp(12px,2vw,20px)">
+        <div style="background:var(--surface-alt);padding:clamp(14px,2vw,20px);border-radius:var(--radius);border:1px solid var(--border)">
+          <p style="font-weight:700;color:var(--green);margin-bottom:6px">✓ 이미 검증됨</p>
+          <ul style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);padding-left:16px">
+            <li>이온화 미네랄 특허공법</li>
+            <li>피부과 납품 실적</li>
+            <li>연 37~39억 해외 매출</li>
+            <li>자체 R&amp;D 및 생산</li>
+          </ul>
+        </div>
+        <div style="background:var(--orange-dim);padding:clamp(14px,2vw,20px);border-radius:var(--radius);border:1px solid rgba(232,113,43,.15)">
+          <p style="font-weight:700;color:var(--orange);margin-bottom:6px">⚠ 현재 상황</p>
+          <ul style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);padding-left:16px">
+            <li>국내 매출 = 전체의 10%</li>
+            <li>쿠팡 전담자 퇴사</li>
+            <li>리스팅 방치 중</li>
+            <li>SKU 1개만 운영</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <h3 style="font-size:clamp(14px,1.5vw,17px);margin-bottom:10px;color:var(--navy)">지금 진입해야 하는 3가지 이유</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="background:var(--blue-dim);padding:16px;border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--blue)">14.6%</div>
+          <p style="font-size:12px;color:var(--ink-sub);margin-top:4px">시장 극도 분산<br>선점하는 브랜드 유리</p>
+        </div>
+        <div style="background:var(--orange-dim);padding:16px;border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--orange)">즉시</div>
+          <p style="font-size:12px;color:var(--ink-sub);margin-top:4px">이미 입점된 리스팅<br>즉각적 개선 가능</p>
+        </div>
+        <div style="background:var(--green-dim);padding:16px;border-radius:var(--radius);text-align:center">
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--green)">90%</div>
+          <p style="font-size:12px;color:var(--ink-sub);margin-top:4px">해외 매출 의존<br>국내 기반 = 안전판</p>
+        </div>
+      </div>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">핵심 메시지</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        다시 한 명을 뽑아 같은 리스크를 반복할 것인가, 아니면 <strong>5인 전문팀에게 맡겨 체계적으로 성장</strong>할 것인가. 쿠팡에서 쌓인 리뷰·SEO·데이터는 담당자가 아닌 <strong>브랜드의 자산</strong>으로 남습니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">07</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 8: D2. OSC BATTLECARD
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s8">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑦</span><h2 style="font-size:clamp(22px,2.8vw,32px)">OSC 차별화된 파트너십</h2></div>
+      <p class="exhibit">EXHIBIT | 재채용 vs OSC 파트너십</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <table class="compare-table">
+        <thead><tr><th>비교 항목</th><th>재채용</th><th>OSC 파트너십</th></tr></thead>
+        <tbody>
+          <tr><td>월 비용</td><td>350~400만 (연봉+4대보험)</td><td><strong>300만 + 수익쉐어 6%</strong></td></tr>
+          <tr><td>인력 구성</td><td>1명 (퇴사 리스크 반복)</td><td><strong>분야별 전문가 5인</strong></td></tr>
+          <tr><td>데이터 접근</td><td>자체 학습 필요</td><td><strong>쿠팡 파트너 내부 데이터</strong></td></tr>
+          <tr><td>퇴사/이탈 시</td><td>역량 사라짐, 처음부터</td><td><strong>리뷰·SEO·데이터 모두 유지</strong></td></tr>
+          <tr><td>확장성</td><td>1인 역량 한계</td><td><strong>SKU·채널 확장 체계적</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,20px)">
+      <table class="battlecard">
+        <thead><tr><th>구분</th><th>일반 대행사</th><th>OSC</th></tr></thead>
+        <tbody>
+          <tr><td>서비스 범위</td><td>광고 집행 중심</td><td>셋업→세일즈→MD A to Z</td></tr>
+          <tr><td>수익 구조</td><td>광고비 % 수수료</td><td><strong>수익쉐어</strong> (매출 나야 수익)</td></tr>
+          <tr><td>계정 소유권</td><td>대행사 소유</td><td><strong>브랜드 소유</strong> (독립 가능)</td></tr>
+          <tr><td>물류 지원</td><td>별도</td><td>제트배송/도착보장 포함</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">COMMITMENT</div>
+      <p style="font-size:clamp(14px,1.4vw,16px);color:var(--navy);font-weight:600">
+        "담당자가 퇴사해도, 축적된 리뷰·SEO·광고 데이터는 모두 KLALAB의 것입니다."
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">08</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 9: D3. SERVICE DETAIL
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s9">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑧</span><h2 style="font-size:clamp(22px,2.8vw,32px)">채널 운영대행 상세</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">Setting → Sales → MD 3단계 프로세스</p>
+      <hr class="double-line">
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(10px,1.5vw,16px);margin-top:clamp(12px,2vh,20px)">
+      <div class="rv rv-d1" style="background:var(--blue-dim);border:1px solid rgba(59,125,216,.15);border-radius:var(--radius);padding:clamp(14px,1.5vw,20px)">
+        <div style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--blue);letter-spacing:.1em;margin-bottom:8px">SETTING</div>
+        <h3 style="font-size:clamp(14px,1.4vw,16px);margin-bottom:10px">플랫폼 최적화</h3>
+        <ul style="font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);padding-left:16px;line-height:1.8">
+          <li>상품 SEO 전면 최적화</li>
+          <li>썸네일 &amp; 상세페이지 리뉴얼</li>
+          <li>상품 영상/슈퍼콘텐츠</li>
+          <li>SKU 전략 &amp; 번들 구성</li>
+          <li>제트배송/도착보장 세팅</li>
+        </ul>
+      </div>
+      <div class="rv rv-d2" style="background:var(--orange-dim);border:1px solid rgba(232,113,43,.15);border-radius:var(--radius);padding:clamp(14px,1.5vw,20px)">
+        <div style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--orange);letter-spacing:.1em;margin-bottom:8px">SALES</div>
+        <h3 style="font-size:clamp(14px,1.4vw,16px);margin-bottom:10px">공격적 매출 견인</h3>
+        <ul style="font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);padding-left:16px;line-height:1.8">
+          <li>CPC/CPM/NCA 광고 최적화</li>
+          <li>트래픽 데일리 모니터링</li>
+          <li>타임딜/로켓와우/뱃지</li>
+          <li>체험단 500건 리뷰 확보</li>
+          <li>쿠팡 라이브 커머스</li>
+        </ul>
+      </div>
+      <div class="rv rv-d3" style="background:var(--green-dim);border:1px solid rgba(39,174,96,.15);border-radius:var(--radius);padding:clamp(14px,1.5vw,20px)">
+        <div style="font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--green);letter-spacing:.1em;margin-bottom:8px">MD &amp; LOGISTICS</div>
+        <h3 style="font-size:clamp(14px,1.4vw,16px);margin-bottom:10px">안정적 운영 지원</h3>
+        <ul style="font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);padding-left:16px;line-height:1.8">
+          <li>재고 관리 &amp; 입고 스케줄</li>
+          <li>CS 모니터링 &amp; 노티</li>
+          <li>주간/월간 성과 리포팅</li>
+          <li>계정 건전성 관리</li>
+          <li>KPI 대시보드 제공</li>
+        </ul>
+      </div>
+    </div>
+    <div class="key-insight rv rv-d4" style="margin-top:clamp(16px,2vh,20px)">
+      <p style="font-size:clamp(14px,1.4vw,16px);color:var(--navy);font-weight:600;text-align:center">
+        "브랜드는 제품에 집중하세요. 채널은 저희가 책임지겠습니다."
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">09</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 10: D4+D5. CHANNEL & ROADMAP
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s10">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑨</span><h2 style="font-size:clamp(22px,2.8vw,32px)">성장 로드맵</h2></div>
+      <p class="exhibit">EXHIBIT | 4단계 성장 전략</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <div class="chart-wrap" style="height:220px"><canvas id="chartRoadmap"></canvas></div>
+    </div>
+    <div class="roadmap rv rv-d2">
+      <div class="phase-card">
+        <div class="ph-num">PHASE 1</div>
+        <div class="ph-title">최적화</div>
+        <div class="ph-goal">100~150만/일</div>
+        <div class="ph-detail">1~3개월<br>쿠팡 SEO 개편<br>썸네일/상세 리뉴얼<br>체험단 500건</div>
+      </div>
+      <div class="phase-card">
+        <div class="ph-num">PHASE 2</div>
+        <div class="ph-title">성장</div>
+        <div class="ph-goal">150~300만/일</div>
+        <div class="ph-detail">4~6개월<br>광고 본격화<br>프로모션/뱃지<br>바이럴 마케팅</div>
+      </div>
+      <div class="phase-card">
+        <div class="ph-num">PHASE 3</div>
+        <div class="ph-title">스케일업</div>
+        <div class="ph-goal">300~500만/일</div>
+        <div class="ph-detail">7~12개월<br>SKU 1~2종 확장<br>카테고리 확장<br>프로모션 강화</div>
+      </div>
+      <div class="phase-card">
+        <div class="ph-num">PHASE 4</div>
+        <div class="ph-title">확장</div>
+        <div class="ph-goal">500만+/일</div>
+        <div class="ph-detail">13개월~<br>풀 포트폴리오<br>네이버 정식 운영<br>추가 채널 검토</div>
+      </div>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">CHANNEL STRATEGY</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        <strong>핵심 채널: 쿠팡</strong> — 검색 수요 캡처, 빠른 배송, 리뷰 축적. Phase 2 이후 <strong>네이버</strong> 추가, Phase 3~4에서 <strong>올리브영 온라인</strong> 등 더마 채널 확장을 순차 제안합니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">10</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 11: D6. KPI
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s11">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑩</span><h2 style="font-size:clamp(22px,2.8vw,32px)">운영 목표 &amp; KPI</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">12개월 목표 기준</p>
+      <hr class="double-line">
+    </div>
+    <div class="kpi-row rv rv-d1">
+      <div class="kpi-card">
+        <div class="num">8,811<span class="unit">만</span></div>
+        <div class="kpi-label">12개월차 월매출 (3% 점유)</div>
+      </div>
+      <div class="kpi-card">
+        <div class="num">30<span class="unit">%</span></div>
+        <div class="kpi-label">브랜드 검색 전환 비중</div>
+      </div>
+      <div class="kpi-card">
+        <div class="num">500<span class="unit">개+</span></div>
+        <div class="kpi-label">쿠팡 리뷰 수</div>
+      </div>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
+      <table class="data-table">
+        <thead><tr><th>단계</th><th>기간</th><th>일매출 목표</th><th>브랜드 전환</th><th>확장 조건</th></tr></thead>
+        <tbody>
+          <tr><td>1단계</td><td>1~3개월</td><td>100~150만</td><td>10%</td><td>리뷰 500개 → 바이럴</td></tr>
+          <tr><td>2단계</td><td>4~6개월</td><td>150~300만</td><td>20%</td><td>프로모션 + 외부 마케팅</td></tr>
+          <tr class="highlight-row"><td><strong>3단계</strong></td><td><strong>7~12개월</strong></td><td><strong>300~500만</strong></td><td><strong>30%</strong></td><td><strong>SKU 확장, 채널 확장</strong></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-insight rv rv-d3">
+      <div class="ki-title">브랜드 검색 전환 매출이란?</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        "로션"이 아니라 <strong>"클라랩" 또는 "DR120"을 직접 검색</strong>해서 구매하는 매출. 이 비중이 30%에 도달하면 광고비 없이도 매출이 유지되는 <strong>자생력</strong>이 확보됩니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">11</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 12: D7. COST STRUCTURE
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s12">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑪</span><h2 style="font-size:clamp(22px,2.8vw,32px)">비용 구조</h2></div>
+      <p class="exhibit">EXHIBIT | 쿠팡 운영대행 (Basic)</p>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <table class="cost-table">
+        <thead><tr><th>항목</th><th>월 비용</th><th>비고</th></tr></thead>
+        <tbody>
+          <tr><td>쿠팡 운영대행</td><td><strong>300만원</strong></td><td>세팅+광고+트래픽+MD</td></tr>
+          <tr><td>수익쉐어</td><td><strong>매출의 6%</strong></td><td>부가세 기준</td></tr>
+          <tr class="cost-total"><td>합계 (목표 달성 시)</td><td><strong>~829만원</strong></td><td>월 8,811만 매출의 9.4%</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,20px)">
+      <div class="chart-wrap" style="height:200px"><canvas id="chartCost"></canvas></div>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(12px,1.5vh,16px)">
+      <p class="exhibit">변동 비용 (별도)</p>
+      <table class="data-table" style="font-size:clamp(11px,1.1vw,13px)">
+        <tbody>
+          <tr><td>체험단 (런칭)</td><td>배송비+실행비, 브랜드 50% 부담</td></tr>
+          <tr><td>바이럴/공동구매</td><td>성장 단계별 변동 제안</td></tr>
+          <tr><td>네이버 추가 시</td><td>+50만원/월 (Phase 2 이후)</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="key-insight rv rv-d4">
+      <div class="ki-title">PRICE ANCHORING</div>
+      <p style="font-size:clamp(13px,1.2vw,14px);color:var(--ink-sub)">
+        월 300만 투자 대비, 12개월 목표 <strong>월 매출 8,811만원</strong> 달성 시 <strong>ROAS 29배</strong>. 직원 1명 인건비(350~400만)보다 효율적이며, 5인 전문팀이 밀착 운영합니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">12</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 13: D8+D9. CONTRACT & OSC INTRO
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s13">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑫</span><h2 style="font-size:clamp(22px,2.8vw,32px)">계약 조건 &amp; OSC 소개</h2></div>
+      <hr class="double-line">
+    </div>
+    <div class="rv rv-d1">
+      <h3 style="font-size:clamp(16px,1.6vw,18px);margin-bottom:12px">계약 조건</h3>
+      <table class="data-table">
+        <tbody>
+          <tr><td style="font-weight:600;width:30%">최소 계약 기간</td><td><strong>24개월</strong></td></tr>
+          <tr><td style="font-weight:600">정산 기준</td><td>부가세 신고 기준 매출</td></tr>
+          <tr><td style="font-weight:600">정산 주기</td><td>월 1회 (익월 15일 내)</td></tr>
+          <tr><td style="font-weight:600">계정 소유권</td><td><strong style="color:var(--blue)">브랜드사 소유</strong> (계약 종료 후에도 유지)</td></tr>
+        </tbody>
+      </table>
+      <p style="font-size:clamp(12px,1.2vw,13px);color:var(--ink-mute);margin-top:8px">
+        24개월은 성장 로드맵(Phase 1→2→3)을 완수하기 위한 최소 기간입니다. 계정은 KLALAB 소유이므로, 계약 종료 후에도 축적된 리뷰·SEO·고객데이터가 모두 유지됩니다.
+      </p>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(20px,3vh,32px)">
+      <h3 style="font-size:clamp(16px,1.6vw,18px);margin-bottom:12px">About OSC</h3>
+      <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px">
+        <div style="text-align:center;padding:16px;background:var(--surface-alt);border-radius:var(--radius)">
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--navy)">8년</div>
+          <p style="font-size:12px;color:var(--ink-mute)">이커머스 전문</p>
+        </div>
+        <div style="text-align:center;padding:16px;background:var(--surface-alt);border-radius:var(--radius)">
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--navy)">200+</div>
+          <p style="font-size:12px;color:var(--ink-mute)">브랜드 운영</p>
+        </div>
+        <div style="text-align:center;padding:16px;background:var(--surface-alt);border-radius:var(--radius)">
+          <div style="font-family:var(--font-display);font-size:28px;font-weight:800;color:var(--navy)">2,000+</div>
+          <p style="font-size:12px;color:var(--ink-mute)">SKU 운영 경험</p>
+        </div>
+      </div>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(16px,2vh,20px);background:var(--surface-alt);padding:clamp(16px,2vw,24px);border-radius:var(--radius);border:1px solid var(--border)">
+      <p style="font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.1em;color:var(--ink-mute);margin-bottom:8px">SUCCESS CASE</p>
+      <p style="font-size:clamp(14px,1.4vw,16px);font-weight:700;color:var(--navy)">꼬기다 (닭가슴살)</p>
+      <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub)">
+        일매출 100만원 → <strong style="color:var(--blue)">2,500만원</strong> (6개월), 이후 월평균 6억원대 유지 (쿠팡 단독)
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+  <span class="page-num">13</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     SLIDE 14: D10. TIMELINE & CTA
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s14" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%)">
+  <div class="slide-inner" style="color:#fff">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num" style="background:var(--blue)">⑬</span><h2 style="font-size:clamp(22px,2.8vw,32px);color:#fff">예상 일정</h2></div>
+      <hr style="border:none;border-top:3px double rgba(255,255,255,.2);margin:clamp(12px,1.5vh,18px) 0">
+    </div>
+    <div class="rv rv-d1">
+      <table style="width:100%;border-collapse:collapse;font-size:clamp(13px,1.3vw,15px)">
+        <tbody>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.1)"><td style="padding:12px 0;color:rgba(255,255,255,.5);width:30%">계약 체결</td><td style="padding:12px 0;color:rgba(255,255,255,.9)">계약 체결 및 에셋 전달 (상세페이지, 이미지, 영상)</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.1)"><td style="padding:12px 0;color:rgba(255,255,255,.5)">+2주</td><td style="padding:12px 0;color:rgba(255,255,255,.9)">쿠팡 리스팅 SEO 전면 개편 + 썸네일/상세 리뉴얼 완료</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.1)"><td style="padding:12px 0;color:rgba(255,255,255,.5)">+3주</td><td style="padding:12px 0;color:rgba(255,255,255,.9)">제트배송/도착보장 세팅, 광고 캠페인 시작</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.1)"><td style="padding:12px 0;color:rgba(255,255,255,.5)">1~3개월</td><td style="padding:12px 0;color:rgba(255,255,255,.9)">체험단 집중 운영 (리뷰 500개 목표)</td></tr>
+          <tr style="border-bottom:1px solid rgba(255,255,255,.1)"><td style="padding:12px 0;color:rgba(255,255,255,.5)">4개월~</td><td style="padding:12px 0;color:rgba(255,255,255,.9)">바이럴 마케팅 본격화, 프로모션/뱃지 확보</td></tr>
+          <tr><td style="padding:12px 0;color:rgba(255,255,255,.5)">7개월~</td><td style="padding:12px 0;color:rgba(255,255,255,.9)">SKU 확장 (앰플 또는 선크림), 네이버 운영 검토</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="rv rv-d2" style="margin-top:clamp(32px,5vh,48px);text-align:center">
+      <p style="font-size:clamp(18px,2.5vw,28px);font-weight:700;color:var(--blue-light);margin-bottom:12px">
+        "KLALAB의 이온화 미네랄 기술이<br>국내 소비자에게 닿을 수 있도록,<br>채널은 저희가 책임지겠습니다."
+      </p>
+    </div>
+    <div class="rv rv-d3" style="margin-top:clamp(24px,4vh,40px);text-align:center">
+      <p style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.4);margin-bottom:4px">Contact</p>
+      <p style="font-size:clamp(16px,1.6vw,20px);font-weight:600;color:rgba(255,255,255,.8)">주식회사 오에스씨 (OSC)</p>
+      <p style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.4);margin-top:8px">쿠팡 광고 파트너 · 200+ 브랜드 운영</p>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+  <span class="page-num" style="color:rgba(255,255,255,.25)">14</span>
+</section>
+
+<nav class="nav-dots" id="navDots"></nav>
+<div style="position:fixed;top:clamp(14px,2vw,28px);right:clamp(14px,2vw,28px);z-index:100;font-family:var(--font-display);font-size:11px;color:var(--ink-mute);letter-spacing:.1em" id="slideCounter"></div>
+
+<script>
+// Nav dots
+const slides=document.querySelectorAll('.slide');
+const nav=document.getElementById('navDots');
+const counter=document.getElementById('slideCounter');
+slides.forEach((_,i)=>{const a=document.createElement('a');a.href='#s'+(i+1);nav.appendChild(a)});
+const dots=nav.querySelectorAll('a');
+
+// Reveal + active dot
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.querySelectorAll('.rv').forEach(r=>r.classList.add('visible'));
+      const idx=[...slides].indexOf(e.target);
+      dots.forEach((d,i)=>d.classList.toggle('active',i===idx));
+      counter.textContent=(idx+1)+' / '+slides.length;
+    }
+  });
+},{threshold:.35});
+slides.forEach(s=>obs.observe(s));
+
+// Charts
+Chart.defaults.font.family="'Pretendard Variable',sans-serif";
+
+// Chart: TAM/SAM/SOM (Slide 3) - horizontal bar
+new Chart(document.getElementById('chartTAM'),{
+  type:'bar',
+  data:{
+    labels:['선블록/선크림','앰플','클렌징 폼','로션/에멀젼 (직접)'],
+    datasets:[{
+      data:[1220,847,755,352],
+      backgroundColor:['#94A3B8','#5A9BF0','#94A3B8','#1B2A4A'],
+      borderRadius:6,barThickness:32
+    }]
+  },
+  options:{
+    indexAxis:'y',responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw+'억원'}}},
+    scales:{x:{grid:{display:false},ticks:{callback:v=>v+'억'}},y:{grid:{display:false}}}
+  }
+});
+
+// Chart: Market Share (Slide 4) - doughnut
+new Chart(document.getElementById('chartShare'),{
+  type:'doughnut',
+  data:{
+    labels:['피지오겔 6.38%','라운드랩 5.81%','제로이드 2.42%','잔여시장 85.4%'],
+    datasets:[{
+      data:[6.38,5.81,2.42,85.4],
+      backgroundColor:['#1B2A4A','#3B7DD8','#5A9BF0','#E8712B'],
+      borderWidth:2,borderColor:'#fff'
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,cutout:'55%',
+    plugins:{legend:{position:'bottom',labels:{boxWidth:12,padding:10,font:{size:11}}}}
+  }
+});
+
+// Chart: Scenario (Slide 6) - bar
+new Chart(document.getElementById('chartScenario'),{
+  type:'bar',
+  data:{
+    labels:['1% (현재)','3% (목표)','5%','10%'],
+    datasets:[{
+      label:'월 매출 (만원)',
+      data:[2937,8811,14685,29370],
+      backgroundColor:['#94A3B8','#E8712B','#3B7DD8','#1B2A4A'],
+      borderRadius:6,barThickness:48
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toLocaleString()+'만원/월'}}},
+    scales:{
+      y:{grid:{color:'#E2E8F0'},ticks:{callback:v=>(v/10000).toFixed(1)+'억'}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Chart: Roadmap (Slide 10) - line
+new Chart(document.getElementById('chartRoadmap'),{
+  type:'line',
+  data:{
+    labels:['현재','3M','6M','9M','12M','15M'],
+    datasets:[{
+      label:'일매출 목표 (만원)',
+      data:[83,150,300,400,500,600],
+      borderColor:'#3B7DD8',backgroundColor:'rgba(59,125,216,.1)',
+      fill:true,tension:.4,pointRadius:5,pointBackgroundColor:'#3B7DD8',borderWidth:3
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false}},
+    scales:{
+      y:{grid:{color:'#E2E8F0'},ticks:{callback:v=>v+'만'}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+
+// Chart: Cost comparison (Slide 12)
+new Chart(document.getElementById('chartCost'),{
+  type:'bar',
+  data:{
+    labels:['운영비','수익쉐어','합계','월매출 목표'],
+    datasets:[{
+      data:[300,529,829,8811],
+      backgroundColor:['#3B7DD8','#5A9BF0','#1B2A4A','#E8712B'],
+      borderRadius:6,barThickness:44
+    }]
+  },
+  options:{
+    responsive:true,maintainAspectRatio:false,
+    plugins:{legend:{display:false},tooltip:{callbacks:{label:c=>c.raw.toLocaleString()+'만원'}}},
+    scales:{
+      y:{grid:{color:'#E2E8F0'},ticks:{callback:v=>(v>=1000?(v/10000).toFixed(1)+'억':v+'만')}},
+      x:{grid:{display:false}}
+    }
+  }
+});
+</script>
+</body>
+</html>
