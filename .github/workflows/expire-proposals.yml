@@ -1,0 +1,65 @@
+name: Expire old proposals
+
+on:
+  schedule:
+    - cron: '0 0 * * *'
+  workflow_dispatch: {}
+
+jobs:
+  expire:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Expire proposals older than 30 days
+        id: expire
+        run: |
+          EXPIRED_PAGE='<!DOCTYPE html><html><head><meta charset="UTF-8"><title>5FUNNEL</title></head><body style="margin:0;background:#0F172A;display:flex;align-items:center;justify-content:center;min-height:100vh"><p style="color:rgba(255,255,255,.3);font-family:sans-serif;font-size:14px">This proposal has expired.</p></body></html>'
+
+          TODAY=$(date +%s)
+          CHANGED=false
+
+          for dir in */; do
+            [ "$dir" = ".github/" ] && continue
+
+            DATE_PART=$(echo "$dir" | grep -oP '\d{4}-\d{2}' | tail -1)
+
+            if [ -z "$DATE_PART" ]; then
+              echo "SKIP (no date): $dir"
+              continue
+            fi
+
+            FOLDER_DATE=$(date -d "${DATE_PART}-01" +%s 2>/dev/null)
+            if [ -z "$FOLDER_DATE" ]; then
+              echo "SKIP (invalid date): $dir"
+              continue
+            fi
+
+            DAYS_AGO=$(( (TODAY - FOLDER_DATE) / 86400 ))
+
+            if [ "$DAYS_AGO" -gt 30 ]; then
+              INDEX="${dir}index.html"
+              if [ -f "$INDEX" ]; then
+                if grep -q "This proposal has expired" "$INDEX" 2>/dev/null; then
+                  echo "ALREADY EXPIRED: $dir ($DAYS_AGO days)"
+                  continue
+                fi
+                echo "$EXPIRED_PAGE" > "$INDEX"
+                echo "EXPIRED: $dir ($DAYS_AGO days)"
+                CHANGED=true
+              fi
+            else
+              echo "ACTIVE: $dir ($DAYS_AGO days)"
+            fi
+          done
+
+          echo "changed=$CHANGED" >> $GITHUB_OUTPUT
+
+      - name: Commit and push
+        if: steps.expire.outputs.changed == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "chore: expire proposals older than 30 days"
+          git push
