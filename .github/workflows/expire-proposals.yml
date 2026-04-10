@@ -39,13 +39,17 @@ jobs:
 
             if [ "$DAYS_AGO" -gt 30 ]; then
               INDEX="${dir}index.html"
+              BACKUP="${dir}_original.html"
               if [ -f "$INDEX" ]; then
-                if grep -q "This proposal has expired" "$INDEX" 2>/dev/null; then
+                # Already expired (backup exists)
+                if [ -f "$BACKUP" ]; then
                   echo "ALREADY EXPIRED: $dir ($DAYS_AGO days)"
                   continue
                 fi
+                # Backup original, then replace with expired page
+                cp "$INDEX" "$BACKUP"
                 echo "$EXPIRED_PAGE" > "$INDEX"
-                echo "EXPIRED: $dir ($DAYS_AGO days)"
+                echo "EXPIRED: $dir ($DAYS_AGO days) — original backed up"
                 CHANGED=true
               fi
             else
