@@ -148,6 +148,11 @@
 </head>
 <body>
 
+<!-- ═══ 모바일 PC 최적화 안내 배너 (768px 이하에서만 표시) ═══ -->
+<style>.mobile-notice,.mobile-spacer{display:none}@media(max-width:768px){.mobile-notice{display:block;position:fixed;top:0;left:0;right:0;z-index:9999;background:rgba(15,23,42,.9);backdrop-filter:blur(4px);text-align:center;padding:8px 16px;font-size:13px;color:#cbd5e1;letter-spacing:.02em}.mobile-spacer{display:block;height:36px}}</style>
+<div class="mobile-notice no-print">본 제안서는 PC에 최적화되어 있습니다. PC에서 확인해주세요.</div>
+<div class="mobile-spacer"></div>
+
 <!-- ═══ 우상단 고정 · PDF 다운로드 버튼 (인쇄 시 자동 숨김) ═══ -->
 <div class="no-print fixed top-4 right-4 z-50">
   <button onclick="window.print()" class="inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold bg-white text-[color:var(--ink)] border border-[color:var(--line)] rounded-full shadow-sm hover:shadow-md transition-shadow cursor-pointer">
@@ -172,8 +177,7 @@
 
     <h1 class="headline headline-responsive text-5xl sm:text-6xl md:text-7xl font-bold mb-8">
       세종지엠에스의 일본 진출 파이프라인에<br>
-      <span style="color: var(--accent)">AI × 마케팅 에이전시 스케일</span>을<br>
-      더하겠습니다.
+      <span style="color: var(--accent)">AI × 마케팅 에이전시 스케일</span>을 더하겠습니다.
     </h1>
 
     <p class="subhead text-xl md:text-2xl text-[color:var(--ink-soft)] max-w-[820px] mb-16">
@@ -436,18 +440,18 @@
             <tr class="tbl-row">
               <td class="px-6 py-4 font-semibold">S</td>
               <td class="px-6 py-4">영상 편집 <span class="num">15건</span></td>
-              <td class="px-6 py-4 text-right num font-bold text-lg">220만원</td>
+              <td class="px-6 py-4 text-right num font-bold text-lg">150만원</td>
               <td class="px-6 py-4 text-right text-[color:var(--accent)] font-semibold">약 35% ↓</td>
             </tr>
             <tr class="tbl-row">
               <td class="px-6 py-4 font-semibold">M</td>
-              <td class="px-6 py-4">영상 편집 <span class="num">30건</span> + 릴스 <span class="num">5건</span></td>
+              <td class="px-6 py-4">영상 편집 <span class="num">30건</span> + 숏폼 촬영 제작 <span class="num">5건</span></td>
               <td class="px-6 py-4 text-right num font-bold text-lg">420만원</td>
               <td class="px-6 py-4 text-right text-[color:var(--accent)] font-semibold">약 45% ↓</td>
             </tr>
             <tr class="tbl-row">
               <td class="px-6 py-4 font-semibold">L</td>
-              <td class="px-6 py-4">영상 편집 <span class="num">50건</span> + 릴스 <span class="num">10건</span></td>
+              <td class="px-6 py-4">영상 편집 <span class="num">50건</span> + 숏폼 촬영 제작 <span class="num">10건</span></td>
               <td class="px-6 py-4 text-right num font-bold text-lg">680만원</td>
               <td class="px-6 py-4 text-right text-[color:var(--accent)] font-semibold">약 50% ↓</td>
             </tr>
@@ -516,7 +520,7 @@
             <tr class="tbl-row">
               <td class="px-6 py-4 font-semibold">S</td>
               <td class="px-6 py-4">SNS 이미지 <span class="num">30장</span></td>
-              <td class="px-6 py-4 text-right num font-bold text-lg">380만원</td>
+              <td class="px-6 py-4 text-right num font-bold text-lg">300만원</td>
               <td class="px-6 py-4 text-right text-[color:var(--accent)] font-semibold">약 20% ↓</td>
             </tr>
           </tbody>
@@ -603,7 +607,7 @@
             </tr>
             <tr class="tbl-row">
               <td class="px-6 py-4 font-semibold">블로그 포스팅</td>
-              <td class="px-6 py-4 text-right num font-bold">25~40만원</td>
+              <td class="px-6 py-4 text-right num font-bold">5~10만원</td>
               <td class="px-6 py-4 text-[color:var(--ink-soft)]">SEO 키워드 최적화 · 유입 설계</td>
             </tr>
           </tbody>
