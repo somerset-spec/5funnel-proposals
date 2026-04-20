@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="아원푸드 쿠팡 판매전략 제안서 — OSC">
+<meta name="robots" content="noindex,nofollow">
+<meta property="og:title" content="아원푸드 × OSC 쿠팡 판매전략 제안서">
+<meta property="og:description" content="TAM 102.9억, 잔여시장 74.6%가 아직 주인 없는 빈자리">
+<meta property="og:type" content="website">
+<title>아원푸드 × OSC 쿠팡 판매전략 제안서</title>
+<link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+<link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<script src="https://code.iconify.design/iconify-icon/2.3.0/iconify-icon.min.js"></script>
+<style>
+:root {
+  --navy: #1B2A4A;
+  --navy-light: #2A3F6A;
+  --blue: #3B7DD8;
+  --blue-light: #5A9BF0;
+  --blue-dim: rgba(59,125,216,.08);
+  --orange: #E8712B;
+  --orange-dim: rgba(232,113,43,.10);
+  --green: #27AE60;
+  --green-dim: rgba(39,174,96,.10);
+  --red: #C0392B;
+  --red-dim: rgba(192,57,43,.08);
+  --ink: #1B2A4A;
+  --ink-sub: #475569;
+  --ink-mute: #94A3B8;
+  --surface: #FFFFFF;
+  --surface-alt: #F8FAFC;
+  --border: #E2E8F0;
+  --insight-bg: #F0F4F8;
+  --font-display: 'Outfit','Pretendard Variable',sans-serif;
+  --font-body: 'Pretendard Variable',sans-serif;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(15,23,42,.04),0 4px 14px rgba(15,23,42,.06);
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-snap-type:y mandatory;overflow-x:hidden}
+body{font-family:var(--font-body);color:var(--ink);background:var(--surface);-webkit-font-smoothing:antialiased}
+
+/* Premium numerics — tabular lining for all numeric blocks */
+.num,.kpi-card .num,.m-num,.ph-goal,.cap-num,.data-table,.metric-item,.sc .rev{font-variant-numeric:tabular-nums;font-feature-settings:"ss01" on,"tnum" on}
+
+/* Subtle grain texture for hero */
+.grain{position:absolute;inset:0;pointer-events:none;z-index:1;opacity:.28;mix-blend-mode:overlay;background-image:url("data:image/svg+xml;utf8,<svg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 0.5 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>")}
+
+/* Iconify sizing + alignment */
+iconify-icon{display:inline-block;font-size:inherit}
+
+/* CTA tap target (min 48px) */
+.cta-step{min-height:48px}
+
+/* Section-label enhancement */
+.label-row{display:flex;align-items:center;gap:10px;margin-bottom:8px}
+.label-row iconify-icon{color:var(--blue);font-size:18px}
+.label-row .lbl-txt{font-family:var(--font-display);font-size:clamp(10px,1.1vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--blue)}
+
+/* Key insight icon */
+.key-insight{position:relative}
+.key-insight .ki-icon{position:absolute;top:clamp(14px,2vw,20px);right:clamp(16px,2vw,24px);color:var(--navy);opacity:.18;font-size:36px}
+
+.slide{min-height:100dvh;width:100vw;overflow:hidden;scroll-snap-align:start;display:flex;flex-direction:column;justify-content:center;align-items:center;padding:clamp(2rem,5vw,5rem);position:relative}
+.slide-inner{width:100%;max-width:960px}
+
+.nav-dots{position:fixed;right:clamp(14px,2vw,28px);top:50%;transform:translateY(-50%);z-index:100;display:flex;flex-direction:column;gap:10px}
+.nav-dots a{width:8px;height:8px;border-radius:50%;background:var(--border);display:block;transition:all .3s ease}
+.nav-dots a:hover,.nav-dots a.active{background:var(--blue);transform:scale(1.5);box-shadow:0 0 8px rgba(59,125,216,.5)}
+.confidential{position:absolute;bottom:clamp(14px,2vw,28px);left:clamp(24px,3vw,40px);font-family:var(--font-display);font-size:10px;color:var(--ink-mute);letter-spacing:.15em;text-transform:uppercase}
+
+.rv{opacity:0;transform:translateY(24px);transition:opacity .65s cubic-bezier(.16,1,.3,1),transform .65s cubic-bezier(.16,1,.3,1)}
+.rv.visible{opacity:1;transform:translateY(0)}
+.rv-d1{transition-delay:.1s}.rv-d2{transition-delay:.2s}.rv-d3{transition-delay:.3s}
+.rv-d4{transition-delay:.4s}.rv-d5{transition-delay:.5s}.rv-d6{transition-delay:.6s}
+.rv-scale{opacity:0;transform:scale(.92);transition:opacity .6s cubic-bezier(.16,1,.3,1),transform .6s cubic-bezier(.16,1,.3,1)}
+.rv-scale.visible{opacity:1;transform:scale(1)}
+
+h1,h2,h3{font-family:var(--font-display);word-break:keep-all;text-wrap:balance}
+h1{font-weight:800;line-height:1.15;letter-spacing:-.02em}
+h2{font-weight:700;line-height:1.25;letter-spacing:-.015em}
+p,li{line-height:1.75;word-break:keep-all}
+.label{font-family:var(--font-display);font-size:clamp(10px,1.1vw,12px);font-weight:700;text-transform:uppercase;letter-spacing:.18em;color:var(--blue);margin-bottom:8px}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:32px;height:32px;border-radius:50%;background:var(--navy);color:#fff;font-family:var(--font-display);font-size:14px;font-weight:700;margin-right:10px}
+.exhibit{font-family:var(--font-display);font-size:11px;color:var(--ink-mute);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px}
+.double-line{border:none;border-top:3px double var(--navy);margin:clamp(12px,1.5vh,18px) 0}
+
+.kpi-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,20px);margin-top:clamp(20px,3vh,36px)}
+.kpi-card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(16px,2vw,24px);text-align:center;position:relative;overflow:hidden}
+.kpi-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px}
+.kpi-card:nth-child(1)::before{background:var(--blue)}
+.kpi-card:nth-child(2)::before{background:var(--orange)}
+.kpi-card:nth-child(3)::before{background:var(--green)}
+.kpi-card .num{font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:800;line-height:1.1;color:var(--navy)}
+.kpi-card .unit{font-size:clamp(14px,1.5vw,18px);font-weight:600;color:var(--ink-sub)}
+.kpi-card .kpi-label{font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);margin-top:6px}
+
+.key-insight{border-left:4px solid var(--navy);background:var(--insight-bg);padding:clamp(14px,2vw,20px) clamp(16px,2vw,24px);border-radius:0 var(--radius) var(--radius) 0;margin-top:clamp(16px,2vh,24px)}
+.key-insight .ki-title{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.12em;color:var(--navy);margin-bottom:6px}
+
+.recommendation{background:var(--navy);color:#fff;padding:clamp(20px,3vw,32px);border-radius:var(--radius);margin-top:clamp(16px,2vh,24px);position:relative;overflow:hidden}
+.recommendation::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at top right,rgba(90,155,240,.18),transparent 60%);pointer-events:none}
+.recommendation .rec-title{font-family:var(--font-display);font-size:12px;font-weight:700;letter-spacing:.15em;margin-bottom:12px;opacity:.7;display:flex;align-items:center;gap:8px;position:relative;z-index:1}
+.recommendation .rec-title iconify-icon{font-size:16px;opacity:1;color:var(--blue-light)}
+.recommendation > *{position:relative;z-index:1}
+.recommendation li{color:rgba(255,255,255,.9);margin-bottom:8px}
+
+.data-table{width:100%;border-collapse:collapse;font-size:clamp(12px,1.2vw,14px);margin-top:8px}
+.data-table thead th{background:var(--navy);color:#fff;padding:10px 14px;text-align:left;font-weight:600;font-size:clamp(11px,1.1vw,13px)}
+.data-table tbody td{padding:10px 14px;border-bottom:1px solid var(--border)}
+.data-table tbody tr:nth-child(even){background:#F9FAFB}
+.data-table .highlight-row{background:rgba(59,125,216,.06);font-weight:600}
+.data-table .total-row{background:var(--navy);color:#fff;font-weight:700}
+.data-table .total-row td{border-bottom:none}
+
+.metric-row{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.5vw,16px);margin:clamp(16px,2vh,24px) 0}
+.metric-item{text-align:center;padding:clamp(12px,1.5vw,18px);background:var(--surface-alt);border-radius:var(--radius);border:1px solid var(--border)}
+.metric-item .m-num{font-family:var(--font-display);font-size:clamp(22px,2.8vw,32px);font-weight:800;color:var(--navy)}
+.metric-item .m-label{font-size:clamp(10px,1vw,12px);color:var(--ink-mute);margin-top:4px}
+
+.roadmap{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(8px,1.2vw,14px);margin-top:clamp(12px,2vh,20px)}
+.phase-card{padding:clamp(14px,1.5vw,20px);border-radius:var(--radius);border:1px solid var(--border);position:relative;background:var(--surface)}
+.phase-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;border-radius:var(--radius) var(--radius) 0 0}
+.phase-card:nth-child(1)::before{background:var(--blue)}
+.phase-card:nth-child(2)::before{background:var(--blue-light)}
+.phase-card:nth-child(3)::before{background:var(--orange)}
+.phase-card:nth-child(4)::before{background:var(--green)}
+.phase-card .ph-num{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--ink-mute);letter-spacing:.1em}
+.phase-card .ph-title{font-weight:700;font-size:clamp(13px,1.3vw,15px);margin:4px 0;color:var(--navy)}
+.phase-card .ph-goal{font-family:var(--font-display);font-size:clamp(18px,2vw,24px);font-weight:800;color:var(--navy)}
+.phase-card .ph-detail{font-size:clamp(11px,1vw,12px);color:var(--ink-sub);margin-top:6px;line-height:1.5}
+
+/* Roadmap v3 — minimal horizontal progression */
+.roadmap-v3{position:relative;margin-top:clamp(28px,4vh,48px);padding-top:20px}
+.roadmap-v3::before{content:'';position:absolute;top:48px;left:calc(12.5% + 10px);right:calc(12.5% + 10px);height:1px;background:var(--border);z-index:0}
+.roadmap-v3-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(14px,2vw,28px);position:relative;z-index:1}
+.stage-v3{text-align:center;display:flex;flex-direction:column;align-items:center;padding:0 clamp(4px,0.5vw,10px)}
+.stage-num{width:56px;height:56px;border-radius:50%;background:var(--surface);border:2px solid var(--border);display:flex;align-items:center;justify-content:center;font-family:var(--font-display);font-size:22px;font-weight:800;color:var(--ink-mute);margin-bottom:18px;transition:all .3s ease}
+.stage-v3:hover .stage-num{border-color:var(--navy);color:var(--navy)}
+.stage-v3.key .stage-num{border-color:var(--orange);color:#fff;background:var(--orange);box-shadow:0 6px 20px rgba(232,113,43,.25)}
+.stage-when-v3{font-family:var(--font-display);font-size:clamp(10px,1vw,12px);font-weight:600;letter-spacing:.1em;color:var(--ink-mute);text-transform:uppercase;margin-bottom:6px}
+.stage-name-v3{font-family:var(--font-display);font-size:clamp(13px,1.3vw,15px);font-weight:700;color:var(--navy);margin-bottom:14px;letter-spacing:-.01em}
+.stage-v3.key .stage-name-v3{color:var(--orange)}
+.stage-rev-v3{font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);font-weight:900;color:var(--navy);letter-spacing:-.02em;line-height:1;margin-bottom:10px}
+.stage-v3.key .stage-rev-v3{color:var(--orange)}
+.stage-rev-v3 .unit{font-size:.6em;font-weight:700;color:var(--ink-sub);margin-left:2px}
+.stage-v3.key .stage-rev-v3 .unit{color:var(--orange);opacity:.75}
+.stage-desc-v3{font-size:clamp(12px,1.1vw,13px);color:var(--ink-sub);line-height:1.55;max-width:190px}
+.stage-badge-v3{display:inline-block;font-family:var(--font-display);font-size:9.5px;font-weight:700;letter-spacing:.1em;padding:3px 10px;border-radius:999px;background:var(--orange-dim);color:var(--orange);margin-top:10px;text-transform:uppercase}
+@media(max-width:768px){
+  .roadmap-v3::before{display:none}
+  .roadmap-v3-grid{grid-template-columns:1fr;gap:28px}
+  .stage-desc-v3{max-width:none}
+}
+
+.node-diagram{display:flex;align-items:center;justify-content:center;gap:0;margin:clamp(16px,2vh,24px) 0;flex-wrap:wrap}
+.node{padding:clamp(10px,1.2vw,16px) clamp(14px,1.5vw,20px);border-radius:var(--radius);text-align:center;font-size:clamp(12px,1.2vw,14px);font-weight:600;min-width:120px}
+.node-center{background:var(--navy);color:#fff;font-size:clamp(14px,1.4vw,16px);z-index:1}
+.node-adjacent{background:var(--surface);border:2px solid var(--blue);color:var(--navy)}
+.node-arrow{font-size:20px;color:var(--blue);padding:0 4px}
+
+.benefit-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.benefit-card{padding:clamp(16px,2vw,24px);border-radius:var(--radius);border:1px solid var(--border);background:var(--surface)}
+.benefit-card .bc-icon{font-size:28px;margin-bottom:8px}
+.benefit-card .bc-title{font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--navy);margin-bottom:4px}
+.benefit-card .bc-desc{font-size:clamp(12px,1.2vw,13px);color:var(--ink-sub);line-height:1.6}
+
+.strategy-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.strategy-card{padding:clamp(16px,2vw,24px);border-radius:var(--radius);border:1px solid var(--border);background:var(--surface)}
+.strategy-card .sc-num{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--ink-mute);letter-spacing:.1em;margin-bottom:4px}
+.strategy-card .sc-title{font-family:var(--font-display);font-weight:700;font-size:clamp(15px,1.5vw,18px);color:var(--navy);margin-bottom:8px}
+.strategy-card ul{list-style:none;padding:0}
+.strategy-card ul li{font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);padding:4px 0;line-height:1.5}
+.strategy-card ul li::before{content:'→ ';color:var(--blue);font-weight:700}
+
+.cap-row{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.cap-card{text-align:center;padding:clamp(20px,2.5vw,32px);border-radius:var(--radius);background:var(--surface-alt);border:1px solid var(--border)}
+.cap-card .cap-num{font-family:var(--font-display);font-size:clamp(28px,3.5vw,42px);font-weight:800;color:var(--navy)}
+.cap-card .cap-label{font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);margin-top:4px}
+.cap-card .cap-desc{font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);margin-top:8px;line-height:1.5}
+
+.tools-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.2vw,14px);margin-top:clamp(14px,2vh,20px)}
+.tool-card{padding:clamp(14px,1.6vw,20px);border-radius:var(--radius);border:1px solid var(--border);background:var(--surface);text-align:center}
+.tool-card .t-name{font-family:var(--font-display);font-weight:700;font-size:clamp(12px,1.2vw,14px);color:var(--navy);margin-bottom:6px}
+.tool-card .t-desc{font-size:clamp(10px,1vw,12px);color:var(--ink-sub);line-height:1.5}
+.tool-card .t-tag{font-size:10px;font-weight:700;letter-spacing:.08em;color:var(--green);margin-top:8px;text-transform:uppercase}
+
+.compare-split{display:grid;grid-template-columns:1fr 1fr;gap:0;border-radius:var(--radius);overflow:hidden;margin-top:clamp(14px,2vh,20px);border:1px solid var(--border)}
+.compare-side{padding:clamp(18px,2.5vw,28px)}
+.compare-side.bad{background:var(--red-dim);border-right:1px solid var(--border)}
+.compare-side.good{background:var(--green-dim)}
+.compare-side .cs-tag{font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
+.compare-side.bad .cs-tag{color:var(--red)}
+.compare-side.good .cs-tag{color:var(--green)}
+.compare-side h3{font-size:clamp(16px,1.8vw,20px);margin-bottom:14px;color:var(--navy)}
+.compare-side ul{list-style:none;padding:0}
+.compare-side ul li{font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);padding:6px 0 6px 18px;position:relative;line-height:1.6}
+.compare-side.bad ul li::before{content:'−';color:var(--red);font-weight:700;position:absolute;left:0}
+.compare-side.good ul li::before{content:'+';color:var(--green);font-weight:700;position:absolute;left:0}
+
+.risk-stack{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.risk-card{padding:clamp(16px,2vw,24px);border-radius:var(--radius);background:var(--surface);border:1px solid var(--border);border-top:4px solid var(--red)}
+.risk-card .rc-num{font-family:var(--font-display);font-size:11px;font-weight:700;color:var(--red);letter-spacing:.12em;margin-bottom:6px;text-transform:uppercase}
+.risk-card .rc-title{font-family:var(--font-display);font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--navy);margin-bottom:8px}
+.risk-card .rc-desc{font-size:clamp(11px,1.1vw,13px);color:var(--ink-sub);line-height:1.6}
+
+.ref-card-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:clamp(12px,1.5vw,18px);margin-top:clamp(14px,2vh,20px)}
+.ref-card{padding:clamp(16px,2vw,24px);border-radius:var(--radius);border:1px solid var(--border);background:var(--surface)}
+.ref-card.hero{background:var(--navy);color:#fff;border-color:var(--navy)}
+.ref-card .rc-tag{display:inline-block;font-family:var(--font-display);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:3px 10px;border-radius:999px;background:var(--surface-alt);color:var(--ink-mute);margin-bottom:12px}
+.ref-card.hero .rc-tag{background:rgba(255,255,255,.12);color:rgba(255,255,255,.7)}
+.ref-card h3{font-size:clamp(16px,1.6vw,20px);margin-bottom:4px}
+.ref-card.hero h3{color:#fff}
+.ref-card h4{font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);font-weight:500;margin-bottom:12px}
+.ref-card.hero h4{color:rgba(255,255,255,.6)}
+.ref-card p{font-size:clamp(12px,1.2vw,14px);line-height:1.65;color:var(--ink-sub)}
+.ref-card.hero p{color:rgba(255,255,255,.85)}
+.ref-card p + p{margin-top:8px}
+
+.cta-timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,1.5vw,18px);margin-top:clamp(16px,2vh,24px)}
+.cta-step{padding:clamp(18px,2.2vw,26px);border-radius:var(--radius);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14)}
+.cta-step .when{font-family:var(--font-display);font-size:12px;font-weight:700;color:var(--blue-light);letter-spacing:.1em;margin-bottom:8px}
+.cta-step h4{font-size:clamp(14px,1.4vw,16px);color:#fff;margin-bottom:6px}
+.cta-step p{font-size:clamp(11px,1.1vw,13px);line-height:1.6;color:rgba(255,255,255,.78)}
+.cta-step .tag-mini{display:inline-block;margin-top:8px;font-size:10px;font-weight:700;color:#FFC857;letter-spacing:.06em;text-transform:uppercase;background:rgba(255,200,87,.12);padding:3px 8px;border-radius:999px}
+
+.slide-counter{position:fixed;bottom:clamp(14px,2vw,28px);right:clamp(14px,2vw,28px);font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);z-index:100;background:rgba(255,255,255,.85);padding:5px 14px;border-radius:20px;backdrop-filter:blur(12px);border:1px solid var(--border);font-variant-numeric:tabular-nums}
+
+.mobile-banner{display:none;position:fixed;top:0;left:0;right:0;z-index:9999;background:var(--navy);color:#fff;text-align:center;padding:12px 16px;font-size:14px;font-family:var(--font-display);letter-spacing:.02em}
+.mobile-banner a{color:var(--blue-light);text-decoration:underline;margin-left:4px;cursor:pointer}
+
+@media(max-width:768px){
+  .kpi-row,.metric-row{grid-template-columns:1fr}
+  .roadmap,.benefit-grid,.growth-timeline,.strategy-grid,.cap-row,.risk-stack,.ref-card-grid,.cta-timeline{grid-template-columns:1fr}
+  .tools-grid{grid-template-columns:repeat(2,1fr)}
+  .data-table{font-size:11px}
+  .node-diagram{flex-direction:column}
+  .compare-split{grid-template-columns:1fr}
+  .compare-side.bad{border-right:none;border-bottom:1px solid var(--border)}
+  .mobile-banner{display:block}
+  .nav-dots,.slide-counter{display:none}
+}
+@media(prefers-reduced-motion:reduce){
+  .rv,.rv-scale{transition:none;opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<div class="mobile-banner">
+  이 제안서는 PC 또는 태블릿에서 가장 편하게 보실 수 있습니다.
+  <a onclick="this.parentElement.style.display='none'">닫기</a>
+</div>
+
+<div class="slide-counter" id="slideCounter">1 / 14</div>
+
+<nav class="nav-dots" aria-label="슬라이드 네비게이션">
+  <a href="#s1" title="표지"></a>
+  <a href="#s2" title="두 채널 현황"></a>
+  <a href="#s3" title="새로 가져올 시장"></a>
+  <a href="#s4" title="시장 규모 상세"></a>
+  <a href="#s5" title="경쟁 구도"></a>
+  <a href="#s6" title="판매 시나리오"></a>
+  <a href="#s7" title="Type 3 판매대행"></a>
+  <a href="#s8" title="실행 로드맵"></a>
+  <a href="#s9" title="OSC 도구 8종"></a>
+  <a href="#s10" title="Type 4 운영대행"></a>
+  <a href="#s11" title="쿠팡 1P vs OSC"></a>
+  <a href="#s12" title="1P 장기 리스크"></a>
+  <a href="#s13" title="OSC 역량"></a>
+  <a href="#s14" title="시작하기"></a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════
+     S1 · 표지
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s1" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%);position:relative">
+  <div class="grain"></div>
+  <div class="slide-inner" style="color:#fff;position:relative;z-index:2">
+    <div class="rv visible">
+      <p style="font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:clamp(10px,2vh,20px);display:flex;align-items:center;gap:10px"><iconify-icon icon="solar:chart-square-bold" style="color:var(--blue-light);font-size:18px"></iconify-icon>Market Sizing & Sales Strategy</p>
+      <h1 style="font-size:clamp(32px,4.5vw,56px);color:#fff;margin-bottom:clamp(8px,1.5vh,16px)">
+        아원푸드 · 냉동 간편식<br>
+        <span style="color:var(--blue-light)">쿠팡 판매전략 제안서</span>
+      </h1>
+      <p style="font-size:clamp(14px,1.5vw,18px);color:rgba(255,255,255,.65);max-width:640px;margin-bottom:8px">
+        쿠팡 오돌뼈 · 무뼈닭발 · 양념쭈꾸미/오징어/낙지 시장 수요 예측 & 판매 전략
+      </p>
+      <p style="font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.5);font-style:italic;max-width:640px">
+        "네이버 리뷰 9,862개·별점 4.83 — 대표님이 이미 증명하신 제품력,<br>쿠팡에서도 같은 결과를 재현합니다."
+      </p>
+    </div>
+
+    <div class="kpi-row rv rv-d2 visible">
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--blue-light)">102.9</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--blue-light);opacity:.7">억</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">3개 키워드 합산 TAM</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(36px,4.5vw,54px);font-weight:800;color:var(--orange)">74.6</span><span style="font-size:clamp(20px,2.2vw,28px);font-weight:700;color:var(--orange);opacity:.7">%</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">잔여시장 (주인 없는 공간)</div>
+      </div>
+      <div class="kpi-card" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.1)">
+        <div style="font-family:var(--font-display);line-height:1.1"><span style="font-size:clamp(28px,3vw,40px);font-weight:800;color:var(--green)">9,862</span><span style="font-size:clamp(18px,2vw,26px);font-weight:700;color:var(--green);opacity:.7"> · 4.83</span></div>
+        <div class="kpi-label" style="color:rgba(255,255,255,.5)">네이버 리뷰 · 별점 (검증됨)</div>
+      </div>
+    </div>
+
+    <div class="rv rv-d3 visible" style="margin-top:clamp(24px,4vh,40px);display:flex;align-items:center;gap:10px">
+      <iconify-icon icon="solar:verified-check-bold-duotone" style="color:var(--blue-light);font-size:20px"></iconify-icon>
+      <p style="font-size:clamp(14px,1.4vw,17px);font-weight:600;color:rgba(255,255,255,.6);margin:0">주식회사 오에스씨 (OSC) · 쿠팡 광고 파트너</p>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S2 · 현황 진단
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s2">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">①</span><h2 style="font-size:clamp(22px,2.8vw,32px)">두 채널 현황</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">네이버에서 쌓으신 자산을 쿠팡에서도 그대로 활용할 수 있는 시점입니다</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1" style="margin-top:clamp(12px,2vh,20px)">
+      <div class="compare-split">
+        <div class="compare-side good">
+          <div class="cs-tag">네이버 스마트스토어</div>
+          <h3>리뷰 9,862개 · 별점 4.83</h3>
+          <ul>
+            <li>수천 명의 실사용자가 남긴 검증 완료</li>
+            <li>다수의 긍정 리뷰 — 맛 · 편의성 반복 언급</li>
+            <li>전자레인지·후라이팬 이중 조리 가능 USP</li>
+            <li>쿠팡에 그대로 가져가실 수 있는 자산</li>
+          </ul>
+        </div>
+        <div class="compare-side bad">
+          <div class="cs-tag">쿠팡</div>
+          <h3>채널 진입 대기 상태</h3>
+          <ul>
+            <li>상품은 등록되어 있으나 운영 세팅 전</li>
+            <li>상세페이지·광고·리뷰 등 채널 세팅 필요</li>
+            <li>검색·노출 알고리즘 진입 아직 전</li>
+            <li>한 번 점화하면 네이버 자산이 즉시 작동</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="key-insight">
+        <iconify-icon class="ki-icon" icon="solar:lightbulb-bold-duotone"></iconify-icon>
+        <div class="ki-title">KEY INSIGHT</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink)">
+          네이버 리뷰 9,862개·별점 4.83은 <strong>쿠팡으로 옮겨서도 그대로 작동할 수 있는 자산</strong>입니다. 쿠팡 채널 세팅을 시작하시면 이 제품력이 즉시 작동 기준점이 되어, 신규 브랜드 대비 초기 구간을 훨씬 빠르게 통과하실 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S3 · 기회 손실
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s3">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">②</span><h2 style="font-size:clamp(22px,2.8vw,32px)">쿠팡에서 새로 가져오실 수 있는 시장</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">3개 키워드 합산 연 102.9억 · 월 6.3억이 리더 없이 열려 있습니다</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="metric-row">
+        <div class="metric-item"><div class="m-num">67.4억</div><div class="m-label">무뼈닭발 연 시장</div></div>
+        <div class="metric-item"><div class="m-num">30.0억</div><div class="m-label">양념쭈꾸미/오징어/낙지</div></div>
+        <div class="metric-item"><div class="m-num">5.5억</div><div class="m-label">오돌뼈 (대표님 주력)</div></div>
+        <div class="metric-item" style="background:var(--navy);border-color:var(--navy)"><div class="m-num" style="color:#fff">102.9억</div><div class="m-label" style="color:rgba(255,255,255,.65)">합산 TAM (연간)</div></div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2">
+      <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub);margin-top:clamp(10px,1.5vh,16px);line-height:1.8">
+        3개 핵심 키워드의 쿠팡 내 연간 시장 매출을 <strong>OSC 쿠팡 광고 파트너 데이터</strong>로 산출한 결과입니다. 월 평균 <strong>8.5억</strong> 규모의 카테고리 수요가 매일 발생 중이며, 그중 <strong>74.6% (월 약 6.3억)</strong>가 절대 리더 없이 열려 있는 공간입니다. 지금 진입하시면 이 공간에서 유의미한 점유를 새로 확보하실 수 있습니다.
+      </p>
+    </div>
+
+    <div class="rv rv-d3">
+      <div class="key-insight">
+        <iconify-icon class="ki-icon" icon="solar:lightbulb-bold-duotone"></iconify-icon>
+        <div class="ki-title">KEY INSIGHT · 3개 키워드의 서로 다른 기회</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.75">
+          <strong>무뼈닭발(67.4억)</strong>은 주력 오돌뼈보다 12배 큰 시장이 병렬로 열려 있어 <strong>매출 볼륨 확장</strong>에 결정적입니다. <strong>오돌뼈</strong>는 객단가 51,900원으로 <strong>단위 매출 수익성</strong>에 유리합니다. <strong>양념쭈꾸미류</strong>는 잔여시장 86.2%로 <strong>진입 장벽이 가장 낮은 블루오션</strong>입니다. 세 키워드가 서로 다른 각도로 매출에 기여하는 구조입니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="rv rv-d4" style="margin-top:10px"><p class="exhibit">출처: OSC 쿠팡 내부 데이터 (2026년 4월, 전환율 20% 기준) · OSC 쿠팡 광고 파트너</p></div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S4 · 시장 규모 상세
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s4">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">③</span><h2 style="font-size:clamp(22px,2.8vw,32px)">시장 규모 상세 분석</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">3개 키워드 수요 퍼널 · 객단가 · 광고비율</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <p class="exhibit">EXHIBIT | 수요 퍼널 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: OSC 쿠팡 광고 파트너 내부 데이터</span></p>
+      <table class="data-table">
+        <thead><tr><th>키워드</th><th>연간 클릭</th><th>객단가</th><th>광고비율</th><th>연간시장매출</th></tr></thead>
+        <tbody>
+          <tr><td><strong>무뼈닭발</strong></td><td>1,306,400</td><td>25,800원</td><td>45.9%</td><td><strong>67.4억</strong></td></tr>
+          <tr><td><strong>양념쭈꾸미/오징어/낙지</strong></td><td>499,400</td><td>30,000원</td><td>32.0%</td><td><strong>30.0억</strong></td></tr>
+          <tr><td><strong>오돌뼈</strong> (대표님 주력)</td><td>53,200</td><td style="color:var(--orange);font-weight:700">51,900원</td><td>43.0%</td><td>5.5억</td></tr>
+          <tr class="total-row"><td>합산</td><td>1,859,000</td><td>—</td><td>평균 40.3%</td><td>102.9억</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="key-insight">
+        <div class="ki-title">KEY INSIGHT · 3개 키워드, 3가지 확장 레버</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.75">
+          ① <strong>무뼈닭발(67.4억)</strong> — 주력 오돌뼈보다 12배 큰 시장이 옆에 열려 있어, <strong>매출 볼륨의 축</strong>으로 쓰실 수 있습니다.<br>
+          ② <strong>오돌뼈 객단가 51,900원</strong> — 단위 매출로 <strong>수익성 축</strong>을 잡아주십니다.<br>
+          ③ <strong>양념쭈꾸미/오징어/낙지</strong> — 다음 페이지에서 보실 <strong>가장 빠르게 진입 가능한 축</strong>입니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S5 · 경쟁 구도
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s5">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">④</span><h2 style="font-size:clamp(22px,2.8vw,32px)">경쟁 구도 — 분산형 시장</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">3개 키워드 모두 절대 1위 없음 · 평균 잔여시장 74.6%</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <p class="exhibit">EXHIBIT | TOP3 집중도 & 잔여시장</p>
+      <table class="data-table">
+        <thead><tr><th>키워드</th><th>1위 브랜드</th><th>1위 점유</th><th>TOP3 집중</th><th>잔여시장</th></tr></thead>
+        <tbody>
+          <tr><td><strong>무뼈닭발</strong></td><td>팍팜</td><td>13.1%</td><td>35.0%</td><td><strong>65.0%</strong></td></tr>
+          <tr class="highlight-row"><td><strong>양념쭈꾸미/오징어/낙지</strong></td><td>홍익상회</td><td>4.7%</td><td style="color:var(--green);font-weight:700;white-space:nowrap">13.8% <iconify-icon icon="solar:verified-check-bold" style="vertical-align:-0.15em;color:var(--green)"></iconify-icon></td><td style="color:var(--green);font-weight:700;white-space:nowrap">86.2% <iconify-icon icon="solar:verified-check-bold" style="vertical-align:-0.15em;color:var(--green)"></iconify-icon></td></tr>
+          <tr><td><strong>오돌뼈</strong></td><td>디에스미트</td><td>10.1%</td><td>27.5%</td><td><strong>72.5%</strong></td></tr>
+          <tr class="total-row"><td>평균</td><td>—</td><td>—</td><td>25.4%</td><td>74.6%</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="key-insight">
+        <iconify-icon class="ki-icon" icon="solar:lightbulb-bold-duotone"></iconify-icon>
+        <div class="ki-title">KEY INSIGHT · 가장 넓은 진입 공간</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.75">
+          1위 점유가 가장 높은 무뼈닭발도 <strong>13.1%</strong>에 불과하고, 양념쭈꾸미류는 <strong>86.2%가 TOP3 바깥</strong> — 가장 파편화된 블루오션입니다. 평균 잔여시장 <strong>74.6%</strong> — 지금 진입하시는 브랜드가 <strong>의미 있는 점유를 직접 설계해 가져갈 수 있는 공간</strong>입니다.
+        </p>
+      </div>
+    </div>
+
+    <div class="rv rv-d3" style="margin-top:clamp(8px,1.2vh,14px)">
+      <p style="font-size:clamp(11px,1.1vw,12px);color:var(--ink-mute);line-height:1.6">
+        <strong>제외 카테고리</strong>: 생오징어·생쭈꾸미 등 미조리 원물, 일반 닭발(뼈 있는), 타 단백질(소·돼지) 안주 제품 — 귀사 SKU 특성과 무관한 카테고리는 TAM에서 제외하여 분석 정밀도를 확보했습니다.
+      </p>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S6 · 판매 시나리오
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s6">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑤</span><h2 style="font-size:clamp(22px,2.8vw,32px)">판매 시나리오</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">네이버 대비 1.5~4배 · 점유율별 월매출 시뮬레이션</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="roadmap">
+        <div class="phase-card">
+          <div class="ph-num">시나리오 1 — 보수</div>
+          <div class="ph-title">1% 평균 점유</div>
+          <div class="ph-goal">월 858만</div>
+          <div class="ph-detail">네이버 대비 1.5배</div>
+        </div>
+        <div class="phase-card" style="background:var(--blue-dim);border-color:var(--blue)">
+          <div class="ph-num" style="color:var(--blue);display:flex;align-items:center;gap:6px">시나리오 2 — 기본 <iconify-icon icon="solar:star-bold" style="color:var(--blue);font-size:14px"></iconify-icon></div>
+          <div class="ph-title">3% 평균 점유</div>
+          <div class="ph-goal" style="color:var(--blue)">월 2,572만</div>
+          <div class="ph-detail"><strong>네이버 대비 2.5배 — 클라이언트 목표 매칭</strong></div>
+        </div>
+        <div class="phase-card">
+          <div class="ph-num">시나리오 3 — 공격</div>
+          <div class="ph-title">5% 평균 점유</div>
+          <div class="ph-goal">월 4,289만</div>
+          <div class="ph-detail">네이버 대비 4배 (18개월 시점 최대치)</div>
+        </div>
+        <div class="phase-card" style="background:var(--navy);border-color:var(--navy)">
+          <div class="ph-num" style="color:rgba(255,255,255,.6)">근거</div>
+          <div class="ph-title" style="color:#fff">달성 가능 이유</div>
+          <div class="ph-detail" style="color:rgba(255,255,255,.82)">① 잔여시장 74.6% 넓음 ② 네이버 리뷰 9,862 = 제품력 증명 ③ OSC 도구 8종 (S9)</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2" style="margin-top:clamp(14px,2vh,22px)">
+      <p class="exhibit">EXHIBIT | 키워드별 세부 시뮬레이션</p>
+      <table class="data-table">
+        <thead><tr><th>키워드</th><th>1% 월매출</th><th style="white-space:nowrap">3% 월매출 <iconify-icon icon="solar:star-bold" style="vertical-align:-0.1em;color:#FFD700"></iconify-icon></th><th>5% 월매출</th></tr></thead>
+        <tbody>
+          <tr><td><strong>무뼈닭발</strong></td><td>562만</td><td>1,685만</td><td>2,809만</td></tr>
+          <tr><td><strong>양념쭈꾸미/오징어/낙지</strong></td><td>250만</td><td>749만</td><td>1,249만</td></tr>
+          <tr><td><strong>오돌뼈</strong></td><td>46만</td><td>138만</td><td>230만</td></tr>
+          <tr class="total-row"><td>합산</td><td>858만</td><td>2,572만</td><td>4,289만</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rv rv-d3">
+      <div class="key-insight">
+        <div class="ki-title">달성 근거</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink)">
+          공격 시나리오(5% 점유)는 1위 팍팜(13.1%)의 절반도 안 되는 수준입니다. 3~4단계(D+180 이후) 최대치 기준이며, 잔여시장 74.6%와 제품력 검증을 고려할 때 OSC 레퍼런스 상위권이 달성한 궤적과 일치합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S7 · Type 3 판매대행
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s7">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑥</span><h2 style="font-size:clamp(22px,2.8vw,32px)">Type 3 판매대행</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">대표님은 생산·브랜드·네이버에만 집중하시고, 쿠팡은 OSC 팀이 맡아 매출을 보내드리는 구조입니다</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="compare-split">
+        <div class="compare-side good" style="background:var(--blue-dim);border-color:var(--blue)">
+          <div class="cs-tag" style="color:var(--blue)">아원푸드</div>
+          <h3>생산 · 브랜드 · 네이버 채널</h3>
+          <ul>
+            <li>제조 · 품질 관리</li>
+            <li>네이버 스마트스토어 자체 운영 유지</li>
+            <li>B2B 유통 라인 (포차·이자카야·캠핑장·펜션매점·PC방)</li>
+            <li>재고 · MOQ 협의</li>
+          </ul>
+        </div>
+        <div class="compare-side good" style="background:var(--navy);color:#fff;border-left:none">
+          <div class="cs-tag" style="color:var(--blue-light)">OSC</div>
+          <h3 style="color:#fff">쿠팡 채널 100% 운영 책임</h3>
+          <ul>
+            <li style="color:rgba(255,255,255,.9)">상세페이지 · 썸네일 · 옵션 리뉴얼</li>
+            <li style="color:rgba(255,255,255,.9)">키워드 광고 · 프로모션 기획·집행</li>
+            <li style="color:rgba(255,255,255,.9)">체험단 · 바이럴 · 인플루언서 · 공동구매</li>
+            <li style="color:rgba(255,255,255,.9)">CS · 재고 동기화 · 리뷰 관리</li>
+            <li style="color:rgba(255,255,255,.9)">정산 익월 15일 (쿠팡 1P 60일 대비 45일 단축)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2" style="margin-top:clamp(14px,2vh,20px)">
+      <div style="background:var(--surface-alt);border:1px solid var(--border);border-radius:var(--radius);padding:clamp(14px,1.8vw,20px)">
+        <p class="exhibit" style="margin-bottom:10px">용어 정의 — 헷갈리지 않도록</p>
+        <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);line-height:1.7;padding:4px 0">
+          <strong style="color:var(--navy)">Type 3 판매대행 (위탁 구조)</strong> — OSC가 아원푸드 상품을 위탁받아 OSC 쿠팡 계정에서 판매, 공급가 정산.
+        </p>
+        <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);line-height:1.7;padding:4px 0">
+          <strong style="color:var(--navy)">Type 4 운영대행 (계정 보유 구조)</strong> — 아원푸드 쿠팡 계정을 대표님이 보유, OSC가 운영만 대행, 수수료 수취.
+        </p>
+      </div>
+    </div>
+
+    <div class="rv rv-d3">
+      <div class="recommendation">
+        <div class="rec-title"><iconify-icon icon="solar:shield-check-bold-duotone"></iconify-icon>브랜드 자산 보호 조항 (계약서 명시)</div>
+        <p style="color:rgba(255,255,255,.9);font-size:clamp(12px,1.2vw,14px);line-height:1.7">
+          1~2단계(런칭·확산)는 OSC 계정으로 빠르게 매출·리뷰·순위 확보. <strong>3단계(스케일업)부터 아원푸드 자체 채널로 매출 30%를 전환</strong>해 귀사 계정에도 자산이 누적되도록 설계합니다. <strong style="color:var(--blue-light)">3단계 진입 시점은 아원푸드가 결정</strong>하시며, 계약서 브랜드 자산 조항에 명시됩니다. 이후 원하시면 운영대행(S10)으로 전환도 가능합니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S8 · 실행 로드맵
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s8">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑦</span><h2 style="font-size:clamp(22px,2.8vw,32px)">1~4단계 실행 로드맵</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">8개월+ 매출 곡선 설계 · 매월 발주가 아닌 능동 구조</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="roadmap-v3">
+        <div class="roadmap-v3-grid">
+          <div class="stage-v3">
+            <div class="stage-num">1</div>
+            <div class="stage-when-v3">D+30 ~ D+60</div>
+            <div class="stage-name-v3">런칭</div>
+            <div class="stage-rev-v3">500~1,000<span class="unit">만/월</span></div>
+            <div class="stage-desc-v3">상세·썸네일 리뉴얼, 체험단 100건, 키워드 광고 세팅</div>
+          </div>
+          <div class="stage-v3">
+            <div class="stage-num">2</div>
+            <div class="stage-when-v3">D+60 ~ D+120</div>
+            <div class="stage-name-v3">확산</div>
+            <div class="stage-rev-v3">1,000~2,000<span class="unit">만/월</span></div>
+            <div class="stage-desc-v3">블로그·카페 바이럴, 인플루언서, 리뷰 500건+</div>
+          </div>
+          <div class="stage-v3 key">
+            <div class="stage-num">3</div>
+            <div class="stage-when-v3">D+120 ~ D+180</div>
+            <div class="stage-name-v3">스케일업</div>
+            <div class="stage-rev-v3">2,500<span class="unit">만+/월</span></div>
+            <div class="stage-desc-v3">공동구매, SKU 확장, 브랜드 계정 30% 전환</div>
+            <span class="stage-badge-v3">목표 매칭</span>
+          </div>
+          <div class="stage-v3">
+            <div class="stage-num">4</div>
+            <div class="stage-when-v3">D+180 이후</div>
+            <div class="stage-name-v3">락인</div>
+            <div class="stage-rev-v3">2,500~4,000<span class="unit">만+/월</span></div>
+            <div class="stage-desc-v3">쿠팡 랭킹 고착, 네이버 대비 1.5~4배 안정 운영</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="key-insight">
+        <div class="ki-title">RECOMMENDATION</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.75">
+          각 단계별 매출 곡선은 OSC가 반복 검증해온 구조입니다. 쿠팡 1P처럼 "매월 발주 반복"이 아닌, <strong>단계별 매출 곡선을 역산 설계</strong>해 베스트셀러로 끌어올립니다. 대표님은 매 단계 시작 전 리포트로 진행 여부를 결정하실 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S9 · OSC 도구 8종
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s9">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑧</span><h2 style="font-size:clamp(22px,2.8vw,32px)">OSC 판매대행 8종 vs 쿠팡 1P 1종</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">도구 가짓수의 차이가 베스트셀러 진입 속도의 차이</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="tools-grid">
+        <div class="tool-card"><iconify-icon icon="solar:magnifer-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">키워드 광고</div><div class="t-desc">검색 노출·전환 최적화</div><div class="t-tag" style="color:var(--ink-mute)">1P도 있음 (비용 브랜드사)</div></div>
+        <div class="tool-card"><iconify-icon icon="solar:users-group-rounded-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">체험단 100건+</div><div class="t-desc">초기 리뷰·사회적 증거</div><div class="t-tag">OSC 전용</div></div>
+        <div class="tool-card"><iconify-icon icon="solar:document-text-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">블로그 바이럴</div><div class="t-desc">장기 SEO · 커뮤니티</div><div class="t-tag">OSC 전용</div></div>
+        <div class="tool-card"><iconify-icon icon="solar:chat-round-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">카페 바이럴</div><div class="t-desc">맘카페·요리카페 진입</div><div class="t-tag">OSC 전용</div></div>
+        <div class="tool-card"><iconify-icon icon="solar:videocamera-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">인플루언서 시딩</div><div class="t-desc">포차·캠핑·홈파티 컨텍스트</div><div class="t-tag">OSC 전용</div></div>
+        <div class="tool-card"><iconify-icon icon="solar:tag-price-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">공동구매 기획</div><div class="t-desc">피크 매출·신규 유입</div><div class="t-tag">OSC 전용</div></div>
+        <div class="tool-card"><iconify-icon icon="solar:pen-new-square-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">USP 재설계</div><div class="t-desc">상세페이지 전환율 최적화</div><div class="t-tag">OSC 전용</div></div>
+        <div class="tool-card"><iconify-icon icon="solar:palette-bold-duotone" style="color:var(--blue);font-size:26px;margin-bottom:8px"></iconify-icon><div class="t-name">상세페이지 리뉴얼</div><div class="t-desc">쿠팡 노출 알고리즘 친화</div><div class="t-tag">OSC 100% 제작</div></div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="key-insight">
+        <iconify-icon class="ki-icon" icon="solar:lightbulb-bold-duotone"></iconify-icon>
+        <div class="ki-title">KEY INSIGHT</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.75">
+          쿠팡 1P는 키워드 광고 1종만 제공하며 <strong>비용은 브랜드사 100%</strong> 부담입니다. OSC는 8종을 직접 가동하며 비용은 OSC가 부담 또는 분담합니다. <strong>베스트셀러 설계 팀</strong>과 <strong>수동 채널</strong>의 차이가 여기서 갈립니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S10 · Type 4 운영대행
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s10">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑨</span><h2 style="font-size:clamp(22px,2.8vw,32px)">Type 4 운영대행</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">쿠팡 계정·매출·고객 데이터를 처음부터 아원푸드가 직접 보유하면서, 운영만 OSC 팀에 맡기는 구조입니다</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="compare-split">
+        <div class="compare-side good" style="background:var(--blue-dim);border-color:var(--blue)">
+          <div class="cs-tag" style="color:var(--blue)">아원푸드가 처음부터 보유</div>
+          <h3>계정 · 매출 · 데이터 · 리뷰</h3>
+          <ul>
+            <li>쿠팡 셀러 계정 소유권 — 첫날부터 아원푸드</li>
+            <li>매출 — 아원푸드 통장 직접 입금</li>
+            <li>고객·리뷰·리스팅 데이터 — 100% 아원푸드 자산</li>
+            <li>향후 쿠팡 자체 운영 내재화 시 이관 과정 불필요</li>
+          </ul>
+        </div>
+        <div class="compare-side good" style="background:var(--navy);color:#fff;border-left:none">
+          <div class="cs-tag" style="color:var(--blue-light)">OSC 운영 전담</div>
+          <h3 style="color:#fff">Type 3와 동일한 8종 도구 가동</h3>
+          <ul>
+            <li style="color:rgba(255,255,255,.9)">상세페이지·썸네일·옵션 리뉴얼</li>
+            <li style="color:rgba(255,255,255,.9)">키워드 광고 · 프로모션 기획·집행</li>
+            <li style="color:rgba(255,255,255,.9)">체험단 · 바이럴 · 인플루언서 · 공동구매</li>
+            <li style="color:rgba(255,255,255,.9)">CS 응대 · 재고 동기화 · 리뷰 관리</li>
+            <li style="color:rgba(255,255,255,.9)">월 고정 운영비 + 매출 쉐어 구조 (조건 협의)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2">
+      <div class="key-insight">
+        <iconify-icon class="ki-icon" icon="solar:lightbulb-bold-duotone"></iconify-icon>
+        <div class="ki-title">두 모델은 같은 방향 · 시작 지점이 다릅니다</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.75">
+          <strong>쿠팡 진입 속도를 최우선</strong>하시고 브랜드 자산 전환은 단계적으로 가져가실 생각이면 <strong>Type 3 판매대행</strong>이 효율적입니다. <strong>계정·데이터 자산을 처음부터 아원푸드가 쥐고 있어야 하는 내재화 로드맵</strong>이 있으시면 <strong>Type 4 운영대행</strong>이 바로 맞는 구조입니다. 두 모델 모두 OSC가 동원하는 <strong>도구 8종(P9)은 동일</strong>하게 가동됩니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S11 · 쿠팡 1P vs OSC 비용
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s11">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑩</span><h2 style="font-size:clamp(22px,2.8vw,32px)">만약 쿠팡 1P를 검토하신다면</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">쿠팡 1P(로켓프레쉬) vs OSC 판매대행 · 같은 기준 비교</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <table class="data-table">
+        <thead><tr><th>항목</th><th>쿠팡 1P</th><th>OSC 판매대행</th></tr></thead>
+        <tbody>
+          <tr><td><strong>공급가 / 수수료</strong></td><td style="color:var(--red)">공급가 = 판매가 60% (수수료 40% 영구)</td><td style="color:var(--green)">공급가 정산 (별도 수수료 없음)</td></tr>
+          <tr><td><strong>정산 사이클</strong></td><td style="color:var(--red)">입고 후 60일</td><td style="color:var(--green)">익월 15일</td></tr>
+          <tr><td><strong>광고비</strong></td><td style="color:var(--red)">브랜드사 100%</td><td style="color:var(--green)">OSC 100%</td></tr>
+          <tr><td><strong>물류비</strong></td><td style="color:var(--red)">브랜드사 (매출 6.5%)</td><td>OSC 5 : 브랜드사 5</td></tr>
+          <tr><td><strong>체험단 단가</strong></td><td style="color:var(--red)">건당 125,000원 + 상품</td><td style="color:var(--green)">건당 5,000원 (50:50)</td></tr>
+          <tr><td><strong>프로모션 할인</strong></td><td style="color:var(--red)">브랜드사 100%</td><td style="color:var(--green)">OSC 기획·집행</td></tr>
+          <tr><td><strong>상세페이지</strong></td><td>브랜드사 실질 제작</td><td style="color:var(--green)">OSC 100% 제작</td></tr>
+          <tr><td><strong>재고 책임</strong></td><td>매입 (안 팔리면 발주 중단)</td><td style="color:var(--green)">OSC 위탁 (매출 = OSC 수익 조건)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rv rv-d2" style="margin-top:clamp(12px,1.5vh,18px)">
+      <p class="exhibit">시뮬레이션 | 판매가 30,000원 × 월 100건 기준</p>
+      <div class="compare-split">
+        <div class="compare-side bad">
+          <div class="cs-tag">쿠팡 1P · 월 95.5만</div>
+          <h3 style="color:var(--red);font-family:var(--font-display);font-size:clamp(24px,2.8vw,32px)">95.5만원</h3>
+          <ul style="font-size:clamp(11px,1.1vw,13px)">
+            <li>매출 180만 − 광고 50만 − 프로모션 15만</li>
+            <li>− 물류 19.5만 − 체험단 80.5만 (10명)</li>
+            <li>정산 입고 후 60일 → 현금흐름 락업</li>
+          </ul>
+        </div>
+        <div class="compare-side good">
+          <div class="cs-tag">OSC 판매대행 · 월 170.25만</div>
+          <h3 style="color:var(--green);font-family:var(--font-display);font-size:clamp(24px,2.8vw,32px)">170.25만원</h3>
+          <ul style="font-size:clamp(11px,1.1vw,13px)">
+            <li>매출 180만 − 물류 9.75만 − 체험단 83만 (100건)</li>
+            <li>광고·프로모션 0 (OSC 100% 부담)</li>
+            <li>정산 익월 15일 → 매월 안정 현금흐름</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d3">
+      <div class="recommendation">
+        <div class="rec-title"><iconify-icon icon="solar:wallet-money-bold-duotone"></iconify-icon>연 환산 실수익 차이</div>
+        <p style="color:#fff;font-size:clamp(18px,2vw,24px);font-weight:800;font-family:var(--font-display)">+897만원/년 (OSC 판매대행 우위)</p>
+        <p style="color:rgba(255,255,255,.7);font-size:clamp(11px,1.1vw,13px);margin-top:8px">쿠팡 1P는 체험단 제도 자체 없음 → 브랜드사 단독 외부 체험단 시장가 기준. 1단계 런칭 필수 비용만 반영.</p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S12 · 1P 장기 리스크
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s12">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑪</span><h2 style="font-size:clamp(22px,2.8vw,32px)">1P의 진짜 위험은 매출이 나기 시작한 이후</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">잘 팔린 다음부터 본격적으로 시작되는 3가지 리스크</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="risk-stack">
+        <div class="risk-card">
+          <iconify-icon icon="solar:graph-up-bold-duotone" style="color:var(--red);font-size:28px;margin-bottom:10px"></iconify-icon>
+          <div class="rc-num">Risk 1</div>
+          <div class="rc-title">매년 갱신 시 수수료 인상</div>
+          <div class="rc-desc">통상 1년 단위 갱신, 수수료 2~5%p 단계적 상승 사례 다수. 거부 시 발주 축소 또는 메인 구좌 미배정으로 대응.</div>
+        </div>
+        <div class="risk-card">
+          <iconify-icon icon="solar:dollar-bold-duotone" style="color:var(--red);font-size:28px;margin-bottom:10px"></iconify-icon>
+          <div class="rc-num">Risk 2</div>
+          <div class="rc-title">"성장 지원금" 광고비 각출</div>
+          <div class="rc-desc">잘 팔리는 상품일수록 "더 키우겠다" 명목으로 추가 분담금 요청. 표시된 수수료 외 숨은 비용 누적.</div>
+        </div>
+        <div class="risk-card">
+          <iconify-icon icon="solar:danger-triangle-bold-duotone" style="color:var(--red);font-size:28px;margin-bottom:10px"></iconify-icon>
+          <div class="rc-num">Risk 3 · 가장 치명적</div>
+          <div class="rc-title">쿠팡 PB로 카피 출시</div>
+          <div class="rc-desc">1P 매입 과정에서 쿠팡이 제조 정보·원가·패키지 사양 확보. 잘 팔리는 카테고리는 쿠팡 PB로 동일 출시 → 로켓 우선권 + 가격 경쟁력으로 원본 판매에 영향. 계약상 PB 금지 조항 없음.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2">
+      <p class="exhibit">EXHIBIT | OSC 판매대행은 3대 위험 구조적 미발생</p>
+      <table class="data-table">
+        <thead><tr><th>위험</th><th>쿠팡 1P</th><th>OSC 판매대행</th></tr></thead>
+        <tbody>
+          <tr><td>갱신 수수료 인상</td><td style="color:var(--red)">발생</td><td style="color:var(--green)">구조적 미발생 (마케팅 파트너, 매입자 아님)</td></tr>
+          <tr><td>성장 지원금 각출</td><td style="color:var(--red)">발생</td><td style="color:var(--green)">구조적 미발생 (OSC가 광고비 부담)</td></tr>
+          <tr><td>브랜드 PB 카피</td><td style="color:var(--red)">발생</td><td style="color:var(--green)">구조적 미발생 (OSC는 PB 사업자 아님)</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="rv rv-d3">
+      <div class="key-insight" style="border-left-color:var(--orange);background:var(--orange-dim)">
+        <div class="ki-title" style="color:var(--orange)">참고</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink)">
+          귀사 제품은 네이버 리뷰 <strong>9,862개 · 별점 4.83</strong>으로 이미 시장성이 증명된 제품입니다. 증명된 제품일수록 1P PB 카피 타겟이 될 가능성이 높습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S13 · OSC 역량 3카드 (간결)
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s13" style="background:linear-gradient(180deg,#F8FAFC 0%,#FFFFFF 100%)">
+  <div class="slide-inner">
+    <div class="rv">
+      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑫</span><h2 style="font-size:clamp(22px,2.8vw,32px)">OSC가 대표님께 드리는 것</h2></div>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">쿠팡 진입부터 베스트셀러까지, 세 가지 자산을 한 번에 가져가십니다</p>
+      <hr class="double-line">
+    </div>
+
+    <div class="rv rv-d1">
+      <div class="ref-card-grid">
+        <div class="ref-card hero">
+          <span class="rc-tag">쿠팡 광고 파트너</span>
+          <h3>시장 내부 데이터</h3>
+          <p>TAM 102.9억·잔여시장 74.6%·TOP3 집중도 — OSC가 직접 확보한 실제 쿠팡 데이터로 방향을 결정하십니다.</p>
+        </div>
+        <div class="ref-card">
+          <span class="rc-tag">베스트셀러 설계</span>
+          <h3>4단계 매출 곡선</h3>
+          <p>매월 발주가 아닌 8개월+ 매출 곡선을 역산 설계. 단계별 리포트로 대표님이 매 구간 판단하십니다.</p>
+        </div>
+        <div class="ref-card">
+          <span class="rc-tag">통합 실행 조직</span>
+          <h3>8종 도구 · 한 팀</h3>
+          <p>기획·카피·디자인·광고·체험단·CS 모두 OSC 인하우스. 외부 대행을 조율하실 필요가 없습니다.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2" style="margin-top:clamp(16px,2.5vh,28px)">
+      <div class="key-insight">
+        <iconify-icon class="ki-icon" icon="solar:lightbulb-bold-duotone"></iconify-icon>
+        <div class="ki-title">아원푸드에 특히 맞는 이유</div>
+        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink);line-height:1.7">
+          네이버 리뷰 <strong>9,862개·별점 4.83</strong>으로 제품력이 이미 검증되어 있어, 4단계 로드맵의 초기 리뷰 확보 구간을 <strong>신규 브랜드보다 빠르게 통과</strong>하실 수 있습니다.
+        </p>
+      </div>
+    </div>
+  </div>
+  <span class="confidential">CONFIDENTIAL</span>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     S14 · Closing — 표지형 CTA
+     ═══════════════════════════════════════════════════ -->
+<section class="slide" id="s14" style="background:linear-gradient(160deg,#0F1B33 0%,#1B2A4A 40%,#2A3F6A 100%);position:relative">
+  <div class="grain"></div>
+  <div class="slide-inner" style="color:#fff;position:relative;z-index:2;text-align:center">
+    <div class="rv visible">
+      <p style="font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);font-weight:600;letter-spacing:.2em;color:rgba(255,255,255,.5);text-transform:uppercase;margin-bottom:clamp(14px,2vh,24px)">Next Step</p>
+      <h1 style="font-size:clamp(36px,5vw,64px);color:#fff;line-height:1.15;margin-bottom:clamp(16px,2.5vh,28px)">
+        가볍게<br>
+        <span style="color:var(--blue-light)">1차 미팅 30분</span>부터
+      </h1>
+      <p style="font-size:clamp(15px,1.7vw,20px);color:rgba(255,255,255,.65);line-height:1.6;max-width:560px;margin:0 auto clamp(36px,5vh,56px)">
+        공급가는 지금 결정하지 않으셔도 됩니다.<br>시장 기회와 시나리오부터 함께 확인하시죠.
+      </p>
+    </div>
+
+    <div class="rv rv-d1 visible" style="display:flex;justify-content:center;gap:clamp(12px,2vw,32px);flex-wrap:wrap;margin-bottom:clamp(36px,5vh,56px)">
+      <div style="text-align:center;min-width:140px">
+        <div style="font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);font-weight:800;color:var(--blue-light);margin-bottom:4px">D+7</div>
+        <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.7)">1차 미팅 30분</div>
+      </div>
+      <div style="color:rgba(255,255,255,.25);font-size:24px;align-self:center">→</div>
+      <div style="text-align:center;min-width:140px">
+        <div style="font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);font-weight:800;color:var(--blue-light);margin-bottom:4px">D+14</div>
+        <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.7)">검토 후 공급가 협의</div>
+      </div>
+      <div style="color:rgba(255,255,255,.25);font-size:24px;align-self:center">→</div>
+      <div style="text-align:center;min-width:140px">
+        <div style="font-family:var(--font-display);font-size:clamp(20px,2.4vw,28px);font-weight:800;color:var(--blue-light);margin-bottom:4px">D+30</div>
+        <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.7)">OSC 쿠팡 리스팅</div>
+      </div>
+    </div>
+
+    <div class="rv rv-d2 visible">
+      <p style="font-family:var(--font-display);font-size:clamp(14px,1.5vw,18px);font-weight:600;color:#fff;margin-bottom:6px">주식회사 오에스씨 (OSC)</p>
+      <p style="font-size:clamp(11px,1.1vw,13px);color:rgba(255,255,255,.45);letter-spacing:.06em">쿠팡 광고 파트너 · 제안서 전달용 · 2026년 4월</p>
+    </div>
+  </div>
+  <span class="confidential" style="color:rgba(255,255,255,.25)">CONFIDENTIAL</span>
+</section>
+
+<script>
+// Reveal on view
+const observerRv = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) entry.target.classList.add('visible');
+  });
+}, { threshold: 0.15 });
+document.querySelectorAll('.rv, .rv-scale').forEach(el => observerRv.observe(el));
+
+// Slide counter + active nav dot
+const slides = document.querySelectorAll('.slide');
+const counter = document.getElementById('slideCounter');
+const dots = document.querySelectorAll('.nav-dots a');
+const observerSlide = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const idx = Array.from(slides).indexOf(entry.target);
+      if (idx >= 0) {
+        counter.textContent = `${idx + 1} / ${slides.length}`;
+        dots.forEach(d => d.classList.remove('active'));
+        if (dots[idx]) dots[idx].classList.add('active');
+      }
+    }
+  });
+}, { threshold: 0.5 });
+slides.forEach(s => observerSlide.observe(s));
+</script>
+</body>
+</html>
