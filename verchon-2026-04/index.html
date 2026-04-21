@@ -87,10 +87,12 @@ p,li{line-height:1.75;word-break:keep-all}
 .tbl .row-alert{background:var(--danger-dim)!important}
 
 /* MATRIX */
-.matrix{display:grid;grid-template-columns:auto repeat(6,1fr);gap:2px;font-size:clamp(13px,1.4vw,16px)}
+.matrix{display:grid;grid-template-columns:auto repeat(3,1fr);gap:2px;font-size:clamp(13px,1.4vw,16px)}
 .mx-group{text-align:center;padding:clamp(10px,1.5vh,16px) clamp(8px,1vw,14px);font-family:var(--font-d);font-weight:700;font-size:clamp(14px,1.5vw,18px);letter-spacing:.04em;border-radius:8px 8px 0 0}
-.mx-group-search{background:#1E3A5F;color:#fff;grid-column:span 3}
 .mx-group-discover{background:#3D1F5C;color:#fff;grid-column:span 3}
+.mx-owned-dual{background:linear-gradient(135deg,var(--highlight-dim) 50%,rgba(80,208,0,.15) 50%);color:#0F172A;font-weight:700;border:2px solid rgba(124,58,237,.25);font-size:clamp(11px,1.2vw,14px);line-height:1.4}
+.mx-owned-dual .mx-part-short{color:#C2410C;display:block}
+.mx-owned-dual .mx-part-blog{color:#166534;display:block;margin-top:2px}
 .mx-group-empty{background:transparent}
 .mx-h{background:var(--surface-dark);color:#fff;padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);font-weight:600;text-align:center;font-family:var(--font-d)}
 .mx-r{background:var(--surface-alt);padding:clamp(10px,1.4vh,16px) clamp(8px,1vw,14px);font-weight:700;display:flex;align-items:center;font-size:clamp(14px,1.5vw,17px)}
@@ -162,7 +164,7 @@ p,li{line-height:1.75;word-break:keep-all}
       버숑<br><span class="t-primary">마케팅 제안</span>
     </h1>
     <p class="rv rv-d2" style="font-size:clamp(14px,1.6vw,20px);color:rgba(255,255,255,.5)">
-      2026년 3월 · 담당 마케터 박찬형
+      2026년 4월 · 담당 마케터 박찬형
     </p>
     <div class="rv rv-d3" style="margin-top:clamp(32px,5vh,60px);display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
       <span class="badge" style="background:rgba(255,255,255,.08);color:rgba(255,255,255,.6);border:1px solid rgba(255,255,255,.12)">업력 8년</span>
@@ -180,7 +182,7 @@ p,li{line-height:1.75;word-break:keep-all}
       누적 매출 <span class="t-primary">8억</span>을 만든 멘토.
     </h1>
     <p class="rv rv-d2" style="font-size:clamp(20px,3vw,36px);color:var(--danger);font-weight:700">
-      그런데 "버숑"를 검색하면,<br>대표님이 보이지 않습니다.
+      그런데 "부업"을 검색하면,<br>대표님이 보이지 않습니다.
     </p>
     <div class="rv rv-d4" style="margin-top:clamp(24px,4vh,40px);padding:clamp(14px,2vh,24px) clamp(20px,3vw,36px);background:var(--surface-alt);border-radius:var(--r-md);display:inline-block">
       <p class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">온라인에서 보이지 않으면, 존재하지 않는 것과 같습니다.</p>
@@ -231,11 +233,11 @@ p,li{line-height:1.75;word-break:keep-all}
     <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(6px,1vh,12px)">경쟁사 분석</h2>
     <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">검색 경쟁에서 대표님이 보이지 않습니다</p>
     <table class="tbl rv rv-d2">
-      <thead><tr><th>멘토</th><th>SEO 순위</th><th>브랜딩</th><th>특징</th></tr></thead>
+      <thead><tr><th>업체</th><th>SEO 순위</th><th>브랜딩</th><th>특징</th></tr></thead>
       <tbody>
-        <tr><td>A멘토</td><td><span class="badge badge-accent">1페이지 장악</span></td><td>약함</td><td>꾸준한 발행으로 키워드 선점</td></tr>
-        <tr><td>온이맘</td><td>중간</td><td><span class="badge badge-primary">강함</span></td><td>"엄마도 가능" 공감 스토리</td></tr>
-        <tr><td>C~E멘토</td><td><span class="badge badge-outline">1페이지</span></td><td>약함</td><td>SEO 기반, 차별화 부족</td></tr>
+        <tr><td>A 경쟁 업체</td><td><span class="badge badge-accent">1페이지 장악</span></td><td>약함</td><td>꾸준한 발행으로 키워드 선점</td></tr>
+        <tr><td>B 경쟁 업체</td><td>중간</td><td><span class="badge badge-primary">강함</span></td><td>"엄마도 가능" 공감 스토리</td></tr>
+        <tr><td>C 경쟁 업체</td><td><span class="badge badge-outline">1페이지</span></td><td>약함</td><td>SEO 기반, 차별화 부족</td></tr>
         <tr class="row-alert"><td><strong>버숑</strong></td><td><span class="badge badge-danger">노출 없음</span></td><td><span class="badge badge-danger">미형성</span></td><td><strong>실적 1위, 검색 꼴찌</strong></td></tr>
       </tbody>
     </table>
@@ -257,11 +259,11 @@ p,li{line-height:1.75;word-break:keep-all}
         <rect x="216" y="20" width="164" height="130" rx="8" fill="rgba(62,144,245,.06)" stroke="#3E90F5" stroke-width="1.5" stroke-dasharray="6,4"/>
         <text x="298" y="50" text-anchor="middle" fill="#3E90F5" font-family="Outfit" font-size="11" font-weight="700">선점 기회</text>
         <circle cx="320" cy="220" r="12" fill="#50D000" opacity=".8"/>
-        <text x="320" y="248" text-anchor="middle" fill="#64748B" font-size="10">A멘토</text>
+        <text x="320" y="248" text-anchor="middle" fill="#64748B" font-size="10">A 경쟁 업체</text>
         <circle cx="140" cy="80" r="12" fill="#FF8C42" opacity=".8"/>
-        <text x="140" y="108" text-anchor="middle" fill="#64748B" font-size="10">온이맘</text>
+        <text x="140" y="108" text-anchor="middle" fill="#64748B" font-size="10">B 경쟁 업체</text>
         <circle cx="280" cy="230" r="8" fill="#94A3B8" opacity=".6"/><circle cx="300" cy="240" r="8" fill="#94A3B8" opacity=".6"/><circle cx="260" cy="250" r="8" fill="#94A3B8" opacity=".6"/>
-        <text x="280" y="268" text-anchor="middle" fill="#94A3B8" font-size="9">C~E멘토</text>
+        <text x="280" y="268" text-anchor="middle" fill="#94A3B8" font-size="9">C 경쟁 업체</text>
         <circle cx="100" cy="240" r="16" fill="#EF4444" stroke="#DC2626" stroke-width="2"/>
         <text x="100" y="244" text-anchor="middle" fill="#fff" font-size="8" font-weight="700">현재</text>
         <text x="100" y="268" text-anchor="middle" fill="#DC2626" font-size="10" font-weight="700">버숑</text>
@@ -275,7 +277,7 @@ p,li{line-height:1.75;word-break:keep-all}
       </svg>
     </div>
     <p class="rv rv-d4 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-top:clamp(8px,1.5vh,16px)">
-      대표님의 실적(4년, 8억, 300명)이면 우상단을 선점할 수 있는 <strong class="t-primary">유일한 멘토</strong>입니다.
+      대표님의 실적이면 우상단을 선점할 수 있는 <strong class="t-primary">유일한 업체</strong>입니다.
     </p>
   </div>
 </section>
@@ -284,13 +286,13 @@ p,li{line-height:1.75;word-break:keep-all}
 <section class="slide" id="s7" style="background:var(--surface-alt)">
   <div class="container">
     <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(14px,2.5vh,28px)">
-      경쟁 멘토는 하고 있고,<br>대표님은 안 하고 있는 것
+      경쟁 업체는 하고 있고,<br>대표님은 안 하고 있는 것
     </h2>
     <div class="g2 rv rv-d2">
       <div class="card card-tint-danger"><strong style="font-size:clamp(18px,2vw,24px)">주 3~5회 블로그 발행</strong><br><span class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">→ 대표님: 통합관리 종료, 발행 0</span></div>
-      <div class="card card-tint-danger"><strong style="font-size:clamp(18px,2vw,24px)">수익 인증 콘텐츠</strong><br><span class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">→ 대표님: 8억 실적 콘텐츠화 부족</span></div>
-      <div class="card card-tint-danger"><strong style="font-size:clamp(18px,2vw,24px)">멘토 스토리텔링</strong><br><span class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">→ 대표님: 브랜딩 콘텐츠 부재</span></div>
-      <div class="card card-tint-danger"><strong style="font-size:clamp(18px,2vw,24px)">학생 성공 사례</strong><br><span class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">→ 대표님: 300명 100% 성공 사례 활용 부족</span></div>
+      <div class="card card-tint-danger"><strong style="font-size:clamp(18px,2vw,24px)">수익 인증 콘텐츠</strong><br><span class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">→ 대표님: 실적 콘텐츠화 부족</span></div>
+      <div class="card card-tint-danger"><strong style="font-size:clamp(18px,2vw,24px)">업체 스토리텔링</strong><br><span class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">→ 대표님: 브랜딩 콘텐츠 부재</span></div>
+      <div class="card card-tint-danger"><strong style="font-size:clamp(18px,2vw,24px)">학생 성공 사례</strong><br><span class="t-sub" style="font-size:clamp(14px,1.5vw,18px)">→ 대표님: 성공 사례 활용 부족</span></div>
     </div>
   </div>
 </section>
@@ -299,59 +301,42 @@ p,li{line-height:1.75;word-break:keep-all}
 <section class="slide" id="s8">
   <div class="container">
     <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(6px,1vh,12px)">현황 진단</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(13px,1.4vw,17px);margin-bottom:clamp(16px,2.5vh,28px)">AS-IS → TO-BE 5FUNNEL 24 마케팅 매트릭스</p>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(13px,1.4vw,17px);margin-bottom:clamp(16px,2.5vh,28px)">발견 구간 3채널 통합 커버 — 5FUNNEL 마케팅 매트릭스</p>
     <div class="matrix rv rv-d2">
-      <div class="mx-group-empty"></div>
-      <div class="mx-group mx-group-search">검색</div>
+      <div></div>
       <div class="mx-group mx-group-discover">발견</div>
       <div class="mx-h" style="background:transparent"></div>
-      <div class="mx-h" style="background:#1E3A5F">OWNED</div>
-      <div class="mx-h" style="background:#1E3A5F">EARNED</div>
-      <div class="mx-h" style="background:#1E3A5F">PAID</div>
       <div class="mx-h" style="background:#3D1F5C">OWNED</div>
       <div class="mx-h" style="background:#3D1F5C">EARNED</div>
       <div class="mx-h" style="background:#3D1F5C">PAID</div>
       <!-- 인지 -->
       <div class="mx-r">인지</div>
-      <div class="mx-c mx-blog">브랜드블로그</div>
-      <div class="mx-c mx-active">▪ 통합관리</div>
-      <div class="mx-c mx-empty">—</div>
-      <div class="mx-c mx-short">숏폼</div>
+      <div class="mx-c mx-owned-dual"><span class="mx-part-short">숏폼</span><span class="mx-part-blog">+ 블로그 통합관리</span></div>
       <div class="mx-c mx-cafe">카페바이럴</div>
       <div class="mx-c mx-empty">—</div>
       <!-- 고려 -->
       <div class="mx-r">고려</div>
-      <div class="mx-c mx-blog">브랜드블로그</div>
-      <div class="mx-c mx-active">▪ 통합관리</div>
-      <div class="mx-c mx-empty">—</div>
-      <div class="mx-c mx-short">숏폼</div>
+      <div class="mx-c mx-owned-dual"><span class="mx-part-short">숏폼</span><span class="mx-part-blog">+ 블로그 통합관리</span></div>
       <div class="mx-c mx-empty">—</div>
       <div class="mx-c mx-empty">—</div>
       <!-- 전환 -->
       <div class="mx-r">전환</div>
-      <div class="mx-c mx-blog">브랜드블로그</div>
-      <div class="mx-c mx-weak">△ 약함</div>
-      <div class="mx-c mx-empty">—</div>
-      <div class="mx-c mx-short">숏폼</div>
+      <div class="mx-c mx-owned-dual"><span class="mx-part-short">숏폼</span><span class="mx-part-blog">+ 블로그 통합관리</span></div>
       <div class="mx-c mx-cafe">카페바이럴</div>
       <div class="mx-c mx-empty">—</div>
       <!-- 확산 -->
       <div class="mx-r">확산</div>
-      <div class="mx-c mx-blog">브랜드블로그</div>
-      <div class="mx-c mx-empty">—</div>
-      <div class="mx-c mx-empty">—</div>
-      <div class="mx-c mx-short">숏폼</div>
+      <div class="mx-c mx-owned-dual"><span class="mx-part-short">숏폼</span><span class="mx-part-blog">+ 블로그 통합관리</span></div>
       <div class="mx-c mx-empty">—</div>
       <div class="mx-c mx-empty">—</div>
     </div>
     <div class="rv rv-d4" style="margin-top:clamp(12px,2vh,20px);display:flex;gap:16px;justify-content:center;flex-wrap:wrap;font-size:clamp(12px,1.3vw,14px)">
-      <span><span style="display:inline-block;width:12px;height:12px;background:var(--primary-mid);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 현재 (통합관리)</span>
-      <span><span style="display:inline-block;width:12px;height:12px;background:rgba(80,208,0,.15);border:2px solid rgba(80,208,0,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 브랜드블로그</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:rgba(255,140,66,.10);border:2px solid rgba(255,140,66,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 숏폼 (인스타/유튜브/틱톡)</span>
+      <span><span style="display:inline-block;width:12px;height:12px;background:rgba(80,208,0,.15);border:2px solid rgba(80,208,0,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 블로그 통합관리</span>
       <span><span style="display:inline-block;width:12px;height:12px;background:rgba(124,58,237,.10);border:2px solid rgba(124,58,237,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 카페바이럴</span>
-      <span><span style="display:inline-block;width:12px;height:12px;background:rgba(255,140,66,.10);border:2px solid rgba(255,140,66,.3);border-radius:3px;vertical-align:middle;margin-right:4px"></span> 숏폼</span>
     </div>
     <p class="rv rv-d5 center" style="margin-top:10px;font-size:clamp(14px,1.5vw,18px)">
-      <strong class="t-danger">현재: EARNED 2칸만 채움</strong> → <strong class="t-accent">제안 후: 10칸 이상 커버</strong>
+      <strong class="t-danger">현재: 블로그 통합관리만 운영</strong> → <strong class="t-accent">제안 후: 발견 전 구간 3채널 통합 커버</strong>
     </p>
   </div>
 </section>
@@ -360,10 +345,10 @@ p,li{line-height:1.75;word-break:keep-all}
 <section class="slide" id="s9" style="background:var(--surface-alt)">
   <div class="container center" style="max-width:820px">
     <h2 class="rv" style="font-size:clamp(26px,4vw,48px);margin-bottom:clamp(14px,2.5vh,28px)">
-      브랜드블로그는 <span class="t-primary">자산</span>입니다.
+      인스타그램 숏폼은 <span class="t-primary">자산</span>입니다.
     </h2>
     <p class="rv rv-d2 t-sub" style="font-size:clamp(15px,1.7vw,21px)">
-      대표님 블로그에 쌓는 글은 검색 유입이 <strong>누적</strong>됩니다.<br>
+      대표님 인스타그램에 쌓는 영상은 발견 유입이 <strong>누적</strong>됩니다.<br>
       쌓을수록 가치가 올라가는 마케팅 자산입니다.
     </p>
   </div>
@@ -441,7 +426,7 @@ p,li{line-height:1.75;word-break:keep-all}
 <section class="slide" id="s12">
   <div class="container">
     <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(6px,1vh,12px)">대표님의 무기</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">4가지 수익 파이프라인 — 이걸 한 멘토에게서 전부 배울 수 있는 곳은 없습니다</p>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px)">4가지 수익 파이프라인 — 이걸 한 부업 업체에서 전부 배울 수 있는 곳은 없습니다</p>
     <div class="g4 rv rv-d2">
       <div class="card card-top-accent" style="text-align:center">
         <h3 style="font-size:clamp(17px,1.8vw,22px);margin-bottom:6px">복붙일감</h3>
@@ -480,7 +465,7 @@ p,li{line-height:1.75;word-break:keep-all}
     <div class="timeline rv rv-d2">
       <div class="tl-item">
         <div class="tl-dot">1</div>
-        <div class="tl-label">브랜드블로그<br>세팅</div>
+        <div class="tl-label">블로그<br>통합관리 세팅</div>
         <div class="tl-desc">"버숑" 검색 시<br>1페이지 확보</div>
       </div>
       <div class="tl-item">
@@ -508,7 +493,7 @@ p,li{line-height:1.75;word-break:keep-all}
     <h2 class="rv" style="font-size:clamp(26px,3.5vw,42px);margin-bottom:clamp(16px,3vh,32px)">왜 이 채널 구성인가?</h2>
     <div class="g3 rv rv-d2">
       <div class="card" style="border-left:4px solid var(--accent)">
-        <h3 style="font-size:clamp(20px,2.2vw,26px);color:#166534;margin-bottom:12px">브랜드블로그</h3>
+        <h3 style="font-size:clamp(20px,2.2vw,26px);color:#166534;margin-bottom:12px">블로그 통합관리</h3>
         <p style="font-size:clamp(16px,1.6vw,20px);font-weight:600;margin-bottom:14px">대표님의 자산</p>
         <ul style="list-style:none;color:var(--ink-sub)">
           <li style="padding:4px 0">✓ 검색인지 + 정보수집</li>
@@ -647,10 +632,13 @@ p,li{line-height:1.75;word-break:keep-all}
 <!-- S16 · 견적 구성 -->
 <section class="slide" id="s16" style="background:var(--surface-alt)">
   <div class="container">
-    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(16px,3vh,32px)">견적 구성</h2>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(6px,1vh,12px)">견적 구성</h2>
+    <p class="rv rv-d1" style="font-size:clamp(16px,1.8vw,22px);font-weight:600;color:var(--highlight);margin-bottom:clamp(16px,3vh,32px)">
+      코어를 <span style="border-bottom:2px solid var(--highlight)">숏폼</span>으로 옮겨야 합니다.
+    </p>
     <div class="g3 rv rv-d2">
       <div class="price-card featured">
-        <div class="price-name" style="color:var(--accent)">브랜드블로그<br>기초단계</div>
+        <div class="price-name" style="color:var(--accent)">블로그<br>통합관리</div>
         <div class="price-amount" style="color:var(--primary)">월 250만원</div>
         <ul class="price-list">
           <li>검색인지 + 정보수집 + 비교검토 + 브랜드키워드</li>
