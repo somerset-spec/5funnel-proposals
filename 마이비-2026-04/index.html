@@ -249,6 +249,32 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
 /* Subtle accent dots (alt pattern background) */
 .dot-pattern{position:absolute;inset:0;pointer-events:none;opacity:.4;background-image:radial-gradient(circle at 1px 1px,rgba(255,255,255,.08) 1px,transparent 0);background-size:24px 24px}
 
+/* Awon-food CLI reference shims — reference injection exposes AI to awon-specific
+   class names that we now see copied verbatim. Map each to sane wrapper styling
+   so previously-generated HTML renders correctly without forcing a regeneration. */
+.slide-inner{width:100%;max-width:1080px;position:relative;z-index:2}
+.section-num{display:inline-flex;align-items:center;justify-content:center;width:clamp(28px,3.2vw,36px);height:clamp(28px,3.2vw,36px);border-radius:50%;background:var(--surface-dark);color:#fff;font-family:var(--font-display);font-size:clamp(13px,1.4vw,16px);font-weight:700;margin-right:12px;flex-shrink:0}
+.hero-navy .section-num,.slide-cta .section-num{background:rgba(255,255,255,.15);color:#fff}
+.double-line{border:none;border-top:3px double var(--ink);margin:clamp(14px,2vh,22px) 0;opacity:.3}
+.hero-navy .double-line,.slide-cta .double-line{border-top-color:rgba(255,255,255,.25);opacity:.6}
+.confidential{position:absolute;bottom:clamp(14px,2vw,28px);left:clamp(24px,3vw,40px);font-family:var(--font-display);font-size:11px;font-weight:500;color:var(--ink-mute);letter-spacing:.18em;text-transform:uppercase;z-index:3}
+.hero-navy .confidential,.slide-cta .confidential{color:rgba(255,255,255,.45)}
+.exhibit{font-family:var(--font-display);font-size:clamp(11px,1.1vw,13px);color:var(--ink-mute);letter-spacing:.15em;text-transform:uppercase;margin-bottom:8px;font-weight:500}
+.hero-navy .exhibit,.slide-cta .exhibit{color:rgba(255,255,255,.5)}
+
+/* Div-based table shim — awon uses <div class="tbl"> wrapping .tbl-header +
+   .tbl-row siblings (instead of <table>). Provide grid rules so these render. */
+.tbl-header{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));background:var(--surface-dark);color:#fff;padding:clamp(10px,1.5vh,16px) clamp(12px,1.5vw,20px);font-family:var(--font-display);font-weight:600;font-size:clamp(13px,1.4vw,16px);border-radius:var(--radius-md) var(--radius-md) 0 0;gap:clamp(8px,1vw,16px);align-items:center}
+.tbl-row{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));padding:clamp(10px,1.5vh,16px) clamp(12px,1.5vw,20px);border-bottom:1px solid var(--border-light);font-size:clamp(13px,1.4vw,16px);background:var(--surface);gap:clamp(8px,1vw,16px);align-items:center}
+.tbl-row:nth-child(even){background:var(--surface-alt)}
+.tbl-row.row-highlight{background:var(--primary-dim)!important;font-weight:600}
+
+/* Enforce consistent h2 sizing across all slides (reference injection can leak
+   smaller clamp values per-slide, producing mobile-like feel on wide displays) */
+.slide h2{font-size:clamp(28px,4vw,48px)}
+.slide h3{font-size:clamp(20px,2.4vw,28px)}
+.slide h4{font-size:clamp(16px,1.8vw,20px)}
+
 /* Legacy-class shims — AI sometimes emits these class names from older prompt
    iterations. Define them so existing published slides render, even though the
    current prompt discourages them in favor of .kpi-*. */
@@ -385,121 +411,102 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 2</span></div>
 </section>
 
-<section class="slide" id="s3">
-  <div class="slide-inner">
-    <div class="rv">
-      <div style="display:flex;align-items:center;margin-bottom:6px">
-        <span class="section-num">②</span>
-        <h2 style="font-size:clamp(22px,2.8vw,32px)">유아구강청결티슈 시장 규모 추정</h2>
-      </div>
-      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">검증된 시장 · 마이비 제품의 상위 랭크 유지로 수요 확인됨</p>
-      <hr class="double-line">
-    </div>
-
-    <div class="rv rv-d1">
-      <div class="g2" style="gap:clamp(16px,2.5vw,24px)">
-        <div>
-          <p class="exhibit-label" style="margin-bottom:clamp(12px,2vh,18px)">
-            <iconify-icon icon="solar:chart-square-bold" style="color:var(--primary);font-size:16px;margin-right:8px"></iconify-icon>
-            수요 퍼널 분석
-          </p>
-          <div class="tbl" style="font-size:clamp(13px,1.4vw,15px)">
-            <div class="tbl-header">
-              <div>구분</div>
-              <div>상태</div>
-              <div>비고</div>
-            </div>
-            <div class="tbl-row">
-              <div>전체 검색량</div>
-              <div>데이터 수집 중</div>
-              <div>유아용품 카테고리</div>
-            </div>
-            <div class="tbl-row">
-              <div>전환율</div>
-              <div>20%</div>
-              <div>카테고리 평균</div>
-            </div>
-            <div class="tbl-row">
-              <div>시장 규모</div>
-              <div>데이터 분석 예정</div>
-              <div>안정적 수요 예상</div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <p class="exhibit-label" style="margin-bottom:clamp(12px,2vh,18px)">
-            <iconify-icon icon="solar:target-bold" style="color:var(--highlight);font-size:16px;margin-right:8px"></iconify-icon>
-            TAM/SAM/SOM 구조
-          </p>
-          <div class="tbl" style="font-size:clamp(13px,1.4vw,15px)">
-            <div class="tbl-header">
-              <div>분류</div>
-              <div>시장</div>
-              <div>규모</div>
-            </div>
-            <div class="tbl-row">
-              <div><strong>TAM</strong></div>
-              <div>전체 유아용품</div>
-              <div>분석 중</div>
-            </div>
-            <div class="tbl-row">
-              <div><strong>SAM</strong></div>
-              <div>유아구강청결티슈</div>
-              <div>분석 중</div>
-            </div>
-            <div class="tbl-row row-highlight">
-              <div><strong>SOM</strong></div>
-              <div>마이비 목표 시장</div>
-              <div>목표 설정 중</div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+<section class="slide">
+  <div class="container">
+    <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px">
+      <iconify-icon icon="solar:pie-chart-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
+      EXHIBIT 2: 시장 규모 추정
+    </p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">유아구강청결티슈 시장 분석</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px);max-width:720px">마이비 제품의 검증된 시장 성과를 바탕으로 전체 유아용품 시장 내 위치와 확장 가능성을 분석했습니다.</p>
 
     <div class="rv rv-d2">
-      <div class="insight-box">
-        <iconify-icon icon="solar:verified-check-bold-duotone" style="color:var(--primary);font-size:20px;margin-right:10px"></iconify-icon>
-        <strong>검증된 시장</strong> 마이비 제품이 쿠팡 상위 랭크를 유지하고 있어 시장 수요는 이미 검증됨. 0-36개월 영유아 대상 전체 시장에서 직접 경쟁 시장으로 범위를 좁혀나가는 단계별 분석이 진행 중입니다.
-      </div>
-    </div>
-
-    <div class="rv rv-d3">
-      <div class="g2" style="gap:clamp(16px,2.5vw,24px);margin-top:clamp(20px,3vh,28px)">
-        <div class="card">
-          <h4 style="color:var(--ink);font-size:clamp(15px,1.5vw,17px);margin-bottom:10px">
-            <iconify-icon icon="solar:close-circle-bold" style="color:var(--danger);font-size:18px;margin-right:8px"></iconify-icon>
-            제외 카테고리
-          </h4>
-          <div style="display:flex;flex-direction:column;gap:8px">
-            <div style="padding:8px 12px;background:var(--surface-alt);border-radius:8px;border-left:3px solid var(--danger)">
-              <div style="font-weight:600;color:var(--ink);font-size:clamp(13px,1.3vw,14px)">성인용 구강용품</div>
-              <div style="color:var(--ink-sub);font-size:clamp(12px,1.2vw,13px)">타겟 연령층 상이</div>
-            </div>
-            <div style="padding:8px 12px;background:var(--surface-alt);border-radius:8px;border-left:3px solid var(--danger)">
-              <div style="font-weight:600;color:var(--ink);font-size:clamp(13px,1.3vw,14px)">치료용 의료기기</div>
-              <div style="color:var(--ink-sub);font-size:clamp(12px,1.2vw,13px)">용도 및 규제 환경 상이</div>
-            </div>
+      <div class="kpi-row">
+        <div class="kpi-card kpi-accent-blue">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <iconify-icon icon="solar:chart-square-bold" style="color:var(--primary);font-size:18px"></iconify-icon>
+            <span class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">수요 퍼널</span>
           </div>
+          <div class="kpi-num">분석 중<span class="unit"></span></div>
+          <div class="kpi-label">총 검색량 · 전환율 20%</div>
         </div>
-
-        <div class="metric-card mc-blue">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-            <iconify-icon icon="solar:graph-up-bold" style="color:var(--primary);font-size:20px"></iconify-icon>
-            <span style="color:var(--ink-sub);font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">시장 현황</span>
+        <div class="kpi-card kpi-accent-orange">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <iconify-icon icon="solar:target-bold" style="color:var(--highlight);font-size:18px"></iconify-icon>
+            <span class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">시장 검증</span>
           </div>
-          <div style="font-size:clamp(24px,3.5vw,36px);font-weight:800;color:var(--primary);margin-bottom:6px">검증됨</div>
-          <div style="color:var(--ink-sub);font-size:clamp(13px,1.4vw,16px)">마이비 상위 랭크 유지</div>
+          <div class="kpi-num">상위<span class="unit">랭크</span></div>
+          <div class="kpi-label">마이비 현재 쿠팡 위치</div>
+        </div>
+        <div class="kpi-card kpi-accent-green">
+          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+            <iconify-icon icon="solar:shield-check-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
+            <span class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">시장 특성</span>
+          </div>
+          <div class="kpi-num">안정<span class="unit">수요</span></div>
+          <div class="kpi-label">유아용품 카테고리</div>
         </div>
       </div>
     </div>
 
-    <div class="rv rv-d4" style="margin-top:10px">
-      <p class="exhibit">출처: OSC 쿠팡 내부 데이터 · 마이비 현재 판매 실적 기반</p>
+    <div class="rv rv-d3" style="margin-top:clamp(24px,4vh,36px)">
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th style="width:25%">시장 구분</th>
+            <th style="width:30%">대상 시장</th>
+            <th style="width:20%">규모</th>
+            <th style="width:25%">설명</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>TAM</strong><br><span class="t-sub" style="font-size:clamp(11px,1.1vw,13px)">Total Addressable Market</span></td>
+            <td>전체 유아용품</td>
+            <td class="t-mute">분석 중</td>
+            <td class="t-sub">0-36개월 영유아 대상 전체 시장</td>
+          </tr>
+          <tr>
+            <td><strong>SAM</strong><br><span class="t-sub" style="font-size:clamp(11px,1.1vw,13px)">Serviceable Addressable Market</span></td>
+            <td>유아구강청결티슈</td>
+            <td class="t-mute">분석 중</td>
+            <td class="t-sub">직접 경쟁 시장</td>
+          </tr>
+          <tr class="row-highlight">
+            <td><strong>SOM</strong><br><span class="t-sub" style="font-size:clamp(11px,1.1vw,13px)">Serviceable Obtainable Market</span></td>
+            <td>마이비 목표 시장</td>
+            <td class="t-primary"><strong>목표 설정 중</strong></td>
+            <td class="t-sub">현실적 달성 가능 규모</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="insight-box rv rv-d4">
+      <strong>시장 검증 완료</strong>
+      마이비 제품이 쿠팡에서 상위 랭크를 유지하고 있어 시장 수요는 이미 검증되었습니다. 유아용품 카테고리 특성상 안정적 수요가 예상되며, 추가 데이터 수집을 통해 정확한 시장 규모와 확장 전략을 수립할 예정입니다.
+    </div>
+
+    <div class="rv rv-d5" style="margin-top:clamp(24px,4vh,36px)">
+      <div style="display:flex;align-items:flex-start;gap:8px;margin-bottom:16px">
+        <iconify-icon icon="solar:close-circle-bold" style="color:var(--danger);font-size:18px;margin-top:2px"></iconify-icon>
+        <div>
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:8px;color:var(--ink)">제외 카테고리</h3>
+          <div class="g2" style="gap:clamp(12px,2vw,20px)">
+            <div class="card" style="padding:clamp(12px,1.5vw,16px)">
+              <div style="font-size:clamp(13px,1.4vw,15px);font-weight:600;margin-bottom:4px">성인용 구강용품</div>
+              <div class="t-sub" style="font-size:clamp(12px,1.3vw,14px)">타겟 연령층 상이</div>
+            </div>
+            <div class="card" style="padding:clamp(12px,1.5vw,16px)">
+              <div style="font-size:clamp(13px,1.4vw,15px);font-weight:600;margin-bottom:4px">치료용 의료기기</div>
+              <div class="t-sub" style="font-size:clamp(12px,1.3vw,14px)">용도 및 규제 환경 상이</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-  <span class="confidential">CONFIDENTIAL</span>
+  <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 3</span></div>
 </section>
 
 <section class="slide">
@@ -576,123 +583,112 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
 <section class="slide">
   <div class="container">
     <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px">
-      <iconify-icon icon="solar:graph-up-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
+      <iconify-icon icon="solar:diagram-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
       EXHIBIT 3: 인접 시장 확장
     </p>
-    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">인접 시장 확장 · 키워드 전략</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">직접 키워드에서 인접·확장 영역으로 단계적 확산. 베이비케어 토탈 솔루션으로 고객 생애가치 확대.</p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">시장 확장 전략 · 키워드 포트폴리오</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px);max-width:720px">직접 시장에서 인접 시장으로 확장 — 유아구강케어 중심의 베이비케어 토탈 솔루션 구축</p>
 
-    <div class="rv rv-d2" style="margin-bottom:clamp(24px,3vh,32px)">
-      <svg viewBox="0 0 800 400" style="width:100%;max-width:800px;margin:0 auto;display:block">
-        <!-- 직접 시장 (중앙) -->
-        <g>
-          <circle cx="200" cy="200" r="60" fill="var(--primary)" opacity="0.9"/>
-          <text x="200" y="190" text-anchor="middle" fill="white" font-size="12" font-weight="600">직접 시장</text>
-          <text x="200" y="205" text-anchor="middle" fill="white" font-size="10">유아구강청결티슈</text>
-          <text x="200" y="218" text-anchor="middle" fill="white" font-size="10">아기구강티슈</text>
-        </g>
-
-        <!-- 인접 시장 1 (구강케어) -->
-        <g>
-          <circle cx="400" cy="120" r="45" fill="var(--highlight)" opacity="0.8"/>
-          <text x="400" y="110" text-anchor="middle" fill="white" font-size="11" font-weight="600">구강케어</text>
-          <text x="400" y="125" text-anchor="middle" fill="white" font-size="9">아기 칫솔</text>
-          <text x="400" y="137" text-anchor="middle" fill="white" font-size="9">유아용 치약</text>
-          <line x1="260" y1="180" x2="355" y2="140" stroke="var(--ink-mute)" stroke-width="2" marker-end="url(#arrowhead)"/>
-        </g>
-
-        <!-- 인접 시장 2 (베이비케어) -->
-        <g>
-          <circle cx="400" cy="200" r="45" fill="var(--accent)" opacity="0.8"/>
-          <text x="400" y="190" text-anchor="middle" fill="white" font-size="11" font-weight="600">베이비케어</text>
-          <text x="400" y="205" text-anchor="middle" fill="white" font-size="9">젖병세정제</text>
-          <text x="400" y="217" text-anchor="middle" fill="white" font-size="9">기저귀</text>
-          <line x1="260" y1="200" x2="355" y2="200" stroke="var(--ink-mute)" stroke-width="2" marker-end="url(#arrowhead)"/>
-        </g>
-
-        <!-- 인접 시장 3 (헬스케어) -->
-        <g>
-          <circle cx="400" cy="280" r="45" fill="var(--teal)" opacity="0.8"/>
-          <text x="400" y="270" text-anchor="middle" fill="white" font-size="11" font-weight="600">헬스케어</text>
-          <text x="400" y="285" text-anchor="middle" fill="white" font-size="9">콧물흡입기</text>
-          <text x="400" y="297" text-anchor="middle" fill="white" font-size="9">체온계</text>
-          <line x1="260" y1="220" x2="355" y2="260" stroke="var(--ink-mute)" stroke-width="2" marker-end="url(#arrowhead)"/>
-        </g>
-
-        <!-- 확장 영역 -->
-        <g>
-          <circle cx="600" cy="200" r="50" fill="var(--ink)" opacity="0.7"/>
-          <text x="600" y="190" text-anchor="middle" fill="white" font-size="11" font-weight="600">확장 영역</text>
-          <text x="600" y="205" text-anchor="middle" fill="white" font-size="9">육아용품</text>
-          <text x="600" y="217" text-anchor="middle" fill="white" font-size="9">베이비케어</text>
-          <line x1="445" y1="120" x2="555" y2="180" stroke="var(--ink-mute)" stroke-width="2" marker-end="url(#arrowhead)"/>
-          <line x1="445" y1="200" x2="550" y2="200" stroke="var(--ink-mute)" stroke-width="2" marker-end="url(#arrowhead)"/>
-          <line x1="445" y1="280" x2="555" y2="220" stroke="var(--ink-mute)" stroke-width="2" marker-end="url(#arrowhead)"/>
-        </g>
-
-        <defs>
-          <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
-            <polygon points="0 0, 10 3.5, 0 7" fill="var(--ink-mute)"/>
-          </marker>
-        </defs>
-      </svg>
-    </div>
-
-    <div class="g2 rv rv-d3" style="gap:clamp(20px,3vw,32px)">
-      <div>
-        <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:clamp(12px,1.5vh,16px);color:var(--ink)">키워드 전략 우선순위</h3>
-        <div class="tbl">
-          <table>
-            <thead>
-              <tr>
-                <th>카테고리</th>
-                <th>키워드</th>
-                <th>우선순위</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr class="row-highlight">
-                <td><span class="badge badge-primary">직접 키워드</span></td>
-                <td>유아구강청결티슈, 아기구강티슈, 신생아 구강티슈</td>
-                <td><strong>1순위</strong></td>
-              </tr>
-              <tr>
-                <td><span class="badge badge-highlight">인접 키워드</span></td>
-                <td>아기용품, 신생아용품, 유아케어</td>
-                <td>2순위</td>
-              </tr>
-              <tr>
-                <td><span class="badge badge-accent">확장 키워드</span></td>
-                <td>육아용품, 베이비케어, 신생아 필수품</td>
-                <td>3순위</td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
+    <div class="g2 rv rv-d2" style="gap:clamp(20px,3vw,32px)">
+      <div style="max-width:500px">
+        <p class="exhibit-label" style="margin-bottom:16px">시장 확장 구조</p>
+        <svg width="100%" height="400" viewBox="0 0 480 360" style="background:var(--surface-alt);border-radius:12px;padding:20px">
+          <!-- 직접 시장 중앙 -->
+          <circle cx="240" cy="180" r="60" fill="var(--primary)" stroke="var(--surface)" stroke-width="3"/>
+          <text x="240" y="170" text-anchor="middle" fill="white" font-size="12" font-weight="600">유아구강</text>
+          <text x="240" y="185" text-anchor="middle" fill="white" font-size="12" font-weight="600">청결티슈</text>
+          <text x="240" y="200" text-anchor="middle" fill="white" font-size="11">직접 시장</text>
+          
+          <!-- 인접 1차: 구강케어 -->
+          <circle cx="120" cy="120" r="40" fill="var(--highlight)" stroke="var(--surface)" stroke-width="2"/>
+          <text x="120" y="115" text-anchor="middle" fill="white" font-size="10" font-weight="600">아기 칫솔</text>
+          <text x="120" y="128" text-anchor="middle" fill="white" font-size="10" font-weight="600">유아용 치약</text>
+          
+          <circle cx="360" cy="120" r="40" fill="var(--highlight)" stroke="var(--surface)" stroke-width="2"/>
+          <text x="360" y="120" text-anchor="middle" fill="white" font-size="10" font-weight="600">구강스프레이</text>
+          
+          <!-- 인접 2차: 베이비케어 -->
+          <circle cx="80" cy="240" r="35" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+          <text x="80" y="235" text-anchor="middle" fill="white" font-size="9" font-weight="600">젖병세정제</text>
+          <text x="80" y="248" text-anchor="middle" fill="white" font-size="9" font-weight="600">기저귀</text>
+          
+          <circle cx="400" cy="240" r="35" fill="var(--accent)" stroke="var(--surface)" stroke-width="2"/>
+          <text x="400" y="240" text-anchor="middle" fill="white" font-size="9" font-weight="600">유아로션</text>
+          
+          <!-- 인접 3차: 헬스케어 -->
+          <circle cx="120" cy="320" r="30" fill="var(--teal)" stroke="var(--surface)" stroke-width="2"/>
+          <text x="120" y="315" text-anchor="middle" fill="white" font-size="8" font-weight="600">콧물흡입기</text>
+          <text x="120" y="328" text-anchor="middle" fill="white" font-size="8" font-weight="600">체온계</text>
+          
+          <circle cx="360" cy="320" r="30" fill="var(--teal)" stroke="var(--surface)" stroke-width="2"/>
+          <text x="360" y="320" text-anchor="middle" fill="white" font-size="8" font-weight="600">가습기</text>
+          
+          <!-- 연결선 -->
+          <line x1="200" y1="150" x2="160" y2="135" stroke="var(--border)" stroke-width="2" opacity="0.6"/>
+          <line x1="280" y1="150" x2="320" y2="135" stroke="var(--border)" stroke-width="2" opacity="0.6"/>
+          <line x1="210" y1="220" x2="115" y2="245" stroke="var(--border)" stroke-width="2" opacity="0.4"/>
+          <line x1="270" y1="220" x2="365" y2="245" stroke="var(--border)" stroke-width="2" opacity="0.4"/>
+          <line x1="160" y1="150" x2="135" y2="290" stroke="var(--border)" stroke-width="1" opacity="0.3"/>
+          <line x1="320" y1="150" x2="345" y2="290" stroke="var(--border)" stroke-width="1" opacity="0.3"/>
+        </svg>
       </div>
-
+      
       <div>
-        <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:clamp(12px,1.5vh,16px);color:var(--ink)">크로스셀링 기회</h3>
-        <div class="card card-tint-primary" style="margin-bottom:clamp(12px,1.5vh,16px)">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <iconify-icon icon="solar:medical-kit-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
-            <strong style="color:var(--ink)">콧물흡입기</strong>
+        <p class="exhibit-label" style="margin-bottom:16px">키워드 전략 우선순위</p>
+        <table class="tbl" style="font-size:clamp(13px,1.4vw,15px)">
+          <thead>
+            <tr>
+              <th>카테고리</th>
+              <th>핵심 키워드</th>
+              <th>진입 우선순위</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-highlight">
+              <td><strong>직접 키워드</strong></td>
+              <td>유아구강청결티슈<br>아기구강티슈<br>신생아 구강티슈</td>
+              <td><span class="badge badge-primary">1순위</span></td>
+            </tr>
+            <tr>
+              <td>인접 키워드</td>
+              <td>아기용품<br>신생아용품<br>유아케어</td>
+              <td><span class="badge badge-highlight">2순위</span></td>
+            </tr>
+            <tr>
+              <td>확장 키워드</td>
+              <td>육아용품<br>베이비케어<br>신생아 필수품</td>
+              <td><span class="badge badge-accent">3순위</span></td>
+            </tr>
+          </tbody>
+        </table>
+        
+        <div style="margin-top:clamp(16px,2.5vh,24px)">
+          <p class="exhibit-label" style="margin-bottom:12px">크로스셀링 기회</p>
+          <div class="g2" style="gap:12px">
+            <div class="card card-top-teal" style="padding:clamp(12px,1.5vw,16px)">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                <iconify-icon icon="solar:shop-bold" style="color:var(--teal);font-size:16px"></iconify-icon>
+                <div class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;text-transform:uppercase">콧물흡입기</div>
+              </div>
+              <p style="font-size:clamp(12px,1.3vw,14px);color:var(--ink);margin:0">구강케어 + 코케어 패키지</p>
+            </div>
+            <div class="card card-top-primary" style="padding:clamp(12px,1.5vw,16px)">
+              <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+                <iconify-icon icon="solar:gift-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
+                <div class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;text-transform:uppercase">시트 섬유유연제</div>
+              </div>
+              <p style="font-size:clamp(12px,1.3vw,14px);color:var(--ink);margin:0">베이비케어 토탈 솔루션</p>
+            </div>
           </div>
-          <p class="t-sub" style="font-size:clamp(12px,1.2vw,14px);margin:0">구강케어 + 코케어 패키지</p>
-        </div>
-        <div class="card card-tint-accent">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:6px">
-            <iconify-icon icon="solar:wineglass-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-            <strong style="color:var(--ink)">시트 섬유유연제</strong>
-          </div>
-          <p class="t-sub" style="font-size:clamp(12px,1.2vw,14px);margin:0">베이비케어 토탈 솔루션</p>
         </div>
       </div>
     </div>
 
     <div class="insight-box rv rv-d4">
-      <strong>KEY INSIGHT</strong> 인접 시장 데이터 분석 중이나, 직접 키워드 대비 3~5배 확장 수요가 일반적. 구강케어에서 시작해 베이비케어 전반으로 브랜드 확장 시 고객 생애가치 300% 이상 증가 가능.
+      <strong>MARKET EXPANSION STRATEGY</strong>직접 시장(유아구강티슈)에서 검증된 브랜드 신뢰를 바탕으로 인접 시장으로 점진 확장. 1단계 구강케어(칫솔·치약·스프레이) → 2단계 베이비케어(세정제·기저귀·로션) → 3단계 헬스케어(콧물흡입기·체온계·가습기) 순서로 크로스셀링 기회를 극대화하는 포트폴리오 전략.
     </div>
+
+    <p class="rv rv-d5 t-sub" style="font-size:clamp(12px,1.2vw,14px);margin-top:clamp(12px,2vh,18px)">출처: OSC 쿠팡 내부 데이터 · 키워드 연관성 분석</p>
   </div>
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 3</span></div>
 </section>
@@ -803,140 +799,112 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
 <section class="slide">
   <div class="container">
     <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px">
-      <iconify-icon icon="solar:document-text-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
+      <iconify-icon icon="solar:folder-with-files-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
       프로젝트 개요
     </p>
-    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">마이비 멸균 아기 구강티슈 채널 확장</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px);max-width:720px">쿠팡에서 검증된 상위랭크 제품력을 기반으로 타 채널 진출과 브랜드 성장을 위한 단계별 확장 계획</p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">마이비 멸균 구강티슈 · 채널 확장 프로젝트</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">쿠팡에서 검증된 제품력을 바탕으로 타 채널 확장과 마케팅 강화를 통해 브랜드 성장을 가속화합니다.</p>
 
-    <div class="g2 rv rv-d2" style="gap:clamp(20px,3vw,32px)">
-      <div class="card card-top-primary">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
+    <div class="g2 rv rv-d2" style="gap:clamp(20px,3vw,32px);margin-bottom:clamp(32px,5vh,48px)">
+      <div class="card card-top-primary" style="flex:1">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(12px,2vh,16px)">
           <iconify-icon icon="solar:box-bold-duotone" style="color:var(--primary);font-size:20px"></iconify-icon>
-          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:var(--primary)">제품 정보</h3>
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;font-weight:700">제품 정보</h3>
         </div>
-        <div class="kpi-row" style="grid-template-columns:1fr;gap:12px">
-          <div style="border-bottom:1px solid var(--border-light);padding-bottom:8px">
-            <div class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:2px">브랜드명</div>
-            <div style="font-weight:600;font-size:clamp(14px,1.4vw,16px)">마이비 (MYBY)</div>
-          </div>
-          <div style="border-bottom:1px solid var(--border-light);padding-bottom:8px">
-            <div class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:2px">주력 상품</div>
-            <div style="font-weight:600;font-size:clamp(14px,1.4vw,16px)">멸균 아기 구강티슈</div>
-          </div>
-          <div style="border-bottom:1px solid var(--border-light);padding-bottom:8px">
-            <div class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:2px">판매가</div>
-            <div style="font-weight:600;font-size:clamp(14px,1.4vw,16px);color:var(--highlight)">8,800원</div>
-          </div>
-          <div style="border-bottom:1px solid var(--border-light);padding-bottom:8px">
-            <div class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:2px">포장</div>
-            <div style="font-weight:600;font-size:clamp(14px,1.4vw,16px)">개별포장</div>
-          </div>
-          <div style="border-bottom:1px solid var(--border-light);padding-bottom:8px">
-            <div class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:2px">소재</div>
-            <div style="font-weight:600;font-size:clamp(14px,1.4vw,16px)">100% 오가닉 순면</div>
-          </div>
-          <div>
-            <div class="t-mute" style="font-size:clamp(11px,1.1vw,13px);margin-bottom:2px">현재 리뷰</div>
-            <div style="font-weight:700;font-size:clamp(14px,1.4vw,16px);color:var(--accent)">15,682개</div>
-          </div>
+        <div style="display:grid;gap:clamp(8px,1.2vh,12px);font-size:clamp(13px,1.4vw,16px)">
+          <div style="display:flex;justify-content:space-between"><span class="t-sub">브랜드</span><span style="font-weight:600">마이비 (MYBY)</span></div>
+          <div style="display:flex;justify-content:space-between"><span class="t-sub">메인 상품</span><span style="font-weight:600">멸균 아기 구강티슈</span></div>
+          <div style="display:flex;justify-content:space-between"><span class="t-sub">판매가</span><span style="font-weight:600;color:var(--primary)">8,800원</span></div>
+          <div style="display:flex;justify-content:space-between"><span class="t-sub">포장</span><span style="font-weight:600">개별포장</span></div>
+          <div style="display:flex;justify-content:space-between"><span class="t-sub">소재</span><span style="font-weight:600">100% 오가닉 순면</span></div>
+          <div style="display:flex;justify-content:space-between"><span class="t-sub">현재 리뷰</span><span style="font-weight:600;color:var(--accent)">15,682개</span></div>
         </div>
       </div>
 
-      <div>
-        <div class="card card-top-highlight" style="margin-bottom:clamp(16px,2.5vw,24px)">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-            <iconify-icon icon="solar:calendar-mark-bold" style="color:var(--highlight);font-size:20px"></iconify-icon>
-            <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:var(--highlight)">단계별 계획</h3>
-          </div>
-          <div class="timeline">
-            <div class="tl-item">
-              <div class="tl-dot" style="background-color:var(--primary)"></div>
-              <div class="tl-label">1개월차</div>
-              <div class="tl-desc">채널 확장 준비</div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-dot" style="background-color:var(--highlight)"></div>
-              <div class="tl-label">2-3개월</div>
-              <div class="tl-desc">타 채널 런칭</div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-dot" style="background-color:var(--accent)"></div>
-              <div class="tl-label">4-6개월</div>
-              <div class="tl-desc">마케팅 강화</div>
-            </div>
-            <div class="tl-item">
-              <div class="tl-dot" style="background-color:var(--teal)"></div>
-              <div class="tl-label">7-12개월</div>
-              <div class="tl-desc">SKU 확장 검토</div>
-            </div>
-          </div>
+      <div class="card card-top-highlight" style="flex:1">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(12px,2vh,16px)">
+          <iconify-icon icon="solar:target-bold-duotone" style="color:var(--highlight);font-size:20px"></iconify-icon>
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;font-weight:700">프로젝트 목표</h3>
         </div>
+        <ul style="margin:0;padding-left:clamp(16px,2vw,20px);font-size:clamp(13px,1.4vw,16px);line-height:1.6">
+          <li>쿠팡 상위 랭크 안정적 유지</li>
+          <li>타 채널 진출을 통한 매출 확대</li>
+          <li>브랜드 인지도 상승</li>
+          <li>추후 신규 SKU 런칭 기반 구축</li>
+        </ul>
+      </div>
+    </div>
 
-        <div class="card card-top-accent">
-          <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-            <iconify-icon icon="solar:target-bold" style="color:var(--accent);font-size:20px"></iconify-icon>
-            <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:var(--accent)">프로젝트 목표</h3>
-          </div>
-          <ul style="margin:0;padding-left:0;list-style:none">
-            <li style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px;margin-top:2px"></iconify-icon>
-              <span style="font-size:clamp(13px,1.3vw,15px)">쿠팡 상위 랭크 안정적 유지</span>
-            </li>
-            <li style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px;margin-top:2px"></iconify-icon>
-              <span style="font-size:clamp(13px,1.3vw,15px)">타 채널 진출을 통한 매출 확대</span>
-            </li>
-            <li style="display:flex;align-items:flex-start;gap:8px;margin-bottom:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px;margin-top:2px"></iconify-icon>
-              <span style="font-size:clamp(13px,1.3vw,15px)">브랜드 인지도 상승</span>
-            </li>
-            <li style="display:flex;align-items:flex-start;gap:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px;margin-top:2px"></iconify-icon>
-              <span style="font-size:clamp(13px,1.3vw,15px)">추후 신규 SKU 런칭 기반 구축</span>
-            </li>
-          </ul>
+    <div class="timeline rv rv-d3" style="margin-bottom:clamp(32px,5vh,48px)">
+      <h3 style="font-size:clamp(18px,2vw,24px);margin-bottom:clamp(16px,2.5vh,24px);display:flex;align-items:center;gap:10px">
+        <iconify-icon icon="solar:calendar-mark-bold" style="color:var(--accent);font-size:22px"></iconify-icon>
+        런칭 일정
+      </h3>
+      <div class="tl-item">
+        <div class="tl-dot" style="background-color:var(--primary)"></div>
+        <div class="tl-content">
+          <div class="tl-label">1개월차</div>
+          <div class="tl-desc">채널 확장 준비</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background-color:var(--highlight)"></div>
+        <div class="tl-content">
+          <div class="tl-label">2-3개월</div>
+          <div class="tl-desc">타 채널 런칭</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background-color:var(--accent)"></div>
+        <div class="tl-content">
+          <div class="tl-label">4-6개월</div>
+          <div class="tl-desc">마케팅 강화</div>
+        </div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-dot" style="background-color:var(--teal)"></div>
+        <div class="tl-content">
+          <div class="tl-label">7-12개월</div>
+          <div class="tl-desc">SKU 확장 검토</div>
         </div>
       </div>
     </div>
 
-    <div class="rv rv-d3" style="margin-top:clamp(24px,4vh,40px)">
-      <div class="tbl">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:14px">
-          <iconify-icon icon="solar:channels-bold" style="color:var(--primary);font-size:18px"></iconify-icon>
-          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0">채널 현황 및 확장 계획</h3>
-        </div>
-        <table>
-          <thead>
-            <tr>
-              <th style="font-size:clamp(13px,1.3vw,15px)">채널</th>
-              <th style="font-size:clamp(13px,1.3vw,15px)">현재 상태</th>
-              <th style="font-size:clamp(13px,1.3vw,15px)">역할</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="row-highlight">
-              <td style="font-size:clamp(13px,1.3vw,15px);font-weight:600">쿠팡</td>
-              <td style="font-size:clamp(13px,1.3vw,15px)">현재 상위랭크 유지</td>
-              <td style="font-size:clamp(13px,1.3vw,15px)"><span class="badge badge-primary">메인 채널</span></td>
-            </tr>
-            <tr>
-              <td style="font-size:clamp(13px,1.3vw,15px);font-weight:600">11번가</td>
-              <td style="font-size:clamp(13px,1.3vw,15px)">신규 진입</td>
-              <td style="font-size:clamp(13px,1.3vw,15px)"><span class="badge badge-highlight">확장 채널 1순위</span></td>
-            </tr>
-            <tr>
-              <td style="font-size:clamp(13px,1.3vw,15px);font-weight:600">네이버쇼핑</td>
-              <td style="font-size:clamp(13px,1.3vw,15px)">검토 중</td>
-              <td style="font-size:clamp(13px,1.3vw,15px)"><span class="badge badge-outline">검색 유입 확대</span></td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <div class="rv rv-d4">
+      <h3 style="font-size:clamp(18px,2vw,24px);margin-bottom:clamp(16px,2.5vh,24px);display:flex;align-items:center;gap:10px">
+        <iconify-icon icon="solar:shop-bold" style="color:var(--primary);font-size:22px"></iconify-icon>
+        타겟 채널 현황
+      </h3>
+      <table class="tbl">
+        <thead>
+          <tr>
+            <th>채널</th>
+            <th>현재 상태</th>
+            <th>역할</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="row-highlight">
+            <td style="font-weight:700">쿠팡</td>
+            <td><span class="badge badge-accent">현재 상위랭크 유지</span></td>
+            <td>메인 채널</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600">11번가</td>
+            <td><span class="badge badge-primary">신규 진입</span></td>
+            <td>확장 채널 1순위</td>
+          </tr>
+          <tr>
+            <td style="font-weight:600">네이버쇼핑</td>
+            <td><span class="badge badge-outline">검토 중</span></td>
+            <td>검색 유입 확대</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <div class="insight-box rv rv-d4">
-      <strong>KEY INSIGHT</strong> 쿠팡에서 이미 검증된 15,682개 리뷰와 상위랭크 지위는 타 채널 진입 시 강력한 자산이 됩니다. 동일한 제품력으로 11번가·네이버쇼핑 확장을 통해 매출 다변화와 브랜드 성장을 동시에 달성할 수 있는 최적 타이밍입니다.
+    <div class="insight-box rv rv-d5">
+      <strong>KEY INSIGHT</strong> 쿠팡에서 15,682개 리뷰와 상위 랭크를 확보한 검증된 제품력을 바탕으로, 타 채널 진입 시 초기 신뢰도와 전환율에서 압도적 우위를 가질 수 있습니다.
     </div>
   </div>
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 7</span></div>
@@ -1195,107 +1163,124 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 6</span></div>
 </section>
 
-<section class="slide" id="s7">
-  <div class="slide-inner">
-    <div class="rv">
-      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑦</span><h2 style="font-size:clamp(22px,2.8vw,32px)">체험단 상세</h2></div>
-      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">500건 체험단 구성 · 실행비 50:50 분담 · 5주 프로세스</p>
-      <hr class="double-line">
-    </div>
+<section class="slide">
+  <div class="container">
+    <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px">
+      <iconify-icon icon="solar:users-group-two-rounded-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
+      체험단 실행 계획
+    </p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">체험단 상세 · 비용 구조</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px);max-width:720px">총 500건 체험단으로 신규 리뷰 확보 및 브랜드 인지도 확산. 실배송 5% + 리뷰 전용 95% 구조로 효율적 운영.</p>
 
-    <div class="rv rv-d1">
-      <div class="kpi-row" style="margin-bottom:clamp(20px,3vh,32px)">
-        <div class="kpi-card kpi-accent-blue">
-          <div class="kpi-num">500<span class="unit">건</span></div>
-          <div class="kpi-label">총 체험단 규모</div>
+    <div class="g2 rv rv-d2" style="gap:clamp(20px,3vw,32px)">
+      <div>
+        <div class="kpi-row" style="grid-template-columns:1fr 1fr;margin-bottom:clamp(20px,3vh,32px)">
+          <div class="kpi-card kpi-accent-blue">
+            <div class="kpi-num">500<span class="unit">건</span></div>
+            <div class="kpi-label">총 체험단 규모</div>
+          </div>
+          <div class="kpi-card kpi-accent-orange">
+            <div class="kpi-num">25<span class="unit">건</span></div>
+            <div class="kpi-label">실제 배송 (5%)</div>
+          </div>
         </div>
-        <div class="kpi-card kpi-accent-orange">
-          <div class="kpi-num">25<span class="unit">건</span></div>
-          <div class="kpi-label">실제 발송 (5%)</div>
+
+        <div class="card">
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:clamp(12px,2vh,16px);color:var(--primary)">구성 및 분담</h3>
+          <div style="display:flex;flex-direction:column;gap:12px">
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border-light)">
+              <span style="font-weight:600;color:var(--ink)">실배송 체험단</span>
+              <span class="t-sub">25건 (5%)</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border-light)">
+              <span style="font-weight:600;color:var(--ink)">리뷰 전용</span>
+              <span class="t-sub">475건 (95%)</span>
+            </div>
+            <div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0">
+              <span style="font-weight:600;color:var(--ink)">실행비 분담</span>
+              <span class="badge badge-primary">마이비 50% : OSC 50%</span>
+            </div>
+          </div>
         </div>
-        <div class="kpi-card kpi-accent-green">
-          <div class="kpi-num">475<span class="unit">건</span></div>
-          <div class="kpi-label">리뷰 전용 (95%)</div>
-        </div>
+      </div>
+
+      <div>
+        <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:clamp(12px,2vh,16px);color:var(--primary)">비용 상세</h3>
+        <table class="tbl">
+          <thead>
+            <tr>
+              <th>항목</th>
+              <th>수량</th>
+              <th>단가</th>
+              <th>합계</th>
+              <th>분담</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="font-weight:600">체험 제품</td>
+              <td>25건</td>
+              <td>8,800원</td>
+              <td style="font-weight:600">220,000원</td>
+              <td><span class="badge badge-outline">50:50</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:600">리뷰 수당</td>
+              <td>500건</td>
+              <td>3,000원</td>
+              <td style="font-weight:600">1,500,000원</td>
+              <td><span class="badge badge-outline">50:50</span></td>
+            </tr>
+            <tr>
+              <td style="font-weight:600">배송비</td>
+              <td>25건</td>
+              <td>3,000원</td>
+              <td style="font-weight:600">75,000원</td>
+              <td><span class="badge badge-primary">마이비 100%</span></td>
+            </tr>
+            <tr class="row-highlight">
+              <td style="font-weight:700">총 실행비</td>
+              <td>-</td>
+              <td>-</td>
+              <td style="font-weight:700;color:var(--primary)">1,795,000원</td>
+              <td><span class="badge badge-accent">분담 후 897,500원</span></td>
+            </tr>
+          </tbody>
+        </table>
       </div>
     </div>
 
-    <div class="rv rv-d2" style="margin-bottom:clamp(24px,4vh,40px)">
-      <p class="exhibit-label" style="display:inline-flex;align-items:center;gap:8px">
-        <iconify-icon icon="solar:calculator-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
-        비용 구조
-      </p>
-      <table class="tbl" style="margin-top:12px">
-        <thead>
-          <tr>
-            <th>항목</th>
-            <th>수량</th>
-            <th>단가</th>
-            <th>합계</th>
-            <th>분담</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td><strong>체험 제품</strong></td>
-            <td>25건</td>
-            <td>8,800원</td>
-            <td>220,000원</td>
-            <td class="t-primary">마이비 50%, OSC 50%</td>
-          </tr>
-          <tr>
-            <td><strong>리뷰 수수료</strong></td>
-            <td>500건</td>
-            <td>3,000원</td>
-            <td>1,500,000원</td>
-            <td class="t-primary">마이비 50%, OSC 50%</td>
-          </tr>
-          <tr class="row-highlight">
-            <td><strong>배송비</strong></td>
-            <td>25건</td>
-            <td>3,000원</td>
-            <td>75,000원</td>
-            <td class="t-accent">마이비 100%</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="g2 rv rv-d3">
-      <div>
-        <p class="exhibit-label" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px">
-          <iconify-icon icon="solar:star-bold-duotone" style="color:var(--accent);font-size:16px"></iconify-icon>
+    <div class="g2 rv rv-d3" style="gap:clamp(20px,3vw,32px);margin-top:clamp(24px,4vh,40px)">
+      <div class="card">
+        <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:clamp(12px,2vh,16px);color:var(--accent);display:flex;align-items:center;gap:8px">
+          <iconify-icon icon="solar:target-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
           예상 효과
-        </p>
-        <div class="card" style="padding:clamp(16px,2.5vw,24px)">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
-            <span style="font-size:clamp(14px,1.4vw,16px);font-weight:600">신규 리뷰 500건 추가</span>
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="display:flex;align-items:center;gap:10px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="color:var(--ink)">신규 리뷰 500건 추가 (현재 15,682 → 16,182)</span>
           </div>
-          <p class="t-sub" style="font-size:clamp(13px,1.3vw,15px);margin-bottom:16px">현재 15,682 → 16,182건</p>
-          
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
-            <span style="font-size:clamp(14px,1.4vw,16px);font-weight:600">채널별 순위 상승 효과</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="color:var(--ink)">채널별 순위 상승 효과</span>
           </div>
-          
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
-            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
-            <span style="font-size:clamp(14px,1.4vw,16px);font-weight:600">브랜드 인지도 확산</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="color:var(--ink)">브랜드 인지도 확산</span>
           </div>
-          
-          <div style="display:flex;align-items:center;gap:8px">
-            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
-            <span style="font-size:clamp(14px,1.4vw,16px);font-weight:600">타겟 고객층 피드백 수집</span>
+          <div style="display:flex;align-items:center;gap:10px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="color:var(--ink)">타겟 고객층 피드백 수집</span>
           </div>
         </div>
       </div>
 
-      <div>
-        <p class="exhibit-label" style="display:inline-flex;align-items:center;gap:8px;margin-bottom:16px">
-          <iconify-icon icon="solar:calendar-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
+      <div class="card">
+        <h3 style="font-size:clamp(16px,1.8vw,20px);margin-bottom:clamp(12px,2vh,16px);color:var(--highlight);display:flex;align-items:center;gap:8px">
+          <iconify-icon icon="solar:calendar-bold" style="color:var(--highlight);font-size:18px"></iconify-icon>
           진행 일정
-        </p>
+        </h3>
         <div class="timeline">
           <div class="tl-item">
             <div class="tl-dot" style="background:var(--primary)"></div>
@@ -1304,7 +1289,7 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
           </div>
           <div class="tl-item">
             <div class="tl-dot" style="background:var(--highlight)"></div>
-            <div class="tl-label">2~3주차</div>
+            <div class="tl-label">2-3주차</div>
             <div class="tl-desc">제품 발송 및 체험</div>
           </div>
           <div class="tl-item">
@@ -1321,43 +1306,41 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
       </div>
     </div>
 
-    <div class="rv rv-d4">
-      <div class="insight-box">
-        <strong>KEY INSIGHT</strong> 체험단은 단순 리뷰 수집이 아닌 브랜드 초기 인지도 확산의 핵심 도구입니다. 실제 발송 25건을 통해 진정성 있는 후기를 확보하고, 475건의 리뷰로 랭킹 상승 모멘텀을 만듭니다.
-      </div>
+    <div class="insight-box rv rv-d4">
+      <strong>KEY INSIGHT</strong>실배송 5%로 실제 체험 품질을 확보하면서, 95%는 리뷰 집중으로 비용 효율성을 극대화. 500건 리뷰 추가로 검색 노출과 전환율 동시 개선 효과.
     </div>
   </div>
-  <span class="confidential">CONFIDENTIAL</span>
+  <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 8</span></div>
 </section>
 
 <section class="slide">
   <div class="container">
     <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px">
-      <iconify-icon icon="solar:calculator-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
+      <iconify-icon icon="solar:dollar-minimalistic-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
       EXHIBIT 7: 비용 구조
     </p>
-    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">투명한 비용 구조 · 빠른 정산</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">브랜드사는 최소 비용만 부담, OSC가 마케팅 투자를 전담합니다. 쿠팡 대비 45일 단축된 빠른 정산으로 현금흐름을 개선합니다.</p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">브랜드사 부담 비용 · 정산 구조</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">브랜드사는 체험단과 제품 공급만 부담하시면 됩니다. 마케팅 투자비·광고비·운영비는 OSC가 전담합니다.</p>
 
     <div class="g2 rv rv-d2" style="gap:clamp(20px,3vw,32px)">
       <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(16px,2vh,24px)">
-          <iconify-icon icon="solar:wallet-bold" style="color:var(--highlight);font-size:20px"></iconify-icon>
-          <h3 style="font-size:clamp(18px,2.2vw,24px);margin:0;color:var(--ink)">브랜드사 부담 비용</h3>
-        </div>
+        <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(12px,2vh,18px);display:flex;align-items:center;gap:10px">
+          <iconify-icon icon="solar:user-bold" style="color:var(--highlight);font-size:20px"></iconify-icon>
+          브랜드사 부담 비용
+        </h3>
         <table class="tbl">
           <thead>
             <tr>
-              <th>비용 항목</th>
-              <th>상세 내용</th>
-              <th>예상 금액</th>
+              <th>항목</th>
+              <th>내용</th>
+              <th>금액</th>
             </tr>
           </thead>
           <tbody>
             <tr>
               <td><strong>체험단 비용</strong></td>
               <td>실행비 50% + 택배비 100%</td>
-              <td class="t-primary">약 90만원</td>
+              <td class="t-primary">약 90만원 (500건 기준)</td>
             </tr>
             <tr>
               <td><strong>제품 공급</strong></td>
@@ -1366,72 +1349,67 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
             </tr>
           </tbody>
         </table>
-        <div style="margin-top:clamp(12px,1.5vh,16px)">
-          <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub);font-style:italic">* 500건 체험단 기준</p>
-        </div>
       </div>
 
       <div>
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(16px,2vh,24px)">
+        <h3 style="font-size:clamp(18px,2.2vw,24px);margin-bottom:clamp(12px,2vh,18px);display:flex;align-items:center;gap:10px">
           <iconify-icon icon="solar:shield-check-bold" style="color:var(--accent);font-size:20px"></iconify-icon>
-          <h3 style="font-size:clamp(18px,2.2vw,24px);margin:0;color:var(--ink)">OSC 전담 영역</h3>
-        </div>
-        <div class="card" style="padding:clamp(16px,2.5vw,24px)">
-          <ul style="margin:0;padding-left:0;list-style:none">
-            <li style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(8px,1vh,12px);font-size:clamp(14px,1.4vw,16px)">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-              채널 운영 수수료
-            </li>
-            <li style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(8px,1vh,12px);font-size:clamp(14px,1.4vw,16px)">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-              광고비 (쿠팡 PA, 네이버 SA)
-            </li>
-            <li style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(8px,1vh,12px);font-size:clamp(14px,1.4vw,16px)">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-              마케팅 실행비
-            </li>
-            <li style="display:flex;align-items:center;gap:10px;margin-bottom:clamp(8px,1vh,12px);font-size:clamp(14px,1.4vw,16px)">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-              재고 관리비
-            </li>
-            <li style="display:flex;align-items:center;gap:10px;font-size:clamp(14px,1.4vw,16px)">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-              고객 응대비
-            </li>
-          </ul>
+          OSC 전담 항목
+        </h3>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div class="card" style="padding:12px 16px;display:flex;align-items:center;gap:12px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="font-size:clamp(13px,1.4vw,16px)">채널 운영 수수료</span>
+          </div>
+          <div class="card" style="padding:12px 16px;display:flex;align-items:center;gap:12px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="font-size:clamp(13px,1.4vw,16px)">광고비 (쿠팡 PA, 네이버 SA)</span>
+          </div>
+          <div class="card" style="padding:12px 16px;display:flex;align-items:center;gap:12px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="font-size:clamp(13px,1.4vw,16px)">마케팅 실행비</span>
+          </div>
+          <div class="card" style="padding:12px 16px;display:flex;align-items:center;gap:12px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="font-size:clamp(13px,1.4vw,16px)">재고 관리비</span>
+          </div>
+          <div class="card" style="padding:12px 16px;display:flex;align-items:center;gap:12px">
+            <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
+            <span style="font-size:clamp(13px,1.4vw,16px)">고객 응대비</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <div class="kpi-row rv rv-d3" style="margin-top:clamp(28px,4vh,40px)">
+    <div class="kpi-row rv rv-d3" style="margin-top:clamp(32px,5vh,48px)">
       <div class="kpi-card kpi-accent-blue">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-          <iconify-icon icon="solar:calendar-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
-          <span style="font-size:clamp(11px,1.2vw,13px);color:var(--ink-sub);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">정산 주기</span>
+          <iconify-icon icon="solar:calendar-bold" style="color:var(--primary);font-size:18px"></iconify-icon>
+          <span class="t-sub" style="font-size:clamp(12px,1.2vw,14px);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">정산 주기</span>
         </div>
-        <div class="kpi-num">익월 15<span class="unit">일</span></div>
+        <div class="kpi-num" style="color:var(--primary)">익월 15<span class="unit">일</span></div>
         <div class="kpi-label">매출 기준 정산</div>
       </div>
       <div class="kpi-card kpi-accent-orange">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-          <iconify-icon icon="solar:flash-bold" style="color:var(--highlight);font-size:16px"></iconify-icon>
-          <span style="font-size:clamp(11px,1.2vw,13px);color:var(--ink-sub);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">정산 단축</span>
+          <iconify-icon icon="solar:speedometer-bold" style="color:var(--highlight);font-size:18px"></iconify-icon>
+          <span class="t-sub" style="font-size:clamp(12px,1.2vw,14px);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">정산 단축</span>
         </div>
-        <div class="kpi-num">45<span class="unit">일</span></div>
+        <div class="kpi-num" style="color:var(--highlight)">45<span class="unit">일</span></div>
         <div class="kpi-label">쿠팡 60일 대비 단축</div>
       </div>
       <div class="kpi-card kpi-accent-green">
         <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-          <iconify-icon icon="solar:shield-star-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-          <span style="font-size:clamp(11px,1.2vw,13px);color:var(--ink-sub);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">리스크 전담</span>
+          <iconify-icon icon="solar:hand-money-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
+          <span class="t-sub" style="font-size:clamp(12px,1.2vw,14px);font-weight:600;text-transform:uppercase;letter-spacing:0.05em">선금 구조</span>
         </div>
-        <div class="kpi-num">100<span class="unit">%</span></div>
-        <div class="kpi-label">재고 · 마케팅 리스크</div>
+        <div class="kpi-num" style="color:var(--accent)">0<span class="unit">원</span></div>
+        <div class="kpi-label">선금 없는 공급 구조</div>
       </div>
     </div>
 
-    <div class="insight-box rv rv-d4" style="margin-top:clamp(20px,3vh,28px)">
-      <strong>핵심 이점</strong> 선금 없는 공급 구조로 현금흐름 부담 없이 시작, OSC가 재고·마케팅 리스크를 전담하여 브랜드사는 제품 생산에 집중 가능합니다.
+    <div class="recommendation-box rv rv-d4" style="margin-top:clamp(24px,4vh,36px)">
+      <strong>핵심 장점</strong>브랜드사는 재고 리스크와 마케팅 투자비 부담 없이 제품 공급에만 집중할 수 있습니다. OSC가 전담하는 광고비·운영비·관리비로 안정적인 성장이 가능하며, 쿠팡 대비 빠른 정산 사이클로 현금흐름도 개선됩니다.
     </div>
   </div>
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 7</span></div>
@@ -1439,209 +1417,168 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
 
 <section class="slide">
   <div class="container">
-    <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px">
-      <iconify-icon icon="solar:chart-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
-      핵심 KPI
+    <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:10px">
+      <iconify-icon icon="solar:chart-square-bold" style="color:var(--primary);font-size:18px"></iconify-icon>
+      핵심 성과 지표
     </p>
-    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">성장 지표 · 마일스톤</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">데이터 기반 목표 설정으로 마이비 브랜드의 체계적 성장을 추적합니다. 3개 핵심 지표와 단계별 확장 로드맵.</p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">핵심 KPI · 확장 마일스톤</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">다채널 확장을 통한 매출 성장과 브랜드 인지도 확립을 위한 핵심 지표. 3개월 단위 마일스톤으로 단계적 성장 관리.</p>
 
     <div class="g3 rv rv-d2" style="gap:clamp(16px,2.5vw,24px);margin-bottom:clamp(32px,5vh,48px)">
-      <div class="metric-card mc-blue">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <iconify-icon icon="solar:graph-up-bold" style="color:var(--primary);font-size:20px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">월 매출 증가율</span>
-        </div>
-        <div class="kpi-num" style="font-size:clamp(32px,4vw,48px);color:var(--primary)">200<span class="unit">%</span></div>
-        <div class="t-sub" style="font-size:clamp(13px,1.4vw,16px);margin-top:6px">6개월 내 달성 목표</div>
-        <div class="t-mute" style="font-size:clamp(12px,1.2vw,14px);margin-top:4px">다채널 확장을 통한 매출 성장</div>
+      <div class="kpi-card kpi-accent-blue">
+        <iconify-icon icon="solar:chart-bold" style="color:var(--primary);font-size:20px;margin-bottom:8px"></iconify-icon>
+        <div class="kpi-num">200<span class="unit">%</span></div>
+        <div class="kpi-label">월 매출 증가율</div>
+        <p class="t-sub" style="font-size:clamp(12px,1.2vw,14px);margin-top:6px">6개월 내 목표<br>다채널 확장 효과</p>
       </div>
-      
-      <div class="metric-card mc-orange">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <iconify-icon icon="solar:target-bold" style="color:var(--highlight);font-size:20px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">브랜드 키워드 비중</span>
-        </div>
-        <div class="kpi-num" style="font-size:clamp(32px,4vw,48px);color:var(--highlight)">70<span class="unit">%</span></div>
-        <div class="t-sub" style="font-size:clamp(13px,1.4vw,16px);margin-top:6px">12개월 내 달성 목표</div>
-        <div class="t-mute" style="font-size:clamp(12px,1.2vw,14px);margin-top:4px">마이비 브랜드명 검색 증가</div>
+      <div class="kpi-card kpi-accent-orange">
+        <iconify-icon icon="solar:verified-check-bold" style="color:var(--highlight);font-size:20px;margin-bottom:8px"></iconify-icon>
+        <div class="kpi-num">70<span class="unit">%</span></div>
+        <div class="kpi-label">브랜드 키워드 비중</div>
+        <p class="t-sub" style="font-size:clamp(12px,1.2vw,14px);margin-top:6px">12개월 내 목표<br>마이비 브랜드명 검색</p>
       </div>
-
-      <div class="metric-card mc-green">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <iconify-icon icon="solar:layers-minimalistic-bold" style="color:var(--accent);font-size:20px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">채널 다각화</span>
-        </div>
-        <div class="kpi-num" style="font-size:clamp(32px,4vw,48px);color:var(--accent)">3<span class="unit">개</span></div>
-        <div class="t-sub" style="font-size:clamp(13px,1.4vw,16px);margin-top:6px">안정적 운영 목표</div>
-        <div class="t-mute" style="font-size:clamp(12px,1.2vw,14px);margin-top:4px">쿠팡 + 11번가 + 네이버쇼핑</div>
+      <div class="kpi-card kpi-accent-green">
+        <iconify-icon icon="solar:layers-bold" style="color:var(--accent);font-size:20px;margin-bottom:8px"></iconify-icon>
+        <div class="kpi-num">3<span class="unit">채널</span></div>
+        <div class="kpi-label">채널 다각화</div>
+        <p class="t-sub" style="font-size:clamp(12px,1.2vw,14px);margin-top:6px">안정적 운영<br>쿠팡+11번가+네이버</p>
       </div>
     </div>
 
     <div class="rv rv-d3" style="margin-bottom:clamp(32px,5vh,48px)">
-      <p class="exhibit-label" style="margin-bottom:clamp(12px,2vh,18px)">확장 마일스톤</p>
-      <table class="tbl">
+      <p class="exhibit-label">확장 마일스톤</p>
+      <table class="tbl" style="margin-top:clamp(12px,2vh,20px)">
         <thead>
           <tr>
             <th>기간</th>
             <th>마일스톤</th>
-            <th>목표 성과</th>
+            <th>목표</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><span class="badge badge-primary">3개월</span></td>
+            <td><strong>3개월</strong></td>
             <td>11번가 입점 완료</td>
-            <td class="t-primary" style="font-weight:600">월 매출 30% 증가</td>
-          </tr>
-          <tr>
-            <td><span class="badge badge-highlight">6개월</span></td>
-            <td>네이버쇼핑 진출</td>
-            <td class="t-highlight" style="font-weight:600">월 매출 100% 증가</td>
-          </tr>
-          <tr>
-            <td><span class="badge badge-accent">9개월</span></td>
-            <td>브랜드 인지도 확립</td>
-            <td class="t-accent" style="font-weight:600">브랜드 키워드 60%</td>
+            <td>월 매출 30% 증가</td>
           </tr>
           <tr class="row-highlight">
-            <td><span class="badge badge-teal">12개월</span></td>
+            <td><strong>6개월</strong></td>
+            <td>네이버쇼핑 진출</td>
+            <td>월 매출 100% 증가</td>
+          </tr>
+          <tr>
+            <td><strong>9개월</strong></td>
+            <td>브랜드 인지도 확립</td>
+            <td>브랜드 키워드 60%</td>
+          </tr>
+          <tr>
+            <td><strong>12개월</strong></td>
             <td>SKU 확장 기반</td>
-            <td class="t-teal" style="font-weight:600">콧물흡입기 연계 판매</td>
+            <td>콧물흡입기 연계 판매</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="recommendation-box rv rv-d4">
-      <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-        <iconify-icon icon="solar:document-text-bold" style="color:white;font-size:20px"></iconify-icon>
-        <strong style="color:white;font-size:clamp(14px,1.5vw,18px)">리포팅 방식</strong>
-      </div>
-      <p style="color:rgba(255,255,255,0.9);font-size:clamp(13px,1.4vw,16px);line-height:1.6">
-        <strong>월 1회 종합 리포트</strong> — 3개 핵심 KPI 달성도, 채널별 매출 기여도, 다음 달 액션플랜<br>
-        <strong>주간 간단 업데이트</strong> — 주요 지표 변화, 이슈 사항, 즉시 대응 필요 항목 카톡/이메일 전달
-      </p>
+    <div class="insight-box rv rv-d4">
+      <strong>리포팅 체계</strong> 월 1회 종합 리포트 + 주간 간단 업데이트로 성과 추적. 브랜드 키워드 비중 증가는 마이비 브랜드 성장의 핵심 지표 — 이 비중이 높아질수록 광고 의존도 감소 + 자연 검색 증가로 마케팅 ROI가 개선됩니다.
     </div>
   </div>
-  <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 10</span></div>
+  <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 11</span></div>
 </section>
 
-<section class="slide" id="s7" style="background:linear-gradient(180deg,#F8FAFC 0%,#FFFFFF 100%)">
-  <div class="slide-inner">
-    <div class="rv">
-      <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑦</span><h2 style="font-size:clamp(22px,2.8vw,32px)">OSC 소개</h2></div>
-      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">이커머스 판매대행 전문 조직과 검증된 성장 노하우를 소개합니다</p>
-      <hr class="double-line">
-    </div>
+<section class="slide">
+  <div class="container">
+    <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:10px">
+      <iconify-icon icon="solar:buildings-3-bold" style="color:var(--primary);font-size:18px"></iconify-icon>
+      회사 소개
+    </p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">이 분석을 만든 팀 OSC</h2>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">쿠팡 파트너사로서 내부 데이터에 접근 가능하며, 체계적인 판매대행 시스템을 통해 브랜드 성장을 지원합니다.</p>
 
-    <div class="rv rv-d1" style="margin-bottom:clamp(20px,3vh,32px)">
-      <div class="card" style="background:var(--surface-alt);border:1px solid var(--border-light);padding:clamp(16px,2.5vw,24px)">
-        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px">
-          <iconify-icon icon="solar:buildings-3-bold-duotone" style="color:var(--primary);font-size:24px"></iconify-icon>
-          <div>
-            <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:var(--ink)">주식회사 오에스씨 (OSC)</h3>
-            <p style="font-size:clamp(12px,1.2vw,14px);margin:0;color:var(--ink-sub)">Online Sales Consulting · 2021년 설립</p>
-          </div>
+    <div class="g3 rv rv-d2" style="margin-bottom:clamp(28px,4vh,40px)">
+      <div class="card card-top-primary">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <iconify-icon icon="solar:buildings-bold" style="color:var(--primary);font-size:20px"></iconify-icon>
+          <div class="label">Company Info</div>
         </div>
-        <p style="font-size:clamp(13px,1.3vw,15px);color:var(--ink-sub);margin:0;line-height:1.6">이커머스 판매대행 및 브랜드 성장 컨설팅 전문</p>
+        <div class="kpi-num" style="font-size:clamp(24px,3vw,32px);color:var(--primary);margin-bottom:8px">2021년</div>
+        <div class="kpi-label">설립년도</div>
+        <p class="t-sub" style="font-size:clamp(13px,1.3vw,15px);margin-top:12px;line-height:1.5">
+          <strong>주식회사 오에스씨 (OSC)</strong><br>
+          Online Sales Consulting<br>
+          이커머스 판매대행 및 브랜드 성장 컨설팅
+        </p>
       </div>
-    </div>
+      
+      <div class="card card-top-highlight">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <iconify-icon icon="solar:verified-check-bold-duotone" style="color:var(--highlight);font-size:20px"></iconify-icon>
+          <div class="label">Partnership</div>
+        </div>
+        <div class="kpi-num" style="font-size:clamp(24px,3vw,32px);color:var(--highlight);margin-bottom:8px">쿠팡</div>
+        <div class="kpi-label">광고 파트너</div>
+        <p class="t-sub" style="font-size:clamp(13px,1.3vw,15px);margin-top:12px;line-height:1.5">
+          내부 데이터 접근 가능<br>
+          최신 알고리즘 이해<br>
+          체계적인 체험단 운영 시스템
+        </p>
+      </div>
 
-    <div class="rv rv-d2" style="margin-bottom:clamp(20px,3vh,32px)">
-      <div style="margin-bottom:16px">
-        <h4 style="font-size:clamp(15px,1.6vw,18px);color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px">
-          <iconify-icon icon="solar:verified-check-bold-duotone" style="color:var(--accent);font-size:18px"></iconify-icon>
-          핵심 전문성
-        </h4>
-      </div>
-      <div class="g2" style="gap:clamp(12px,2vw,16px)">
-        <div class="card">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-            <iconify-icon icon="solar:widget-5-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
-            <span style="font-size:clamp(12px,1.2vw,14px);color:var(--ink);font-weight:600">쿠팡 파트너 - 내부 데이터 접근 가능</span>
-          </div>
+      <div class="card card-top-accent">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:12px">
+          <iconify-icon icon="solar:chart-square-bold" style="color:var(--accent);font-size:20px"></iconify-icon>
+          <div class="label">Expertise</div>
         </div>
-        <div class="card">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-            <iconify-icon icon="solar:baby-bold" style="color:var(--highlight);font-size:16px"></iconify-icon>
-            <span style="font-size:clamp(12px,1.2vw,14px);color:var(--ink);font-weight:600">유아용품 카테고리 운영 경험 보유</span>
-          </div>
-        </div>
-        <div class="card">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-            <iconify-icon icon="solar:users-group-rounded-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-            <span style="font-size:clamp(12px,1.2vw,14px);color:var(--ink);font-weight:600">체계적인 체험단 운영 시스템</span>
-          </div>
-        </div>
-        <div class="card">
-          <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-            <iconify-icon icon="solar:chart-square-bold" style="color:var(--teal);font-size:16px"></iconify-icon>
-            <span style="font-size:clamp(12px,1.2vw,14px);color:var(--ink);font-weight:600">다채널 확장 전문 노하우</span>
-          </div>
-        </div>
+        <div class="kpi-num" style="font-size:clamp(24px,3vw,32px);color:var(--accent);margin-bottom:8px">다채널</div>
+        <div class="kpi-label">확장 전문</div>
+        <p class="t-sub" style="font-size:clamp(13px,1.3vw,15px);margin-top:12px;line-height:1.5">
+          유아용품 카테고리 운영 경험<br>
+          리스크 없는 판매대행 구조<br>
+          투명한 성과 리포팅 시스템
+        </p>
       </div>
     </div>
 
-    <div class="rv rv-d3" style="margin-bottom:clamp(20px,3vh,32px)">
-      <div style="margin-bottom:16px">
-        <h4 style="font-size:clamp(15px,1.6vw,18px);color:var(--ink);margin-bottom:12px;display:flex;align-items:center;gap:8px">
-          <iconify-icon icon="solar:star-bold-duotone" style="color:var(--highlight);font-size:18px"></iconify-icon>
-          주요 성과 레퍼런스
-        </h4>
-      </div>
+    <div class="rv rv-d3" style="margin-bottom:clamp(28px,4vh,40px)">
+      <p class="exhibit-label" style="margin-bottom:clamp(12px,2vh,18px)">주요 성과 레퍼런스</p>
       <table class="tbl">
         <thead>
           <tr>
-            <th style="font-size:clamp(12px,1.2vw,14px)">카테고리</th>
-            <th style="font-size:clamp(12px,1.2vw,14px)">브랜드</th>
-            <th style="font-size:clamp(12px,1.2vw,14px)">성과</th>
-            <th style="font-size:clamp(12px,1.2vw,14px)">기간</th>
+            <th>카테고리</th>
+            <th>브랜드</th>
+            <th>성과</th>
+            <th>기간</th>
           </tr>
         </thead>
         <tbody>
           <tr class="row-highlight">
-            <td style="font-size:clamp(12px,1.2vw,14px)">유아용품</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">비공개 A브랜드</td>
-            <td style="font-size:clamp(12px,1.2vw,14px);color:var(--accent);font-weight:600">월 매출 300% 증가</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">8개월</td>
+            <td><span class="badge badge-primary">유아용품</span></td>
+            <td>비공개 A브랜드</td>
+            <td><strong>월 매출 300% 증가</strong></td>
+            <td>8개월</td>
           </tr>
           <tr>
-            <td style="font-size:clamp(12px,1.2vw,14px)">생활용품</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">풀캅스</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">타 채널 확장 성공</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">6개월</td>
+            <td><span class="badge badge-highlight">생활용품</span></td>
+            <td>풀캅스</td>
+            <td>타 채널 확장 성공</td>
+            <td>6개월</td>
           </tr>
           <tr>
-            <td style="font-size:clamp(12px,1.2vw,14px)">펫케어</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">비공개 B브랜드</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">브랜드 키워드 60%</td>
-            <td style="font-size:clamp(12px,1.2vw,14px)">12개월</td>
+            <td><span class="badge badge-accent">펫케어</span></td>
+            <td>비공개 B브랜드</td>
+            <td>브랜드 키워드 60%</td>
+            <td>12개월</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="rv rv-d4">
-      <div class="recommendation-box">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-          <iconify-icon icon="solar:shield-check-bold" style="color:var(--highlight);font-size:20px"></iconify-icon>
-          <strong style="color:white;font-size:clamp(14px,1.4vw,16px)">OSC와 함께하는 이유</strong>
-        </div>
-        <div class="g2" style="gap:clamp(20px,3vw,32px)">
-          <div>
-            <p style="color:rgba(255,255,255,0.9);font-size:clamp(12px,1.2vw,14px);margin-bottom:8px">• 쿠팡 파트너사로서 최신 알고리즘 이해</p>
-            <p style="color:rgba(255,255,255,0.9);font-size:clamp(12px,1.2vw,14px);margin-bottom:8px">• 카테고리별 차별화된 마케팅 노하우</p>
-          </div>
-          <div>
-            <p style="color:rgba(255,255,255,0.9);font-size:clamp(12px,1.2vw,14px);margin-bottom:8px">• 리스크 없는 판매대행 구조</p>
-            <p style="color:rgba(255,255,255,0.9);font-size:clamp(12px,1.2vw,14px);margin-bottom:8px">• 투명한 성과 리포팅 시스템</p>
-          </div>
-        </div>
-      </div>
+    <div class="insight-box rv rv-d4">
+      <strong>OSC 차별점</strong> 쿠팡 파트너사로서 최신 알고리즘 이해 + 카테고리별 차별화된 마케팅 노하우 + 리스크 없는 판매대행 구조 + 투명한 성과 리포팅 시스템으로 브랜드 성장을 체계적으로 지원합니다.
     </div>
   </div>
-  <span class="confidential">CONFIDENTIAL</span>
+  <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 10</span></div>
 </section>
 
 <section class="slide">
