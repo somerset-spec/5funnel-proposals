@@ -15,6 +15,7 @@
   <link href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700;800&display=swap" rel="stylesheet">
   <script type="module" src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
   <style>
 :root {
   --primary:#3E90F5;--primary-dim:rgba(62,144,245,.08);--primary-mid:rgba(62,144,245,.18);--primary-glow:rgba(62,144,245,.35);
@@ -700,97 +701,83 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
       EXHIBIT 4: 수요 예측 시나리오
     </p>
     <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">점유율별 매출 시뮬레이션</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px);max-width:720px">시장 진입 후 달성 가능한 점유율에 따른 매출 예측. 단가 8,800원 고정, 쿠팡 외 채널 확장 효과 포함.</p>
+    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(20px,3vh,32px);max-width:720px">시장 점유율 1%~10%별 예상 매출액과 판매량. 보수적부터 도전적 목표까지 4단계 시나리오로 구성.</p>
 
-    <div class="rv rv-d2" style="max-width:840px;margin:0 auto clamp(24px,4vh,36px)">
+    <div class="rv rv-d2" style="max-width:800px;margin:0 auto clamp(24px,4vh,36px)">
       <canvas data-chart='{
         "type": "bar",
         "data": {
-          "labels": ["1% (보수적)", "3% (현실적)", "5% (적극적)", "10% (도전적)"],
+          "labels": ["1% 점유율", "3% 점유율", "5% 점유율", "10% 점유율"],
           "datasets": [
             {
-              "label": "월 판매량 (개)",
-              "data": [500, 1200, 2000, 4000],
-              "backgroundColor": "#3B7DD8",
-              "yAxisID": "y"
-            },
-            {
-              "label": "월 매출 (만원)",
-              "data": [440, 1056, 1760, 3520],
-              "backgroundColor": "#E8712B", 
-              "yAxisID": "y1"
+              "label": "연간 매출 (억원)",
+              "data": [0, 0, 0, 0],
+              "backgroundColor": ["#3B7DD8", "#5A9BF0", "#E8712B", "#27AE60"]
             }
           ]
         },
         "options": {
           "responsive": true,
           "plugins": {
-            "legend": {"display": true, "position": "top"}
+            "legend": {"display": false},
+            "title": {"display": true, "text": "점유율별 연간 예상 매출"}
           },
           "scales": {
-            "y": {"type": "linear", "display": true, "position": "left", "title": {"display": true, "text": "월 판매량 (개)"}},
-            "y1": {"type": "linear", "display": true, "position": "right", "title": {"display": true, "text": "월 매출 (만원)"}, "grid": {"drawOnChartArea": false}}
+            "y": {"title": {"display": true, "text": "억원"}}
           }
         }
       }'></canvas>
     </div>
 
-    <div class="g3 rv rv-d3" style="gap:clamp(16px,2.5vw,24px);margin-bottom:clamp(24px,4vh,36px)">
+    <div class="g2 rv rv-d3" style="gap:clamp(16px,2.5vw,24px)">
       <div class="metric-card mc-blue">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
           <iconify-icon icon="solar:target-bold" style="color:var(--primary);font-size:18px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">보수적 목표</span>
+          <span class="t-sub" style="font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">보수적 목표</span>
         </div>
         <div class="kpi-num" style="font-size:clamp(32px,4vw,48px);color:var(--primary)">1<span class="unit">%</span></div>
-        <div class="t-sub" style="font-size:clamp(12px,1.3vw,15px);margin-top:4px">월 500개 / 월 440만원</div>
+        <div class="t-sub" style="font-size:clamp(13px,1.4vw,16px);margin-top:6px">월 500개 예상</div>
       </div>
+
       <div class="metric-card mc-orange">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-          <iconify-icon icon="solar:graph-up-bold" style="color:var(--highlight);font-size:18px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">현실적 목표</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <iconify-icon icon="solar:chart-bold" style="color:var(--highlight);font-size:18px"></iconify-icon>
+          <span class="t-sub" style="font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">현실적 목표</span>
         </div>
         <div class="kpi-num" style="font-size:clamp(32px,4vw,48px);color:var(--highlight)">3<span class="unit">%</span></div>
-        <div class="t-sub" style="font-size:clamp(12px,1.3vw,15px);margin-top:4px">월 1,200개 / 월 1,056만원</div>
+        <div class="t-sub" style="font-size:clamp(13px,1.4vw,16px);margin-top:6px">월 1,200개 예상</div>
       </div>
+
       <div class="metric-card mc-green">
-        <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px">
-          <iconify-icon icon="solar:cup-star-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(11px,1.2vw,13px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">적극적 목표</span>
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <iconify-icon icon="solar:rocket-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
+          <span class="t-sub" style="font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">적극적 목표</span>
         </div>
         <div class="kpi-num" style="font-size:clamp(32px,4vw,48px);color:var(--accent)">5<span class="unit">%</span></div>
-        <div class="t-sub" style="font-size:clamp(12px,1.3vw,15px);margin-top:4px">월 2,000개 / 월 1,760만원</div>
+        <div class="t-sub" style="font-size:clamp(13px,1.4vw,16px);margin-top:6px">월 2,000개 예상</div>
+      </div>
+
+      <div class="metric-card mc-navy">
+        <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px">
+          <iconify-icon icon="solar:star-bold" style="color:var(--ink);font-size:18px"></iconify-icon>
+          <span class="t-sub" style="font-size:clamp(12px,1.3vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">도전적 목표</span>
+        </div>
+        <div class="kpi-num" style="font-size:clamp(32px,4vw,48px);color:var(--ink)">10<span class="unit">%</span></div>
+        <div class="t-sub" style="font-size:clamp(13px,1.4vw,16px);margin-top:6px">시장 리더 그룹</div>
       </div>
     </div>
 
-    <div class="card-tint-primary rv rv-d4" style="padding:clamp(16px,2.5vw,24px);border-radius:clamp(12px,2vw,16px);margin-bottom:clamp(20px,3vh,28px)">
+    <div class="card-tint-primary rv rv-d4" style="padding:clamp(16px,3vh,24px);margin:clamp(20px,3vh,32px) 0">
       <div style="display:flex;align-items:center;gap:10px;margin-bottom:12px">
-        <iconify-icon icon="solar:calculator-bold-duotone" style="color:var(--primary);font-size:20px"></iconify-icon>
-        <strong style="font-size:clamp(14px,1.5vw,16px);color:var(--ink)">클라이언트 목표 역산 분석</strong>
+        <iconify-icon icon="solar:calculator-bold" style="color:var(--primary);font-size:20px"></iconify-icon>
+        <h3 style="font-size:clamp(16px,2vw,20px);color:var(--primary);margin:0">클라이언트 목표 역산 분석</h3>
       </div>
-      <p style="font-size:clamp(13px,1.4vw,15px);color:var(--ink-sub);line-height:1.6;margin:0">
-        클라이언트 매출 목표 확인 후 필요 점유율을 역산하여 현실적 달성 가능성을 검토합니다. 현재 매출 현황 파악이 완료되면 구체적인 성장 시나리오를 제시할 예정입니다.
-      </p>
+      <p class="t-sub" style="font-size:clamp(14px,1.4vw,16px);line-height:1.6;margin-bottom:8px">현재 매출 목표 확인 후 역산 분석 예정. 클라이언트와 협의하여 현실적 달성 가능한 시나리오를 제시합니다.</p>
+      <p class="t-mute" style="font-size:clamp(13px,1.3vw,15px)">현재 매출 현황 파악 필요 → 목표 설정 → 필요 점유율 계산</p>
     </div>
 
-    <div class="tbl rv rv-d5">
-      <table>
-        <thead>
-          <tr>
-            <th style="text-align:left">전제 조건</th>
-            <th style="text-align:right">값</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>제품 단가</td><td style="text-align:right"><strong>8,800원</strong></td></tr>
-          <tr><td>쿠팡 외 채널 확장 효과</td><td style="text-align:right">+20% 매출 상승</td></tr>
-          <tr><td>체험단 마케팅 효과</td><td style="text-align:right">인지도 상승 기여</td></tr>
-          <tr><td>기존 리뷰 자산</td><td style="text-align:right">초기 신뢰도 확보</td></tr>
-        </tbody>
-      </table>
-    </div>
-
-    <div class="insight-box rv rv-d6">
-      <strong>KEY INSIGHT</strong> 3% 점유율(현실적 목표)은 월 1,056만원으로 연 1.27억 수준입니다. 체험단 마케팅과 기존 리뷰 자산을 활용하면 6개월 내 달성 가능한 현실적 목표로 판단됩니다.
+    <div class="insight-box rv rv-d5">
+      <strong>시뮬레이션 기준</strong>제품 단가 8,800원 고정, 쿠팡 외 채널 확장 효과 반영, 체험단 마케팅 통한 인지도 상승, 기존 리뷰 자산 활용을 전제로 산출. 1년차 3% 점유율이 현실적 목표선입니다.
     </div>
   </div>
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 4</span></div>
@@ -1581,169 +1568,137 @@ iconify-icon{display:inline-flex;vertical-align:middle;line-height:1}
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 10</span></div>
 </section>
 
-<section class="slide">
+<section class="slide slide-cta">
   <div class="container">
-    <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px">
-      <iconify-icon icon="solar:chat-dots-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
-      EXHIBIT 8: 커뮤니케이션
+    <p class="exhibit-label rv" style="display:inline-flex;align-items:center;gap:8px;color:rgba(255,255,255,0.7)">
+      <iconify-icon icon="solar:chat-round-dots-bold" style="color:var(--highlight);font-size:16px"></iconify-icon>
+      COMMUNICATION
     </p>
-    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(8px,1.5vh,14px)">투명하고 신속한 소통 체계</h2>
-    <p class="rv rv-d1 t-sub" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(24px,4vh,36px);max-width:720px">
-      정기 보고부터 긴급 상황까지, 브랜드 성장 과정을 실시간으로 공유하고 함께 의사결정합니다.
-    </p>
+    <h2 class="rv" style="font-size:clamp(28px,4vw,48px);margin-bottom:clamp(12px,2vh,20px);color:#fff">효율적인 소통으로 성과를 극대화</h2>
+    <p class="rv rv-d1" style="font-size:clamp(14px,1.5vw,18px);margin-bottom:clamp(32px,4vh,48px);max-width:720px;color:rgba(255,255,255,0.75);line-height:1.6">정기 보고와 즉시 소통을 통해 시장 변화에 빠르게 대응하고, 투명한 성과 공유로 신뢰 기반의 파트너십을 만들어갑니다.</p>
 
-    <div class="g2 rv rv-d2" style="gap:clamp(20px,3vw,32px);margin-bottom:clamp(32px,5vh,48px)">
-      <div class="card">
-        <h3 style="font-size:clamp(18px,2vw,22px);margin-bottom:clamp(16px,2.5vh,20px);display:flex;align-items:center;gap:10px">
-          <iconify-icon icon="solar:calendar-bold" style="color:var(--primary);font-size:20px"></iconify-icon>
-          보고 주기
-        </h3>
-        <div style="margin-bottom:clamp(16px,2.5vh,20px)">
-          <div class="badge badge-primary" style="margin-bottom:8px">주간</div>
-          <div style="font-size:clamp(14px,1.4vw,16px);margin-bottom:6px;font-weight:600">매주 금요일</div>
-          <div class="t-sub" style="font-size:clamp(13px,1.3vw,15px);margin-bottom:4px">주간 성과 요약 (매출, 순위, 이슈)</div>
-          <div class="t-mute" style="font-size:clamp(12px,1.2vw,14px)">카카오톡 또는 이메일</div>
+    <div class="g2 rv rv-d2" style="gap:clamp(24px,3vw,40px);margin-bottom:clamp(32px,4vh,48px)">
+      <div class="card" style="background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <iconify-icon icon="solar:calendar-bold" style="color:var(--highlight);font-size:20px"></iconify-icon>
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:#fff;font-weight:700">정기 보고 일정</h3>
         </div>
-        <div style="margin-bottom:clamp(16px,2.5vh,20px)">
-          <div class="badge badge-highlight" style="margin-bottom:8px">월간</div>
-          <div style="font-size:clamp(14px,1.4vw,16px);margin-bottom:6px;font-weight:600">매월 5일</div>
-          <div class="t-sub" style="font-size:clamp(13px,1.3vw,15px);margin-bottom:4px">종합 리포트 (상세 분석, 다음 달 계획)</div>
-          <div class="t-mute" style="font-size:clamp(12px,1.2vw,14px)">PDF 리포트 + 화상 미팅</div>
+        <div style="margin-bottom:20px">
+          <div style="font-size:clamp(14px,1.4vw,16px);font-weight:600;color:#fff;margin-bottom:6px">매주 금요일</div>
+          <div style="font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,0.7);margin-bottom:4px">주간 성과 요약 (매출, 순위, 이슈)</div>
+          <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,0.5)">카카오톡 또는 이메일</div>
         </div>
         <div>
-          <div class="badge badge-danger" style="margin-bottom:8px">긴급</div>
-          <div style="font-size:clamp(14px,1.4vw,16px);margin-bottom:6px;font-weight:600">24시간 이내 응답</div>
-          <div class="t-sub" style="font-size:clamp(13px,1.3vw,15px);margin-bottom:4px">긴급 이슈, 재고 부족, 고객 컴플레인</div>
-          <div class="t-mute" style="font-size:clamp(12px,1.2vw,14px)">카카오톡, 전화</div>
+          <div style="font-size:clamp(14px,1.4vw,16px);font-weight:600;color:#fff;margin-bottom:6px">매월 5일</div>
+          <div style="font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,0.7);margin-bottom:4px">종합 리포트 (상세 분석, 다음 달 계획)</div>
+          <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,0.5)">PDF 리포트 + 화상 미팅</div>
         </div>
       </div>
 
-      <div class="card">
-        <h3 style="font-size:clamp(18px,2vw,22px);margin-bottom:clamp(16px,2.5vh,20px);display:flex;align-items:center;gap:10px">
-          <iconify-icon icon="solar:share-bold" style="color:var(--highlight);font-size:20px"></iconify-icon>
-          공유 대시보드
-        </h3>
-        <div style="margin-bottom:clamp(16px,2.5vh,20px)">
-          <div style="font-size:clamp(14px,1.4vw,16px);margin-bottom:8px;font-weight:600">구글 스프레드시트 (실시간)</div>
-          <div style="display:flex;flex-direction:column;gap:6px">
-            <div style="display:flex;align-items:center;gap:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px"></iconify-icon>
-              <span class="t-sub" style="font-size:clamp(13px,1.3vw,15px)">일별 매출 현황</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px"></iconify-icon>
-              <span class="t-sub" style="font-size:clamp(13px,1.3vw,15px)">채널별 순위 추이</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px"></iconify-icon>
-              <span class="t-sub" style="font-size:clamp(13px,1.3vw,15px)">재고 현황</span>
-            </div>
-            <div style="display:flex;align-items:center;gap:8px">
-              <iconify-icon icon="solar:check-circle-bold" style="color:var(--accent);font-size:14px"></iconify-icon>
-              <span class="t-sub" style="font-size:clamp(13px,1.3vw,15px)">마케팅 성과 지표</span>
-            </div>
-          </div>
+      <div class="card" style="background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <iconify-icon icon="solar:danger-triangle-bold" style="color:var(--danger);font-size:20px"></iconify-icon>
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:#fff;font-weight:700">긴급 상황 대응</h3>
         </div>
-        <div class="insight-box" style="margin-top:clamp(16px,2.5vh,20px)">
-          <strong>투명한 성과 공유</strong> 언제든지 실시간 데이터를 확인하실 수 있습니다
+        <div style="margin-bottom:16px">
+          <div style="font-size:clamp(14px,1.4vw,16px);font-weight:600;color:#fff;margin-bottom:6px">24시간 이내 대응</div>
+          <div style="font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,0.7);margin-bottom:4px">카카오톡, 전화</div>
+        </div>
+        <div style="padding:12px;background:rgba(239,68,68,0.1);border-radius:8px;border-left:3px solid var(--danger)">
+          <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,0.7);line-height:1.4">긴급 이슈, 재고 부족, 고객 컴플레인 등</div>
         </div>
       </div>
     </div>
 
-    <div class="rv rv-d3" style="margin-bottom:clamp(32px,5vh,48px)">
-      <h3 style="font-size:clamp(20px,2.5vw,24px);margin-bottom:clamp(16px,2.5vh,20px);display:flex;align-items:center;gap:10px">
-        <iconify-icon icon="solar:phone-bold" style="color:var(--accent);font-size:22px"></iconify-icon>
-        소통 채널별 역할
-      </h3>
+    <div class="rv rv-d3" style="margin-bottom:clamp(32px,4vh,48px)">
+      <h3 style="font-size:clamp(18px,2vw,22px);margin-bottom:clamp(16px,2vh,24px);color:#fff;text-align:center;font-weight:700">소통 채널별 활용</h3>
       <table class="tbl">
         <thead>
           <tr>
-            <th style="width:20%">채널</th>
-            <th style="width:45%">목적</th>
-            <th style="width:20%">빈도</th>
-            <th style="width:15%">응답시간</th>
+            <th style="color:#fff">채널</th>
+            <th style="color:#fff">용도</th>
+            <th style="color:#fff">빈도</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>
-              <div style="display:flex;align-items:center;gap:8px">
-                <iconify-icon icon="solar:chat-square-bold" style="color:var(--primary);font-size:16px"></iconify-icon>
-                <strong>카카오톡</strong>
-              </div>
+            <td style="font-weight:600;color:#fff">
+              <iconify-icon icon="solar:chat-square-bold" style="color:var(--accent);font-size:16px;margin-right:6px"></iconify-icon>
+              카카오톡
             </td>
             <td>일상적 소통, 즉시 공유 필요한 정보</td>
-            <td><span class="badge badge-primary">수시</span></td>
-            <td class="t-sub">즉시</td>
+            <td>수시</td>
           </tr>
           <tr>
-            <td>
-              <div style="display:flex;align-items:center;gap:8px">
-                <iconify-icon icon="solar:letter-bold" style="color:var(--highlight);font-size:16px"></iconify-icon>
-                <strong>이메일</strong>
-              </div>
+            <td style="font-weight:600;color:#fff">
+              <iconify-icon icon="solar:letter-bold" style="color:var(--primary);font-size:16px;margin-right:6px"></iconify-icon>
+              이메일
             </td>
             <td>공식적 보고, 문서 공유</td>
-            <td><span class="badge badge-outline">주간/월간</span></td>
-            <td class="t-sub">4시간 이내</td>
+            <td>주간/월간</td>
           </tr>
           <tr>
-            <td>
-              <div style="display:flex;align-items:center;gap:8px">
-                <iconify-icon icon="solar:videocamera-bold" style="color:var(--accent);font-size:16px"></iconify-icon>
-                <strong>화상 미팅</strong>
-              </div>
+            <td style="font-weight:600;color:#fff">
+              <iconify-icon icon="solar:videocamera-bold" style="color:var(--highlight);font-size:16px;margin-right:6px"></iconify-icon>
+              화상 미팅
             </td>
             <td>전략 논의, 심화 분석 공유</td>
-            <td><span class="badge badge-accent">월 1회</span></td>
-            <td class="t-sub">예약제</td>
+            <td>월 1회</td>
           </tr>
           <tr>
-            <td>
-              <div style="display:flex;align-items:center;gap:8px">
-                <iconify-icon icon="solar:phone-calling-bold" style="color:var(--danger);font-size:16px"></iconify-icon>
-                <strong>전화</strong>
-              </div>
+            <td style="font-weight:600;color:#fff">
+              <iconify-icon icon="solar:phone-bold" style="color:var(--teal);font-size:16px;margin-right:6px"></iconify-icon>
+              전화
             </td>
             <td>긴급 상황, 즉시 논의 필요한 사안</td>
-            <td><span class="badge badge-danger">필요시</span></td>
-            <td class="t-sub">즉시</td>
+            <td>필요시</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <div class="g3 rv rv-d4">
-      <div class="metric-card mc-blue">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <iconify-icon icon="solar:settings-bold" style="color:var(--primary);font-size:18px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(12px,1.2vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">일상 운영</span>
+    <div class="g2 rv rv-d4" style="gap:clamp(24px,3vw,40px)">
+      <div class="card" style="background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <iconify-icon icon="solar:monitor-bold" style="color:var(--primary);font-size:20px"></iconify-icon>
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:#fff;font-weight:700">공유 대시보드</h3>
         </div>
-        <div style="font-size:clamp(16px,1.8vw,20px);color:var(--primary);margin-bottom:6px;font-weight:700">OSC 단독 실행</div>
-        <div class="t-sub" style="font-size:clamp(13px,1.3vw,15px)">광고 최적화, 키워드 관리, 일반적 운영 이슈</div>
+        <div style="margin-bottom:12px">
+          <div style="font-size:clamp(14px,1.4vw,16px);font-weight:600;color:#fff;margin-bottom:4px">구글 스프레드시트</div>
+          <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,0.6)">실시간 업데이트</div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:6px">
+          <div style="font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,0.8)">• 일별 매출 현황</div>
+          <div style="font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,0.8)">• 채널별 순위 추이</div>
+          <div style="font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,0.8)">• 재고 현황</div>
+          <div style="font-size:clamp(13px,1.3vw,15px);color:rgba(255,255,255,0.8)">• 마케팅 성과 지표</div>
+        </div>
       </div>
 
-      <div class="metric-card mc-orange">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <iconify-icon icon="solar:users-group-two-rounded-bold" style="color:var(--highlight);font-size:18px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(12px,1.2vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">전략 결정</span>
+      <div class="card" style="background:rgba(255,255,255,0.08);backdrop-filter:blur(12px);border:1px solid rgba(255,255,255,0.12)">
+        <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
+          <iconify-icon icon="solar:settings-bold" style="color:var(--accent);font-size:20px"></iconify-icon>
+          <h3 style="font-size:clamp(16px,1.8vw,20px);margin:0;color:#fff;font-weight:700">의사결정 프로세스</h3>
         </div>
-        <div style="font-size:clamp(16px,1.8vw,20px);color:var(--highlight);margin-bottom:6px;font-weight:700">사전 협의 후 실행</div>
-        <div class="t-sub" style="font-size:clamp(13px,1.3vw,15px)">예산 조정, 신규 SKU, 프로모션 기획</div>
-      </div>
-
-      <div class="metric-card mc-green">
-        <div style="display:flex;align-items:center;gap:10px;margin-bottom:10px">
-          <iconify-icon icon="solar:danger-triangle-bold" style="color:var(--accent);font-size:18px"></iconify-icon>
-          <span class="t-sub" style="font-size:clamp(12px,1.2vw,14px);font-weight:600;letter-spacing:.05em;text-transform:uppercase">긴급 대응</span>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div>
+            <div style="font-size:clamp(13px,1.3vw,15px);font-weight:600;color:var(--accent);margin-bottom:4px">일상 운영</div>
+            <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,0.7)">OSC 단독 실행</div>
+          </div>
+          <div>
+            <div style="font-size:clamp(13px,1.3vw,15px);font-weight:600;color:var(--highlight);margin-bottom:4px">전략적 변경</div>
+            <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,0.7)">사전 협의 후 실행</div>
+          </div>
+          <div>
+            <div style="font-size:clamp(13px,1.3vw,15px);font-weight:600;color:var(--danger);margin-bottom:4px">긴급 상황</div>
+            <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,0.7)">실행 후 즉시 보고</div>
+          </div>
         </div>
-        <div style="font-size:clamp(16px,1.8vw,20px);color:var(--accent);margin-bottom:6px;font-weight:700">실행 후 즉시 보고</div>
-        <div class="t-sub" style="font-size:clamp(13px,1.3vw,15px)">리스팅 오류, 재고 이슈, 고객 컴플레인</div>
       </div>
     </div>
 
-    <div class="recommendation-box rv rv-d5" style="margin-top:clamp(32px,5vh,48px)">
-      <strong>파트너십의 핵심은 소통입니다</strong> OSC는 브랜드 성장 과정을 투명하게 공유하고, 함께 최선의 선택을 만들어갑니다. 언제든지 궁금한 것이 있으시면 주저하지 마시고 연락주세요.
+    <div class="recommendation-box rv rv-d5">
+      <strong>투명하고 신속한 소통이 성공의 열쇠</strong>매주 성과를 함께 확인하고, 월간 전략 회의를 통해 지속적으로 개선해 나갑니다. 24시간 긴급 대응 체계로 어떤 상황에도 빠르게 대처할 수 있습니다.
     </div>
   </div>
   <div class="page-footer"><span>CONFIDENTIAL</span><span>Page 8</span></div>
@@ -1768,6 +1723,21 @@ if(nav&&slides.length){
     });
   },{threshold:.35});
   slides.forEach((s,i)=>{s.id='s'+(i+1);io.observe(s)});
+}
+
+// Chart.js auto-init — reads <canvas data-chart='...'> and renders.
+// Without this hook, AI-generated canvases collapse to 0 height leaving
+// large empty space in the slide layout.
+if (typeof Chart !== 'undefined') {
+  document.querySelectorAll('canvas[data-chart]').forEach(canvas => {
+    try {
+      const cfg = JSON.parse(canvas.getAttribute('data-chart'));
+      if (!canvas.style.maxHeight) canvas.style.maxHeight = '420px';
+      new Chart(canvas, cfg);
+    } catch (err) {
+      console.warn('Chart.js init failed for canvas:', err);
+    }
+  });
 }
 </script>
 </body>
