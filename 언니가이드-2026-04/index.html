@@ -809,9 +809,34 @@ td.num.big { color: var(--accent); font-size: 19px; }
   .slide { page-break-after: always; min-height: auto; }
   .pkg.featured { transform: none; }
 }
+
+/* MOBILE NOTICE */
+.mobile-notice, .mobile-spacer { display: none; }
+@media (max-width: 768px) {
+  .mobile-notice {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    background: rgba(15, 23, 42, 0.92);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    text-align: center;
+    padding: 10px 16px;
+    font-size: 13px;
+    color: #cbd5e1;
+    letter-spacing: 0.02em;
+    border-bottom: 1px solid rgba(255, 106, 61, 0.3);
+  }
+  .mobile-spacer { display: block; height: 40px; }
+}
 </style>
 </head>
 <body>
+<div class="mobile-notice">본 제안서는 PC에 최적화되어 있습니다. PC에서 확인해주세요.</div>
+<div class="mobile-spacer"></div>
 <div class="deck">
 
 <!-- 1. COVER -->
