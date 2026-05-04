@@ -1,0 +1,1512 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8" />
+<title>첫 대면 미팅 플레이북 · 공급사 대표 · OSC</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow, noarchive" />
+<meta name="googlebot" content="noindex, nofollow" />
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="0" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Pretendard+Variable&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #faf8f3;
+    --panel: #ffffff;
+    --cream: #f5f1e8;
+    --cream-soft: #f8f4eb;
+    --line: #e8e2d4;
+    --line-soft: #efebe0;
+    --line-dash: #d9d3c4;
+
+    --ink: #2a2823;
+    --txt: #4a4740;
+    --txt-2: #6a675e;
+    --mute: #8a8678;
+    --dim: #a8a494;
+
+    --accent: #4a6c5c;
+    --accent-ink: #2f4b3e;
+    --accent-soft: #dde7e0;
+    --accent-softer: #ecf2ee;
+
+    --warm: #c97c3c;
+    --warm-soft: #f5e3d0;
+    --warm-softer: #faecd9;
+
+    --halt: #a54535;
+    --halt-soft: #f2d9d1;
+    --halt-softer: #f9ece5;
+
+    --ok: #5a7a4e;
+    --ok-soft: #e0ebd5;
+
+    --hook: #6b4d8a;
+    --hook-soft: #e6dff0;
+    --hook-softer: #f0ebf6;
+
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    font-family: 'Pretendard Variable', Pretendard, -apple-system, system-ui, sans-serif;
+    letter-spacing: -0.022em;
+    word-break: keep-all;
+    color: var(--txt);
+    background: var(--bg);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  body { font-size: 15px; line-height: 1.7; margin: 0; }
+
+  .mono { font-family: var(--mono); letter-spacing: 0; font-feature-settings: 'tnum'; }
+  .tnum { font-variant-numeric: tabular-nums; }
+
+  h1, h2, h3, h4 { color: var(--ink); text-wrap: balance; margin: 0; }
+
+  .h-cover { font-size: 40px; font-weight: 600; line-height: 1.1; letter-spacing: -0.028em; }
+  .h-sec   { font-size: 26px; font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; margin-bottom: 20px; }
+  .h-sub   { font-size: 18px; font-weight: 600; line-height: 1.3; letter-spacing: -0.014em; margin-bottom: 12px; color: var(--ink); }
+  .h-card  { font-size: 15px; font-weight: 600; line-height: 1.3; color: var(--ink); }
+
+  .eyebrow {
+    font-size: 11px; font-weight: 600; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 8px;
+  }
+  .nano { font-size: 11px; color: var(--mute); letter-spacing: 0.04em; }
+  .meta { font-size: 12.5px; color: var(--txt-2); }
+  .lede { font-size: 17px; line-height: 1.6; color: var(--txt-2); text-wrap: balance; }
+
+  .star {
+    color: var(--warm);
+    font-size: 12px;
+    margin-right: 4px;
+  }
+
+  /* Layout */
+  .layout {
+    display: grid;
+    grid-template-columns: 240px minmax(0, 720px);
+    gap: 56px;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 64px 32px 120px;
+  }
+
+  /* Left TOC (sticky) */
+  aside.toc {
+    position: sticky;
+    top: 32px;
+    align-self: start;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    padding-right: 12px;
+    border-right: 1px solid var(--line-soft);
+  }
+  aside.toc .toc-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--mute); margin-bottom: 16px;
+  }
+  aside.toc ol {
+    list-style: none; padding: 0; margin: 0;
+    counter-reset: toc;
+  }
+  aside.toc li {
+    counter-increment: toc;
+    margin-bottom: 4px;
+    font-size: 13px;
+    line-height: 1.4;
+  }
+  aside.toc a {
+    color: var(--txt-2);
+    text-decoration: none;
+    display: flex;
+    gap: 10px;
+    padding: 6px 8px;
+    border-radius: 4px;
+    transition: background 120ms, color 120ms;
+  }
+  aside.toc a::before {
+    content: counter(toc, decimal-leading-zero);
+    color: var(--dim);
+    font-family: var(--mono);
+    font-size: 11px;
+    flex-shrink: 0;
+  }
+  aside.toc a:hover { background: var(--cream-soft); color: var(--ink); }
+  aside.toc a.active { background: var(--accent-softer); color: var(--accent-ink); font-weight: 500; }
+  aside.toc a.key::after {
+    content: '★';
+    margin-left: auto;
+    color: var(--warm);
+    font-size: 10px;
+  }
+
+  /* Cover */
+  .cover {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 40px;
+    margin-bottom: 56px;
+  }
+  .cover .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-softer);
+    padding: 4px 10px;
+    border-radius: 3px;
+    margin-bottom: 16px;
+  }
+  .cover h1 { margin-bottom: 16px; }
+  .cover .meta-row {
+    display: flex; gap: 24px; margin-top: 24px;
+    font-size: 13px; color: var(--txt-2);
+    flex-wrap: wrap;
+  }
+  .cover .meta-row span strong { color: var(--ink); font-weight: 600; }
+  .cover .version {
+    margin-top: 12px;
+    font-size: 11.5px;
+    color: var(--mute);
+    font-family: var(--mono);
+    letter-spacing: 0.04em;
+  }
+
+  /* TLDR card */
+  .tldr {
+    background: var(--cream);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 28px 32px;
+    margin-bottom: 64px;
+  }
+  .tldr .tldr-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--accent); margin-bottom: 20px;
+  }
+  .tldr ol {
+    margin: 0; padding-left: 0; list-style: none;
+    counter-reset: tldr;
+  }
+  .tldr li {
+    counter-increment: tldr;
+    padding: 12px 0;
+    border-bottom: 1px dashed var(--line-dash);
+    display: flex;
+    gap: 16px;
+    align-items: baseline;
+  }
+  .tldr li:last-child { border-bottom: none; }
+  .tldr li::before {
+    content: counter(tldr, decimal-leading-zero);
+    font-family: var(--mono);
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--accent);
+    flex-shrink: 0;
+    min-width: 24px;
+  }
+  .tldr li strong { color: var(--ink); font-weight: 600; }
+
+  /* Sections */
+  section {
+    margin-bottom: 80px;
+    scroll-margin-top: 24px;
+  }
+  section .num {
+    font-family: var(--mono);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--accent);
+    letter-spacing: 0.04em;
+    margin-bottom: 8px;
+  }
+  section.key .num { color: var(--warm); }
+  section.key .num::before {
+    content: '★ ';
+    color: var(--warm);
+  }
+
+  p { margin: 0 0 14px; }
+  p + h3, ul + h3, ol + h3, .quote + h3, .callout + h3, .grid-2 + h3, .flow + h3, .hook-card + h3 { margin-top: 32px; }
+
+  ul, ol { padding-left: 22px; margin: 0 0 16px; }
+  li { margin-bottom: 6px; }
+  li::marker { color: var(--mute); }
+
+  /* Callouts */
+  .callout {
+    border-left: 3px solid var(--accent);
+    background: var(--accent-softer);
+    padding: 16px 20px;
+    border-radius: 0 4px 4px 0;
+    margin: 20px 0;
+  }
+  .callout .callout-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--accent);
+    margin-bottom: 6px;
+  }
+  .callout.warn {
+    border-left-color: var(--warm);
+    background: var(--warm-softer);
+  }
+  .callout.warn .callout-label { color: var(--warm); }
+  .callout.halt {
+    border-left-color: var(--halt);
+    background: var(--halt-softer);
+  }
+  .callout.halt .callout-label { color: var(--halt); }
+  .callout.ok {
+    border-left-color: var(--ok);
+    background: var(--ok-soft);
+  }
+  .callout.ok .callout-label { color: var(--ok); }
+  .callout.hook {
+    border-left-color: var(--hook);
+    background: var(--hook-softer);
+  }
+  .callout.hook .callout-label { color: var(--hook); }
+  .callout p:last-child { margin-bottom: 0; }
+
+  /* Quote — 박재하 인용 */
+  .quote {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 16px 0;
+    position: relative;
+  }
+  .quote::before {
+    content: '""';
+    position: absolute;
+    left: 18px; top: -2px;
+    font-family: var(--mono);
+    font-size: 28px;
+    color: var(--accent);
+    font-weight: 600;
+    line-height: 1;
+  }
+  .quote .q-body {
+    margin-left: 22px;
+    font-size: 15px;
+    line-height: 1.65;
+    color: var(--txt);
+    font-style: normal;
+  }
+  .quote .q-attr {
+    display: block;
+    margin-left: 22px;
+    margin-top: 8px;
+    font-size: 11.5px;
+    color: var(--mute);
+    letter-spacing: 0.04em;
+  }
+
+  /* Script line — 실전 화법 */
+  .script {
+    background: var(--cream-soft);
+    border-left: 3px solid var(--warm);
+    padding: 14px 18px;
+    border-radius: 0 4px 4px 0;
+    margin: 12px 0;
+  }
+  .script .script-label {
+    font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--warm); margin-bottom: 6px;
+  }
+  .script .script-body {
+    font-family: 'Pretendard Variable', sans-serif;
+    font-size: 14.5px;
+    line-height: 1.6;
+    color: var(--ink);
+  }
+
+  /* Cards grid (시나리오 4분기, 포지셔닝 비교 등) */
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin: 16px 0;
+  }
+  .scen-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 18px;
+  }
+  .scen-card.ok    { border-top: 3px solid var(--ok); }
+  .scen-card.warn  { border-top: 3px solid var(--warm); }
+  .scen-card.harder{ border-top: 3px solid #b85d3a; }
+  .scen-card.halt  { border-top: 3px solid var(--halt); }
+  .scen-card.hook  { border-top: 3px solid var(--hook); }
+  .scen-card .scen-title {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+    color: var(--mute); text-transform: uppercase; margin-bottom: 8px;
+  }
+  .scen-card .scen-h { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .scen-card p { font-size: 13.5px; color: var(--txt); margin-bottom: 8px; line-height: 1.55; }
+  .scen-card ul { padding-left: 18px; margin-bottom: 0; }
+  .scen-card li { font-size: 13px; color: var(--txt); margin-bottom: 4px; }
+
+  /* Margin simulator table */
+  table.sim {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0 24px;
+    font-size: 13.5px;
+  }
+  table.sim th, table.sim td {
+    text-align: left;
+    padding: 10px 12px;
+    border-bottom: 1px solid var(--line-soft);
+  }
+  table.sim thead th {
+    border-bottom: 1px solid var(--line);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mute);
+    background: var(--cream-soft);
+  }
+  table.sim td.num-cell { font-family: var(--mono); font-variant-numeric: tabular-nums; text-align: right; }
+  table.sim tr.row-ok td:last-child { color: var(--ok); font-weight: 600; }
+  table.sim tr.row-warn td:last-child { color: var(--warm); font-weight: 600; }
+  table.sim tr.row-halt td:last-child { color: var(--halt); font-weight: 600; }
+
+  /* Flow — 미팅 9단계 시퀀스 */
+  .flow {
+    margin: 24px 0 32px;
+  }
+  .flow-step {
+    display: grid;
+    grid-template-columns: 60px 1fr;
+    gap: 16px;
+    padding: 16px 0;
+    border-bottom: 1px dashed var(--line-dash);
+    position: relative;
+  }
+  .flow-step:last-child { border-bottom: none; }
+  .flow-step .flow-num {
+    font-family: var(--mono);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--accent);
+    background: var(--accent-softer);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+  .flow-step.hook .flow-num {
+    color: var(--hook);
+    background: var(--hook-softer);
+  }
+  .flow-step.close .flow-num {
+    color: var(--warm);
+    background: var(--warm-softer);
+  }
+  .flow-step .flow-content { padding-top: 4px; }
+  .flow-step .flow-stage {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mute);
+    margin-bottom: 4px;
+  }
+  .flow-step .flow-title {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .flow-step .flow-purpose {
+    font-size: 13px;
+    color: var(--txt-2);
+    margin-bottom: 8px;
+    line-height: 1.5;
+  }
+  .flow-step .flow-script {
+    font-size: 13.5px;
+    color: var(--ink);
+    background: var(--cream-soft);
+    padding: 10px 14px;
+    border-left: 2px solid var(--warm);
+    border-radius: 0 4px 4px 0;
+    line-height: 1.55;
+  }
+  .flow-step .flow-script::before {
+    content: '화법 ▸ ';
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--warm);
+    display: block;
+    margin-bottom: 4px;
+  }
+
+  /* Hook card — 후킹 1, 2 강조 */
+  .hook-card {
+    background: var(--hook-softer);
+    border: 1px solid var(--hook-soft);
+    border-left: 4px solid var(--hook);
+    border-radius: 0 6px 6px 0;
+    padding: 22px 26px;
+    margin: 20px 0;
+  }
+  .hook-card .hook-label {
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--hook);
+    margin-bottom: 8px;
+  }
+  .hook-card .hook-h {
+    font-size: 18px;
+    font-weight: 600;
+    color: var(--ink);
+    margin-bottom: 10px;
+  }
+  .hook-card p { font-size: 14.5px; line-height: 1.6; }
+
+  /* Checklist */
+  .checklist {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    padding: 18px 22px;
+    margin: 16px 0;
+  }
+  .checklist h4 { font-size: 13px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--accent); margin-bottom: 12px; }
+  .checklist ul { list-style: none; padding-left: 0; margin: 0; }
+  .checklist li {
+    padding: 6px 0 6px 26px;
+    position: relative;
+    font-size: 14px;
+    line-height: 1.5;
+    border-bottom: 1px dashed var(--line-soft);
+  }
+  .checklist li:last-child { border-bottom: none; }
+  .checklist li::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 11px;
+    width: 14px; height: 14px;
+    border: 1.5px solid var(--mute);
+    border-radius: 3px;
+    background: var(--bg);
+  }
+
+  /* Cheat cards */
+  .cheat-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-top: 16px;
+  }
+  .cheat-card {
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-left: 3px solid var(--accent);
+    border-radius: 0 4px 4px 0;
+    padding: 14px 16px;
+  }
+  .cheat-card.hook { border-left-color: var(--hook); }
+  .cheat-card.warn { border-left-color: var(--warm); }
+  .cheat-card .ch-when { font-size: 11px; color: var(--mute); letter-spacing: 0.06em; text-transform: uppercase; font-weight: 600; margin-bottom: 4px; }
+  .cheat-card .ch-script { font-size: 13.5px; line-height: 1.55; color: var(--ink); }
+
+  /* Anti-pattern list */
+  .anti li {
+    padding-left: 0;
+    list-style: none;
+    margin-bottom: 10px;
+    line-height: 1.55;
+  }
+  .anti li::before {
+    content: '✗';
+    color: var(--halt);
+    font-weight: 700;
+    margin-right: 8px;
+  }
+
+  /* Pipeline next steps */
+  .pipeline {
+    display: flex;
+    align-items: stretch;
+    gap: 0;
+    margin: 16px 0;
+    border: 1px solid var(--line);
+    border-radius: 6px;
+    overflow: hidden;
+    background: var(--panel);
+  }
+  .pipe-step {
+    flex: 1;
+    padding: 14px 12px;
+    border-right: 1px solid var(--line-soft);
+    text-align: center;
+    font-size: 12px;
+  }
+  .pipe-step:last-child { border-right: none; }
+  .pipe-step.now {
+    background: var(--accent-softer);
+    color: var(--accent-ink);
+    font-weight: 600;
+  }
+  .pipe-step .pipe-num { font-family: var(--mono); font-size: 10px; color: var(--mute); display: block; margin-bottom: 4px; }
+
+  hr { border: none; border-top: 1px solid var(--line); margin: 32px 0; }
+
+  /* Mobile */
+  @media (max-width: 900px) {
+    .layout {
+      grid-template-columns: 1fr;
+      gap: 24px;
+      padding: 32px 20px 80px;
+    }
+    aside.toc {
+      position: relative;
+      top: 0; height: auto;
+      border-right: none;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 16px;
+      padding-right: 0;
+    }
+    aside.toc ol {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+    }
+    .grid-2, .cheat-grid { grid-template-columns: 1fr; }
+    .h-cover { font-size: 30px; }
+    .h-sec { font-size: 22px; }
+    .pipeline { flex-direction: column; }
+    .pipe-step { border-right: none; border-bottom: 1px solid var(--line-soft); }
+  }
+
+  /* Print */
+  @media print {
+    body { font-size: 11pt; }
+    aside.toc { display: none; }
+    .layout { grid-template-columns: 1fr; padding: 0; max-width: none; }
+    section { page-break-inside: avoid; margin-bottom: 24px; }
+    .cover { page-break-after: always; }
+    .quote, .callout, .script, .scen-card, .cheat-card, .hook-card, .flow-step { page-break-inside: avoid; }
+    a { color: inherit; text-decoration: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+<aside class="toc">
+  <div class="toc-title">목차</div>
+  <ol>
+    <li><a href="#sec-1">왜 중요한가 — 이미지 앵커링</a></li>
+    <li><a href="#sec-2" class="key">포지셔닝 — 브랜드 파트너</a></li>
+    <li><a href="#sec-3">미팅 전 — 시장 조사</a></li>
+    <li><a href="#sec-4" class="key">미팅 흐름 9단계</a></li>
+    <li><a href="#sec-5">오프닝 + 기대치 정렬</a></li>
+    <li><a href="#sec-6">후킹 1 — 경쟁사·판매량</a></li>
+    <li><a href="#sec-7" class="key">후킹 2 — 브랜드 검색 전환율</a></li>
+    <li><a href="#sec-8">판가 앵커링</a></li>
+    <li><a href="#sec-9">공급가 — 시트로 분리</a></li>
+    <li><a href="#sec-10">마진 30% 게이트</a></li>
+    <li><a href="#sec-11">후속 협상 시나리오 4분기</a></li>
+    <li><a href="#sec-12">SKU 여러 개일 때</a></li>
+    <li><a href="#sec-13">미팅 마무리 — 클로징</a></li>
+    <li><a href="#sec-14">절대 금지</a></li>
+    <li><a href="#sec-15">컨닝페이퍼</a></li>
+  </ol>
+</aside>
+
+<main>
+
+<header class="cover">
+  <span class="tag">First In-Person Meeting · Supplier</span>
+  <h1 class="h-cover">첫 대면 미팅 플레이북</h1>
+  <p class="lede">공급사 대표 미팅에서 <strong>"우리는 쿠팡 대행사가 아니라 브랜드 파트너"</strong>라는 이미지를 박고, 시장 판가를 앵커링하고, 공급가는 시트로 분리해서 받아내는 실전 가이드입니다.</p>
+  <div class="meta-row">
+    <span><strong>대상:</strong> 영업 담당자 (콜 응대 경험 보유)</span>
+    <span><strong>상대:</strong> 공급사·제조사 대표</span>
+  </div>
+  <div class="version">v2 · 2026-05-04 영업 교육 회의 반영 (박재하 2026-04-23 + 2026-05-04)</div>
+</header>
+
+<!-- TLDR -->
+<div class="tldr">
+  <div class="tldr-title">한 장 요약 — 가기 전에 외워두기</div>
+  <ol>
+    <li><strong>첫 미팅의 진짜 목표는 공급가가 아니라 "이미지 앵커링"이다.</strong> 우리가 진짜 다른 팀이라는 인상이 박혀야 그다음 공급가도 잘 줍니다.</li>
+    <li><strong>"쿠팡 대행사"가 아니라 "브랜드 파트너"로 포지셔닝한다.</strong> 이 프레임을 벗어나야 협상의 우위를 가져옵니다.</li>
+    <li><strong>시장부터 본다.</strong> 메인 키워드·시장 크기·가격대·레퍼런스를 미리 파악해두면 미팅 자리가 쉬워집니다.</li>
+    <li><strong>판가가 먼저, 공급가는 그다음.</strong> 시장 판가에서 거꾸로 공급가를 요구합니다.</li>
+    <li><strong>공급가는 미팅에서 받아내려 하지 마라.</strong> 시트 따로 보내고 회신받는 게 정공법입니다. 미팅 자리는 전략·인사 위주.</li>
+    <li><strong>후킹 두 번 — 첫 번째는 경쟁사·판매량, 두 번째는 브랜드 검색 전환율.</strong> 이 두 번이 미팅의 톤을 결정합니다.</li>
+    <li><strong>마진 30%가 안 되면 광고 못 돌린다.</strong> 이 게이트는 절대 양보 불가.</li>
+  </ol>
+</div>
+
+<!-- SEC 1 -->
+<section id="sec-1">
+  <div class="num">01 · ORIENT</div>
+  <h2 class="h-sec">왜 중요한가 — 이미지 앵커링</h2>
+
+  <p>이 미팅의 결과물은 두 가지입니다. 하나는 <strong>공급가</strong>, 다른 하나는 <strong>"우리가 다른 팀이라는 이미지 앵커링"</strong>입니다. 둘 중 후자가 압도적으로 더 중요합니다.</p>
+
+  <div class="callout halt">
+    <div class="callout-label">박재하 핵심 메시지</div>
+    <p>이번 미팅의 목적은 공급가를 받아내는 게 아니라 <strong>"이미지를 딱 박는 것"</strong>입니다. 이게 안 되면 공급가는 어차피 잘 안 나옵니다.</p>
+  </div>
+
+  <div class="quote">
+    <div class="q-body">"어차피 앵커링이 안 되면은 그냥 뒤에 공급가를 걔네 입장에서 우리한테만 잘 줄 이유가 일도 없어요. 전혀 없어요."</div>
+    <span class="q-attr">— 박재하 (2026-05-04 영업 교육)</span>
+  </div>
+
+  <p>기존 방식은 그냥 와서 "저희 소개합니다, 공급가 적으세요, 저희가 맞춰볼게요" 식이었습니다. 이러면:</p>
+  <ul>
+    <li>대표님 머릿속에 "쿠팡 대행사 한 명 더 왔구나" 프레임에 갇힘</li>
+    <li>공급가 달라는 입장 = 우리가 아쉬운 입장이 됨</li>
+    <li>잘 되면 공급가 올려달라는 요구가 계속 들어옴</li>
+    <li>안 되면 다 우리 탓</li>
+    <li>미팅 10번 → 계약 3~4건 수준</li>
+  </ul>
+
+  <div class="quote">
+    <div class="q-body">"꽃게화도 휘게팜도 처음에 '대표님 일단 해보시죠' 이렇게 시작을 해버리니까 얘네 스탠스가 우리한테 그렇게 좋지가 않은 거예요. 잘 나가면 잘 나갈수록 공고가 올려달라 계속 그렇게 돼버리는 거고."</div>
+    <span class="q-attr">— 박재하 (2026-04-23 공급가 전략)</span>
+  </div>
+
+  <p>그래서 첫 미팅에서 우리가 해야 할 것은 <strong>"이 팀은 다르다, 진짜 우리 브랜드를 키워줄 수 있겠다"라는 시그널을 박는 것</strong>입니다. 이게 박히면 공급가, 협상, 후속 단계가 전부 쉬워집니다.</p>
+</section>
+
+<!-- SEC 2 -->
+<section id="sec-2" class="key">
+  <div class="num">02 · POSITIONING</div>
+  <h2 class="h-sec">포지셔닝 — 브랜드 파트너</h2>
+
+  <p>이 섹션이 <strong>이번 가이드 v2의 가장 중요한 변화</strong>입니다. 미팅 자리에서 우리가 선 자리를 어디로 잡느냐가 모든 것을 결정합니다.</p>
+
+  <div class="grid-2">
+    <div class="scen-card halt">
+      <div class="scen-title">기존 프레임</div>
+      <div class="scen-h">쿠팡 대행사</div>
+      <p>"저희가 쿠팡 잘 운영합니다. 광고도 돌리고 콘텐츠도 만들어요. 공급가 주시면 팔아드립니다."</p>
+      <ul>
+        <li>대표님 = 손님, 우리 = 서비스 제공자</li>
+        <li>가격 협상 우위 없음</li>
+        <li>대체 가능한 회사 1개</li>
+      </ul>
+    </div>
+    <div class="scen-card ok">
+      <div class="scen-title">새 프레임</div>
+      <div class="scen-h">브랜드 파트너</div>
+      <p>"저희는 8년 동안 200여 개 브랜드를 운영하면서 잘 되는 데와 안 되는 데의 차이를 찾았습니다. 그 핵심은 브랜드 검색 전환율이고, 그건 저희만 만들어낼 수 있습니다."</p>
+      <ul>
+        <li>대표님 = 자식 같은 브랜드 위탁자, 우리 = 전문가</li>
+        <li>전략·인사이트 우위로 협상 우위</li>
+        <li>대체 불가능한 팀</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="h-sub">대표님이 진짜 원하는 것</h3>
+  <p>제조사·브랜드사 대표가 셀러를 가장 경계하는 이유는 단순합니다. <strong>제품을 자식처럼 여기기 때문</strong>입니다. 가격을 함부로 내리거나, CS를 이상하게 응대하거나, 브랜드 이미지를 깎아 먹는 셀러를 가장 무서워합니다.</p>
+
+  <div class="quote">
+    <div class="q-body">"제조사나 브랜드사 대표자 중에 제품을 다 자기 자식처럼 여긴단 말이에요. 그러면은 그 파는 사람을 제일 중요하게 생각해요. 셀러를. 왜냐하면 걔네들이 밖에 난리를 치면은… 그런 걸 엄청 경계하는 거죠."</div>
+    <span class="q-attr">— 박재하</span>
+  </div>
+
+  <p>그래서 우리가 줘야 하는 시그널은 <strong>"우리는 단순 셀러가 아니라 브랜드를 키워낼 수 있는 팀"</strong>입니다. 대표님이 안심하고 자식 같은 브랜드를 맡길 만한 팀이라는 인상을 줘야 합니다.</p>
+
+  <div class="callout">
+    <div class="callout-label">한 줄로</div>
+    <p><strong>마케팅 얘기를 해야겠다 ✗ → 마케팅은 수단, 핵심은 "브랜드 키운다" ✓</strong></p>
+  </div>
+
+  <div class="quote">
+    <div class="q-body">"마케팅 얘기를 해야겠다가 아니라 그건 수단인 거고요. 쿠팡 대행사 프레임에서 벗어나서 '우리 진짜 전문가다, 너희 브랜드 한번 맡겨봐라' 이걸로 가야 돼요. 그래야 걔네들이 확 와요."</div>
+    <span class="q-attr">— 박재하</span>
+  </div>
+
+  <h3 class="h-sub">왜 우리랑 안 할 이유가 없는가</h3>
+  <p>대표님 입장에서 우리를 거절할 이유를 거꾸로 따져보면 거의 없습니다. 미팅 마무리에 던지는 강한 멘트도 여기서 나옵니다.</p>
+  <ul>
+    <li>본인들에게 쿠팡 운영팀 없음</li>
+    <li>마케팅 회사들 연락은 오는데 어디 할지 모름</li>
+    <li>생산에만 집중해야 하는 상황</li>
+    <li>우리는 부담 0 (몇 백 내라가 아님 — 그냥 물건만 주시면 됨)</li>
+    <li>체험단 5천 원 (제품 제공도 우리가 함). 쿠팡 원피로 하면 12만 5천 원</li>
+    <li>외부 마케팅까지 통합해서 브랜드 검색량을 키워줌</li>
+  </ul>
+
+  <div class="script">
+    <div class="script-label">화법 · 마무리 강자</div>
+    <div class="script-body">"대표님, <strong>왜 저희랑 안 하시죠?</strong>"</div>
+  </div>
+</section>
+
+<!-- SEC 3 -->
+<section id="sec-3">
+  <div class="num">03 · BEFORE</div>
+  <h2 class="h-sec">미팅 전 — 시장 조사 (전략 8할)</h2>
+
+  <p>미팅 가기 전에 그 업체 상품의 <strong>메인 키워드 → 시장 크기 → 시장 가격대 → 레퍼런스 1~2개</strong>를 끝내고 갑니다. 이게 안 되어 있으면 미팅 자리에서 우위를 못 가져갑니다.</p>
+
+  <h3 class="h-sub">3-1. 메인 키워드 정하기</h3>
+  <ul>
+    <li>업체 상품으로 떠오르는 검색어를 다 적습니다 (예: 곱창 / 소곱창 / 한우 소곱창 / 통대창 …).</li>
+    <li>네이버 검색량을 본다. <strong>월 검색량 1만+ 이면 진입 가능 키워드</strong>. 그 미만이면 시장 자체가 너무 작음.</li>
+    <li>같은 시장에 묶이는 키워드는 <strong>그룹화</strong>. 예: 곱창·소곱창·한우 곱창 = 같은 시장.</li>
+  </ul>
+
+  <h3 class="h-sub">3-2. 시장 크기 — 클릭수 기준</h3>
+  <p>검색어 노출보다 <strong>클릭수가 진짜 유입에 가깝습니다</strong>. 클릭수 기준으로 봐야 합니다.</p>
+  <ul>
+    <li>네이버 카테고리에서 검색어 순위 확인 (1년 단위로 변동 적은지 체크).</li>
+    <li>30일 / 360일 두 기간 다 봅니다. 어떤 키워드는 30일에는 안 보이는데 360일로 보면 시장이 있는 경우가 있음.</li>
+    <li><strong>프레시 상품은 카테고리 순위에 안 뜨는 경우가 많아 일단 배제</strong>하고 봅니다.</li>
+  </ul>
+
+  <h3 class="h-sub">3-3. 가격대 분포 보기</h3>
+  <p>그 키워드 안에서 상위 노출 중인 상품들의 <strong>g당 단가</strong>를 분리해서 봅니다.</p>
+  <table class="sim">
+    <thead>
+      <tr><th>상품</th><th class="num-cell">중량</th><th class="num-cell">가격</th><th class="num-cell">g당 단가</th></tr>
+    </thead>
+    <tbody>
+      <tr><td>경쟁사 A</td><td class="num-cell">1,000g</td><td class="num-cell">29,500원</td><td class="num-cell">29.5원</td></tr>
+      <tr><td>경쟁사 B</td><td class="num-cell">500g</td><td class="num-cell">21,900원</td><td class="num-cell">43.8원</td></tr>
+      <tr><td>경쟁사 C</td><td class="num-cell">480g</td><td class="num-cell">20,900원</td><td class="num-cell">43.5원</td></tr>
+      <tr><td>경쟁사 D</td><td class="num-cell">760g</td><td class="num-cell">26,000원</td><td class="num-cell">34.2원</td></tr>
+      <tr><td><strong>우리 (검토 중)</strong></td><td class="num-cell">200g</td><td class="num-cell">17,900원</td><td class="num-cell">89.5원</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout halt">
+    <div class="callout-label">시장 진입 불가 신호</div>
+    <p>위 예시처럼 우리 g당 단가가 시장 평균의 <strong>2배 이상</strong>이고, 같은 시장에 이미 수년치 데이터가 쌓여 있다면 <strong>그 키워드로는 못 팝니다</strong>. 이미 우리 같은 상품들이 올라갔다 다 밀려난 시장.</p>
+  </div>
+
+  <h3 class="h-sub">3-4. 한 단계 위 시장 찾기</h3>
+  <p>시장이 안 맞으면 한 단계 <strong>프리미엄 키워드</strong>를 봅니다. 가격대가 더 높고, 우리가 그 안에서 가장 저렴한 포지션을 잡을 수 있으면 진입 가능.</p>
+
+  <h3 class="h-sub">3-5. 레퍼런스 1개만 확보하면 끝</h3>
+  <p>"우리가 노릴 포지션에서 어느 정도 팔린 케이스"를 1개만 찾으면 됩니다.</p>
+  <p class="meta">단, 그 레퍼런스가 <strong>브랜드 키워드</strong>로 유입된 케이스라면 참고 안 됨. 일반 키워드 유입 사례를 찾아야 함.</p>
+
+  <h3 class="h-sub">3-6. 다른 데이터 포인트도 같이 확인</h3>
+  <ul>
+    <li><strong>네이버 스마트스토어</strong>에서 잘 나가면 그냥 가도 됨. 이미 검증된 시장.</li>
+    <li><strong>SNS 댓글이 1년 미만에 1,000+</strong> 쌓여 있으면 좋은 신호.</li>
+    <li>외부 트렌드 (예: 화제된 콘텐츠, 시즌성).</li>
+    <li>맛·품질이 정말 좋으면 <strong>재구매 가능성</strong> 자체가 자산.</li>
+  </ul>
+
+  <div class="checklist">
+    <h4>미팅 가기 전 체크리스트</h4>
+    <ul>
+      <li>메인 키워드 3~5개 후보 + 검색량 메모</li>
+      <li>같은 시장 키워드 그룹화 끝</li>
+      <li>가격대 분포 표 1개 (경쟁사 4~6개)</li>
+      <li>레퍼런스 1개 확보 (URL + 추정 판매량)</li>
+      <li>네이버·SNS 흐름 한 번 훑기</li>
+      <li>업체 상품 직접 먹어/써보고 품질 메모</li>
+      <li>경쟁사 1등 이름·판매량·가격 정확히 외우기</li>
+      <li>우리 8년/200개 레퍼런스 중 식품·해당 카테고리 사례 2~3개 미리 정리</li>
+    </ul>
+  </div>
+</section>
+
+<!-- SEC 4 -->
+<section id="sec-4" class="key">
+  <div class="num">04 · FLOW</div>
+  <h2 class="h-sec">미팅 흐름 9단계</h2>
+
+  <p class="lede">박재하가 직접 정리한 자연스러운 대화 시퀀스입니다. 미팅 자리에서 이 순서를 머릿속에 깔고 가면 됩니다.</p>
+
+  <div class="flow">
+
+    <div class="flow-step">
+      <div class="flow-num">1</div>
+      <div class="flow-content">
+        <div class="flow-stage">Open · 인사</div>
+        <div class="flow-title">우리 회사 소개</div>
+        <div class="flow-purpose">가볍게. 차장님이 하시는 대로. 길지 않게.</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">2</div>
+      <div class="flow-content">
+        <div class="flow-stage">Listen · 컨디션 파악</div>
+        <div class="flow-title">걔네 이야기 끌어내기</div>
+        <div class="flow-purpose">우리가 리서치한 걸 살짝 풀면서 걔네 입을 열게 만든다. 화상 미팅이면 화면 공유로 자료 보여줘도 OK.</div>
+        <div class="flow-script">"대표님, 지금 어떻게 하고 계세요? 다른 채널은 어떻게 판매하고 계시나요? 스스로는 어떻게 운영하세요?"</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">3</div>
+      <div class="flow-content">
+        <div class="flow-stage">Listen · 디테일</div>
+        <div class="flow-title">SKU · 팔로워 확인</div>
+        <div class="flow-purpose">컨디션을 더 디테일하게 본다. 팔로워 수치는 브랜드 검색량 논의의 단서가 됨.</div>
+        <div class="flow-script">"SKU는 어떻게 되세요? 인스타·네이버 팔로워는 얼마나 되세요?"</div>
+      </div>
+    </div>
+
+    <div class="flow-step hook">
+      <div class="flow-num">4</div>
+      <div class="flow-content">
+        <div class="flow-stage">Hook 1 · 첫 번째 후킹</div>
+        <div class="flow-title">경쟁사 + 판매량 후킹</div>
+        <div class="flow-purpose">"쿠팡에서 그런 거 하면 어떻게 되는데?"라는 호기심을 자극한다. 판매량·매출 숫자가 가장 강력.</div>
+        <div class="flow-script">"대표님 혹시 [경쟁사] 아세요? 거기가 쿠팡 1등인데 한 달에 몇 천 개씩 팔립니다. 우리 가격 이렇게만 맞추면 못할 리가 없습니다."</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">5</div>
+      <div class="flow-content">
+        <div class="flow-stage">Show · 우리 능력</div>
+        <div class="flow-title">"우리는 이렇게 한다"</div>
+        <div class="flow-purpose">시장 조사 결과를 풀면서 판가를 자연스럽게 앵커링한다. 이 판가에 팔아야 한다 → 그러려면 공급가가 이 정도여야 한다.</div>
+      </div>
+    </div>
+
+    <div class="flow-step hook">
+      <div class="flow-num">6</div>
+      <div class="flow-content">
+        <div class="flow-stage">Hook 2 · 두 번째 후킹 (★ 가장 중요)</div>
+        <div class="flow-title">브랜드 검색 전환율 — "이건 우리만 한다"</div>
+        <div class="flow-purpose">대표님 머릿속에 "이 팀은 다른 쿠팡 대행사랑 다르다"는 인상을 박는 결정타. 이게 박히면 공급가는 자연스럽게 따라옵니다.</div>
+        <div class="flow-script">"대표님, 저희가 8년 동안 200여 개 브랜드를 운영하면서 보니까, 잘 되는 데는 무조건 <strong>브랜드 검색 전환율이 30% 이상</strong>이에요. 5%인 데랑 30%인 데는 광고 ROAS도 50% 차이가 나고, 브랜드 키워드 광고는 ROAS 1,200%까지 나옵니다. 근데 그건 외부 마케팅까지 같이 가야 만들어지거든요. 그게 저희가 할 수 있는 거고요."</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">7</div>
+      <div class="flow-content">
+        <div class="flow-stage">Q&amp;A · 신뢰 구축</div>
+        <div class="flow-title">궁금한 거 주고받기</div>
+        <div class="flow-purpose">대표님 질문에 답하면서 우리 인사이트를 더 풀어낸다. 답이 막힐 거 같은 깊은 질문이 오면 마케팅 담당자 연결하겠다고 던져도 OK.</div>
+        <div class="flow-script">"대표님 고민이 뭐예요? 어떻게 생각하세요?"</div>
+      </div>
+    </div>
+
+    <div class="flow-step">
+      <div class="flow-num">8</div>
+      <div class="flow-content">
+        <div class="flow-stage">Wrap · 마무리 신호</div>
+        <div class="flow-title">정리 진입</div>
+        <div class="flow-purpose">자연스럽게 미팅 끝낼 신호. "더 궁금하신 거 있으세요?" / "어떻게 진행되는지 궁금하실 텐데요…"</div>
+      </div>
+    </div>
+
+    <div class="flow-step close">
+      <div class="flow-num">9</div>
+      <div class="flow-content">
+        <div class="flow-stage">Close · 클로징 (다음 단계 약속)</div>
+        <div class="flow-title">시트 발송 + 체험단 + "왜 안 하시죠?"</div>
+        <div class="flow-purpose">숫자 얘기 나오면 숫자 얘기. 안 나오면 다음 액션을 우리가 던진다.</div>
+        <div class="flow-script">"공급가 시트 보내드릴게요. 회신 주시면 저희가 한 번 더 전략적으로 피드백 드리겠습니다. 체험단은 5천 원이고요 — 쿠팡 원피로 하면 12만 5천 원입니다. 저희가 더 경쟁력 있어요. 대표님, <strong>왜 저희랑 안 하시죠?</strong>"</div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">전체 흐름 한 줄 요약</div>
+    <p>걔네 입 열기(2~3) → <strong>후킹 1 (경쟁사·판매량)</strong> → 우리 능력(5) → <strong>후킹 2 (브랜드 검색 전환율)</strong> → Q&amp;A(7) → 시트 분리(9). 후킹 두 번이 미팅의 톤을 결정합니다.</p>
+  </div>
+</section>
+
+<!-- SEC 5 -->
+<section id="sec-5">
+  <div class="num">05 · OPEN</div>
+  <h2 class="h-sec">오프닝 + 기대치 정렬</h2>
+
+  <p>대면 미팅 첫 5분의 목표는 두 가지입니다. <strong>(1) 우리가 이 카테고리를 안다는 신호</strong>, <strong>(2) 대표님 기대치 사전 정렬</strong>.</p>
+
+  <h3 class="h-sub">5-1. 첫 신호 — 경쟁사 질문이 가장 강력</h3>
+  <p>인사 끝나고 본론 들어가기 전에 경쟁사 이름을 묻습니다. 질문 자체가 "우리가 시장을 본다"는 신호입니다.</p>
+
+  <div class="script">
+    <div class="script-label">화법 · 경쟁사 질문</div>
+    <div class="script-body">"대표님, 혹시 [경쟁사 이름] 아세요?"<br>
+    → <strong>모른다 답하면:</strong> "여기가 [카테고리] 쿠팡 1등이거든요. 판매 전략이 이렇고요. 우리 가격 이 정도만 맞추면 얘네보다 못할 리가 없습니다."<br>
+    → <strong>안다 답하면:</strong> "역시 대표님 아시죠? 거기 판매 전략이 이렇고요…"</div>
+  </div>
+
+  <h3 class="h-sub">5-2. 기대치 정렬 — 시장 상황별 두 톤</h3>
+  <p>시장 조사 결과에 따라 톤이 달라집니다. 두 케이스 모두 <strong>"제대로 안 될 수도 있다"는 가능성을 미리 깔고</strong> 가는 게 핵심입니다.</p>
+
+  <div class="grid-2">
+    <div class="scen-card warn">
+      <div class="scen-title">Case A · 시장이 어려운 경우</div>
+      <div class="scen-h">"천천히 키워보자" 톤</div>
+      <div class="script">
+        <div class="script-label">화법 A</div>
+        <div class="script-body">"대표님, 시장 자체가 저희가 진입하기에 포지셔닝이 그렇게 매력적이지는 않습니다. 진짜 한우만 찾는 사람들이 우리 걸 살 것 같고, 시장이 생각보다 작아요. 근데 쿠팡 시장 놓치기는 아깝지 않냐, 장기로 보고 천천히 키워보시겠냐 — 이렇게 한번 가보시죠."</div>
+      </div>
+    </div>
+    <div class="scen-card ok">
+      <div class="scen-title">Case B · 시장이 호조인 경우 (예: 시즌)</div>
+      <div class="scen-h">"빠르게 위임해라" 톤</div>
+      <div class="script">
+        <div class="script-label">화법 B</div>
+        <div class="script-body">"대표님, 이번 시즌 정말 잘될 수 있는 카테고리예요. 근데 지금 조금 늦었습니다. 빠르게 준비해야 됩니다. 대표님 생산 들어가시느라 바쁘시면 이번 한 시즌 그냥 저희한테 위임해보시죠. 어차피 쿠팡 안 하시는 거면 해본 셈 치지 않겠어요? 손해 보는 장사 아닙니다."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">왜 이렇게 깔아두나</div>
+    <p>대표님이 처음부터 "1등 가능"으로만 기대하면, 우리가 어떤 결과를 가져와도 부족합니다. <strong>"천천히 본다 / 어차피 손해 없다"</strong>를 미팅 초반에 합의해두면 모든 후속 협상이 우호적으로 흐릅니다.</p>
+  </div>
+</section>
+
+<!-- SEC 6 -->
+<section id="sec-6">
+  <div class="num">06 · HOOK 1</div>
+  <h2 class="h-sec">후킹 1 — 경쟁사·판매량</h2>
+
+  <p>첫 번째 후킹은 <strong>대표님이 가장 듣고 싶어 하고, 제일 궁금해하고, 제일 혹하는 포인트</strong>로 칩니다. = 쿠팡에서 같은 카테고리 1등이 한 달에 얼마나 파는지, 매출이 얼마인지.</p>
+
+  <div class="hook-card">
+    <div class="hook-label">Hook 1</div>
+    <div class="hook-h">"쿠팡에서 [경쟁사]가 한 달에 몇 천 개씩 팝니다."</div>
+    <p>이 한 줄이 대표님 머릿속에 "쿠팡 시장 진짜 크네"라는 인식을 박습니다. 그리고 자연스럽게 "근데 그거 우리도 할 수 있어요"로 이어갑니다.</p>
+  </div>
+
+  <h3 class="h-sub">왜 이게 첫 번째인가</h3>
+  <ul>
+    <li>대표님이 쿠팡 잘 모를 가능성 높음 → 시장 크기 인지가 첫 단추</li>
+    <li>판매량·매출은 누구에게나 직관적 → 설명 부담 없음</li>
+    <li>"근데 우리가 한다"라는 멘트로 자연스럽게 우리 능력 어필 진입</li>
+  </ul>
+
+  <h3 class="h-sub">화법 흐름</h3>
+  <div class="script">
+    <div class="script-label">Hook 1 풀 흐름</div>
+    <div class="script-body">"대표님, 혹시 [경쟁사] 아세요? <strong>거기가 쿠팡 [카테고리] 1등인데, 한 달에 몇 천 개씩 팝니다.</strong> 매출로 치면 한 달에 [추정 매출]이 나오는 시장이에요. 근데 그쪽 가격 보면 [g당 단가] 정도고, 저희 상품은 [g당 단가]니까 — 우리 가격 이렇게만 맞추면 얘네보다 못할 리가 없습니다."</div>
+  </div>
+
+  <p class="meta">이 시점에 대표님은 보통 "오 그래요?" 또는 "그게 가능해요?" 같은 반응으로 입을 열기 시작합니다. 그러면 자연스럽게 다음 단계 (5번 — 우리는 이렇게 한다)로 진입.</p>
+</section>
+
+<!-- SEC 7 -->
+<section id="sec-7" class="key">
+  <div class="num">07 · HOOK 2</div>
+  <h2 class="h-sec">후킹 2 — 브랜드 검색 전환율</h2>
+
+  <p class="lede"><strong>이 미팅에서 가장 중요한 한 방.</strong> 후킹 1이 시장 크기로 호기심을 자극했다면, 후킹 2는 "왜 이 팀이 다른지"를 박는 결정타입니다. 이게 안 박히면 공급가도 잘 안 나옵니다.</p>
+
+  <div class="hook-card">
+    <div class="hook-label">Hook 2 · 결정타</div>
+    <div class="hook-h">"잘 되는 데는 무조건 브랜드 검색 전환율이 30% 이상입니다. 그건 저희만 만들어낼 수 있습니다."</div>
+    <p>이 한 줄이 박히면 대표님 머릿속에서 <strong>"쿠팡 대행사" 프레임이 깨지고 "브랜드 파트너" 프레임이 박힙니다</strong>.</p>
+  </div>
+
+  <h3 class="h-sub">논리 — 왜 브랜드 검색 전환율이 핵심인가</h3>
+  <ul>
+    <li>쿠팡에서 검색하는 키워드는 두 종류: <strong>구매 키워드</strong> (예: "닭가슴살") + <strong>브랜드 키워드</strong> (예: "오기다 닭가슴살")</li>
+    <li>브랜드 검색 전환율 30%인 브랜드 = "콘크리트 매출"이 깔려 있음. 매월 안정적으로 들어오는 매출.</li>
+    <li>5%인 브랜드 = 항상 광고로 처음 보는 사람들에게만 의존. 광고 끄면 매출 즉시 떨어짐.</li>
+    <li>같은 광고비를 써도 30% 깔린 브랜드가 50% 더 효율 (ROAS 1,200% 까지 나옴).</li>
+    <li>브랜드 검색량은 <strong>외부 마케팅</strong>으로만 키워짐 (인스타·네이버에서 계속 노출돼야 검색이 늘어남).</li>
+    <li>결과: 브랜드 검색 전환율 높은 브랜드가 <strong>계속 1등할 수밖에 없는 구조</strong>가 됨.</li>
+  </ul>
+
+  <div class="quote">
+    <div class="q-body">"브랜드 검색 전환율이 30%인 데가 있고 5%인 데가 있는데, 30%인 애들은 콘크리트 매출이 깔려 있는 거고 5%인 애들은 5%밖에 없는 거잖아요. 광고를 돌려도 30% 깐 애들이 훨씬 효율이 더 높을 거고, 브랜드 키워드는 광고 돌리면 ROAS 1200% 나와요."</div>
+    <span class="q-attr">— 박재하 (2026-05-04)</span>
+  </div>
+
+  <h3 class="h-sub">왜 우리만 할 수 있는가</h3>
+  <p>이 부분이 차별화의 핵심입니다. 다른 쿠팡 대행사들은 쿠팡 안에서만 봅니다. 외부 마케팅까지 통합해서 브랜드 검색량을 키울 줄 아는 팀이 거의 없습니다.</p>
+  <ul>
+    <li>대부분 대행사: 쿠팡 광고 + 콘텐츠만 → 브랜드 검색량 안 자람 → 한계점에서 정체</li>
+    <li>저희: <strong>쿠팡 + 외부 마케팅 (인스타·네이버) 통합</strong> → 브랜드 검색 전환율 키움 → 계속 성장하는 구조</li>
+    <li>증명: 8년 / 200여 개 운영 / 조니스 브랜드 검색 10%, 맥록 10% 등 케이스 보유</li>
+  </ul>
+
+  <h3 class="h-sub">화법 — Hook 2 풀 스크립트</h3>
+  <div class="script">
+    <div class="script-label">Hook 2 풀 흐름 (★ 외워두기)</div>
+    <div class="script-body">"대표님, 저희가 8년 동안 200여 개 브랜드를 운영했거든요. 그러면서 보니까 잘 되는 데와 안 되는 데가 명확하게 갈리더라고요.<br><br>
+    잘 되는 데는 무조건 <strong>브랜드 검색 전환율이 30% 이상</strong>이에요. 5%인 데랑 비교하면, 같은 광고비를 써도 ROAS가 50% 더 나오고, 브랜드 키워드 광고는 ROAS 1,200%까지 나옵니다.<br><br>
+    근데 그 브랜드 검색량은 쿠팡 안에서만 돌려서는 절대 안 자라요. <strong>외부 마케팅이 같이 가야 해요.</strong> 인스타·네이버에서 계속 노출돼야 사람들이 쿠팡에서도 그 브랜드를 검색하거든요.<br><br>
+    저희는 그걸 같이 가는 팀입니다. 쿠팡 시작점이지만, 그다음 플랜은 저희가 쭉쭉 짜드립니다. 진짜 우리랑 하시면 쿠팡 베스트셀러뿐만 아니라 카테고리 1등 만들어드릴 수 있어요. 다른 회사랑 따로 하실 필요도 없고요."</div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-label">기억할 것</div>
+    <p>이 후킹은 "마케팅 얘기를 한다"가 목적이 아니라, <strong>"우리가 다른 시야를 가진 팀"이라는 인상을 박는 게 목적</strong>입니다. 마케팅은 수단, 인상이 본질.</p>
+  </div>
+
+  <div class="quote">
+    <div class="q-body">"그 시야를 가지고 있는 데가 거의 없어요. 진짜 거의 없어요. 그게 진짜 저희 시야인 거죠."</div>
+    <span class="q-attr">— 박재하</span>
+  </div>
+</section>
+
+<!-- SEC 8 -->
+<section id="sec-8">
+  <div class="num">08 · ANCHOR</div>
+  <h2 class="h-sec">판가 앵커링 — 역방향 사고</h2>
+
+  <p>여기가 협상 사고의 핵심입니다. 이 사고만 잡혀도 협상의 80%가 풀립니다.</p>
+
+  <div class="grid-2">
+    <div class="scen-card halt">
+      <div class="scen-title">잘못된 흐름</div>
+      <div class="scen-h">공급가 → 판가</div>
+      <p>"공급가가 1만원이니까 30% 얹어서 판매가는 1만 4천원에 팔자"</p>
+      <p class="meta">→ 시장에서 안 팔리는 가격일 가능성 높음. 시장이 정해주는 게 아니라 공급가가 정해줘 버림.</p>
+    </div>
+    <div class="scen-card ok">
+      <div class="scen-title">올바른 흐름</div>
+      <div class="scen-h">판가 → 공급가</div>
+      <p>"이 시장에서는 1만 2천원에 팔아야 팔린다. 그러려면 공급가는 8천원 이하여야 한다."</p>
+      <p class="meta">→ 시장이 우리 편. 공급사가 우리 기준에 맞춰야 하는 구조.</p>
+    </div>
+  </div>
+
+  <p>우리는 시장 조사로 <strong>이미 판가를 알고 있는 상태</strong>로 미팅에 들어갑니다. 그러면 협상은 자연스럽게 "이 판가에 팔아야 하니까 공급가 이 정도 주셔야 합니다"가 됩니다.</p>
+
+  <div class="quote">
+    <div class="q-body">"제일 베스트는 저희가 전략 세워서 판가를 앵커링하고, 이걸 하려면 공급가 이 정도는 주셔야 된다. 왜냐 광고 룸이 이러니까. 우리 광고 안 달면 광고 못해."</div>
+    <span class="q-attr">— 박재하</span>
+  </div>
+
+  <div class="callout">
+    <div class="callout-label">앵커링이 만드는 우위</div>
+    <p>우리가 판가를 먼저 정해두고 들어가면, 협상 테이블의 기준점이 우리 쪽에 있습니다. <strong>"전략이 있다 = 우리가 전문가다 = 너희가 맞춰봐"</strong>의 구도가 자동으로 만들어집니다.</p>
+  </div>
+</section>
+
+<!-- SEC 9 -->
+<section id="sec-9" class="key">
+  <div class="num">09 · SUPPLY</div>
+  <h2 class="h-sec">공급가 — 시트로 분리한다</h2>
+
+  <p class="lede"><strong>이 섹션이 v1에서 톤이 가장 크게 바뀐 곳</strong>입니다. 미팅 자리에서 공급가를 받아내려고 하면 안 됩니다.</p>
+
+  <div class="callout halt">
+    <div class="callout-label">박재하 명확한 지침</div>
+    <p>"미팅 때 공급가를 받는다, 그거 거의 불가능해요. 그럴 필요도 없고. <strong>이번에는 그냥 메이킹 한다고 생각하고, 공급가는 두 번 더 친다고 생각</strong>하세요."</p>
+  </div>
+
+  <h3 class="h-sub">왜 분리해야 하나</h3>
+  <ul>
+    <li>처음 위탁 진행하는 대표님은 공급가 책정 자체에 익숙하지 않음 → 즉답 못함</li>
+    <li>미팅 자리는 인상을 박는 게 핵심 → 숫자 협상에 매몰되면 후킹 효과 약화</li>
+    <li>이미지 앵커링 안 박힌 상태에서 받은 공급가는 어차피 우리에게 유리하게 안 나옴</li>
+    <li>시트 회신 → 마진 시뮬 → 1차 피드백 → 협상 — 이 흐름이 정공법</li>
+  </ul>
+
+  <div class="quote">
+    <div class="q-body">"이번에는 그냥 메이킹 한다고 생각하고 공급가는 두 번 더 친다고 생각하고 뒤에서… CMC가 하는 것처럼 전략 소통한다고 생각해도 괜찮을 것 같아요."</div>
+    <span class="q-attr">— 박재하 (2026-05-04)</span>
+  </div>
+
+  <h3 class="h-sub">미팅 자리 공급가 화법 — 클로징 패턴</h3>
+  <p>미팅 자리에서는 공급가에 대해 깊게 들어가지 않고 <strong>"시트 보내드릴게요" 흐름으로 자연스럽게 마무리</strong>합니다.</p>
+
+  <div class="script">
+    <div class="script-label">화법 A · 미팅 클로징 (정석)</div>
+    <div class="script-body">"대표님, 공급가 시트 보내드릴게요. 거기에 적어서 회신만 주시면 됩니다. 저희가 이미 전략을 짰으니까, 잘 팔 수 있는 방향으로 한 번 더 피드백 드리겠습니다. <strong>일단 공급가만 잘 주시면 진짜 잘 팔아낼 수 있습니다.</strong>"</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">화법 B · 대표님이 직접 물어보시면</div>
+    <div class="script-body">"공급가는 카테고리마다 좀 달라서요. 저희가 쿠팡 내부 평균 ROAS 기준으로 그 카테고리 표준을 파악할 수 있거든요. 시트로 받아서 한번 제안 드려보겠습니다."</div>
+  </div>
+
+  <div class="script">
+    <div class="script-label">화법 C · 가이드만 살짝 (대표님이 막막해하실 때)</div>
+    <div class="script-body">"보통 잘 주시는 분들은 판매가의 1/4도 주시고요, 1/3도 주시기도 합니다. 근데 그건 원가가 다 다르니까… 그냥 <strong>원가에 대표님이 남기고 싶은 마진을 얹어서</strong> 시트에 적어주시면 됩니다. 하나 팔아서 2,000원 남으면 된다 하시면, 3,000원짜리면 5,000원에 적으시면 돼요."</div>
+  </div>
+
+  <h3 class="h-sub">미팅 후 시트 흐름</h3>
+  <ol>
+    <li>미팅 끝나고 <strong>그날 안에 공급가 시트</strong> 보내기 (이메일 또는 카톡)</li>
+    <li>대표님 회신 받음 → 마진 시트에 입력 → 진짜 마진율 계산</li>
+    <li>1차 피드백 — "전략적으로 이 판가여야 하니까 공급가 이 정도면 좋겠습니다" (Section 11 4분기 시나리오 적용 시점)</li>
+    <li>대표님 재회신 → 협상 → 합의</li>
+  </ol>
+</section>
+
+<!-- SEC 10 -->
+<section id="sec-10">
+  <div class="num">10 · GATE</div>
+  <h2 class="h-sec">마진 30% 게이트 — 왜, 그리고 시뮬레이션</h2>
+
+  <h3 class="h-sub">왜 30%인가</h3>
+  <p>쿠팡 광고 ROAS가 일반적으로 30~33% 수준에서 돌아갑니다. 즉, <strong>마진율이 30% 미만이면 광고를 돌려서 손해</strong>입니다. 광고 못 돌리면 신규 상품을 띄울 방법이 사실상 없습니다.</p>
+
+  <div class="quote">
+    <div class="q-body">"20% 대로 진행하면 진짜 작살 납니다. 그냥 봉사활동 하는 거예요."</div>
+    <span class="q-attr">— 박재하</span>
+  </div>
+
+  <h3 class="h-sub">시뮬레이션 표 (시트 회신 후 적용)</h3>
+  <p class="meta">미팅 자리에서는 안 함. 공급가 시트 회신 받은 후 마진 시트에 입력하고 협상 흐름을 결정.</p>
+
+  <table class="sim">
+    <thead>
+      <tr><th>판가 (앵커링)</th><th class="num-cell">공급가</th><th class="num-cell">마진</th><th class="num-cell">마진율</th><th>판단</th></tr>
+    </thead>
+    <tbody>
+      <tr class="row-ok">
+        <td>20,000원</td>
+        <td class="num-cell">14,000원</td>
+        <td class="num-cell">6,000원</td>
+        <td class="num-cell">30.0%</td>
+        <td>OK · 한 번 더 협상</td>
+      </tr>
+      <tr class="row-ok">
+        <td>20,000원</td>
+        <td class="num-cell">13,000원</td>
+        <td class="num-cell">7,000원</td>
+        <td class="num-cell">35.0%</td>
+        <td>OK · 광고 여유</td>
+      </tr>
+      <tr class="row-warn">
+        <td>20,000원</td>
+        <td class="num-cell">15,000원</td>
+        <td class="num-cell">5,000원</td>
+        <td class="num-cell">25.0%</td>
+        <td>협상 필요</td>
+      </tr>
+      <tr class="row-warn">
+        <td>20,000원</td>
+        <td class="num-cell">16,000원</td>
+        <td class="num-cell">4,000원</td>
+        <td class="num-cell">20.0%</td>
+        <td>판가 인상 검토</td>
+      </tr>
+      <tr class="row-halt">
+        <td>20,000원</td>
+        <td class="num-cell">17,000원</td>
+        <td class="num-cell">3,000원</td>
+        <td class="num-cell">15.0%</td>
+        <td>드롭 또는 마케팅만</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p class="meta">실제 마진 시트는 PG 수수료·쿠팡 수수료·배송비 등을 다 빼고 계산합니다. 위는 단순화 시나리오.</p>
+</section>
+
+<!-- SEC 11 -->
+<section id="sec-11">
+  <div class="num">11 · NEGOTIATE</div>
+  <h2 class="h-sec">후속 협상 시나리오 4분기 (시트 회신 후)</h2>
+
+  <p>공급가 시트 회신 받은 다음, 마진 시트로 시뮬레이션해보면 4가지 분기 중 하나로 빠집니다. <strong>이 협상은 미팅 자리가 아니라 후속 통화·이메일·2차 미팅 시점에 진행됩니다.</strong></p>
+
+  <div class="grid-2">
+    <div class="scen-card ok">
+      <div class="scen-title">A · 30% 이상 OK</div>
+      <div class="scen-h">한 번 더 협상</div>
+      <p>30% 떨어졌다고 해서 한 번 더 협상 안 하면 바보입니다. 무조건 한 번 더.</p>
+      <ul>
+        <li>"이 정도 주시면 광고비 더 쓸 수 있겠습니다. 혹시 배송비도 부담 가능하실까요?"</li>
+        <li>"옵션 추가 시 단가 한 번만 더 보시겠어요?"</li>
+      </ul>
+    </div>
+    <div class="scen-card warn">
+      <div class="scen-title">B · 20% 대 (조절 가능)</div>
+      <div class="scen-h">단가 협상 — 시장 근거</div>
+      <p>"우리 마진 30% 맞춰주세요"는 우리 입장. <strong>시장 근거</strong>로 말합니다.</p>
+      <ul>
+        <li>"경쟁사 이렇고 판가가 이 정도여야 팔립니다."</li>
+        <li>"그러려면 공급가 이 정도여야 합니다. 가능하실까요?"</li>
+      </ul>
+    </div>
+    <div class="scen-card harder">
+      <div class="scen-title">C · 안 맞음 (조절 가능)</div>
+      <div class="scen-h">판가 인상 옵션</div>
+      <p>공급가가 안 떨어지지만 상품이 매력 있으면, <strong>대표님께 옵션을 줍니다</strong>.</p>
+      <ul>
+        <li>"배송비 조금 부담해주실 수 있을까요?"</li>
+        <li>"안 되시면 판가를 조금 올려서 가는 방법도 있습니다. 어떤 게 나으세요?"</li>
+      </ul>
+      <p class="meta">의사결정을 대표님이 하게 만듭니다. 우리가 강요한 게 아닙니다.</p>
+    </div>
+    <div class="scen-card halt">
+      <div class="scen-title">D · 절대 안 맞음</div>
+      <div class="scen-h">드롭 / 마케팅만 / 체험단만</div>
+      <p>판가도 못 올리고, 공급가도 절대 못 내림. 이때는 <strong>사전에 동의 구하고</strong>:</p>
+      <ul>
+        <li>드롭 (정중히 정리)</li>
+        <li>판가 인상 후 천천히 진행</li>
+        <li>마케팅(콘텐츠/광고)만 분리 진행</li>
+        <li>체험단만 — 락 걸어두고 대기</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="callout warn">
+    <div class="callout-label">D 분기 핵심</div>
+    <p>"제대로 안 되실 거예요. 근데 저희가 최우선 한다면 진행은 할 수 있습니다. 괜찮으시겠어요?" — 이렇게 <strong>동의를 구하고 시작합니다</strong>. 그래야 결과 안 좋을 때 우리가 할 말이 있습니다.</p>
+  </div>
+
+  <h3 class="h-sub">협상 트리거 화법 (후속 통화)</h3>
+  <div class="script">
+    <div class="script-label">시트 회신 후 1차 피드백</div>
+    <div class="script-body">"대표님 공급가 회신 주신 거 잘 받았습니다. 저희가 시뮬레이션해봤는데, 시장 판가는 이 정도여야 잘 팔립니다. 근데 받으신 공급가로 그 판가에 팔면 광고를 못 돌리는 구조여서 — 공급가 이 정도까지 맞춰주시면 저희가 진짜 잘 팔아드릴 수 있습니다."</div>
+  </div>
+</section>
+
+<!-- SEC 12 -->
+<section id="sec-12">
+  <div class="num">12 · MULTI-SKU</div>
+  <h2 class="h-sec">SKU 여러 개일 때 — 메인 1개라도 30%</h2>
+
+  <p>업체가 SKU(상품 종류)를 여러 개 가진 경우, <strong>전체가 30% 안 나와도 메인 1개만이라도 30%를 맞춰야 합니다</strong>. 광고는 메인 SKU 하나에 집중해서 돌리기 때문입니다.</p>
+
+  <div class="script">
+    <div class="script-label">화법 · 메인 SKU 협상</div>
+    <div class="script-body">"대표님, 그러면 이 SKU는 20%로 가더라도, 광고 뺑뺑뺑 돌릴 수 있는 메인 상품 하나는 30% 맞춰주실 수 있을까요? 진짜로 하나만이라도 30% 부탁드립니다."</div>
+  </div>
+
+  <p>메인 SKU 선정 기준:</p>
+  <ul>
+    <li>가장 잘 팔릴 가능성이 높은 SKU (시장 조사 기준)</li>
+    <li>광고 노출 시 시각적으로 매력적인 SKU</li>
+    <li>대표성 있는 SKU (브랜드를 대표하는 품목)</li>
+  </ul>
+</section>
+
+<!-- SEC 13 -->
+<section id="sec-13">
+  <div class="num">13 · CLOSE</div>
+  <h2 class="h-sec">미팅 마무리 — 클로징 패턴</h2>
+
+  <p>미팅 끝나기 직전 5분이 가장 중요합니다. 다음 액션을 우리가 던지고, 마무리 강자 멘트로 닫습니다.</p>
+
+  <h3 class="h-sub">13-1. 체험단 멘트 — 부담 없음 강조</h3>
+  <p>대표님께 부담 없다는 신호를 주는 가장 강력한 멘트입니다.</p>
+
+  <div class="script">
+    <div class="script-label">화법 · 체험단</div>
+    <div class="script-body">"체험단도 부담 없으세요. <strong>5천 원입니다.</strong> 게다가 저희가 제품도 제공해 드리고요. 쿠팡 원피로 하면 12만 5천 원이거든요. 저희가 더 경쟁력 있게 진행할 수 있습니다. 콘텐츠도 같이 관리해드리고요."</div>
+  </div>
+
+  <h3 class="h-sub">13-2. 시트 발송 약속</h3>
+  <div class="script">
+    <div class="script-label">화법 · 시트 발송</div>
+    <div class="script-body">"공급가 시트 보내드릴게요. 거기에 기재만 해 주시면 됩니다. 어차피 제가 또 전략을 짰으니까, 잘 팔 수 있는 방향으로 한 번 더 피드백 드리겠습니다."</div>
+  </div>
+
+  <h3 class="h-sub">13-3. 마무리 강자 — "왜 안 하시죠?"</h3>
+  <div class="script">
+    <div class="script-label">화법 · 마무리</div>
+    <div class="script-body">"대표님, 저희랑 안 하실 이유가 진짜 거의 없습니다. 본인 운영팀 따로 두실 필요도 없고, 마케팅 회사 따로 또 알아보실 필요도 없습니다. 저희는 외부 마케팅까지 통합해서 브랜드 전체를 키우는 팀이고, 부담은 거의 없습니다. <strong>왜 저희랑 안 하시죠?</strong>"</div>
+  </div>
+
+  <h3 class="h-sub">13-4. 미팅 직후 입력 (Airtable)</h3>
+  <p>미팅 끝나고 30분 안에 처리:</p>
+  <ul>
+    <li><strong>공급가 시트 메일/카톡 발송</strong> (그날 안에)</li>
+    <li>딜 단계 → "미팅완료"</li>
+    <li>미팅 결과 요약 3~5줄 (대표님 반응, 후킹 1·2 적중도, 합의점)</li>
+    <li>다음 액션 + 기한 + 담당자</li>
+  </ul>
+
+  <div class="pipeline">
+    <div class="pipe-step"><span class="pipe-num">01</span>미팅예정</div>
+    <div class="pipe-step now"><span class="pipe-num">02</span>미팅완료 (지금)</div>
+    <div class="pipe-step"><span class="pipe-num">03</span>제안서발송</div>
+    <div class="pipe-step"><span class="pipe-num">04</span>검토중</div>
+    <div class="pipe-step"><span class="pipe-num">05</span>조건협상</div>
+    <div class="pipe-step"><span class="pipe-num">06</span>최종합의</div>
+    <div class="pipe-step"><span class="pipe-num">07</span>계약체결</div>
+  </div>
+  <p class="meta">자세한 단계별 입력 항목은 <span class="mono">docs/deal-pipeline/workflow.md</span> 참조.</p>
+</section>
+
+<!-- SEC 14 -->
+<section id="sec-14">
+  <div class="num">14 · DON'T</div>
+  <h2 class="h-sec">절대 금지</h2>
+
+  <ul class="anti">
+    <li><strong>"잘 되면 공급가 올려드릴게요, 일단 해보시죠"</strong> — 우리 스탠스 영원히 약화. 휘게팜·꽃게화 사례.</li>
+    <li><strong>"쿠팡 대행사" 프레임 안에 머무르기</strong> — 미팅 10번에 계약 3~4건 수준의 옛날 방식. 무조건 "브랜드 파트너" 프레임으로 벗어나기.</li>
+    <li><strong>미팅 자리에서 공급가 받아내려고 매달리기</strong> — 거의 불가능. 매달리면 인상도 못 박고 공급가도 못 받음. 시트로 분리.</li>
+    <li><strong>후킹 두 번 안 걸기</strong> — 한 번만 걸면 약함. 시장 크기(Hook 1) + 브랜드 검색 전환율(Hook 2) 둘 다 박혀야 톤이 결정됨.</li>
+    <li><strong>마케팅 얘기를 너무 깊게 들어가기</strong> — 마케팅은 수단. 대표님이 마케팅 디테일 물어보면 "마케팅 담당자 연결해드리겠다" 던지고 본질로 복귀.</li>
+    <li><strong>공급가 받고 30%만 얹어 판가 정하기</strong> — 시장 무시. 안 팔림.</li>
+    <li><strong>30% 떨어졌다고 한 번 더 협상 안 하기</strong> — 무조건 한 번 더 (배송비·옵션 등).</li>
+    <li><strong>"잘 될 거예요" 식 낙관</strong> — 결과 안 좋으면 다 우리 탓. 시장 어렵다면 미리 깔기, 호조라면 "한 시즌 위임" 톤으로.</li>
+    <li><strong>D 분기에서 동의 안 받고 진행</strong> — "괜찮으시겠어요?" 한 번 묻고 시작.</li>
+    <li><strong>"깎아주세요" 단순 요청</strong> — 시장 근거 없이는 안 먹힘.</li>
+    <li><strong>SKU 전체 평균만 보기</strong> — 메인 1개라도 30% 안 맞으면 광고 못 돌림.</li>
+    <li><strong>레퍼런스·8년/200개 운영 멘트 안 쓰기</strong> — 우리 차별화의 핵심 증거. 무조건 한 번은 흘려야 함.</li>
+  </ul>
+</section>
+
+<!-- SEC 15 -->
+<section id="sec-15">
+  <div class="num">15 · CHEAT SHEET</div>
+  <h2 class="h-sec">컨닝페이퍼 — 빠른 화법 카드</h2>
+
+  <p class="lede">미팅 자리에서 막혔을 때 펼쳐 보는 카드. 상황별 한 줄 멘트. <span class="star">★</span> 표시는 핵심.</p>
+
+  <div class="cheat-grid">
+    <div class="cheat-card">
+      <div class="ch-when">오프닝 — 입 열기</div>
+      <div class="ch-script">"대표님, 지금 어떻게 하고 계세요? 다른 채널은요?"</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">컨디션 확인</div>
+      <div class="ch-script">"SKU 어떻게 되세요? 인스타·네이버 팔로워는 얼마나 되세요?"</div>
+    </div>
+    <div class="cheat-card hook">
+      <div class="ch-when"><span class="star">★</span> Hook 1 · 경쟁사</div>
+      <div class="ch-script">"대표님 혹시 [경쟁사] 아세요? 거기가 한 달에 몇 천 개씩 팝니다."</div>
+    </div>
+    <div class="cheat-card hook">
+      <div class="ch-when"><span class="star">★</span> Hook 2 · 브랜드 검색</div>
+      <div class="ch-script">"잘 되는 데는 무조건 브랜드 검색 전환율 30%. 그건 저희만 만듭니다."</div>
+    </div>
+    <div class="cheat-card hook">
+      <div class="ch-when">8년 200개 레퍼런스</div>
+      <div class="ch-script">"저희가 8년 동안 200여 개 운영하면서 보니까…"</div>
+    </div>
+    <div class="cheat-card hook">
+      <div class="ch-when">브랜드 파트너 포지셔닝</div>
+      <div class="ch-script">"저희는 쿠팡 대행사가 아니라 브랜드 파트너입니다."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">기대치 정렬 (어려운 시장)</div>
+      <div class="ch-script">"시장이 매력적이지는 않습니다. 천천히 보시는 게 좋겠습니다."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">기대치 정렬 (호조 시장)</div>
+      <div class="ch-script">"이번 시즌 잘될 수 있어요. 빠르게 위임해보시죠. 손해 보는 장사 아닙니다."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">판가 앵커링</div>
+      <div class="ch-script">"이 판가여야 팔립니다. 그러려면 공급가는 이 정도가 필요합니다."</div>
+    </div>
+    <div class="cheat-card warn">
+      <div class="ch-when"><span class="star">★</span> 공급가 클로징 (정석)</div>
+      <div class="ch-script">"공급가 시트 보내드릴게요. 회신 주시면 한 번 더 전략적으로 피드백 드리겠습니다."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">공급가 가이드 (막막해할 때)</div>
+      <div class="ch-script">"원가에 남기고 싶은 마진 얹어서 시트에 적어주세요. 3,000원짜리면 5,000원에."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">체험단 부담 없음</div>
+      <div class="ch-script">"체험단 5천 원입니다. 제품도 저희가 제공합니다. 쿠팡 원피는 12만 5천 원."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">외부 마케팅 통합</div>
+      <div class="ch-script">"다른 회사랑 따로 하실 필요 없어요. 외부 마케팅까지 같이 가는 팀입니다."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">Q&amp;A 마케팅 깊이 들어오면</div>
+      <div class="ch-script">"자세한 건 저희 마케팅 담당자 연결해드리겠습니다."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">대표님 고민 끌어내기</div>
+      <div class="ch-script">"대표님 고민이 뭐예요? 어떻게 생각하세요? 뭐가 문제라고 생각하세요?"</div>
+    </div>
+    <div class="cheat-card warn">
+      <div class="ch-when"><span class="star">★</span> 마무리 강자</div>
+      <div class="ch-script">"대표님, <strong>왜 저희랑 안 하시죠?</strong>"</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">[후속] 30% OK 한 번 더</div>
+      <div class="ch-script">"광고비 여유 생깁니다. 배송비도 부담 가능하세요?"</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">[후속] 단가 협상 (시장)</div>
+      <div class="ch-script">"이 판가 못 지키면 광고 자체를 못 돌립니다."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">[후속] 판가 인상 옵션</div>
+      <div class="ch-script">"공급가 인상 vs 판가 인상, 어떤 게 나으세요?"</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">[후속] SKU 메인 협상</div>
+      <div class="ch-script">"메인 상품 하나만이라도 30% 부탁드립니다. 광고 돌릴 SKU."</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">[후속] D 분기 동의</div>
+      <div class="ch-script">"제대로 안 되실 수도 있습니다. 그래도 괜찮으시겠어요?"</div>
+    </div>
+    <div class="cheat-card">
+      <div class="ch-when">[후속] 시트 회신 1차 피드백</div>
+      <div class="ch-script">"이 판가여야 팔리는데 받으신 공급가로는 광고를 못 돌립니다. 이 정도까지만…"</div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="callout hook">
+    <div class="callout-label">두 가지만 기억한다면</div>
+    <p>① <strong>"이 미팅의 진짜 목표는 공급가가 아니라 이미지 앵커링이다."</strong> 후킹 두 번 (경쟁사 판매량 + 브랜드 검색 전환율) 박는 것에 집중. 공급가는 시트로 분리.<br>
+    ② <strong>"우리는 쿠팡 대행사가 아니라 브랜드 파트너다."</strong> 8년/200개 레퍼런스 + 브랜드 검색 전환율 30% 논리로 다른 팀이라는 인상을 박는다.</p>
+  </div>
+
+  <p class="meta" style="margin-top: 32px; padding-top: 16px; border-top: 1px solid var(--line-soft);">
+    원본 자료<br>
+    · <span class="mono">docs/deal-pipeline/260423공급가 전략.txt</span> (박재하 회의록 v1, 시장조사·공급가 협상 기초)<br>
+    · <span class="mono">docs/deal-pipeline/260504_영업미팅교육.txt</span> (박재하 v2 보완 회의 — 포지셔닝·후킹·시트 분리 핵심)<br>
+    · <span class="mono">docs/deal-pipeline/commerce-supply-price-workflow.html</span> (13장 슬라이드 덱)<br>
+    · <span class="mono">docs/deal-pipeline/workflow.md</span> (딜 파이프라인 7단계)
+  </p>
+</section>
+
+</main>
+
+</div>
+
+<script>
+  const sections = document.querySelectorAll('section[id^="sec-"]');
+  const tocLinks = document.querySelectorAll('aside.toc a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const id = entry.target.id;
+        tocLinks.forEach(link => {
+          link.classList.toggle('active', link.getAttribute('href') === '#' + id);
+        });
+      }
+    });
+  }, { rootMargin: '-30% 0px -60% 0px', threshold: 0 });
+
+  sections.forEach(s => observer.observe(s));
+</script>
+
+</body>
+</html>
