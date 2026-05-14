@@ -259,7 +259,7 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
     <div class="key-insight rv rv-d3">
       <div class="ki-title">KEY INSIGHT</div>
-      <p>본 제안서는 화깨수가 선택할 수 있는 <strong>두 가지 OSC 협력 모델</strong>을 별개 메뉴로 소개합니다 — <strong>메뉴 A 운영대행</strong> (자사 채널 효율화) 또는 <strong>메뉴 B 판매대행</strong> (OSC 직판 + 광고비 부담 + 신규 채널). 두 메뉴는 <strong>선택형</strong>이며, 동시 적용 시 5채널 통합 시너지가 발생합니다.</p>
+      <p>본 제안서는 화깨수가 선택할 수 있는 <strong>두 가지 OSC 협력 모델</strong>을 별개 메뉴로 소개합니다 — <strong>메뉴 A 운영대행</strong> (자사 채널 효율화) 또는 <strong>메뉴 B 판매대행</strong> (OSC 직판 + 광고비 부담). <strong>두 메뉴는 선택형입니다.</strong></p>
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
@@ -276,27 +276,28 @@ p,li{line-height:1.75;word-break:keep-all}
       <hr class="double-line">
     </div>
     <div class="rv rv-d1">
-      <p class="exhibit">EXHIBIT | 시장 규모 비교 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: OSC 쿠팡 내부 데이터 (Airtable 키워드리서치, 2026-05-13) · 전환율 20% 기준 (음료 카테고리 25~30% 가능 → 실제 시장 50억+ 추정)</span></p>
+      <p class="exhibit">EXHIBIT | 직접 + 인접 시장 규모 (Airtable 실측) <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: OSC 쿠팡 내부 데이터 (2026-05-13) · 전환율 20% 기준 (음료 25~30% 가능)</span></p>
       <div class="chart-wrap" style="max-width:760px;height:240px">
         <canvas id="chartMarketSize"></canvas>
       </div>
     </div>
     <div class="rv rv-d2" style="margin-top:12px">
       <table class="data-table">
-        <thead><tr><th>키워드</th><th>연간 검색노출</th><th>연간 클릭</th><th>객단가</th><th>광고비율</th><th>연간시장매출</th></tr></thead>
+        <thead><tr><th>키워드</th><th>연간 클릭</th><th>객단가</th><th>광고비율</th><th>1위 점유율</th><th>잔여시장</th><th>연간시장매출</th></tr></thead>
         <tbody>
-          <tr><td><strong>숙취해소음료</strong></td><td>14,474,700</td><td>984,100</td><td>22,000원</td><td>35%</td><td><strong>43.30억</strong></td></tr>
-          <tr style="color:var(--ink-mute)"><td>숙취해소제 (환·캡슐)</td><td colspan="3" style="font-style:italic">인접 시장 — 마케터 추가 등록 권장</td><td>—</td><td>50~80억 추정</td></tr>
-          <tr style="color:var(--ink-mute)"><td>헛개수·헬스음료</td><td colspan="3" style="font-style:italic">인접 시장 — 마케터 추가 등록 권장</td><td>—</td><td>30~50억 추정</td></tr>
+          <tr class="highlight-row"><td><strong>숙취해소음료</strong> (직접)</td><td>984,100</td><td>22,000원</td><td>35%</td><td>컨디션 14.1%</td><td>60.6%</td><td><strong>43.30억</strong></td></tr>
+          <tr><td>헛개수차음료 (인접)</td><td>721,710</td><td>20,000원</td><td>26%</td><td>광동진한헛개차 41.8%</td><td>34.4%</td><td><strong>28.87억</strong></td></tr>
+          <tr><td>숙취해소제 환·캡슐 (인접)</td><td>136,900</td><td>18,000원</td><td>33%</td><td>컨디션 41.2%</td><td>32.8%</td><td><strong>4.93억</strong></td></tr>
+          <tr class="total-row"><td colspan="6">합산 TAM</td><td><strong>77.10억</strong></td></tr>
         </tbody>
       </table>
     </div>
     <div class="key-insight rv rv-d3">
       <div class="ki-title">TAM / SAM / SOM</div>
       <p>
-        <strong>TAM</strong> (인접 확장 시): 연 <strong>100~200억</strong> ·
+        <strong>TAM</strong> (인접 시장 포함): 연 <strong>77.1억</strong> ·
         <strong>SAM</strong> (숙취음료 직접): 연 <strong>43.3억</strong> ·
-        <strong>SOM (1차 목표 12M)</strong>: 월 <strong>6~8천만</strong> (현 매출 2배)
+        <strong>SOM (1차 목표 12M)</strong>: 월 <strong>8천만~1억</strong>
       </p>
     </div>
   </div>
@@ -632,7 +633,7 @@ p,li{line-height:1.75;word-break:keep-all}
           <tr><td>입점 / 운영</td><td>—</td><td>✅ <strong>쿠팡 &amp; 네이버 + 기타 채널 확장</strong></td></tr>
           <tr><td>광고비 투입</td><td>—</td><td>✅ <strong>OSC 부담</strong></td></tr>
           <tr><td>콘텐츠 / 상세페이지</td><td>—</td><td>✅ <strong>보완 및 제작 생성</strong></td></tr>
-          <tr><td>체험단 / 리뷰</td><td>—</td><td>✅ 메인 운영</td></tr>
+          <tr><td>체험단 / 리뷰</td><td colspan="2" style="text-align:center"><strong>화깨수 · OSC 공동 투자</strong> (실행비 50:50 분담, P11 상세)</td></tr>
         </tbody>
       </table>
     </div>
@@ -758,7 +759,7 @@ p,li{line-height:1.75;word-break:keep-all}
   <div class="slide-inner">
     <div class="rv">
       <div style="display:flex;align-items:center;margin-bottom:6px"><span class="section-num">⑩</span><h2 style="font-size:clamp(22px,2.8vw,32px)">메뉴 A vs B — 한눈에 비교</h2></div>
-      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">두 메뉴는 상호 배타적이지 않습니다 — 동시 적용 시 시너지</p>
+      <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">메뉴 A · 메뉴 B 핵심 비교</p>
       <hr class="double-line">
     </div>
     <div class="rv rv-d1" style="margin-top:12px">
@@ -775,49 +776,18 @@ p,li{line-height:1.75;word-break:keep-all}
           <tr><td><strong>계정 소유</strong></td><td>화깨수 소유</td><td>OSC 소유</td></tr>
           <tr><td><strong>광고비 부담</strong></td><td>쿠팡 트래픽 = 대행비 포함, 기타 = 화깨수</td><td><strong>OSC 부담</strong></td></tr>
           <tr><td><strong>화깨수 비용</strong></td><td>월 고정 500만 + 매출 6%</td><td>공급가 매출만 (월 고정비 X)</td></tr>
-          <tr><td><strong>정산</strong></td><td>월 1회 (익월 15일 내)</td><td>공급가 × 상품매대, 최소 15일</td></tr>
+          <tr><td><strong>정산</strong></td><td>월 1회 (익월 15일 내)</td><td>공급가 매입 · <strong>매 달 15일 월정산</strong></td></tr>
           <tr><td><strong>계약 기간</strong></td><td>24개월 + α</td><td><strong>24개월부터 시작</strong></td></tr>
           <tr><td><strong>메인 가치</strong></td><td>자사 자산 유지 + ROAS 개선</td><td>광고비 부담 X + OSC 직판</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="rv rv-d2" style="margin-top:clamp(14px,2vh,20px)">
-      <p class="exhibit">EXHIBIT | 동시 적용 시 5가지 시너지</p>
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,1vw,12px);margin-top:8px">
-        <div style="padding:clamp(12px,1.5vw,16px);background:var(--surface-alt);border-radius:var(--radius);text-align:center;border-top:3px solid var(--blue)">
-          <div style="font-family:var(--font-display);font-size:clamp(20px,2vw,26px);font-weight:800;color:var(--blue)">5</div>
-          <div style="font-size:clamp(11px,1vw,12px);color:var(--ink-sub);font-weight:600;margin-top:4px">채널 통합 운영</div>
-          <div style="font-size:clamp(10px,.95vw,11px);color:var(--ink-mute);margin-top:4px">단일 운영팀 데이터 통합</div>
-        </div>
-        <div style="padding:clamp(12px,1.5vw,16px);background:var(--surface-alt);border-radius:var(--radius);text-align:center;border-top:3px solid var(--orange)">
-          <div style="font-family:var(--font-display);font-size:clamp(20px,2vw,26px);font-weight:800;color:var(--orange)">1</div>
-          <div style="font-size:clamp(11px,1vw,12px);color:var(--ink-sub);font-weight:600;margin-top:4px">콘텐츠 자산 풀</div>
-          <div style="font-size:clamp(10px,.95vw,11px);color:var(--ink-mute);margin-top:4px">폭탄주 임상 5채널 재활용</div>
-        </div>
-        <div style="padding:clamp(12px,1.5vw,16px);background:var(--surface-alt);border-radius:var(--radius);text-align:center;border-top:3px solid var(--green)">
-          <div style="font-family:var(--font-display);font-size:clamp(20px,2vw,26px);font-weight:800;color:var(--green)">∞</div>
-          <div style="font-size:clamp(11px,1vw,12px);color:var(--ink-sub);font-weight:600;margin-top:4px">SEO 통합 전략</div>
-          <div style="font-size:clamp(10px,.95vw,11px);color:var(--ink-mute);margin-top:4px">키워드 5채널 통합 설계</div>
-        </div>
-        <div style="padding:clamp(12px,1.5vw,16px);background:var(--surface-alt);border-radius:var(--radius);text-align:center;border-top:3px solid var(--navy)">
-          <div style="font-family:var(--font-display);font-size:clamp(20px,2vw,26px);font-weight:800;color:var(--navy)">B2B</div>
-          <div style="font-size:clamp(11px,1vw,12px);color:var(--ink-sub);font-weight:600;margin-top:4px">레퍼런스 강화</div>
-          <div style="font-size:clamp(10px,.95vw,11px);color:var(--ink-mute);margin-top:4px">편의점·호텔 영업 카드</div>
-        </div>
-        <div style="padding:clamp(12px,1.5vw,16px);background:var(--surface-alt);border-radius:var(--radius);text-align:center;border-top:3px solid var(--blue-light)">
-          <div style="font-family:var(--font-display);font-size:clamp(20px,2vw,26px);font-weight:800;color:var(--blue-light)">⚖</div>
-          <div style="font-size:clamp(11px,1vw,12px);color:var(--ink-sub);font-weight:600;margin-top:4px">위험 분산</div>
-          <div style="font-size:clamp(10px,.95vw,11px);color:var(--ink-mute);margin-top:4px">자산 누적 + 무리스크 매출</div>
-        </div>
-      </div>
-    </div>
-    <div class="recommendation rv rv-d3">
+    <div class="recommendation rv rv-d2" style="margin-top:clamp(14px,2vh,20px)">
       <div class="rec-title">RECOMMENDED PATH</div>
       <p style="font-size:clamp(13px,1.3vw,15px);margin-bottom:6px">화깨수 우선순위에 따라 진입 시나리오 추천:</p>
       <ul style="list-style:none;font-size:clamp(13px,1.3vw,15px)">
-        <li>• 자사 채널 효율화 시급 → <strong>메뉴 A 우선</strong> · 6M 후 메뉴 B 추가</li>
-        <li>• 광고비 부담 즉각 해결 → <strong>메뉴 B 우선</strong> · 12M 후 메뉴 A 추가</li>
-        <li>• 빠른 매출 확장 (시간 우선) → <strong>A + B 동시</strong></li>
+        <li>• 자사 채널 효율화 시급 → <strong>메뉴 A 우선</strong></li>
+        <li>• 광고비 부담 즉각 해결 → <strong>메뉴 B 우선</strong></li>
       </ul>
     </div>
   </div>
@@ -848,7 +818,7 @@ p,li{line-height:1.75;word-break:keep-all}
         <div style="font-family:var(--font-display);font-size:clamp(22px,2.4vw,30px);font-weight:800;margin-bottom:4px">꼬기다 (닭가슴살)</div>
         <div style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.55);margin-bottom:14px">OSC 가 직접 키운 브랜드 — 실질적 커머스 성공 사례</div>
         <div style="display:flex;align-items:baseline;gap:6px;margin-top:14px">
-          <span style="font-family:var(--font-display);font-size:clamp(20px,2.2vw,28px);font-weight:700;color:rgba(255,255,255,.6)">100만</span>
+          <span style="font-family:var(--font-display);font-size:clamp(20px,2.2vw,28px);font-weight:700;color:rgba(255,255,255,.6)">10만</span>
           <span style="font-size:clamp(12px,1.2vw,14px);color:rgba(255,255,255,.4)">/일</span>
           <span style="font-size:clamp(16px,1.6vw,20px);color:rgba(255,255,255,.4);margin:0 8px">→</span>
           <span style="font-family:var(--font-display);font-size:clamp(28px,3vw,38px);font-weight:800;color:var(--green)">2,500만</span>
@@ -975,13 +945,9 @@ p,li{line-height:1.75;word-break:keep-all}
             <span style="font-family:var(--font-display);font-weight:700;color:var(--orange);min-width:24px">①</span>
             <span>공급가 협의 (오리지날·프리미엄·맛 라인 별도)</span>
           </li>
-          <li style="counter-increment:step;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.1);display:flex;gap:10px">
-            <span style="font-family:var(--font-display);font-weight:700;color:var(--orange);min-width:24px">②</span>
-            <span>신규 채널 입점 우선순위 협의 (G마켓·옥션·11번가·위메프)</span>
-          </li>
           <li style="counter-increment:step;padding:8px 0;display:flex;gap:10px">
-            <span style="font-family:var(--font-display);font-weight:700;color:var(--orange);min-width:24px">③</span>
-            <span>판매대행 계약 협의 (기간 제한 없음)</span>
+            <span style="font-family:var(--font-display);font-weight:700;color:var(--orange);min-width:24px">②</span>
+            <span>판매대행 계약 협의</span>
           </li>
         </ol>
       </div>
@@ -1073,14 +1039,14 @@ Chart.defaults.color='#475569';
 document.fonts.ready.then(()=>{
   const defs={responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}}};
 
-  // Market Size Bar
+  // Market Size Bar (Airtable 실제 데이터)
   new Chart(document.getElementById('chartMarketSize'),{type:'bar',data:{
-    labels:['숙취해소음료 (직접)','숙취해소제 환·캡슐 (인접)','헛개·헬스음료 (인접)'],
-    datasets:[{data:[43.3,65,40],backgroundColor:['#3B7DD8','#5A9BF0','#94B8E0'],borderRadius:6,barThickness:50}]
+    labels:['숙취해소음료 (직접)','헛개수차음료 (인접)','숙취해소제 환·캡슐 (인접)'],
+    datasets:[{data:[43.3,28.87,4.93],backgroundColor:['#3B7DD8','#5A9BF0','#94B8E0'],borderRadius:6,barThickness:50}]
   },options:{...defs,indexAxis:'y',scales:{
     x:{grid:{display:false},ticks:{callback:v=>v+'억',font:{family:'Outfit',weight:'600'}}},
     y:{grid:{display:false},ticks:{font:{family:'Pretendard Variable',size:13,weight:'700'}}}
-  },plugins:{...defs.plugins,tooltip:{callbacks:{label:c=>c.raw+'억원'+(c.dataIndex>0?' (추정)':'')}}}}});
+  },plugins:{...defs.plugins,tooltip:{callbacks:{label:c=>c.raw+'억원'}}}}});
 
   // Competition Donut (5강 + 화깨수 + 잔여)
   new Chart(document.getElementById('chartCompetition'),{type:'doughnut',data:{
