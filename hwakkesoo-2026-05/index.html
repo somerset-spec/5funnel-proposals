@@ -207,8 +207,9 @@ p,li{line-height:1.75;word-break:keep-all}
       <p style="font-size:clamp(14px,1.5vw,20px);color:rgba(255,255,255,.75);max-width:680px;margin-bottom:8px;font-weight:500">
         효능 강자, 다음은 운영입니다
       </p>
-      <p style="font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.45);font-style:italic;max-width:680px">
-        "숙취해소음료 43억 시장에서 화깨수는 이미 6위 — 운영 효율로 TOP3 진입이 가능합니다."
+      <p style="font-size:clamp(13px,1.3vw,16px);color:rgba(255,255,255,.55);font-style:italic;max-width:680px;line-height:1.7">
+        "숙취해소음료 43억 시장 — <strong style="color:var(--blue-light);font-style:normal">1위가 14%, 잔여 48%는 아직 주인이 없습니다.</strong><br>
+        화깨수는 이미 6위, 폭탄주 10잔 임상 USP — 이 빈자리를 채울 준비가 끝났습니다."
       </p>
     </div>
 
@@ -275,7 +276,7 @@ p,li{line-height:1.75;word-break:keep-all}
       <hr class="double-line">
     </div>
     <div class="rv rv-d1">
-      <p class="exhibit">EXHIBIT | 시장 규모 비교 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: OSC 쿠팡 내부 데이터 (Airtable 키워드리서치, 2026-05-13)</span></p>
+      <p class="exhibit">EXHIBIT | 시장 규모 비교 <span style="color:var(--ink-mute);font-style:italic;text-transform:none;letter-spacing:0">— 출처: OSC 쿠팡 내부 데이터 (Airtable 키워드리서치, 2026-05-13) · 전환율 20% 기준 (음료 카테고리 25~30% 가능 → 실제 시장 50억+ 추정)</span></p>
       <div class="chart-wrap" style="max-width:760px;height:240px">
         <canvas id="chartMarketSize"></canvas>
       </div>
@@ -334,15 +335,15 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
     <div class="rv rv-d2" style="margin-top:12px">
       <table class="data-table">
-        <thead><tr><th>순위</th><th>브랜드</th><th>연간 클릭</th><th>점유율</th><th>포지셔닝</th></tr></thead>
+        <thead><tr><th>순위</th><th>브랜드</th><th>연간 클릭</th><th>점유율</th><th>포지셔닝</th><th>쿠팡 URL</th></tr></thead>
         <tbody>
-          <tr><td>1</td><td>컨디션</td><td>138,600</td><td>14.08%</td><td>음료+환제 통합 · 맛 우선</td></tr>
-          <tr><td>2</td><td>상쾌환</td><td>131,400</td><td>13.35%</td><td>환제 강자 · 음료 라인 보조</td></tr>
-          <tr><td>3</td><td>도쿄메타</td><td>117,700</td><td>11.96%</td><td>일본 컨셉 마케팅</td></tr>
-          <tr><td>4</td><td>여명808</td><td>77,300</td><td>7.85%</td><td>효능 포커스</td></tr>
-          <tr><td>5</td><td>주주총회</td><td>51,100</td><td>5.19%</td><td>신생 브랜드</td></tr>
-          <tr class="highlight-row"><td>6</td><td><strong>화깨수</strong></td><td>약 40~50K</td><td>약 4~5%</td><td><strong>효능 임상 (폭탄주 10잔)</strong></td></tr>
-          <tr class="total-row"><td colspan="2">잔여 (TOP5 외)</td><td>468,000</td><td>47.6%</td><td>화깨수 + 기타</td></tr>
+          <tr><td>1</td><td>컨디션</td><td>138,600</td><td>14.08%</td><td>음료+환제 통합 · 맛 우선</td><td style="color:var(--ink-mute);font-style:italic">마케터 보강</td></tr>
+          <tr><td>2</td><td>상쾌환</td><td>131,400</td><td>13.35%</td><td>환제 강자 · 음료 라인 보조</td><td style="color:var(--ink-mute);font-style:italic">마케터 보강</td></tr>
+          <tr><td>3</td><td>도쿄메타</td><td>117,700</td><td>11.96%</td><td>일본 컨셉 마케팅</td><td style="color:var(--ink-mute);font-style:italic">마케터 보강</td></tr>
+          <tr><td>4</td><td>여명808</td><td>77,300</td><td>7.85%</td><td>효능 포커스</td><td style="color:var(--ink-mute);font-style:italic">마케터 보강</td></tr>
+          <tr><td>5</td><td>주주총회</td><td>51,100</td><td>5.19%</td><td>신생 브랜드</td><td style="color:var(--ink-mute);font-style:italic">마케터 보강</td></tr>
+          <tr class="highlight-row"><td>6</td><td><strong>화깨수</strong></td><td>약 40~50K</td><td>약 4~5%</td><td><strong>효능 임상 (폭탄주 10잔)</strong></td><td style="color:var(--navy);font-weight:600">화깨수 자사</td></tr>
+          <tr class="total-row"><td colspan="2">잔여 (TOP5 외)</td><td>468,000</td><td>47.6%</td><td colspan="2">화깨수 + 기타</td></tr>
         </tbody>
       </table>
     </div>
@@ -376,13 +377,13 @@ p,li{line-height:1.75;word-break:keep-all}
       </table>
     </div>
     <div class="rv rv-d2" style="margin-top:clamp(16px,2vh,24px)">
-      <p class="exhibit">EXHIBIT | 5가지 운영 정체 포인트</p>
+      <p class="exhibit">EXHIBIT | 5가지 운영 정체 포인트 — 행동 → 수치 결과</p>
       <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(8px,1vw,14px);margin-top:8px">
-        <div class="phase-card" style="text-align:center"><div class="ph-num">#1</div><div class="ph-title">클릭율</div><div class="ph-detail">썸네일 후킹 약함 → 폭탄주 시각화</div></div>
-        <div class="phase-card" style="text-align:center"><div class="ph-num">#2</div><div class="ph-title">전환율</div><div class="ph-detail">효능 차별화 약함 → 임상 콘텐츠</div></div>
-        <div class="phase-card" style="text-align:center"><div class="ph-num">#3</div><div class="ph-title">광고 ROAS</div><div class="ph-detail">키워드 미스매치 → 입찰 재설계</div></div>
-        <div class="phase-card" style="text-align:center"><div class="ph-num">#4</div><div class="ph-title">신제품</div><div class="ph-detail">메시지 충돌 → 별도 라인 브랜딩</div></div>
-        <div class="phase-card" style="text-align:center"><div class="ph-num">#5</div><div class="ph-title">마케팅</div><div class="ph-detail">고비용 ROI 미흡 → 효율 카드 전환</div></div>
+        <div class="phase-card" style="text-align:center"><div class="ph-num">#1</div><div class="ph-title">클릭율</div><div class="ph-detail">폭탄주 임상 시각화 콘텐츠 → <strong style="color:var(--blue)">CTR +30%</strong></div></div>
+        <div class="phase-card" style="text-align:center"><div class="ph-num">#2</div><div class="ph-title">전환율</div><div class="ph-detail">효능 차별화 상세페이지 → <strong style="color:var(--blue)">CVR +20%</strong></div></div>
+        <div class="phase-card" style="text-align:center"><div class="ph-num">#3</div><div class="ph-title">광고 ROAS</div><div class="ph-detail">인접 키워드 입찰 재설계 → <strong style="color:var(--blue)">ROAS +30%</strong></div></div>
+        <div class="phase-card" style="text-align:center"><div class="ph-num">#4</div><div class="ph-title">신제품</div><div class="ph-detail">맛 라인 별도 브랜딩 → <strong style="color:var(--blue)">매출 비중 30%</strong></div></div>
+        <div class="phase-card" style="text-align:center"><div class="ph-num">#5</div><div class="ph-title">마케팅</div><div class="ph-detail">OSC 운영 효율 카드 전환 → <strong style="color:var(--blue)">월 매출 2배</strong></div></div>
       </div>
     </div>
     <div class="key-insight rv rv-d3">
@@ -423,7 +424,16 @@ p,li{line-height:1.75;word-break:keep-all}
     </div>
     <div class="key-insight rv rv-d3">
       <div class="ki-title">현실성 평가</div>
-      <p>매출 2배 (월 6~8천만) = 직접 시장 8~10% 점유 = <strong>여명808 + 도쿄메타 사이 자리</strong> 확보. 컨디션·상쾌환 추월이 아닌 <strong>4위 진입 수준</strong>으로 충분히 현실적입니다. 인접 키워드 (환·헛개) 확장 시 더욱 안정적 달성 가능.</p>
+      <p>매출 2배 (월 6~8천만) = 직접 시장 8~10% 점유 = <strong>여명808 + 도쿄메타 사이 자리</strong> 확보. 컨디션·상쾌환 추월이 아닌 <strong>4위 진입 수준</strong>으로 충분히 현실적입니다. <strong>분산형 시장 (1위 14%) + 잔여 48%</strong>이므로 점유율 8~10% 달성은 보수적 목표.</p>
+    </div>
+
+    <div class="recommendation rv rv-d4" style="margin-top:clamp(16px,2vh,24px)">
+      <div class="rec-title">RECOMMENDATION</div>
+      <ul style="list-style:none;padding-left:0">
+        <li style="margin-bottom:10px;display:flex;gap:12px"><span style="font-family:var(--font-display);font-weight:800;color:var(--blue-light);min-width:24px">①</span><span><strong>1~2개월:</strong> 광고 ROAS 진단·재설계 → 효능 콘텐츠 시각화 (폭탄주 10잔 임상) → 월 4,500만 회복</span></li>
+        <li style="margin-bottom:10px;display:flex;gap:12px"><span style="font-family:var(--font-display);font-weight:800;color:var(--blue-light);min-width:24px">②</span><span><strong>2~6개월:</strong> 인접 키워드 (환·헛개·헬스음료) 진입 → 5위 → 4위 진입 → 월 6,000~7,000만</span></li>
+        <li style="display:flex;gap:12px"><span style="font-family:var(--font-display);font-weight:800;color:var(--blue-light);min-width:24px">③</span><span><strong>6~12개월:</strong> 신제품 (맛 라인) 매출 비중 30% + B2B 편의점 확장 → TOP3 진입 → <strong>월 8,000만~1억</strong></span></li>
+      </ul>
     </div>
   </div>
   <span class="confidential">CONFIDENTIAL</span>
@@ -607,9 +617,10 @@ p,li{line-height:1.75;word-break:keep-all}
       <p style="color:var(--ink-sub);font-size:clamp(13px,1.3vw,15px)">공급만 주세요 — OSC 가 직판 + 광고비·체험단 부담 (쿠팡 &amp; 네이버 메인)</p>
       <hr class="double-line">
     </div>
-    <div class="rv rv-d1" style="background:rgba(232,113,43,.06);border-left:4px solid var(--orange);padding:clamp(14px,2vw,20px) clamp(16px,2vw,24px);border-radius:0 var(--radius) var(--radius) 0;margin-top:12px">
-      <p style="font-size:clamp(15px,1.5vw,18px);font-weight:600;color:var(--navy);margin-bottom:4px">"공급만 하세요. 광고비·체험단·운영 — OSC 가 부담합니다."</p>
-      <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub)">광고비 부담 줄이고 OSC 가 직접 판매하는 구조 (쿠팡+네이버 메인, 기타 채널 확장 가능)</p>
+    <div class="rv rv-d1" style="background:linear-gradient(135deg,rgba(232,113,43,.10),rgba(59,125,216,.08));border:1.5px solid var(--orange);padding:clamp(16px,2.2vw,24px) clamp(18px,2.4vw,28px);border-radius:var(--radius);margin-top:12px;position:relative;overflow:hidden">
+      <div style="font-family:var(--font-display);font-size:11px;font-weight:700;letter-spacing:.15em;color:var(--orange);margin-bottom:8px">화깨수의 부담 = 0</div>
+      <p style="font-size:clamp(16px,1.6vw,20px);font-weight:700;color:var(--navy);margin-bottom:6px;line-height:1.4">"공급만 하세요. 광고비·운영·매입 — OSC 가 부담합니다."</p>
+      <p style="font-size:clamp(12px,1.2vw,14px);color:var(--ink-sub)">광고비 추가 지출 X · 매출 리스크 X · 화깨수는 발주 입고 시 즉시 매출 (쿠팡+네이버 메인, 기타 채널 확장 가능)</p>
     </div>
 
     <div class="rv rv-d2" style="margin-top:clamp(14px,2vh,20px)">
